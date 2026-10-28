@@ -1,0 +1,349 @@
+{
+  "botoes": {
+    "caixa": "alta",
+    "formato": "padrao"
+  },
+  "carrinho": {
+    "botao": "Fechar pedido no WhatsApp",
+    "cep_placeholder": "Ex.: 14800-000 ou Sua Cidade - UF",
+    "cep_rot": "CEP ou cidade para estimar o frete (opcional)",
+    "nome_placeholder": "Ex.: Seu nome",
+    "nome_rot": "Seu nome (opcional)",
+    "nota": "Nada é cobrado aqui. A lista vai para o WhatsApp da loja, onde combinamos pagamento e frete.",
+    "nota_combinar": "Há itens com valor a combinar na sua lista — o orçamento do Clube sai na conversa.",
+    "obs_placeholder": "Ex.: tipo de pele/cabelo, presente com cartão",
+    "obs_rot": "Observações do pedido",
+    "resumo_vazio": "nenhum item ainda",
+    "titulo": "Minha lista",
+    "total_rot": "Total estimado",
+    "vazio_texto": "Escolha os produtos no catálogo e finalize no WhatsApp.",
+    "vazio_titulo": "Sua lista está vazia.",
+    "whats_placeholder": "Ex.: (16) 99999-9999",
+    "whats_rot": "Seu WhatsApp (para a loja confirmar o pedido) *"
+  },
+  "catalogo": {
+    "busca_placeholder": "Buscar por barba, cabelo, pele…",
+    "chapeu": "Catálogo",
+    "lead": "Rotina completa do homem: <b>barba</b>, <b>cabelo</b>, <b>pele</b> e <b>banho</b>. Monte sua lista e toque em \"Fechar pedido\" que tudo chega pronto no WhatsApp.",
+    "nota": "Não achou o que procurava? <a href=\"#encomenda\" style=\"color:var(--ouro);border-bottom:1px solid var(--ouro-claro)\">montamos um kit para você</a>.",
+    "prazo": "Postamos em até 2 dias úteis + prazo dos Correios.",
+    "titulo": "Do corte ao <em>acabamento</em>"
+  },
+  "depoimentos": {
+    "chapeu": "Quem já usa",
+    "faixa": [
+      {
+        "s": "clientes atendidos",
+        "t": "1.200+"
+      },
+      {
+        "s": "cidades alcançadas",
+        "t": "15"
+      },
+      {
+        "s": "avaliação média",
+        "t": "4.9★"
+      }
+    ],
+    "lead": "Quem trocou o sabonete comum pela rotina certa não volta atrás:",
+    "lista": [
+      {
+        "contexto": "Kit rotina facial",
+        "nome": "Ricardo",
+        "texto": "\"Nunca tinha usado nada no rosto. Em 3 semanas a oleosidade baixou muito. O gel de limpeza virou item fixo no box.\""
+      },
+      {
+        "contexto": "Óleo para barba",
+        "nome": "Marcos",
+        "texto": "\"Barba cheia coçando direto. O óleo de cedro resolveu em dias e o cheiro é discreto, nada doce.\""
+      },
+      {
+        "contexto": "Kit presente Dia dos Pais",
+        "nome": "Diego",
+        "texto": "\"Dei o kit de presente pro meu pai e acabei assinando o clube pra mim. Chegou rápido e bem embalado.\""
+      }
+    ],
+    "titulo": "Rotina aprovada <em>na prática</em>"
+  },
+  "devocoes": {
+    "chapeu": "Linhas",
+    "itens": [
+      {
+        "t": "Barba"
+      },
+      {
+        "t": "Cabelo"
+      },
+      {
+        "t": "Pele"
+      },
+      {
+        "t": "Banho"
+      },
+      {
+        "t": "Kits"
+      },
+      {
+        "t": "Clube"
+      }
+    ],
+    "lead": "Cada linha resolve uma parte da rotina. Toque para filtrar o catálogo.",
+    "titulo": "Nossas <em>linhas</em>"
+  },
+  "destaques": {
+    "chapeu": "Em destaque",
+    "ids": [
+      "oleo-barba-cedro",
+      "gel-limpeza-facial",
+      "kit-rotina-facial"
+    ],
+    "titulo": "Os <em>mais pedidos</em>"
+  },
+  "encomenda": {
+    "botao": "Montar meu kit no WhatsApp",
+    "chapeu": "Kits sob medida",
+    "lead": "Pele oleosa, barba falhada, cabelo fino? Conte seu caso no WhatsApp e montamos o kit na medida — sem empurrar produto à toa.",
+    "passos": [
+      {
+        "s": "Tipo de pele, cabelo e barba. Ou mande foto do que você usa hoje.",
+        "t": "Você conta seu caso"
+      },
+      {
+        "s": "Produtos, ordem de uso e quantidade ideal para o seu perfil.",
+        "t": "A gente monta a rotina"
+      },
+      {
+        "s": "Kit fechado na caixa de presente, com cartão se for presente.",
+        "t": "Você aprova o kit"
+      },
+      {
+        "s": "Postamos em até 2 dias úteis, com rastreio no seu WhatsApp.",
+        "t": "Chega na sua casa"
+      }
+    ],
+    "titulo": "Kit na medida <em>do seu perfil</em>"
+  },
+  "final": {
+    "chapeu": "Fale com a loja",
+    "cta1": "Falar no WhatsApp",
+    "cta2": "Voltar ao catálogo",
+    "lead": "Dúvida de produto, presente ou assinatura do clube? Chame e resolva em minutos.",
+    "titulo": "Pronto para <em>subir de nível?</em>"
+  },
+  "geral": {
+    "descricao": "Cosméticos feitos para homem: barba, cabelo, pele e banho. Óleo de barba, pomada matte, rotina facial e kits presente. Monte sua lista e feche no WhatsApp.",
+    "instagram": "https://www.instagram.com/homem.essencia/",
+    "nome": "Homem Essência",
+    "prazo_producao": "Postamos em até 2 dias úteis + Correios",
+    "tagline": "Cosméticos para homens",
+    "title": "Homem Essência — Cosméticos para homens: barba, cabelo e pele",
+    "zap": "5516999999999",
+    "zap_tel": "(16) 99999-9999",
+    "produto": "Cosmético masculino",
+    "categoria": "Cosméticos para homens"
+  },
+  "hero": {
+    "chapeu": "Cosméticos para homens · pedido no WhatsApp",
+    "cta1": "Ver o catálogo",
+    "cta2": "Montar meu kit",
+    "fita1": "Rotina completa",
+    "fita2": "barba · cabelo · pele",
+    "lead": "Óleo de barba, pomada matte, limpeza facial e kits presente — formulação pensada para a pele e o fio masculinos, sem complicação.",
+    "nota": "Monte sua lista e feche o pedido no WhatsApp",
+    "titulo": "Cuidado de homem,<br>sem complicação <em>e sem frescura.</em>"
+  },
+  "menu": [
+    {
+      "href": "#oficio",
+      "t": "A loja"
+    },
+    {
+      "href": "#catalogo",
+      "t": "Catálogo"
+    },
+    {
+      "href": "#encomenda",
+      "t": "Seu kit"
+    },
+    {
+      "href": "#ocasioes",
+      "t": "Presentes"
+    },
+    {
+      "href": "#terco",
+      "t": "Guia de uso"
+    },
+    {
+      "href": "#sobre",
+      "t": "História"
+    }
+  ],
+  "misterios": {
+    "chapeu": "Guia de uso",
+    "itens": [
+      {
+        "dia": "Passo 1 · manhã e noite",
+        "texto": "Espuma rápida, 30 segundos massageando testa, nariz e queixo. Enxágue frio para fechar os poros.",
+        "titulo": "Limpeza"
+      },
+      {
+        "dia": "Passo 2 · após o banho",
+        "texto": "3 gotas na palma, esfregue as mãos e aplique na barba ainda úmida, da raiz às pontas. Penteie em seguida.",
+        "titulo": "Barba"
+      },
+      {
+        "dia": "Passo 3 · saída",
+        "texto": "Uma noz de pomada, aqueça entre as mãos e modele o cabelo seco. Matte não tem brilho molhado.",
+        "titulo": "Cabelo"
+      },
+      {
+        "dia": "Passo 4 · reposição",
+        "texto": "Óleo dura ~2 meses, pomada ~3. Ative o lembrete no WhatsApp e nunca fique sem.",
+        "titulo": "Reposição"
+      }
+    ],
+    "lead": "Rotina de 5 minutos que resolve 90% dos casos. Comece pelo básico e evolua.",
+    "titulo": "Rotina em <em>4 passos</em>"
+  },
+  "ocasioes": {
+    "chapeu": "Presentes",
+    "itens": [
+      {
+        "img": "kit.jpg",
+        "sub": "Caixa pronta com cartão",
+        "titulo": "Dia dos Pais"
+      },
+      {
+        "img": "servico-navalha.jpg",
+        "sub": "Acabamento de respeito",
+        "titulo": "Padrinhos"
+      },
+      {
+        "img": "kit-premium.jpg",
+        "sub": "Comece pela rotina básica",
+        "titulo": "Primeiro kit"
+      },
+      {
+        "img": "barba-toalha.jpg",
+        "sub": "Para quem leva a sério",
+        "titulo": "Barba na régua"
+      }
+    ],
+    "titulo": "Para <em>presentear</em>"
+  },
+  "oficio": {
+    "chapeu": "A loja",
+    "citacao": "\"Homem também se cuida — só precisa do produto certo, sem 15 etapas.\"",
+    "cta": "Ver o catálogo",
+    "fe1": "<b>Formulação masculina</b> — pele do homem é mais oleosa e espessa; nossos produtos nascem para esse perfil.",
+    "fe2": "<b>Rotina de 5 minutos</b> — poucos produtos, ordem clara de uso e resultado visível em semanas.",
+    "fe3": "<b>Kit presente pronto</b> — caixa, cartão e entrega com rastreio. Presente resolvido em uma conversa.",
+    "lead": "Nascemos numa barbearia de bairro vendo o mesmo filme: homem querendo se cuidar sem saber por onde começar. Testamos dezenas de fórmulas até chegar numa linha curta, direta e com preço justo.",
+    "titulo": "Nascida na barbearia, <em>feita para o dia a dia.</em>"
+  },
+  "oracao": {
+    "autor": "Homem Essência",
+    "texto": "\"Cuidar-se não é vaidade. É respeito por quem você vê no espelho.\""
+  },
+  "popup": {
+    "ativo": false,
+    "aviso": "Ao enviar, você concorda em receber novidades no WhatsApp.",
+    "botao": "Quero meu cupom",
+    "cupom": "",
+    "fim": "",
+    "inicio": "",
+    "texto": "Deixe seu nome e WhatsApp que enviamos seu cupom de boas-vindas.",
+    "titulo": "Ganhe 10% na primeira compra"
+  },
+  "rodape": {
+    "cat_titulo": "Catálogo",
+    "como_titulo": "Como comprar",
+    "nota_base": "Produtos de uso externo. Em caso de irritação, suspenda o uso.",
+    "sobre": "Cosméticos para homens: barba, cabelo, pele e banho. Monte sua lista e feche no WhatsApp.",
+    "titulo": "Homem Essência"
+  },
+  "selos": [
+    {
+      "s": "Para pele e fio masculinos",
+      "t": "Formulação própria"
+    },
+    {
+      "s": "Rotina de 5 minutos",
+      "t": "Sem complicação"
+    },
+    {
+      "s": "Caixa + cartão",
+      "t": "Presente pronto"
+    },
+    {
+      "s": "Para todo o Brasil",
+      "t": "Envio rápido"
+    }
+  ],
+  "sobre": {
+    "chapeu": "Nossa história",
+    "cta": "Ver bastidores no Instagram",
+    "numeros": [
+      {
+        "s": "kits montados",
+        "v": "1.200+"
+      },
+      {
+        "s": "avaliação média",
+        "v": "4.9★"
+      },
+      {
+        "s": "recompra em 60 dias",
+        "v": "68%"
+      }
+    ],
+    "p1": "Começamos em 2023 indicando produto importado caro para cliente de barbearia. Percebemos que dava para formular melhor, nacional e mais barato.",
+    "p2": "Hoje produzimos em pequenos lotes, testamos cada fórmula em pele masculina real e vendemos direto — sem atravessador, sem prateleira de farmácia.",
+    "p3": "O clube nasceu do pedido dos clientes: reposição automática e desconto fixo. Quem entra, fica.",
+    "titulo": "De balcão de barbearia <em>para o Brasil todo</em>"
+  },
+  "visual": {
+    "cores": {
+      "marfim": "#14110c",
+      "areia": "#1e1811",
+      "papel": "#221b12",
+      "linha": "#3d3322",
+      "tinta": "#f0e7d5",
+      "tinta-suave": "#b3a586",
+      "ouro": "#cf9c4f",
+      "ouro-claro": "#e3bd7f",
+      "ouro-fraco": "#3a2c17",
+      "rosa": "#c98a5e",
+      "rosa-claro": "#3a2718",
+      "salvia": "#8ba382",
+      "zap": "#25a86a"
+    },
+    "fontes": {
+      "texto": {
+        "familia": "\"Inter\",-apple-system,BlinkMacSystemFont,\"Segoe UI\",sans-serif",
+        "link": "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap",
+        "nome": "Inter"
+      },
+      "titulos": {
+        "familia": "\"Archivo\",-apple-system,BlinkMacSystemFont,\"Segoe UI\",sans-serif",
+        "link": "https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&display=swap",
+        "nome": "Archivo"
+      }
+    },
+    "logo": "logo.svg"
+  },
+  "zap": {
+    "msg_ola": "Olá! Vim pelo site da Homem Essência e quero saber mais sobre os produtos.",
+    "msg_encomenda": "Olá! Vim pelo site e quero montar um kit na medida do meu perfil. Pode me ajudar?"
+  },
+  "personalizar": {
+    "titulo": "Personalizar este produto",
+    "rot_campo1": "Linha / necessidade",
+    "ph_campo1": "Ex.: barba, pele oleosa, presente",
+    "rot_campo2": "Variação",
+    "ph_campo2": "Ex.: tamanho, fragrância, kit",
+    "rot_campo3": "Nome no cartão (opcional)",
+    "ph_campo3": "Ex.: Para o pai, com carinho",
+    "rot_campo4": "Prazo desejado"
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "default": "default-tenant",
+  "tenants": [
+    {
+      "slug": "default-tenant",
+      "nome": "Loja Padrão",
+      "email": "",
+      "zap": "",
+      "plano": "pro",
+      "status": "ativo",
+      "dominio_custom": "",
+      "logo": "/img/logo-default.webp",
+      "cores_botao": "#2E7CFF",
+      "cores_bg": "#F4F6FB",
+      "tagline": "Catálogo virtual whitelabel",
+      "segmento": "Catálogo",
+      "created_at": "2026-10-01T00:00:00"
+    },
+    {
+      "slug": "loja-teste",
+      "nome": "Loja Teste",
+      "email": "teste@exemplo.com",
+      "zap": "5516999999999",
+      "plano": "basico",
+      "status": "ativo",
+      "dominio_custom": "",
+      "logo": "/img/loja-teste-logo.webp",
+      "cores_botao": "#F4A261",
+      "cores_bg": "#FFF8F0",
+      "tagline": "Catálogo de demonstração",
+      "segmento": "Catálogo",
+      "created_at": "2026-09-25T16:17:00"
+    },
+    {
+      "slug": "homem-essencia",
+      "nome": "Homem Essência",
+      "logo": "/img/homem-essencia-logo.webp",
+      "cores_bg": "#f0f4f8",
+      "tagline": "Espirito masculino, na essência",
+      "email": "",
+      "zap": "5516999999999",
+      "plano": "basico",
+      "status": "ativo",
+      "dominio_custom": "",
+      "created_at": "2026-10-14T00:00:00",
+      "segmento": "Portfólio",
+      "cores_botao": "#4361ee"
+    },
+    {
+      "slug": "teste-homolog",
+      "nome": "Loja Teste Homolog",
+      "logo": "/img/teste-homolog-logo.webp",
+      "cores_bg": "#fffcf7",
+      "tagline": "Teste de homologação",
+      "email": "",
+      "zap": "5516999999999",
+      "plano": "basico",
+      "status": "ativo",
+      "dominio_custom": "",
+      "created_at": "2026-10-15T22:11:32",
+      "segmento": "Catálogo",
+      "cores_botao": "#f77f00"
+    },
+    {
+      "slug": "minha-loja",
+      "nome": "Minha Loja",
+      "email": "contato@minha-loja.com",
+      "zap": "5516999888777",
+      "plano": "pro",
+      "status": "ativo",
+      "dominio_custom": "teste.local",
+      "logo": "/img/logo-default.webp",
+      "cores_botao": "#F4A261",
+      "cores_bg": "#FFF8F0",
+      "tagline": "Catálogo neutro para qualquer segmento",
+      "segmento": "Moda",
+      "created_at": "2026-10-26T23:44:01",
+      "atualizado_em": "2026-10-26T23:44:01"
+    }
+  ]
+}

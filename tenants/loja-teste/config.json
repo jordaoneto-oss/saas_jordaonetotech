@@ -1,0 +1,459 @@
+{
+  "geral": {
+    "nome": "Ateliê Santo Terço",
+    "tagline": "Terços feitos à mão",
+    "title": "Ateliê Santo Terço — Terços artesanais feitos à mão, com fé",
+    "descricao": "Terços, dezenas de carro e terços infantis feitos à mão, peça por peça, em cristal, pérola e porcelana pintada. Personalizamos com nome, devoção e cor. Enviamos para todo o Brasil, pedido pelo WhatsApp.",
+    "instagram": "https://www.instagram.com/atelie_santotercoo/",
+    "zap": "5516991038587",
+    "zap_tel": "(16) 99103-8587",
+    "prazo_producao": "à vista · produção de 3 a 7 dias úteis + Correios",
+    "produto": "Terço artesanal personalizado",
+    "categoria": "Artigos religiosos"
+  },
+  "visual": {
+    "logo": "",
+    "cores": {
+      "marfim": "#fbf5ee",
+      "areia": "#f3e9dc",
+      "papel": "#fffcf7",
+      "linha": "#e7d9c4",
+      "tinta": "#33291f",
+      "tinta-suave": "#6f6050",
+      "ouro": "#d39c9c",
+      "ouro-claro": "#d0ae72",
+      "ouro-fraco": "#f2e7d2",
+      "rosa": "#d39c9c",
+      "rosa-claro": "#f3ddd9",
+      "salvia": "#93a68c",
+      "zap": "#1f8c5a"
+    },
+    "fontes": {
+      "titulos": {
+        "nome": "Playfair Display",
+        "link": "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap",
+        "familia": "\"Playfair Display\",Georgia,serif"
+      },
+      "texto": {
+        "nome": "Lato",
+        "link": "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap",
+        "familia": "\"Lato\",-apple-system,BlinkMacSystemFont,\"Segoe UI\",sans-serif"
+      }
+    }
+  },
+  "hero": {
+    "chapeu": "Terços artesanais · feitos com fé",
+    "titulo": "Cada peça é feita<br>à mão, com intenção,<br><em>oração e amor.</em>",
+    "lead": "Terços e dezenas montados conta por conta, em cristal, pérola de vidro e porcelana pintada. Você escolhe a devoção, a cor e o nome que vai gravado. A gente monta a peça só sua.",
+    "cta1": "Ver o catálogo",
+    "cta2": "Quero personalizar",
+    "nota": "Enviamos para todo o Brasil, com pedido e pagamento pelo WhatsApp",
+    "fita1": "Peça única",
+    "fita2": "montada uma a uma"
+  },
+  "selos": [
+    {
+      "t": "Feito à mão",
+      "s": "Conta por conta, aqui"
+    },
+    {
+      "t": "Personalizamos",
+      "s": "Nome, devoção e cor"
+    },
+    {
+      "t": "Sob encomenda",
+      "s": "Feita depois do seu sim"
+    },
+    {
+      "t": "Envio nacional",
+      "s": "Para todo o Brasil"
+    }
+  ],
+  "destaques": {
+    "chapeu": "Em destaque",
+    "titulo": "As peças <em>do momento</em>",
+    "ids": [
+      "sao-miguel-quaresma",
+      "sagrada-familia-champagne",
+      "sao-bento-resinado"
+    ]
+  },
+  "oficio": {
+    "chapeu": "O ateliê",
+    "titulo": "Não sai de máquina. <em>Sai de uma oração.</em>",
+    "citacao": "\"Todo trabalho artesanal leva consigo a alma de quem produz, e isso não tem preço.\"",
+    "lead": "Cada terço é montado aqui, uma conta de cada vez: escolhendo o cristal, fechando o elo, ajustando o entremeio até ficar do jeito certo. Não existem dois iguais, porque nenhum é feito antes de alguém pedir.",
+    "fe1": "<b>Materiais que duram</b> — cristal facetado, pérola de vidro, porcelana pintada à mão, hematita natural, metais com banho de ouro e ouro velho.",
+    "fe2": "<b>Acabamento de semi-joia</b> — entremeios trabalhados, detalhes em strass e crucifixos escolhidos peça a peça.",
+    "fe3": "<b>Do jeito que você pediu</b> — a cor da conta, o santo do entremeio, o nome que vai gravado. Já fizemos até com foto de família dos dois lados.",
+    "cta": "Conhecer as peças"
+  },
+  "catalogo": {
+    "chapeu": "Catálogo",
+    "titulo": "Escolha a sua, <em>a gente faz a sua</em>",
+    "lead": "As peças são organizadas por linha: a <b>Essencial</b> é a mais leve no bolso, a <b>Clássica</b> é o coração do ateliê, a <b>Premium</b> tem acabamento de semi-joia e a <b>Luxo</b> guarda as peças mais diferenciadas. Monte sua lista e toque em \"Fechar pedido\" que tudo chega pronto no WhatsApp.",
+    "prazo": "Produção de 3 a 7 dias úteis depois do seu sim, mais o prazo dos Correios.",
+    "nota": "Não achou o seu santo? A gente faz sob encomenda: <a href=\"#encomenda\">conte a sua devoção</a>.",
+    "busca_placeholder": "Buscar por santo, cor ou peça…"
+  },
+  "encomenda": {
+    "chapeu": "Sob encomenda",
+    "titulo": "O seu santo, a sua cor, <em>o seu nome</em>",
+    "lead": "Ter um terço personalizado é uma forma de se sentir ainda mais íntimo de Nossa Mãe e do Seu Filho. Conte a devoção, o tom que você imagina e para quem é. O resto é com a gente.",
+    "passos": [
+      {
+        "t": "Você conta a ideia",
+        "s": "Um santo de devoção, uma cor, uma data. Ou manda uma foto do que te encantou."
+      },
+      {
+        "t": "A gente combina os detalhes",
+        "s": "Tipo de conta, acabamento do metal, entremeio, gravação de nome e o prazo."
+      },
+      {
+        "t": "A peça é montada",
+        "s": "Uma a uma, à mão. Você acompanha e aprova antes de sair daqui."
+      },
+      {
+        "t": "Chega na sua casa",
+        "s": "Enviamos para todo o Brasil, embalado para presentear."
+      }
+    ],
+    "botao": "Encomendar pelo WhatsApp"
+  },
+  "devocoes": {
+    "chapeu": "Coleções da vitrine",
+    "titulo": "Os santos que já <em>passaram por aqui</em>",
+    "lead": "Cada um destes já virou terço aqui dentro. Se o seu não está na lista, é só pedir.",
+    "itens": [
+      {
+        "t": "Nossa Senhora Aparecida"
+      },
+      {
+        "t": "Nossa Senhora de Fátima"
+      },
+      {
+        "t": "Nossa Senhora das Graças"
+      },
+      {
+        "t": "Virgem de Guadalupe"
+      },
+      {
+        "t": "Sagrada Família"
+      },
+      {
+        "t": "Divino Espírito Santo"
+      },
+      {
+        "t": "São Miguel Arcanjo"
+      },
+      {
+        "t": "São Bento"
+      },
+      {
+        "t": "São José"
+      },
+      {
+        "t": "São Padre Pio"
+      },
+      {
+        "t": "São Cristóvão"
+      },
+      {
+        "t": "São Carlo Acutis"
+      },
+      {
+        "t": "Santa Teresinha"
+      },
+      {
+        "t": "Santa Rita de Cássia"
+      },
+      {
+        "t": "Santa Gianna"
+      },
+      {
+        "t": "Anjo da Guarda"
+      },
+      {
+        "t": "Santo Expedito"
+      }
+    ]
+  },
+  "ocasioes": {
+    "chapeu": "Para quando",
+    "titulo": "Os dias que a família <em>não esquece</em>",
+    "itens": [
+      {
+        "img": "terco-infantil-nome-caixa.webp",
+        "titulo": "Batizado",
+        "sub": "Terço infantil com nome e caixinha"
+      },
+      {
+        "img": "terco-primeira-eucaristia.webp",
+        "titulo": "Primeira Eucaristia",
+        "sub": "A lembrança do primeiro encontro"
+      },
+      {
+        "img": "poster-noiva.webp",
+        "titulo": "Casamento",
+        "sub": "O terço da noiva, até o altar"
+      },
+      {
+        "img": "terco-profissao-enfermagem.webp",
+        "titulo": "Formatura",
+        "sub": "Com o símbolo da profissão"
+      }
+    ]
+  },
+  "oracao": {
+    "texto": "\"Segure o terço com fé. Cada Ave-Maria é um passo em direção ao coração de Jesus pelas mãos de Maria.\"",
+    "autor": "Ateliê Santo Terço"
+  },
+  "misterios": {
+    "chapeu": "A oração de cada dia",
+    "titulo": "Os mistérios, <em>dia por dia</em>",
+    "lead": "Se você está começando a rezar o terço, é por aqui. Cada dia da semana tem os seus mistérios, e são cinco dezenas em cada um.",
+    "itens": [
+      {
+        "dia": "Segunda e sábado",
+        "titulo": "Gozosos",
+        "texto": "A alegria do início: a Anunciação, a Visitação, o Nascimento de Jesus, a Apresentação no templo e o reencontro com o Menino entre os doutores."
+      },
+      {
+        "dia": "Terça e sexta",
+        "titulo": "Dolorosos",
+        "texto": "A entrega: a agonia no horto, a flagelação, a coroação de espinhos, a subida ao Calvário e a crucifixão."
+      },
+      {
+        "dia": "Quarta e domingo",
+        "titulo": "Gloriosos",
+        "texto": "A vitória: a Ressurreição, a Ascensão, Pentecostes, a Assunção de Maria e a coroação de Nossa Senhora."
+      },
+      {
+        "dia": "Quinta-feira",
+        "titulo": "Luminosos",
+        "texto": "A vida pública de Jesus: o Batismo no Jordão, Caná, o anúncio do Reino, a Transfiguração e a instituição da Eucaristia."
+      }
+    ]
+  },
+  "sobre": {
+    "chapeu": "A história",
+    "titulo": "Começou com um terço <em>feito para mim</em>",
+    "p1": "O primeiro terço foi para uso pessoal. Depois vieram os da família, os de presente para pessoas queridas. Era hobby, era fé, era um amor muito pessoal.",
+    "p2": "Com o tempo veio a percepção de que aquilo feito com tanta dedicação podia alcançar mais corações. Virou também uma renda, mas continua sendo, acima de tudo, um trabalho feito com amor, cuidado e muita fé.",
+    "p3": "Hoje as encomendas saem daqui para o Brasil inteiro. E a gratidão é a mesma por cada pessoa que confia e leva um pedacinho dessa dedicação para casa.",
+    "cta": "Ver o dia a dia no Instagram",
+    "numeros": [
+      {
+        "v": "100%",
+        "s": "montado à mão"
+      },
+      {
+        "v": "16+",
+        "s": "devoções feitas"
+      },
+      {
+        "v": "Brasil",
+        "s": "inteiro, por Correios"
+      }
+    ]
+  },
+  "depoimentos": {
+    "chapeu": "Quem já levou",
+    "titulo": "Devoções que viraram <em>presentes</em>",
+    "lead": "O que mais me emociona é receber fotos de quem recebeu e abraçou a peça. Algumas palavras de quem já confiou:",
+    "lista": [
+      {
+        "texto": "\"Encomendei o terço da minha filha com o nome dela e chegou mais lindo do que nas fotos. A embalagem também é um presente.\"",
+        "nome": "Maria",
+        "contexto": "Terço infantil com nome"
+      },
+      {
+        "texto": "\"O terço de Santa Rita chegou perfeito, exatamente na cor que pedi. Atendimento atencioso do início ao fim.\"",
+        "nome": "Fernanda",
+        "contexto": "Terço de Santa Rita"
+      },
+      {
+        "texto": "\"O terço da noiva emocionou a minha irmã no casamento. Trabalho delicado, feito com muito capricho.\"",
+        "nome": "Ana Paula",
+        "contexto": "Terço de noiva"
+      }
+    ],
+    "faixa": [
+      {
+        "t": "500+",
+        "s": "terços enviados"
+      },
+      {
+        "t": "26",
+        "s": "estados alcançados"
+      },
+      {
+        "t": "100%",
+        "s": "feito à mão"
+      }
+    ]
+  },
+  "final": {
+    "chapeu": "Fale com o ateliê",
+    "titulo": "Qual devoção <em>vai nas suas mãos?</em>",
+    "lead": "Chame no WhatsApp e conte o que você imagina. Respondemos com as opções de conta, cor e acabamento, o prazo e o valor.",
+    "cta1": "Falar no WhatsApp",
+    "cta2": "Voltar ao catálogo"
+  },
+  "rodape": {
+    "titulo": "Ateliê Santo Terço",
+    "sobre": "Terços artesanais feitos com fé. Cada peça é montada à mão, com intenção, oração e amor. Enviamos para todo o Brasil.",
+    "cat_titulo": "Catálogo",
+    "como_titulo": "Como comprar",
+    "nota_base": "Peças artesanais: pequenas variações fazem parte do feito à mão."
+  },
+  "carrinho": {
+    "titulo": "Minha lista",
+    "resumo_vazio": "nenhuma peça ainda",
+    "obs_rot": "Cor, devoção ou nome para gravar",
+    "obs_placeholder": "Ex.: o de Santa Rita em tom rosa, com o nome Helena gravado",
+    "nome_rot": "Seu nome (opcional)",
+    "nome_placeholder": "Ex.: Maria Helena",
+    "whats_rot": "Seu WhatsApp (para a loja confirmar o pedido) *",
+    "whats_placeholder": "Ex.: (16) 99999-9999",
+    "cep_rot": "CEP ou cidade para estimar o frete (opcional)",
+    "cep_placeholder": "Ex.: 14800-000 ou Araraquara - SP",
+    "total_rot": "Total estimado",
+    "nota": "Nada é cobrado aqui. A lista vai para o WhatsApp do ateliê, onde combinamos os detalhes, o prazo e o frete.",
+    "nota_combinar": "Há peças com valor a combinar na sua lista — o orçamento delas sai na conversa.",
+    "botao": "Fechar pedido no WhatsApp",
+    "msg_modelo": "Olá, {loja}! 🤍\nVim pelo site e gostaria de encomendar:\n\n{itens}\n\nTotal estimado: {total}{combinar}\n\n{observacao}\n\n{cliente}\n\n{entrega}\n\nPode me confirmar disponibilidade, prazo e o frete?",
+    "vazio_titulo": "Sua lista está vazia.",
+    "vazio_texto": "Escolha as peças no catálogo e a gente monta o orçamento no WhatsApp."
+  },
+  "zap": {
+    "msg_ola": "Olá! Vim pelo site do {NOME} e gostaria de saber mais sobre os terços. 🤍",
+    "msg_encomenda": "Olá! Vim pelo site e queria encomendar um terço personalizado. Posso contar a devoção que eu tenho em mente?"
+  },
+  "personalizar": {
+    "titulo": "Personalizar esta peça",
+    "rot_campo1": "Devoção",
+    "ph_campo1": "Ex.: Santa Rita de Cássia",
+    "rot_campo2": "Cor",
+    "ph_campo2": "rosa, azul, champanhe…",
+    "rot_campo3": "Nome a gravar (opcional)",
+    "ph_campo3": "Ex.: Helena",
+    "rot_campo4": "Prazo desejado"
+  },
+  "menu": [
+    {
+      "t": "O ateliê",
+      "href": "#oficio"
+    },
+    {
+      "t": "Catálogo",
+      "href": "#catalogo"
+    },
+    {
+      "t": "Personalizar",
+      "href": "#encomenda"
+    },
+    {
+      "t": "Ocasiões",
+      "href": "#ocasioes"
+    },
+    {
+      "t": "Como rezar",
+      "href": "#terco"
+    },
+    {
+      "t": "História",
+      "href": "#sobre"
+    }
+  ],
+  "botoes": {
+    "formato": "padrao",
+    "caixa": "alta"
+  },
+  "popup": {
+    "ativo": false,
+    "titulo": "Ganhe 10% na primeira peça 🤍",
+    "texto": "Deixe seu nome e WhatsApp que enviamos seu cupom de boas-vindas.",
+    "botao": "Quero meu cupom",
+    "cupom": "",
+    "aviso": "Ao enviar, você concorda em receber novidades no WhatsApp.",
+    "atraso": 25,
+    "intervalo": 7,
+    "inicio": "",
+    "fim": ""
+  },
+  "layout": {
+    "secoes": [
+      {
+        "id": "hero",
+        "visivel": true,
+        "icone": ""
+      },
+      {
+        "id": "selos",
+        "visivel": true,
+        "icone": "cruz"
+      },
+      {
+        "id": "destaques",
+        "visivel": true,
+        "icone": ""
+      },
+      {
+        "id": "oficio",
+        "visivel": true,
+        "icone": "usuario"
+      },
+      {
+        "id": "catalogo",
+        "visivel": true,
+        "icone": ""
+      },
+      {
+        "id": "encomenda",
+        "visivel": true,
+        "icone": ""
+      },
+      {
+        "id": "devocoes",
+        "visivel": true,
+        "icone": ""
+      },
+      {
+        "id": "ocasioes",
+        "visivel": true,
+        "icone": ""
+      },
+      {
+        "id": "oracao",
+        "visivel": true,
+        "icone": ""
+      },
+      {
+        "id": "misterios",
+        "visivel": true,
+        "icone": ""
+      },
+      {
+        "id": "sobre",
+        "visivel": true,
+        "icone": ""
+      },
+      {
+        "id": "depoimentos",
+        "visivel": true,
+        "icone": ""
+      },
+      {
+        "id": "final",
+        "visivel": true,
+        "icone": ""
+      },
+      {
+        "id": "rodape",
+        "visivel": true,
+        "icone": ""
+      }
+    ]
+  }
+}

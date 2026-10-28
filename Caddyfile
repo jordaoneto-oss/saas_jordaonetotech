@@ -1,0 +1,68 @@
+# --- gestão SaaS bloqueada nos domínios públicos (operador usa plataforma.jordaonetotech.com.br) ---
+(protecaoSaas) {
+	@saasGestao {
+				path /api/saas/tenants /api/saas/tenants/* /api/saas/lojas /api/saas/lojas/* /api/saas/financeiro /api/saas/financeiro/* /api/saas/interesses /api/saas/interesses/* /api/saas/info /api/saas/dns /api/saas/dns/* /api/saas/resumo /api/saas/receita /api/saas/receita/*
+	}
+	handle @saasGestao {
+		abort
+	}
+	@saasPlataformaEscrita {
+		path /api/saas/plataforma
+		not method GET
+	}
+	handle @saasPlataformaEscrita {
+		abort
+	}
+	@pagGestao {
+		path /saas-admin.html
+	}
+	handle @pagGestao {
+		respond "Não encontrado" 404
+	}
+}
+
+{
+	email jordao@jordaonetotech.com.br
+}
+
+
+# Plataforma: superadmin + APIs SaaS
+# Domínio oficial da plataforma
+plataforma.jordaonetotech.com.br {
+	reverse_proxy 127.0.0.1:8324
+}
+
+# Legado (mantido para não quebrar acessos antigos)
+admin.seusaas.com.br {
+	reverse_proxy 127.0.0.1:8324
+}
+
+# Landing de vendas - novo endereço
+lojaapp.jordaonetotech.com.br {
+	import protecaoSaas
+	reverse_proxy 127.0.0.1:8324
+}
+
+# Loja principal - domínio próprio mantido
+ateliesantoterco.com.br, www.ateliesantoterco.com.br {
+	import protecaoSaas
+	reverse_proxy 127.0.0.1:8324
+}
+
+# ATELIE SANTO TERÇO
+default-tenant.plataforma.jordaonetotech.com.br {
+	import protecaoSaas
+	reverse_proxy 127.0.0.1:8331
+}
+
+# Santo Terço
+santo-terco.plataforma.jordaonetotech.com.br, santoterco.com.br, www.santoterco.com.br {
+	import protecaoSaas
+	reverse_proxy 127.0.0.1:8332
+}
+
+# Teste1
+loja-teste.plataforma.jordaonetotech.com.br {
+	import protecaoSaas
+	reverse_proxy 127.0.0.1:8333
+}

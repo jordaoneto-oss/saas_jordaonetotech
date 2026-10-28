@@ -1,0 +1,61 @@
+# Caddyfile de PRODUÇÃO — Super Loja (Jordao Neto Tech)
+# 1. Troque SEU-DOMINIO, SEU-IP e SEU-EMAIL abaixo.
+# 2. Gere os blocos das lojas (já com proteção + admin restrito):
+#    python3 scripts/gerar_caddy.py --base SEU-DOMINIO --email SEU-EMAIL --admin-ip SEU-IP
+#    e confira se o snippet (protecaoSaas) gerado é igual ao deste arquivo.
+# 3. Cole a saída no final deste arquivo (seção LOJAS), valide com `caddy fmt` e recarregue.
+
+{
+	email SEU-EMAIL
+}
+
+# Plataforma: superadmin RESTRITO ao seu IP (nunca exponha sem isso)
+admin.SEU-DOMINIO {
+	@eu remote_ip SEU-IP
+	handle @eu {
+		reverse_proxy 127.0.0.1:8324
+	}
+	handle {
+		abort
+	}
+}
+
+# --- gestão SaaS bloqueada nos domínios públicos (operador usa admin.*) ---
+# Mantém abertas só as rotas que o site/landing precisam sem auth:
+# /api/pedido, /api/tenant, /api/temas, GET /api/saas/plataforma,
+# POST /api/saas/interesse, login + /api/admin/* do lojista (senha+sessão).
+(protecaoSaas) {
+	@saasGestao {
+		path /api/saas/tenants /api/saas/tenants/* /api/saas/lojas /api/saas/lojas/* /api/saas/financeiro /api/saas/financeiro/* /api/saas/interesses /api/saas/interesses/* /api/saas/info /api/saas/dns /api/saas/dns/* /api/saas/resumo /api/saas/receita /api/saas/receita/*
+	}
+	handle @saasGestao {
+		abort
+	}
+	@saasPlataformaEscrita {
+		path /api/saas/plataforma
+		not method GET
+	}
+	handle @saasPlataformaEscrita {
+		abort
+	}
+	@pagGestao {
+		path /saas-admin.html
+	}
+	handle @pagGestao {
+		respond "Não encontrado" 404
+	}
+}
+
+# Landing de vendas (pública)
+SEU-DOMINIO {
+	import protecaoSaas
+	reverse_proxy 127.0.0.1:8324
+}
+
+# Loja principal (troque pelo domínio dela ou remova se for outra VPS)
+principal.SEU-DOMINIO {
+	import protecaoSaas
+	reverse_proxy 127.0.0.1:8324
+}
+
+# ================= LOJAS (colar saída do gerar_caddy.py aqui) =================

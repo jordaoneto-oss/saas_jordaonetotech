@@ -1,0 +1,45 @@
+[
+  {
+    "id": "bolo-chocolate-festa",
+    "cat": "bolos",
+    "nome": "Bolo de Chocolate para Festa (2kg)",
+    "foto": "placeholder.png",
+    "tag": "Mais pedido",
+    "preco": 149.9,
+    "desc": "EXEMPLO — troque no painel. Massa de chocolate, recheio de brigadeiro e cobertura. Serve ~20 fatias."
+  },
+  {
+    "id": "brigadeiro-gourmet-cx",
+    "cat": "docinhos",
+    "nome": "Caixa de Brigadeiro Gourmet (25 un.)",
+    "foto": "placeholder.png",
+    "tag": "Lançamento",
+    "preco": 59.9,
+    "desc": "EXEMPLO — troque no painel. Chocolate nobre com granulado belga. Vendido em caixas de 25."
+  },
+  {
+    "id": "beijinho-coco",
+    "cat": "docinhos",
+    "nome": "Beijinho de Coco (cento)",
+    "foto": "placeholder.png",
+    "preco": 89.9,
+    "desc": "EXEMPLO — troque no painel. Coco fresco e leite condensado, passado no açúcar cristal. Cento para festa."
+  },
+  {
+    "id": "bolo-vulcao-ninho",
+    "cat": "bolos",
+    "nome": "Bolo Vulcão de Ninho com Morango",
+    "foto": "placeholder.png",
+    "preco": 99.9,
+    "desc": "EXEMPLO — troque no painel. Bolo de ninho com calda cremosa e morangos frescos por cima."
+  },
+  {
+    "id": "combo-festa-50",
+    "cat": "festa",
+    "nome": "Combo Festa 50 pessoas",
+    "foto": "placeholder.png",
+    "tag": "Economize",
+    "preco": 349,
+    "desc": "EXEMPLO — troque no painel. Bolo 2kg + 100 docinhos sortidos. Personalize sabores no WhatsApp."
+  }
+]

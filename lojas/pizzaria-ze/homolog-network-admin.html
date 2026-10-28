@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="light" data-segment="moda">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Network Admin — Revenda Whitelabel (Homologação v2)</title>
+<meta name="description" content="Painel de revenda / network admin para plataforma whitelabel multi-loja: marca própria, lojas vinculadas, preços de revenda e relatórios consolidados.">
+<style>
+:root{
+  --ds-brand:#4361ee;--ds-brand-ink:#fff;--ds-accent:#3a0ca3;--ds-paper:#f8f9fa;--ds-surface:#fff;--ds-ink:#212529;--ds-muted:#6c757d;--ds-line:#dee2e6;--ds-radius-sm:8px;--ds-radius-md:14px;--ds-radius-lg:20px;--ds-font-display:"Instrument Serif",Georgia,serif;--ds-font-body:Inter,ui-sans-serif,system-ui,sans-serif;
+  --ds-surface-2:#f1f3f5;--ds-ink-soft:#495057;--ds-track:#e9ecef;--ds-warn:#e9c46a;
+}
+[data-segment="restaurante"]{--ds-brand:#e63946;--ds-accent:#ffb703}
+[data-segment="pet"]{--ds-brand:#2a9d8f;--ds-accent:#264653}
+[data-segment="papelaria"]{--ds-brand:#f4a261;--ds-accent:#e76f51}
+[data-segment="utilidades"]{--ds-brand:#6c757d;--ds-accent:#adb5bd}
+[data-segment="bem-estar"]{--ds-brand:#c792ea;--ds-accent:#b0e0e6}
+[data-segment="doces"]{--ds-brand:#f72585;--ds-accent:#fc4f4f}
+[data-segment="neutro"]{--ds-brand:#6c757d;--ds-accent:#adb5bd}
+
+*{box-sizing:border-box}
+body{font-family:var(--ds-font-body);background:var(--ds-paper);color:var(--ds-ink);margin:0;line-height:1.65;font-size:15px}
+header{position:sticky;top:0;z-index:50;background:rgba(248,249,250,0.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--ds-line)}
+.ds-wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+header .ds-wrap{display:flex;align-items:center;gap:14px;padding:14px 0;flex-wrap:wrap}
+.logo-dot{width:38px;height:38px;border-radius:10px;background:var(--ds-brand);color:var(--ds-brand-ink);display:grid;place-items:center;font-weight:800;font-family:var(--ds-font-display);font-size:18px;box-shadow:0 6px 18px rgba(0,0,0,.08)}
+header h1{font-family:var(--ds-font-display);font-size:22px;margin:0;line-height:1.15}
+header .sub{font-size:13px;color:var(--ds-muted);margin:2px 0 0}
+.tag{display:inline-block;padding:3px 8px;border-radius:999px;font-weight:600;font-size:11px;letter-spacing:.5px;background:var(--ds-brand);color:var(--ds-brand-ink);box-shadow:0 2px 6px rgba(0,0,0,.08)}
+
+main{padding:32px 0}
+.grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px}
+.card{background:var(--ds-surface);border:1px solid var(--ds-line);border-radius:var(--ds-radius-md);padding:22px;box-shadow:0 1px 4px rgba(0,0,0,.03);transition:transform .08s ease,border-color .15s ease}
+.card:hover{border-color:#ced4da;transform:translateY(-1px)}
+.card h2{font-family:var(--ds-font-display);font-size:20px;margin:0 0 6px;line-height:1.2}
+.card .meta{font-size:13px;color:var(--ds-muted);margin-bottom:14px}
+.card .num{font-family:var(--ds-font-display);font-size:36px;line-height:1;color:var(--ds-brand);margin:6px 0}
+
+.table-wrap{overflow-x:auto;border:1px solid var(--ds-line);border-radius:var(--ds-radius-md);background:var(--ds-surface)}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th,td{padding:10px 12px;text-align:left;border-bottom:1px solid var(--ds-line)}
+th{background:var(--ds-surface-2);font-weight:600;color:var(--ds-ink-soft);font-size:12px;letter-spacing:.3px}
+td{color:var(--ds-ink-soft)}
+tr:hover td{background:#f8f9fa}
+.badge{display:inline-block;padding:3px 8px;border-radius:999px;font-size:11px;font-weight:600;background:#e9ecef;color:#495057}
+.badge-ok{background:#d8f3dc;color:#155724}
+.badge-warn{background:#fff3cd;color:#856404}
+
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:14px 0}
+input,select{font:inherit;padding:8px 10px;border:1px solid var(--ds-line);border-radius:var(--ds-radius-sm);background:var(--ds-surface);color:var(--ds-ink)}
+input[type="search"]{min-width:260px}
+
+button{font:inherit;padding:10px 14px;border:none;border-radius:var(--ds-radius-sm);cursor:pointer;font-weight:600;transition:filter .15s,transform .08s}
+.btn-primary{background:var(--ds-brand);color:var(--ds-brand-ink);box-shadow:0 4px 14px rgba(0,0,0,.12)}
+.btn-primary:hover{filter:brightness(1.08)}
+.btn-ghost{background:transparent;color:var(--ds-ink);border:1px solid var(--ds-line)}
+.btn-ghost:hover{background:var(--ds-surface-2)}
+
+.brand-strip{display:flex;align-items:center;gap:12px;background:linear-gradient(135deg,var(--ds-brand) 0%,var(--ds-accent) 100%);padding:18px 24px;border-radius:var(--ds-radius-md);color:#fff}
+.brand-strip h2{margin:0;font-family:var(--ds-font-display);font-size:28px}
+.brand-strip p{margin:4px 0 0;opacity:.95;font-size:14px}
+
+@media(max-width:640px){.grid-3{grid-template-columns:1fr};.brand-strip{flex-direction:column;align-items:flex-start}}
+</style>
+</head>
+<body data-brand="catalogo-pro" data-domain="catalogopro.com.br">
+
+<header>
+  <div class="ds-wrap" role="banner" aria-label="Network Admin — Revenda Whitelabel">
+    <div class="logo-dot" aria-hidden="true">N</div>
+    <div style="flex:1;min-width:200px">
+      <h1>Network Admin <span class="tag">Revenda</span></h1>
+      <div class="sub">Marca própria • Lojas vinculadas • Preços de revenda • Relatórios consolidados</div>
+    </div>
+    <a href="#lojas" class="btn-ghost">Lojas</a>
+    <a href="#marca" class="btn-ghost">Marca</a>
+    <button class="btn-primary" onclick="setTheme()">Tema</button>
+  </div>
+</header>
+
+<main class="ds-wrap" aria-label="Painel de revenda">
+
+  <section aria-label="Identidade da revenda" id="marca" class="section" style="padding-top:10px">
+    <div class="brand-strip" aria-label="Identidade da marca">
+      <div style="font-size:48px">✦</div>
+      <div>
+        <h2>Catálogo Pro</h2>
+        <p>Domínio: <b>catalogopro.com.br</b>  •  Segmento: <b>Moda / Restaurante / Pet</b>  •  Plano revenda: <b>Enterprise</b></p>
+      </div>
+    </div>
+  </section>
+
+  <section aria-label="KPIs da rede" id="kpis" class="section">
+    <div class="grid-3">
+      <article class="card" aria-label="Lojas vinculadas">
+        <h2>Lojas vinculadas</h2>
+        <div class="meta">Catálogos operando na sua rede</div>
+        <div class="num" aria-label="42">42</div>
+        <div><span class="badge badge-ok">+3 esta semana</span></div>
+      </article>
+      <article class="card" aria-label="Pedidos consolidados">
+        <h2>Pedidos / mês</h2>
+        <div class="meta">Consolidado de todas as lojas</div>
+        <div class="num" aria-label="8.320">8.320</div>
+      </article>
+      <article class="card" aria-label="Receita estimada">
+        <h2>Receita estimada</h2>
+        <div class="meta">Valor de revenda × lojas ativas</div>
+        <div class="num" aria-label="R$ 4.200">R$ 4.200</div>
+        <div><span class="badge badge-warn">Meta 5k</span></div>
+      </article>
+    </div>
+  </section>
+
+  <section aria-label="Lojas da rede" id="lojas" class="section">
+    <h2 style="font-family:var(--ds-font-display);font-size:26px;margin:0 0 6px">Lojas vinculadas</h2>
+    <p class="sub" style="margin:0 0 14px">Cada loja pode trocar de segmento (`?segmento=...`) sem quebrar layout, pois usa o mesmo design system neutro.</p>
+    <div class="toolbar">
+      <input type="search" aria-label="Buscar loja" placeholder="Buscar por nome, slug ou segmento…" oninput="filterTable(this.value,'tblLojas')">
+      <button class="btn-primary" onclick="addLojaDemo()">+ Criar loja de teste</button>
+    </div>
+    <div class="table-wrap">
+      <table id="tblLojas" aria-label="Tabela de lojas vinculadas">
+        <thead><tr><th>Slug</th><th>Nome</th><th>Segmento</th><th>Planos</th><th>Produto ativo</th><th>Domínio</th><th>Ações</th></tr></thead>
+        <tbody>
+          <tr><td><b>padaria-joao</b></td><td>Padaria João</td><td>Restaurante</td><td>Enterprise</td><td>Sim</td><td>padariajoao.catalogopro.com.br</td><td><a href="#" class="btn-ghost" style="padding:6px 10px;font-size:12px">Abrir</a> <a href="#" class="btn-ghost" style="padding:6px 10px;font-size:12px">Tema</a></td></tr>
+          <tr><td><b>moda-bella</b></td><td>Bella Moda</td><td>Moda</td><td>Profissional</td><td>Sim</td><td>bellamoda.catalogopro.com.br</td><td><a href="#" class="btn-ghost" style="padding:6px 10px;font-size:12px">Abrir</a></td></tr>
+          <tr><td><b>pet-feliz</b></td><td>Pet Feliz</td><td>Pet</td><td>Básico</td><td>Não</td><td>petfeliz.catalogopro.com.br</td><td><a href="#" class="btn-ghost" style="padding:6px 10px;font-size:12px">Revisar</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section aria-label="Configuração de marca" class="section">
+    <h2 style="font-family:var(--ds-font-display);font-size:26px;margin:0 0 6px">Configuração de marca (White Label)</h2>
+    <div class="grid-3">
+      <article class="card" aria-label="Logo e cores">
+        <h2>Logo e cores</h2>
+        <div class="meta">Troque logo, fonte do título e tokens CSS</div>
+        <p style="font-size:13px;color:var(--ds-muted)">Arquivo: <code>config/tema.json</code> • Token <code>--ds-brand</code> define a cor primária do domínio.</p>
+      </article>
+      <article class="card" aria-label="Domínio próprio">
+        <h2>Domínio próprio</h2>
+        <div class="meta">SSL automático via Caddy / proxy</div>
+        <p style="font-size:13px;color:var(--ds-muted)">Subdomínios listados automaticamente: <b>catalogopro.com.br</b>. Pode adicionar <code>www</code> ou domínio raiz.</p>
+      </article>
+      <article class="card" aria-label="Preços de revenda">
+        <h2>Preços de revenda</h2>
+        <div class="meta">Margem controlada pelo super admin</div>
+        <p style="font-size:13px;color:var(--ds-muted)">Seu preço de compra nos planos: Básico R$ 29,90 • Profissional R$ 54,90 • Enterprise R$ 79,90.</p>
+      </article>
+    </div>
+  </section>
+
+  <section aria-label="Segmentos ativos na rede" class="section">
+    <h2 style="font-family:var(--ds-font-display);font-size:26px;margin:0 0 6px">Segmentos disponíveis para ativar</h2>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px">
+      <button class="btn-ghost" onclick="setSegment('restaurante')">Restaurante</button>
+      <button class="btn-ghost" onclick="setSegment('moda')">Moda</button>
+      <button class="btn-ghost" onclick="setSegment('pet')">Pet</button>
+      <button class="btn-ghost" onclick="setSegment('papelaria')">Papeleria</button>
+      <button class="btn-ghost" onclick="setSegment('utilidades')">Utilidades</button>
+      <button class="btn-ghost" onclick="setSegment('bem-estar')">Bem-estar</button>
+      <button class="btn-ghost" onclick="setSegment('doces')">Doces</button>
+    </div>
+  </section>
+
+</main>
+
+<footer class="ds-wrap" aria-label="Rodapé">
+  <b>Network Admin — Homologação Whitelabel</b>  •  Design neutro inspirado no Katalog  •  Marca própria via tokens CSS  •  Versão de homologação v2
+</footer>
+
+<script>
+function setTheme(){
+  const d=document.documentElement.getAttribute('data-theme');
+  const n=d==='dark'?'light':'dark';
+  document.documentElement.setAttribute('data-theme',n);
+}
+function setSegment(s){
+  document.documentElement.setAttribute('data-segment',s);
+  alert('Segmento alterado para '+s+' — o layout se adapta via CSS (token --ds-brand) sem quebrar a grade.');
+}
+function filterTable(q,id){
+  const t=document.getElementById(id); const tr=t.querySelectorAll('tbody tr');
+  const v=q.toLowerCase(); tr.forEach(r=>r.style.display=r.innerText.toLowerCase().includes(v)?'':'none');
+}
+function addLojaDemo(){
+  const tb=document.querySelector('#tblLojas tbody');
+  const r=document.createElement('tr');
+  r.innerHTML='<td><b>teste-'+(Math.floor(Math.random()*900)+100)+'</b></td><td>Loja Teste</td><td>Neutro</td><td>Básico</td><td>Não</td><td>teste.catalogopro.com.br</td><td><a href="#" class="btn-ghost" style="padding:6px 10px;font-size:12px">Abrir</a></td>';
+  tb.prepend(r);
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+[
+  {
+    "id": "aparecida-roxo",
+    "cat": "essencial",
+    "nome": "Terço Aparecida em Cristal Roxo",
+    "foto": "terco-aparecida-roxo",
+    "preco": 59.9,
+    "desc": "Contas de cristal roxas, Pai-Nossos em porcelana floral e detalhes dourados. Nasceu de uma encomenda, do jeitinho que a cliente pediu."
+  },
+  {
+    "id": "sagrada-familia-champagne",
+    "cat": "classico",
+    "nome": "Terço da Sagrada Família em Cristal Champagne",
+    "foto": "terco-sagrada-familia-champagne",
+    "tag": "Novo",
+    "preco": 79.9,
+    "desc": "Cristais champagne com brilho furta-cor, pérolas e o entremeio da Sagrada Família em ouro velho, todo trabalhado. Jesus, Maria e José para abençoar o lar.",
+    "selo": "Novo"
+  },
+  {
+    "id": "fatima-perola",
+    "cat": "premium",
+    "nome": "Terço Fátima em Pérola",
+    "foto": "terco-fatima-perola-v2",
+    "preco": 84.9,
+    "desc": "Pérolas de vidro, entremeio da Virgem de Fátima e crucifixo dourado. Clássico, para quem gosta de peça clara."
+  },
+  {
+    "id": "infantil-nome",
+    "cat": "infantil",
+    "nome": "Terço Infantil com Nome e Caixinha",
+    "foto": "terco-infantil-nome-caixa",
+    "tag": "Com nome",
+    "preco": 54.9,
+    "desc": "O nome da criança montado letra por letra, caixa presenteável e a oração do Anjo da Guarda. Um presente para guardar para sempre."
+  },
+  {
+    "id": "carro-sao-bento",
+    "cat": "carro",
+    "nome": "Dezena de Carro São Bento",
+    "foto": "dezena-carro-sao-bento",
+    "preco": 45.9,
+    "desc": "Contas pretas foscas com a medalha de São Bento e crucifixo. Sóbria e protetora."
+  }
+]

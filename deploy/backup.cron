@@ -1,0 +1,2 @@
+# Backup diário Super Loja — instalar com: sudo crontab -e  (cole a linha abaixo)
+30 3 * * * /srv/superloja/deploy/backup.sh >> /var/log/superloja-backup.log 2>&1

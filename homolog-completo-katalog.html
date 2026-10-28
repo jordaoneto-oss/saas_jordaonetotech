@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="light" data-segment="neutro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Homologação Completa — Katalog Whitelabel Multi-Segmento</title>
+<meta name="description" content="Portal de homologação completo da plataforma Katalog whitelabel: Super Admin, Network Admin, Loja, PDV, Estoque, Pedidos, Clientes, Relatórios, KDS, Checkout, WhatsApp, App, Domínio Próprio.">
+<style>
+:root{
+  --ds-brand:#2a9d8f;--ds-brand-ink:#fff;--ds-accent:#ffb703;--ds-paper:#f8f9fa;--ds-surface:#fff;--ds-ink:#1d3557;--ds-muted:#6c757d;--ds-line:#dee2e6;--ds-radius-sm:8px;--ds-radius-md:14px;--ds-radius-lg:20px;--ds-font-display:"Instrument Serif",Georgia,serif;--ds-font-body:"Inter",ui-sans-serif,system-ui,sans-serif;
+  --ds-surface-2:#f1f3f5;--ds-track:#e9ecef;
+}
+[data-segment="restaurante"]{--ds-brand:#e63946;--ds-accent:#ffb703}
+[data-segment="moda"]{--ds-brand:#4361ee;--ds-accent:#3a0ca3}
+[data-segment="pet"]{--ds-brand:#2a9d8f;--ds-accent:#264653}
+[data-segment="papelaria"]{--ds-brand:#f4a261;--ds-accent:#e76f51}
+[data-segment="utilidades"]{--ds-brand:#6c757d;--ds-accent:#adb5bd}
+[data-segment="bem-estar"]{--ds-brand:#c792ea;--ds-accent:#b0e0e6}
+[data-segment="doces"]{--ds-brand:#f72585;--ds-accent:#fc4f4f}
+
+*{box-sizing:border-box}
+body{font-family:var(--ds-font-body);background:var(--ds-paper);color:var(--ds-ink);margin:0;line-height:1.65;font-size:15px}
+header{position:sticky;top:0;z-index:50;background:rgba(248,249,250,0.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--ds-line)}
+.ds-wrap{max-width:1280px;margin:0 auto;padding:0 24px}
+header .ds-wrap{display:flex;align-items:center;gap:14px;padding:14px 0;flex-wrap:wrap;justify-content:space-between}
+.logo-dot{width:40px;height:40px;border-radius:10px;background:var(--ds-brand);color:var(--ds-brand-ink);display:grid;place-items:center;font-weight:800;font-family:var(--ds-font-display);font-size:20px;box-shadow:0 6px 18px rgba(0,0,0,.08)}
+header h1{font-family:var(--ds-font-display);font-size:24px;margin:0;line-height:1.15}
+.tag{display:inline-block;padding:3px 10px;border-radius:999px;font-weight:600;font-size:11px;letter-spacing:.5px;background:var(--ds-brand);color:var(--ds-brand-ink);box-shadow:0 2px 6px rgba(0,0,0,.08)}
+
+main{padding:32px 0}
+.hero{background:linear-gradient(135deg,var(--ds-brand),var(--ds-accent));color:#fff;padding:48px 24px;border-radius:var(--ds-radius-lg);margin-bottom:32px;position:relative;overflow:hidden}
+.hero h2{font-family:var(--ds-font-display);font-size:clamp(2rem,5vw,3.2rem);line-height:1.1;margin:0 0 12px}
+.hero p{margin:0;font-size:18px;opacity:.95;max-width:720px}
+
+.grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:16px}
+.card{background:var(--ds-surface);border:1px solid var(--ds-line);border-radius:var(--ds-radius-lg);padding:24px;box-shadow:0 1px 4px rgba(0,0,0,.03);transition:transform .08s ease,border-color .15s ease}
+.card:hover{border-color:#ced4da;transform:translateY(-2px)}
+.card h3{font-family:var(--ds-font-display);font-size:22px;margin:0 0 8px;line-height:1.15}
+.card .meta{font-size:13px;color:var(--ds-muted);margin-bottom:14px}
+.card a{color:var(--ds-brand);font-weight:700;text-decoration:none}
+.card a:hover{text-decoration:underline}
+
+.section{padding:28px 0;border-bottom:1px solid var(--ds-line)}
+h2{font-family:var(--ds-font-display);font-size:26px;margin:0 0 10px}
+
+.table-wrap{overflow-x:auto;border:1px solid var(--ds-line);border-radius:var(--ds-radius-md);background:var(--ds-surface)}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th,td{padding:10px 12px;text-align:left;border-bottom:1px solid var(--ds-line)}
+th{background:var(--ds-surface-2);font-weight:600;color:var(--ds-ink-soft);font-size:12px;letter-spacing:.3px}
+td{color:var(--ds-ink-soft)}
+
+.btn-primary{background:var(--ds-brand);color:var(--ds-brand-ink);padding:10px 18px;border:none;border-radius:var(--ds-radius-sm);font-weight:700;font-family:inherit;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.12);transition:filter .15s}
+.btn-primary:hover{filter:brightness(1.08)}
+.btn-ghost{background:transparent;color:var(--ds-ink);border:1px solid var(--ds-line);padding:8px 14px;border-radius:var(--ds-radius-sm);font-weight:600;text-decoration:none;display:inline-block}
+.btn-ghost:hover{background:var(--ds-surface-2)}
+
+.grid-features{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin-top:14px}
+.feature{background:var(--ds-surface);border:1px solid var(--ds-line);border-radius:var(--ds-radius-md);padding:16px}
+.feature h4{margin:0 0 6px;font-family:var(--ds-font-display);font-size:18px}
+.feature p{margin:0;font-size:13px;color:var(--ds-muted)}
+
+footer{padding:28px 0;font-size:13px;color:var(--ds-muted);border-top:1px solid var(--ds-line);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
+
+@media(max-width:640px){.grid-3{grid-template-columns:1fr};.hero{padding:28px 16px}}
+</style>
+</head>
+<body data-theme="light">
+
+<header role="banner" aria-label="Homologação Completa Katalog">
+  <div class="ds-wrap">
+    <div style="display:flex;align-items:center;gap:12px">
+      <div class="logo-dot" aria-label="Katalog">K</div>
+      <div>
+        <h1>Homologação Completa <span class="tag">Katalog Whitelabel</span></h1>
+        <div style="font-size:13px;color:var(--ds-muted)">Super Admin • Network Admin • Loja • Pedidos • Clientes • Relatórios • KDS • PDV • WhatsApp — Tudo em um só lugar.</div>
+      </div>
+    </div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <a href="homolog-super-admin.html" class="btn-ghost">Super Admin</a>
+      <a href="homolog-network-admin.html" class="btn-ghost">Network Admin</a>
+      <a href="homolog-loja-whitelabel.html" class="btn-ghost">Loja</a>
+    </div>
+  </div>
+</header>
+
+<main class="ds-wrap" aria-label="Portal de homologação completa">
+
+  <section aria-label="Hero" class="hero">
+    <h2>Uma plataforma completa para vender para qualquer segmento.</h2>
+    <p>Catálogo digital, PDV, estoque, tabelas de preço, força de vendas externa, financeiro, KDS, checkout integrado, QR Code por mesa, WhatsApp automático, domínio próprio e app mobile — tudo operando sob uma arquitetura whitelabel de 3 camadas.</p>
+    <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap">
+      <a href="homolog-completo-katalog.md" class="btn-primary">Ler documentação completa</a>
+      <a href="docs/ROTEIRO-KINGHOST-VPS.md" class="btn-ghost" style="background:rgba(255,255,255,.15);color:#fff;border-color:rgba(255,255,255,.3)">Roteiro KingHost VPS</a>
+    </div>
+  </section>
+
+  <section aria-label="Camadas" class="section" id="camadas">
+    <h2>As 3 camadas da homologação</h2>
+    <div class="grid-3">
+      <article class="card" aria-label="Super Admin">
+        <h3>Super Admin</h3>
+        <div class="meta">Controle da plataforma — tenants, segmentos, planos, faturamento</div>
+        <p>Gestão de revendas (whitelabel), definição de preços atacado, ativação de segmentos (restaurante, moda, pet, papelaria, utilidades, bem-estar, doces), KPIs consolidados e segurança (token, Caddy, firewall).</p>
+        <a href="homolog-super-admin.html">Acessar Super Admin →</a>
+      </article>
+      <article class="card" aria-label="Network Admin">
+        <h3>Network Admin</h3>
+        <div class="meta">Revenda / Rede — marca própria, lojas vinculadas, domínios</div>
+        <p>Configuração de identidade visual (logo, cores, fonte), domínio próprio (SSL automático), lojas vinculadas por slug, preços de revenda, relatórios consolidados da rede.</p>
+        <a href="homolog-network-admin.html">Acessar Network Admin →</a>
+      </article>
+      <article class="card" aria-label="Loja">
+        <h3>Loja (Catálogo + PDV)</h3>
+        <div class="meta">Cliente final — catálogo, pedidos, clientes, estoque, KDS</div>
+        <p>Catálogo multi-segmento com opção de troca de segmento via token CSS, modo híbrido (catálogo + cardápio), checkout integrado (PIX/cartão/boleto), QR Code, impressão de comanda, KDS, app mobile offline.</p>
+        <a href="homolog-loja-whitelabel.html">Acessar Loja →</a>
+      </article>
+    </div>
+  </section>
+
+  <section aria-label="Funcionalidades completas" class="section" id="funcionalidades">
+    <h2>Todas as funcionalidades do Katalog</h2>
+    <p style="color:var(--ds-muted);margin-top:-6px">Cada módulo abaixo está disponível na homologação (visual + referência funcional) ou diretamente nos painéis originais do projeto.</p>
+    <div class="grid-features">
+      <div class="feature"><h4>Catálogo / Cardápio</h4><p>Modo híbrido (grid + lista). Busca por texto e filtro por categoria. Troca de segmento via <code>data-segment</code>.</p></div>
+      <div class="feature"><h4>PDV</h4><p>Venda no balcão, carrinho, finalização de pedido, baixa automática de estoque, impressão de comanda.</p></div>
+      <div class="feature"><h4>Estoque</h4><p>Controle por produto, variação, complemento; alertas de mínimo; reposição automática.</p></div>
+      <div class="feature"><h4>Tabela de Preço</h4><p>Percentual ou preço fixo por produto; vínculo direto com cada cliente cadastrado.</p></div>
+      <div class="feature"><h4>Força de Vendas</h4><p>App offline com sync automático; scanner; cadastro de clientes em campo; assinatura digital.</p></div>
+      <div class="feature"><h4>Financeiro</h4><p>Relatórios por loja e rede; faturamento mensal recorrente; cobrança e controle de planos.</p></div>
+      <div class="feature"><h4>Checkout Integrado</h4><p>PIX, cartão de crédito e boleto via GálagoPay; pagamento direto pelo catálogo.</p></div>
+      <div class="feature"><h4>QR Code por Mesa</h4><p>Pedido direto pelo celular; comanda impressa; pedido chega direto na cozinha (KDS).</p></div>
+      <div class="feature"><h4>WhatsApp Automático</h4><p>Notificações de cada pedido; status em tempo real para cliente e lojista.</p></div>
+      <div class="feature"><h4>KDS (Cozinha)</h4><p>Kanban: Novos → Confirmados → Preparando → Pronto; timer; alertas sonoros; modo tela cheia.</p></div>
+      <div class="feature"><h4>Impressão</h4><p>Comanda térmica 80mm e laser; PDF direto do painel.</p></div>
+      <div class="feature"><h4>Domínio Próprio</h4><p>Subdomínio ou domínio raiz; SSL automático (Caddy + Let's Encrypt); logo e cores custom.</p></div>
+    </div>
+  </section>
+
+  <section aria-label="Módulos funcionais existentes" class="section" id="modulos">
+    <h2>Módulos funcionais já no projeto (base real)</h2>
+    <div class="table-wrap">
+      <table aria-label="Módulos funcionais">
+        <thead><tr><th>Módulo</th><th>Arquivo(s)</th><th>O que faz</th><th>Homologação</th></tr></thead>
+        <tbody>
+          <tr><td>Super Admin funcional</td><td><code>saas-admin.html</code> + <code>server.py</code></td><td>Gestão de tenants, lojas, planos, relatórios, financeiro</td><td>Referenciado em <code>homolog-super-admin.html</code></td></tr>
+          <tr><td>Admin da loja</td><td><code>admin-completo.html</code> + <code>admin.js</code></td><td>Pedidos, clientes, estoque, KDS, relatórios, uploads</td><td>Referenciado em <code>homolog-network-admin.html</code></td></tr>
+          <tr><td>Catálogo / Editor</td><td><code>index.html</code> + <code>editor.html</code></td><td>Catálogo visual, cardápio, produtos, variações, complementos</td><td>Referenciado em <code>homolog-loja-whitelabel.html</code></td></tr>
+          <tr><td>API / Backend</td><td><code>server.py</code></td><td>Pedidos, clientes, autenticação, uploads, multi-tenant</td><td>Base funcional do sistema</td></tr>
+          <tr><td>PWA / Offline</td><td><code>sw.js</code> + <code>manifest.webmanifest</code></td><td>Cache, instalação, funcionamento offline</td><td>Disponível no site da loja</td></tr>
+          <tr><td>Deploy / VPS</td><td><code>deploy/</code>, <code>docs/ROTEIRO-KINGHOST-VPS.md</code></td><td>RSYNC, Caddy, systemd, firewall, backup</td><td>Documentado para KingHost</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section aria-label="Versão de homologação completa" class="section">
+    <h2>Versão completa — por que usar</h2>
+    <div class="grid-3">
+      <article class="card"><h3>Para vendas B2B</h3><p>Mostra ao revendedor/comerciante que a plataforma tem todos os módulos: catálogo, PDV, estoque, pedidos, clientes, relatórios e domínio próprio.</p></article>
+      <article class="card"><h3>Para validação técnica</h3><p>Permite testar troca de segmento, tema claro/escuro, formato de botão e integração entre 3 camadas sem quebrar layout.</p></article>
+      <article class="card"><h3>Para deploy</h3><p>Base pronta para subir na VPS KingHost via rsync + Caddy + systemd, com documentação completa de operação.</p></article>
+    </div>
+  </section>
+
+</main>
+
+<footer class="ds-wrap">
+  <div><b>Homologação Completa — Katalog Whitelabel</b>  •  Design neutro multi-segmento  •  Inspirado em www.katalog.com.br  •  Arquitetura 3 camadas (Super / Network / Loja)</div>
+  <div style="display:flex;gap:12px;flex-wrap:wrap">
+    <a href="homolog-super-admin.html" style="color:var(--ds-muted)">Super Admin</a>
+    <a href="homolog-network-admin.html" style="color:var(--ds-muted)">Network Admin</a>
+    <a href="homolog-loja-whitelabel.html" style="color:var(--ds-muted)">Loja</a>
+    <a href="homolog-completo-katalog.md" style="color:var(--ds-muted)">Docs</a>
+  </div>
+</footer>
+
+</body>
+</html>

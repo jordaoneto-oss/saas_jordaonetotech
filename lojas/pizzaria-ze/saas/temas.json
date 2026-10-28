@@ -1,0 +1,100 @@
+{
+  "temas": [
+    {
+      "id": "artesanal",
+      "nome": "Artesanal",
+      "descricao": "Tons quentes de ateliê: marfim, ouro e rosa.",
+      "cores": {
+        "marfim": "#fbf5ee",
+        "areia": "#f3e9dc",
+        "papel": "#fffcf7",
+        "linha": "#e7d9c4",
+        "tinta": "#33291f",
+        "tinta-suave": "#6f6050",
+        "ouro": "#b58a45",
+        "ouro-claro": "#d0ae72",
+        "ouro-fraco": "#f2e7d2",
+        "rosa": "#d39c9c",
+        "rosa-claro": "#f3ddd9",
+        "salvia": "#93a68c",
+        "zap": "#1f8c5a"
+      },
+      "fontes": {
+        "titulos": {
+          "nome": "Cormorant Garamond",
+          "link": "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap",
+          "familia": "\"Cormorant Garamond\",Georgia,serif"
+        },
+        "texto": {
+          "nome": "Lato",
+          "link": "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap",
+          "familia": "\"Lato\",-apple-system,BlinkMacSystemFont,\"Segoe UI\",sans-serif"
+        }
+      }
+    },
+    {
+      "id": "moderno",
+      "nome": "Moderno",
+      "descricao": "Claro e minimalista, com destaque azul. Bom para roupas, doces e serviços.",
+      "cores": {
+        "marfim": "#f6f8fb",
+        "areia": "#eef1f6",
+        "papel": "#ffffff",
+        "linha": "#dfe6ef",
+        "tinta": "#17202e",
+        "tinta-suave": "#5b6678",
+        "ouro": "#2563eb",
+        "ouro-claro": "#93c5fd",
+        "ouro-fraco": "#dbeafe",
+        "rosa": "#f472b6",
+        "rosa-claro": "#fce7f3",
+        "salvia": "#34d399",
+        "zap": "#16a34a"
+      },
+      "fontes": {
+        "titulos": {
+          "nome": "Inter",
+          "link": "https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&display=swap",
+          "familia": "\"Inter\",-apple-system,BlinkMacSystemFont,\"Segoe UI\",sans-serif"
+        },
+        "texto": {
+          "nome": "Inter",
+          "link": "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap",
+          "familia": "\"Inter\",-apple-system,BlinkMacSystemFont,\"Segoe UI\",sans-serif"
+        }
+      }
+    },
+    {
+      "id": "noturno",
+      "nome": "Noturno",
+      "descricao": "Escuro e elegante para peças premium e atendimento noturno.",
+      "cores": {
+        "marfim": "#16120d",
+        "areia": "#201913",
+        "papel": "#241c14",
+        "linha": "#3d3225",
+        "tinta": "#f3e9db",
+        "tinta-suave": "#b6a58a",
+        "ouro": "#d0ae72",
+        "ouro-claro": "#e8c98a",
+        "ouro-fraco": "#3a2c1b",
+        "rosa": "#d39c9c",
+        "rosa-claro": "#33231f",
+        "salvia": "#93a68c",
+        "zap": "#25a86a"
+      },
+      "fontes": {
+        "titulos": {
+          "nome": "Playfair Display",
+          "link": "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap",
+          "familia": "\"Playfair Display\",Georgia,serif"
+        },
+        "texto": {
+          "nome": "Lato",
+          "link": "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap",
+          "familia": "\"Lato\",-apple-system,BlinkMacSystemFont,\"Segoe UI\",sans-serif"
+        }
+      }
+    }
+  ]
+}

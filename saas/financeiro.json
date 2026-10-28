@@ -1,0 +1,38 @@
+{
+  "lojas": {
+    "loja-teste": {
+      "plano": "basico",
+      "mensalidade": 39.9,
+      "vencimento": "2026-11-10",
+      "pagamentos": [
+        {
+          "id": "P1790370897428",
+          "data": "2026-09-25",
+          "competencia": "2026-09",
+          "valor": 20.0,
+          "meio": "Pix",
+          "status": "pago",
+          "obs": ""
+        }
+      ]
+    },
+    "default-tenant": {
+      "plano": "pro",
+      "mensalidade": 69.9,
+      "vencimento": "2026-11-08",
+      "pagamentos": []
+    },
+    "homem-essencia": {
+      "plano": "basico",
+      "mensalidade": 39.9,
+      "vencimento": "2026-11-05",
+      "pagamentos": []
+    },
+    "teste-homolog": {
+      "plano": "basico",
+      "mensalidade": 39.9,
+      "vencimento": "2026-10-30",
+      "pagamentos": []
+    }
+  }
+}

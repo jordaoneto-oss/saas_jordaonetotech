@@ -1,0 +1,56 @@
+{
+  "lojas": [
+    {
+      "slug": "santo-terco",
+      "nome": "Santo Terço",
+      "email": "santoterco@gmail.com",
+      "zap": "1699999999",
+      "porta": 8332,
+      "path": "lojas/santo-terco",
+      "status": "suspensa",
+      "created_at": "2026-09-25T16:01:08",
+      "dominio": "santoterco.com.br"
+    },
+    {
+      "slug": "loja-teste",
+      "nome": "Teste1",
+      "email": "teste@gmail.com",
+      "zap": "16999991991919",
+      "porta": 8333,
+      "path": "lojas/loja-teste",
+      "status": "suspensa",
+      "dominio": "",
+      "created_at": "2026-09-25T16:17:00"
+    },
+    {
+      "slug": "zeca-teste-1",
+      "nome": "Zeca teste",
+      "email": "",
+      "zap": "1699999999",
+      "porta": 8334,
+      "path": "lojas/zeca-teste-1",
+      "status": "suspensa",
+      "dominio": "",
+      "doc": "",
+      "doc_tipo": "",
+      "template": "generico",
+      "tema": "moderno",
+      "created_at": "2026-10-09T19:00:37"
+    },
+    {
+      "slug": "pizzaria-ze",
+      "nome": "pizzaria-ze",
+      "email": "",
+      "zap": "11223333333",
+      "porta": 8331,
+      "path": "lojas/pizzaria-ze",
+      "status": "suspensa",
+      "dominio": "",
+      "doc": "",
+      "doc_tipo": "",
+      "template": "generico",
+      "tema": "moderno",
+      "created_at": "2026-10-28T00:18:42"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+[Unit]
+Description=Super Loja - plataforma (Jordao Neto Tech)
+After=network.target
+# auto-recovery sem reset manual: tolera 30 restarts em 5min antes de travar
+StartLimitIntervalSec=300
+StartLimitBurst=30
+
+[Service]
+Type=simple
+User=www-data
+WorkingDirectory=/srv/superloja
+EnvironmentFile=-/srv/superloja/.env.prod
+ExecStart=/usr/bin/python3 server.py
+Restart=always
+RestartSec=5
+# anti-queda: teto de RAM (OOM vira restart limpo)
+MemoryMax=512M
+
+[Install]
+WantedBy=multi-user.target

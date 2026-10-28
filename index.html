@@ -1,0 +1,755 @@
+<!doctype html>
+<html lang="pt-BR" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Site-rascunho de venda do lead Ateliê Santo Terço (instância). Terços artesanais,
+     venda NACIONAL por encomenda. Identidade tirada do logo dela: Nossa Senhora em
+     traço dourado, rosas rosa e creme, folhas verde-sálvia sobre marfim (D11).
+     Dados reais: Instagram @atelie_santotercoo (bio, legendas, fotos e vídeos próprios).
+     Sem cidade, sem mapa e sem LocalBusiness: endereço não é público (D20).
+     Fotos e vídeos no R2 (D15). Catálogo com carrinho que fecha o pedido no WhatsApp.
+     PREÇOS REAIS desde 14/08/2026: a Juliana revisou o catálogo inteiro por WhatsApp,
+     print a print, e mandou a tabela dela. As linhas (Essencial / Clássica / Premium /
+     Luxo) são pedido dela, por faixa de preço. Pulseiras saíram do site a pedido dela
+     ("dá trabalho e não compensa"). O que ela NÃO precificou (noiva, formatura e os
+     kits) está com preco:null e aparece como "Sob consulta". -->
+
+<title data-t="geral.title">{{SEO_TITLE}}</title>
+<meta name="description" data-t="geral.descricao" content="{{SEO_DESC}}">
+<link rel="canonical" href="{{SEO_URL}}/">
+<meta name="theme-color" content="#fbf5ee">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="{{SEO_NAME}}">
+<meta property="og:title" content="{{SEO_TITLE}}">
+<meta property="og:description" content="{{SEO_DESC}}">
+<meta property="og:url" content="{{SEO_URL}}/">
+<meta property="og:image" content="{{SEO_IMAGE}}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{SEO_TITLE}}">
+<meta name="twitter:description" content="{{SEO_DESC}}">
+<meta name="twitter:image" content="{{SEO_IMAGE}}">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23fbf5ee'/><path d='M50 20v58M31 40h38' stroke='%23b58a45' stroke-width='6' stroke-linecap='round'/><circle cx='50' cy='84' r='5' fill='%23d39c9c'/></svg>">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="img/poster-guadalupe.webp">
+<link rel="stylesheet" href="css/style.css?v=20261021-estilo3">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="img/icon-192.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "OnlineStore",
+      "name": "{{SEO_NAME}}",
+      "description": "{{SEO_DESC}}",
+      "url": "{{SEO_URL}}/",
+      "telephone": "{{SEO_PHONE}}",
+      "image": "{{SEO_IMAGE}}",
+      "logo": "{{SEO_IMAGE}}",
+      "sameAs": [{{SEO_INSTAGRAM}}],
+      "areaServed": { "@type": "Country", "name": "Brasil" },
+      "makesOffer": {
+        "@type": "Offer",
+        "itemOffered": { "@type": "Product", "name": "{{SEO_PRODUTO}}", "category": "{{SEO_CATEGORIA}}" },
+        "availability": "https://schema.org/PreOrder"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "name": "{{SEO_NAME}}",
+      "url": "{{SEO_URL}}/",
+      "inLanguage": "pt-BR",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "{{SEO_URL}}/?q={query}",
+        "query-input": "required name=query"
+      }
+    }
+  ]
+}
+</script>
+
+
+</head>
+<body>
+
+<noscript><p class="noscript">Para navegar pelo catálogo e montar seu pedido, ative o JavaScript no navegador.</p></noscript>
+
+<a class="pular" href="#topo">Pular para o conteúdo</a>
+
+<header>
+  <div class="env">
+    <a href="#topo" class="marca" aria-label="Voltar ao início">
+      <img data-logo src="img/logo-retangular.webp" alt="Logo da loja" width="1200" height="400" fetchpriority="high" decoding="async">
+      <span>
+        <b data-t="geral.nome">Ateliê Santo Terço</b>
+        <span data-t="geral.tagline">Terços feitos à mão</span>
+      </span>
+    </a>
+
+    <nav id="menu">
+      <a href="#oficio">O ateliê</a>
+      <a href="#catalogo">Catálogo</a>
+      <a href="#encomenda">Personalizar</a>
+      <a href="#ocasioes">Ocasiões</a>
+      <a href="#terco">Como rezar</a>
+      <a href="#sobre">História</a>
+    </nav>
+
+    <div class="acoes-topo">
+      <button class="btn-carrinho" id="abreCarrinho" aria-label="Abrir minha lista (0 peças)" aria-expanded="false" aria-controls="gaveta">
+        <svg viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <span class="contador" id="contador">0</span>
+      </button>
+      <button class="hamburguer" id="hamburguer" aria-label="Abrir menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="topo">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="env">
+      <div data-slot="hero.texto">
+        <p class="chapeu" data-t="hero.chapeu">Terços artesanais · feitos com fé</p>
+        <h1 data-t-html="hero.titulo">Cada peça é feita<br>à mão, com intenção,<br><em>oração e amor.</em></h1>
+        <p class="lead" data-t-html="hero.lead">Terços e dezenas montados conta por conta, em cristal, pérola de vidro e porcelana pintada. Você escolhe a devoção, a cor e o nome que vai gravado. A gente monta a peça só sua.</p>
+        <div class="hero-ctas" data-slot="hero.ctas">
+          <a href="#catalogo" class="btn btn-ouro" data-t="hero.cta1">Ver o catálogo</a>
+          <a href="#encomenda" class="btn btn-linha" data-t="hero.cta2">Quero personalizar</a>
+        </div>
+        <ul class="hero-prova" data-slot="hero.prova" aria-label="O ateliê em números">
+          <li><b data-t="depoimentos.faixa.0.t">500+</b><span data-t="depoimentos.faixa.0.s">terços enviados</span></li>
+          <li><b data-t="depoimentos.faixa.1.t">26</b><span data-t="depoimentos.faixa.1.s">estados alcançados</span></li>
+          <li><b data-t="depoimentos.faixa.2.t">100%</b><span data-t="depoimentos.faixa.2.s">feito à mão</span></li>
+        </ul>
+        <p class="hero-nota">
+          <svg viewBox="0 0 24 24"><path d="M3 7h13v10H3zM16 10h3l2 3v4h-5z"/><circle cx="7" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg>
+          <span data-t-html="hero.nota">Enviamos para todo o Brasil, com pedido e pagamento pelo WhatsApp</span>
+        </p>
+      </div>
+
+      <div class="moldura rv" data-slot="hero.moldura" data-midia-box="hero.midia" data-midia-padrao="video/video-guadalupe.mp4" data-midia-poster="hero.poster" data-poster-padrao="img/poster-guadalupe.webp" data-midia-preserva>
+        <video data-midia-video autoplay muted loop playsinline preload="none"
+               poster="img/poster-guadalupe.webp">
+          <source src="video/video-guadalupe.mp4" type="video/mp4">
+        </video>
+        <img data-midia-img alt="" hidden>
+        <div class="fita">
+          <b data-t="hero.fita1">Peça única</b>
+          <span data-t="hero.fita2">montada uma a uma</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SELOS ============ -->
+  <div class="selos">
+    <div class="env" data-slot="selos.lista">
+      <div class="selo-item">
+        <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-7-10a7 7 0 0 1 14 0c0 5.5-7 10-7 10z"/><circle cx="12" cy="11" r="2.5"/></svg>
+        <b data-t="selos.0.t">Feito à mão</b>
+        <span data-t="selos.0.s">Conta por conta, aqui</span>
+      </div>
+      <div class="selo-item">
+        <svg viewBox="0 0 24 24"><path d="M12 3v18M7 8h10"/></svg>
+        <b data-t="selos.1.t">Personalizamos</b>
+        <span data-t="selos.1.s">Nome, devoção e cor</span>
+      </div>
+      <div class="selo-item">
+        <svg viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-8-8"/><path d="M12 8v4l3 2"/><path d="M17 3l4 4-4 4"/></svg>
+        <b data-t="selos.2.t">Sob encomenda</b>
+        <span data-t="selos.2.s">Feita depois do seu sim</span>
+      </div>
+      <div class="selo-item">
+        <svg viewBox="0 0 24 24"><path d="M3 7h13v10H3zM16 10h3l2 3v4h-5z"/><circle cx="7" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg>
+        <b data-t="selos.3.t">Envio nacional</b>
+        <span data-t="selos.3.s">Para todo o Brasil</span>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ============ DESTAQUES EM VÍDEO ============ -->
+  <section class="destaques">
+    <div class="env">
+      <div class="cab-secao centro rv" data-slot="destaques.cabecalho">
+        <p class="chapeu" data-t="destaques.chapeu">Em destaque</p>
+        <h2 class="titulo" data-t-html="destaques.titulo">As peças <em>do momento</em></h2>
+        <div class="ornamento" aria-hidden="true">
+          <i></i>
+          <svg viewBox="0 0 30 24"><path d="M15 3v18M9 9h12"/><path d="M6 12c-2 0-4-1.5-4-4 2.5 0 4 1.5 4 4z"/><path d="M24 12c2 0 4-1.5 4-4-2.5 0-4 1.5-4 4z"/></svg>
+          <i></i>
+        </div>
+      </div>
+      <div class="grade-dest rv" data-slot="destaques.grade">
+        <article class="dest">
+          <div class="dest-video">
+            <video autoplay muted loop playsinline preload="none"
+                   poster="img/poster-sao-miguel-quaresma.webp">
+              <source src="video/video-sao-miguel-quaresma.mp4" type="video/mp4">
+            </video>
+            <span class="dest-selo">Quaresma de São Miguel</span>
+          </div>
+          <div class="dest-corpo">
+            <b>Terço de São Miguel</b>
+            <p>Contas foscas em tom madeira com as asas e a cruz em dourado. Feito para os 40 dias da Quaresma de São Miguel, de 15 de agosto a 29 de setembro.</p>
+            <div class="dest-pe">
+              <span class="preco">R$ 59,90<small>promocional</small></span>
+              <button class="add" data-add="sao-miguel-quaresma">
+                <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg> Quero
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="dest">
+          <div class="dest-video">
+            <video autoplay muted loop playsinline preload="none"
+                   poster="img/poster-sagrada-familia.webp">
+              <source src="video/video-sagrada-familia.mp4" type="video/mp4">
+            </video>
+            <span class="dest-selo">Novo</span>
+          </div>
+          <div class="dest-corpo">
+            <b>Sagrada Família em Cristal Champagne</b>
+            <p>Cristais champagne com brilho furta-cor, pérolas e o entremeio da Sagrada Família em ouro velho, todo trabalhado.</p>
+            <div class="dest-pe">
+              <span class="preco">R$ 79,90<small>à vista</small></span>
+              <button class="add" data-add="sagrada-familia-champagne">
+                <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg> Quero
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="dest">
+          <div class="dest-video">
+            <video autoplay muted loop playsinline preload="none"
+                   poster="img/poster-sao-bento.webp">
+              <source src="video/video-sao-bento.mp4" type="video/mp4">
+            </video>
+            <span class="dest-selo">Pronta entrega</span>
+          </div>
+          <div class="dest-corpo">
+            <b>Terço de São Bento</b>
+            <p>Contas resinadas e metais em ouro velho, com a medalha e o crucifixo de São Bento. A Cruz Sagrada seja minha luz.</p>
+            <div class="dest-pe">
+              <span class="preco">R$ 59,90<small>à vista</small></span>
+              <button class="add" data-add="sao-bento-resinado">
+                <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg> Quero
+              </button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ O OFÍCIO ============ -->
+  <section class="oficio" id="oficio">
+    <div class="env editorial">
+      <div class="par-fotos rv" data-slot="oficio.fotos">
+        <figure class="principal" data-midia-box="oficio.foto1" data-midia-padrao="img/detalhe-mao-boreal.webp"><img src="img/detalhe-mao-boreal.webp" alt="Terço de cristal boreal com pombas do Espírito Santo, segurado na mão" loading="lazy"></figure>
+        <figure class="secundaria" data-midia-box="oficio.foto2" data-midia-padrao="img/detalhe-santa-rita.webp"><img src="img/detalhe-santa-rita.webp" alt="Detalhe do entremeio de Santa Rita de Cássia com rosa e strass" loading="lazy"></figure>
+      </div>
+      <div class="rv" data-slot="oficio.texto">
+        <p class="chapeu" data-t="oficio.chapeu">O ateliê</p>
+        <h2 class="titulo" data-t-html="oficio.titulo">Não sai de máquina. <em>Sai de uma oração.</em></h2>
+        <p class="citacao" data-t-html="oficio.citacao">"Todo trabalho artesanal leva consigo a alma de quem produz, e isso não tem preço."</p>
+        <p class="lead" data-t-html="oficio.lead">Cada terço é montado aqui, uma conta de cada vez: escolhendo o cristal, fechando o elo, ajustando o entremeio até ficar do jeito certo. Não existem dois iguais, porque nenhum é feito antes de alguém pedir.</p>
+        <ul class="lista-fe">
+          <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5L19 7"/></svg><span data-t-html="oficio.fe1"><b>Materiais que duram</b> — cristal facetado, pérola de vidro, porcelana pintada à mão, hematita natural, metais com banho de ouro e ouro velho.</span></li>
+          <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5L19 7"/></svg><span data-t-html="oficio.fe2"><b>Acabamento de semi-joia</b> — entremeios trabalhados, detalhes em strass e crucifixos escolhidos peça a peça.</span></li>
+          <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5L19 7"/></svg><span data-t-html="oficio.fe3"><b>Do jeito que você pediu</b> — a cor da conta, o santo do entremeio, o nome que vai gravado. Já fizemos até com foto de família dos dois lados.</span></li>
+        </ul>
+        <p style="margin-top:30px"><a href="#catalogo" class="btn btn-ouro" data-t="oficio.cta">Conhecer as peças</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CATÁLOGO ============ -->
+  <section id="catalogo">
+    <div class="env">
+      <div class="cab-secao centro rv" data-slot="catalogo.cabecalho">
+        <p class="chapeu" data-t="catalogo.chapeu">Catálogo</p>
+        <h2 class="titulo" data-t-html="catalogo.titulo">Escolha a sua, <em>a gente faz a sua</em></h2>
+        <div class="ornamento" aria-hidden="true">
+          <i></i>
+          <svg viewBox="0 0 30 24"><path d="M15 3v18M9 9h12"/><path d="M6 12c-2 0-4-1.5-4-4 2.5 0 4 1.5 4 4z"/><path d="M24 12c2 0 4-1.5 4-4-2.5 0-4 1.5-4 4z"/></svg>
+          <i></i>
+        </div>
+        <p class="lead" style="margin-top:20px" data-t-html="catalogo.lead">As peças são organizadas por linha: a <b>Essencial</b> é a mais leve no bolso, a <b>Clássica</b> é o coração do ateliê, a <b>Premium</b> tem acabamento de semi-joia e a <b>Luxo</b> guarda as peças mais diferenciadas. Monte sua lista e toque em "Fechar pedido" que tudo chega pronto no WhatsApp.</p>
+      </div>
+
+      <div class="busca-linha rv">
+        <div class="caixa-busca">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+          <input id="busca" type="search" data-ph="catalogo.busca_placeholder" placeholder="Buscar por santo, cor ou peça…" aria-label="Buscar no catálogo" autocomplete="off">
+          <button class="limpar" id="limparBusca" aria-label="Limpar busca">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+          </button>
+        </div>
+        <select id="ordenar" aria-label="Ordenar o catálogo">
+          <option value="destaque">Destaques</option>
+          <option value="lancamentos">Lançamentos primeiro</option>
+          <option value="preco-asc">Menor preço</option>
+          <option value="preco-desc">Maior preço</option>
+        </select>
+      </div>
+
+      <div class="resumo-busca" id="resumoBusca" aria-live="polite"></div>
+
+      <div class="filtros rv" id="filtros">
+        <button class="filtro on" data-cat="tudo">Tudo</button>
+        <button class="filtro" data-cat="essencial">Essencial</button>
+        <button class="filtro" data-cat="classico">Clássica</button>
+        <button class="filtro" data-cat="premium">Premium</button>
+        <button class="filtro" data-cat="luxo">Luxo</button>
+        <button class="filtro" data-cat="infantil">Para os pequenos</button>
+        <button class="filtro" data-cat="carro">Para o carro</button>
+      </div>
+
+      <div class="grade" id="grade" data-slot="catalogo.grade"></div>
+
+      <p class="prazo-aviso">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        <span data-t-html="catalogo.prazo">Produção de 3 a 7 dias úteis depois do seu sim, mais o prazo dos Correios.</span>
+      </p>
+      <p class="nota-catalogo" data-t-html="catalogo.nota">Não achou o seu santo? A gente faz sob encomenda: <a href="#encomenda" style="color:var(--ouro);border-bottom:1px solid var(--ouro-claro)">conte a sua devoção</a>.</p>
+    </div>
+  </section>
+
+  <!-- ============ ENCOMENDA ============ -->
+  <section class="encomenda" id="encomenda">
+    <div class="env">
+      <div class="rv" data-slot="encomenda.texto">
+        <p class="chapeu" data-t="encomenda.chapeu">Sob encomenda</p>
+        <h2 class="titulo" data-t-html="encomenda.titulo">O seu santo, a sua cor, <em>o seu nome</em></h2>
+        <p class="lead" style="margin-top:20px" data-t-html="encomenda.lead">Ter um terço personalizado é uma forma de se sentir ainda mais íntimo de Nossa Mãe e do Seu Filho. Conte a devoção, o tom que você imagina e para quem é. O resto é com a gente.</p>
+        <ol class="passos">
+          <li><span class="num">1</span><span><b data-t="encomenda.passos.0.t">Você conta a ideia</b><span data-t-html="encomenda.passos.0.s">Um santo de devoção, uma cor, uma data. Ou manda uma foto do que te encantou.</span></span></li>
+          <li><span class="num">2</span><span><b data-t="encomenda.passos.1.t">A gente combina os detalhes</b><span data-t-html="encomenda.passos.1.s">Tipo de conta, acabamento do metal, entremeio, gravação de nome e o prazo.</span></span></li>
+          <li><span class="num">3</span><span><b data-t="encomenda.passos.2.t">A peça é montada</b><span data-t-html="encomenda.passos.2.s">Uma a uma, à mão. Você acompanha e aprova antes de sair daqui.</span></span></li>
+          <li><span class="num">4</span><span><b data-t="encomenda.passos.3.t">Chega na sua casa</b><span data-t-html="encomenda.passos.3.s">Enviamos para todo o Brasil, embalado para presentear.</span></span></li>
+        </ol>
+        <p style="margin-top:34px"><a class="btn btn-zap" id="zapPerson" href="#" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.1.1-1.8-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5-4.5-.2-.2-1.2-1.6-1.2-3s.7-2.1 1-2.4c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .7.5l.9 2.2c.1.2 0 .4-.1.6l-.4.5c-.1.1-.3.3-.1.6.1.3.7 1.2 1.5 1.9 1 .9 1.8 1.2 2.1 1.3.3.1.4.1.6-.1l.9-1c.2-.2.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.2.1.8-.1 1.4z"/></svg>
+          <span data-t="encomenda.botao">Encomendar pelo WhatsApp</span>
+        </a></p>
+      </div>
+
+      <div class="moldura rv" data-slot="encomenda.moldura" data-midia-box="encomenda.midia" data-midia-padrao="video/video-esmeralda.mp4" data-midia-poster="encomenda.poster" data-poster-padrao="img/poster-esmeralda.webp" data-midia-preserva>
+        <video data-midia-video muted loop playsinline preload="none"
+               poster="img/poster-esmeralda.webp">
+          <source src="video/video-esmeralda.mp4" type="video/mp4">
+        </video>
+        <img data-midia-img alt="" hidden>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DEVOÇÕES ============ -->
+  <section>
+    <div class="env">
+      <div class="cab-secao centro rv" data-slot="devocoes.cabecalho">
+        <p class="chapeu" data-t="devocoes.chapeu">Devoções</p>
+        <h2 class="titulo" data-t-html="devocoes.titulo">Os santos que já <em>passaram por aqui</em></h2>
+        <div class="ornamento" aria-hidden="true">
+          <i></i>
+          <svg viewBox="0 0 30 24"><path d="M15 3v18M9 9h12"/><path d="M6 12c-2 0-4-1.5-4-4 2.5 0 4 1.5 4 4z"/><path d="M24 12c2 0 4-1.5 4-4-2.5 0-4 1.5-4 4z"/></svg>
+          <i></i>
+        </div>
+        <p class="lead" style="margin-top:20px" data-t-html="devocoes.lead">Cada um destes já virou terço aqui dentro. Se o seu não está na lista, é só pedir.</p>
+      </div>
+      <div class="devocoes rv" data-slot="devocoes.lista">
+        <span class="devocao">Nossa Senhora Aparecida</span>
+        <span class="devocao">Nossa Senhora de Fátima</span>
+        <span class="devocao">Nossa Senhora das Graças</span>
+        <span class="devocao">Virgem de Guadalupe</span>
+        <span class="devocao">Sagrada Família</span>
+        <span class="devocao">Divino Espírito Santo</span>
+        <span class="devocao">São Miguel Arcanjo</span>
+        <span class="devocao">São Bento</span>
+        <span class="devocao">São José</span>
+        <span class="devocao">São Padre Pio</span>
+        <span class="devocao">São Cristóvão</span>
+        <span class="devocao">São Carlo Acutis</span>
+        <span class="devocao">Santa Teresinha</span>
+        <span class="devocao">Santa Rita de Cássia</span>
+        <span class="devocao">Santa Gianna</span>
+        <span class="devocao">Anjo da Guarda</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ OCASIÕES ============ -->
+  <section id="ocasioes" style="padding-top:20px">
+    <div class="env">
+      <div class="cab-secao centro rv" data-slot="ocasioes.cabecalho">
+        <p class="chapeu" data-t="ocasioes.chapeu">Para quando</p>
+        <h2 class="titulo" data-t-html="ocasioes.titulo">Os dias que a família <em>não esquece</em></h2>
+        <div class="ornamento" aria-hidden="true">
+          <i></i>
+          <svg viewBox="0 0 30 24"><path d="M15 3v18M9 9h12"/><path d="M6 12c-2 0-4-1.5-4-4 2.5 0 4 1.5 4 4z"/><path d="M24 12c2 0 4-1.5 4-4-2.5 0-4 1.5-4 4z"/></svg>
+          <i></i>
+        </div>
+      </div>
+      <div class="ocasioes rv" data-slot="ocasioes.grade">
+        <figure class="ocasiao">
+          <img src="img/terco-infantil-nome-caixa.webp" alt="Terço infantil personalizado com o nome da criança, dentro da caixinha de presente" loading="lazy">
+          <figcaption><b>Batizado</b><span>Terço infantil com nome e caixinha</span></figcaption>
+        </figure>
+        <figure class="ocasiao">
+          <img src="img/terco-primeira-eucaristia.webp" alt="Terço de pérolas com cálice dourado para a Primeira Eucaristia" loading="lazy">
+          <figcaption><b>Primeira Eucaristia</b><span>A lembrança do primeiro encontro</span></figcaption>
+        </figure>
+        <figure class="ocasiao">
+          <img src="img/poster-noiva.webp" alt="Terço de noiva em pérolas de vidro com entremeio trabalhado" loading="lazy">
+          <figcaption><b>Casamento</b><span>O terço da noiva, até o altar</span></figcaption>
+        </figure>
+        <figure class="ocasiao">
+          <img src="img/terco-profissao-enfermagem.webp" alt="Terço luxo com entremeio dupla face do símbolo da profissão" loading="lazy">
+          <figcaption><b>Formatura</b><span>Com o símbolo da profissão</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ORAÇÃO ============ -->
+  <div class="oracao">
+    <div class="env">
+      <div class="cartao-oracao rv" data-slot="oracao.cartao">
+        <svg class="cruz" viewBox="0 0 30 40" aria-hidden="true"><path d="M15 2v36M5 12h20"/></svg>
+        <p data-t-html="oracao.texto">"Segure o terço com fé. Cada Ave-Maria é um passo em direção ao coração de Jesus pelas mãos de Maria."</p>
+        <cite data-t="oracao.autor">Ateliê Santo Terço</cite>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ COMO REZAR ============ -->
+  <section class="misterios" id="terco">
+    <div class="env">
+      <div class="cab-secao centro rv" data-slot="misterios.cabecalho">
+        <p class="chapeu" data-t="misterios.chapeu">A oração de cada dia</p>
+        <h2 class="titulo" data-t-html="misterios.titulo">Os mistérios, <em>dia por dia</em></h2>
+        <p class="lead" style="margin-top:18px" data-t-html="misterios.lead">Se você está começando a rezar o terço, é por aqui. Cada dia da semana tem os seus mistérios, e são cinco dezenas em cada um.</p>
+      </div>
+      <div class="grade-mist rv" data-slot="misterios.grade">
+        <div class="mist">
+          <span>Segunda e sábado</span>
+          <b>Gozosos</b>
+          <p>A alegria do início: a Anunciação, a Visitação, o Nascimento de Jesus, a Apresentação no templo e o reencontro com o Menino entre os doutores.</p>
+        </div>
+        <div class="mist">
+          <span>Terça e sexta</span>
+          <b>Dolorosos</b>
+          <p>A entrega: a agonia no horto, a flagelação, a coroação de espinhos, a subida ao Calvário e a crucifixão.</p>
+        </div>
+        <div class="mist">
+          <span>Quarta e domingo</span>
+          <b>Gloriosos</b>
+          <p>A vitória: a Ressurreição, a Ascensão, Pentecostes, a Assunção de Maria e a coroação de Nossa Senhora.</p>
+        </div>
+        <div class="mist">
+          <span>Quinta-feira</span>
+          <b>Luminosos</b>
+          <p>A vida pública de Jesus: o Batismo no Jordão, Caná, o anúncio do Reino, a Transfiguração e a instituição da Eucaristia.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SOBRE ============ -->
+  <section class="sobre" id="sobre">
+    <div class="env">
+      <div class="rv" data-slot="sobre.texto">
+        <p class="chapeu" data-t="sobre.chapeu">A história</p>
+        <h2 class="titulo" data-t-html="sobre.titulo">Começou com um terço <em>feito para mim</em></h2>
+        <p class="lead" style="margin-top:20px" data-t-html="sobre.p1">O primeiro terço foi para uso pessoal. Depois vieram os da família, os de presente para pessoas queridas. Era hobby, era fé, era um amor muito pessoal.</p>
+        <p class="lead" style="margin-top:16px" data-t-html="sobre.p2">Com o tempo veio a percepção de que aquilo feito com tanta dedicação podia alcançar mais corações. Virou também uma renda, mas continua sendo, acima de tudo, um trabalho feito com amor, cuidado e muita fé.</p>
+        <p class="lead" style="margin-top:16px" data-t-html="sobre.p3">Hoje as encomendas saem daqui para o Brasil inteiro. E a gratidão é a mesma por cada pessoa que confia e leva um pedacinho dessa dedicação para casa.</p>
+        <div class="numeros" data-slot="sobre.numeros">
+          <div><b>100%</b><span>montado à mão</span></div>
+          <div><b>16+</b><span>devoções feitas</span></div>
+          <div><b>Brasil</b><span>inteiro, por Correios</span></div>
+        </div>
+        <p style="margin-top:32px"><a class="btn btn-ouro" data-href="geral.instagram" data-t="sobre.cta" href="https://www.instagram.com/atelie_santotercoo/" target="_blank" rel="noopener">Ver o dia a dia no Instagram</a></p>
+      </div>
+      <div class="par-fotos rv" data-slot="sobre.fotos">
+        <figure class="principal" data-midia-box="sobre.foto1" data-midia-padrao="img/encomendas-do-dia.webp"><img src="img/encomendas-do-dia.webp" alt="Encomendas de terços prontas para envio, lado a lado" loading="lazy"></figure>
+        <figure class="secundaria" data-midia-box="sobre.foto2" data-midia-padrao="img/embalagem-presente.webp"><img src="img/embalagem-presente.webp" alt="Embalagem de presente" loading="lazy"></figure>
+      </div>
+    </div>
+  </section>
+
+<!-- ============ DEPOIMENTOS ============
+       ATENÇÃO: depoimentos e números abaixo são EXEMPLOS de estrutura.
+       Substitua pelos depoimentos reais (com autorização) e pelos
+       números verdadeiros do ateliê antes de publicar. -->
+  <section class="depoimentos" id="depoimentos">
+    <div class="env">
+      <div class="cab-secao centro rv" data-slot="depoimentos.cabecalho">
+        <p class="chapeu" data-t="depoimentos.chapeu">Quem já levou</p>
+        <h2 class="titulo" data-t-html="depoimentos.titulo">Devoções que viraram <em>presentes</em></h2>
+        <div class="ornamento" aria-hidden="true">
+          <i></i>
+          <svg viewBox="0 0 30 24"><path d="M15 3v18M9 9h12"/><path d="M6 12c-2 0-4-1.5-4-4 2.5 0 4 1.5 4 4z"/><path d="M24 12c2 0 4-1.5 4-4-2.5 0-4 1.5-4 4z"/></svg>
+          <i></i>
+        </div>
+        <p class="lead" style="margin-top:20px" data-t-html="depoimentos.lead">O que mais me emociona é receber fotos de quem recebeu e abraçou a peça. Algumas palavras de quem já confiou:</p>
+      </div>
+      <div class="grade-depo rv" data-slot="depoimentos.grade">
+        <article class="depo">
+          <div class="estrelas" role="img" aria-label="5 de 5 estrelas"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.2l7.1-.6z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.2l7.1-.6z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.2l7.1-.6z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.2l7.1-.6z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.2l7.1-.6z"/></svg></div>
+          <p data-t-html="depoimentos.lista.0.texto">"Encomendei o terço da minha filha com o nome dela e chegou mais lindo do que nas fotos. A embalagem também é um presente."</p>
+          <div class="depo-pe">
+            <span class="depo-avatar" aria-hidden="true">M</span>
+            <div><b data-t="depoimentos.lista.0.nome">Maria</b><span data-t="depoimentos.lista.0.contexto">Terço infantil com nome</span></div>
+          </div>
+        </article>
+        <article class="depo">
+          <div class="estrelas" role="img" aria-label="5 de 5 estrelas"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.2l7.1-.6z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.2l7.1-.6z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.2l7.1-.6z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.2l7.1-.6z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.2l7.1-.6z"/></svg></div>
+          <p data-t-html="depoimentos.lista.1.texto">"O terço de Santa Rita chegou perfeito, exatamente na cor que pedi. Atendimento atencioso do início ao fim."</p>
+          <div class="depo-pe">
+            <span class="depo-avatar" aria-hidden="true">F</span>
+            <div><b data-t="depoimentos.lista.1.nome">Fernanda</b><span data-t="depoimentos.lista.1.contexto">Terço de Santa Rita</span></div>
+          </div>
+        </article>
+        <article class="depo">
+          <div class="estrelas" role="img" aria-label="5 de 5 estrelas"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.2l7.1-.6z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.2l7.1-.6z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.2l7.1-.6z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.2l7.1-.6z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.2l7.1-.6z"/></svg></div>
+          <p data-t-html="depoimentos.lista.2.texto">"O terço da noiva emocionou a minha irmã no casamento. Trabalho delicado, feito com muito capricho."</p>
+          <div class="depo-pe">
+            <span class="depo-avatar" aria-hidden="true">A</span>
+            <div><b data-t="depoimentos.lista.2.nome">Ana Paula</b><span data-t="depoimentos.lista.2.contexto">Terço de noiva</span></div>
+          </div>
+        </article>
+      </div>
+      <div class="faixa-social rv" data-slot="depoimentos.faixa">
+        <div><b data-t="depoimentos.faixa.0.t">500+</b><span data-t="depoimentos.faixa.0.s">terços enviados</span></div>
+        <div><b data-t="depoimentos.faixa.1.t">26</b><span data-t="depoimentos.faixa.1.s">estados alcançados</span></div>
+        <div><b data-t="depoimentos.faixa.2.t">100%</b><span data-t="depoimentos.faixa.2.s">feito à mão</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CHAMADA FINAL ============ -->
+  <div class="final">
+    <div class="env" data-slot="final.texto">
+      <p class="chapeu rv" data-t="final.chapeu">Fale com o ateliê</p>
+      <h2 class="titulo rv" data-t-html="final.titulo">Qual devoção <em>vai nas suas mãos?</em></h2>
+      <div class="ornamento rv" aria-hidden="true">
+        <i></i>
+        <svg viewBox="0 0 30 24"><path d="M15 3v18M9 9h12"/><path d="M6 12c-2 0-4-1.5-4-4 2.5 0 4 1.5 4 4z"/><path d="M24 12c2 0 4-1.5 4-4-2.5 0-4 1.5-4 4z"/></svg>
+        <i></i>
+      </div>
+      <p class="lead centro rv" style="margin-top:22px" data-t-html="final.lead">Chame no WhatsApp e conte o que você imagina. Respondemos com as opções de conta, cor e acabamento, o prazo e o valor.</p>
+      <div class="hero-ctas rv">
+        <a class="btn btn-zap" id="zapFinal" href="#" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.1.1-1.8-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5-4.5-.2-.2-1.2-1.6-1.2-3s.7-2.1 1-2.4c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .7.5l.9 2.2c.1.2 0 .4-.1.6l-.4.5c-.1.1-.3.3-.1.6.1.3.7 1.2 1.5 1.9 1 .9 1.8 1.2 2.1 1.3.3.1.4.1.6-.1l.9-1c.2-.2.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.2.1.8-.1 1.4z"/></svg>
+          <span data-t="final.cta1">Falar no WhatsApp</span>
+        </a>
+        <a class="btn btn-linha" href="#catalogo" data-t="final.cta2">Voltar ao catálogo</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="env">
+    <div class="pe-grade" data-slot="rodape.grade">
+      <div>
+        <h3 data-t="rodape.titulo">Ateliê Santo Terço</h3>
+        <p data-t-html="rodape.sobre">Terços artesanais feitos com fé. Cada peça é montada à mão, com intenção, oração e amor. Enviamos para todo o Brasil.</p>
+        <div class="redes">
+          <a data-href="geral.instagram" href="https://www.instagram.com/atelie_santotercoo/" target="_blank" rel="noopener" aria-label="Instagram do Ateliê Santo Terço">
+            <svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.3 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.3-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.3-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 3.2A6.6 6.6 0 1 0 18.6 12 6.6 6.6 0 0 0 12 5.4zm0 10.9A4.3 4.3 0 1 1 16.3 12 4.3 4.3 0 0 1 12 16.3zm6.9-11.1a1.5 1.5 0 1 1-1.5-1.5 1.5 1.5 0 0 1 1.5 1.5z"/></svg>
+          </a>
+          <a id="zapRodape" href="#" target="_blank" rel="noopener" aria-label="WhatsApp da loja">
+            <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.1.1-1.8-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5-4.5-.2-.2-1.2-1.6-1.2-3s.7-2.1 1-2.4c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .7.5l.9 2.2c.1.2 0 .4-.1.6l-.4.5c-.1.1-.3.3-.1.6.1.3.7 1.2 1.5 1.9 1 .9 1.8 1.2 2.1 1.3.3.1.4.1.6-.1l.9-1c.2-.2.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.2.1.8-.1 1.4z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <h3 data-t="rodape.cat_titulo">Catálogo</h3>
+        <div class="pe-links">
+          <a href="#catalogo">Linha Essencial</a>
+          <a href="#catalogo">Linha Clássica</a>
+          <a href="#catalogo">Linha Premium e Luxo</a>
+          <a href="#catalogo">Para os pequenos</a>
+          <a href="#catalogo">Dezenas para o carro</a>
+          <a href="#encomenda">Sob encomenda</a>
+        </div>
+      </div>
+      <div>
+        <h3 data-t="rodape.como_titulo">Como comprar</h3>
+        <div class="pe-links">
+          <a id="zapRodape2" href="#" target="_blank" rel="noopener"><span data-t="geral.zap_tel">WhatsApp (16) 99103-8587</span></a>
+          <span>Encomendas também pelo direct</span>
+          <span>Enviamos para todo o Brasil</span>
+          <a href="#terco">Como rezar o terço</a>
+        </div>
+      </div>
+    </div>
+    <div class="pe-base">
+      <span>© <span id="ano"></span> <span data-t="rodape.titulo">Ateliê Santo Terço</span></span>
+      <span data-t-html="rodape.nota_base">Peças artesanais: pequenas variações fazem parte do feito à mão.</span>
+    <span class="credito-visivel">Site feito por
+      <img src="img/marca/simbolo-cor.svg" alt="Jordão Neto Tech" width="22" height="22">
+      <a href="https://www.jordaonetotech.com.br" target="_blank" rel="noopener">Jordão Neto Tech</a>
+    </span>
+    </div>
+  </div>
+</footer>
+
+<a class="zap-flut" id="zapFlut" href="#" target="_blank" rel="noopener" aria-label="Falar no WhatsApp" role="button">
+  <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.1.1-1.8-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5-4.5-.2-.2-1.2-1.6-1.2-3s.7-2.1 1-2.4c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .7.5l.9 2.2c.1.2 0 .4-.1.6l-.4.5c-.1.1-.3.3-.1.6.1.3.7 1.2 1.5 1.9 1 .9 1.8 1.2 2.1 1.3.3.1.4.1.6-.1l.9-1c.2-.2.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.2.1.8-.1 1.4z"/></svg>
+</a>
+
+<!-- ============ CARRINHO ============ -->
+<div class="veu" id="veu"></div>
+<aside class="gaveta" id="gaveta" aria-modal="true" aria-labelledby="tituloCarrinho">
+  <div class="gaveta-topo">
+    <div>
+      <h3 id="tituloCarrinho" data-t="carrinho.titulo">Minha lista</h3>
+      <p id="resumoTopo" aria-live="polite">nenhuma peça ainda</p>
+    </div>
+    <div style="display:flex;align-items:center;gap:6px">
+      <button class="fechar" id="fechaCarrinho" aria-label="Fechar">
+      <svg viewBox="0 0 24 24" stroke="currentColor"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="itens" id="itens"></div>
+  <div class="gaveta-pe">
+    <details class="dobravel" id="dobravelDados">
+      <summary><span data-t="carrinho.dados_titulo">Personalização e entrega</span><em data-t="carrinho.dados_opcional">opcional</em></summary>
+      <div class="dobravel-corpo">
+        <label class="obs-rot" for="obs" data-t="carrinho.obs_rot">Cor, devoção ou nome para gravar</label>
+        <textarea class="obs" id="obs" data-ph="carrinho.obs_placeholder" placeholder="Ex.: o de Santa Rita em tom rosa, com o nome Helena gravado"></textarea>
+        <label class="obs-rot" for="nomeCliente" data-t="carrinho.nome_rot">Seu nome (opcional)</label>
+        <input class="cep" id="nomeCliente" data-ph="carrinho.nome_placeholder" placeholder="Ex.: Maria Helena" autocomplete="name">
+        <label class="obs-rot" for="whatsCliente" data-t="carrinho.whats_rot">Seu WhatsApp (para a loja confirmar o pedido) *</label>
+        <input class="cep" id="whatsCliente" data-ph="carrinho.whats_placeholder" placeholder="Ex.: (16) 99999-9999" inputmode="tel" autocomplete="tel" maxlength="16" aria-describedby="whatsErro">
+        <p class="campo-erro" id="whatsErro" hidden>Informe seu WhatsApp com DDD para a loja te responder.</p>
+        <label class="obs-rot" for="cep" data-t="carrinho.cep_rot">CEP ou cidade para estimar o frete (opcional)</label>
+        <input class="cep" id="cep" inputmode="numeric" data-ph="carrinho.cep_placeholder" placeholder="Ex.: 14800-000 ou Araraquara - SP">
+      </div>
+    </details>
+    <div class="total"><span data-t="carrinho.total_rot">Total estimado</span><b id="total">R$ 0,00</b></div>
+    <p class="gaveta-nota" id="notaCombinar" hidden style="text-align:left;margin:-8px 0 14px" data-t-html="carrinho.nota_combinar">Há peças com valor a combinar na sua lista — o orçamento delas sai na conversa.</p>
+    <a class="btn btn-zap btn-largo" id="fecharPedido" href="#" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.1.1-1.8-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5-4.5-.2-.2-1.2-1.6-1.2-3s.7-2.1 1-2.4c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .7.5l.9 2.2c.1.2 0 .4-.1.6l-.4.5c-.1.1-.3.3-.1.6.1.3.7 1.2 1.5 1.9 1 .9 1.8 1.2 2.1 1.3.3.1.4.1.6-.1l.9-1c.2-.2.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.2.1.8-.1 1.4z"/></svg>
+      <span data-t="carrinho.botao">Fechar pedido no WhatsApp</span>
+    </a>
+    <p class="gaveta-nota" data-t-html="carrinho.nota">Nada é cobrado aqui. A lista vai para o WhatsApp do ateliê, onde combinamos os detalhes, o prazo e o frete.</p>
+  </div>
+</aside>
+
+
+<!-- ============ MODAL DO PRODUTO ============ -->
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modNome">
+  <div class="modal-corpo">
+    <div class="modal-foto">
+      <img id="modFoto" alt="">
+      <button class="modal-fechar" id="modFechar" aria-label="Fechar">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <div class="modal-info">
+      <span class="modal-tag" id="modTag"></span>
+      <h3 id="modNome"></h3>
+      <div class="modal-preco" id="modPreco"></div>
+      <p class="modal-desc" id="modDesc"></p>
+      <div class="pers">
+        <h4><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M7 8h10"/></svg> <span data-t="personalizar.titulo">Personalizar esta peça</span></h4>
+        <div>
+          <label for="modDevocao" data-t="personalizar.rot_campo1">Devoção</label>
+          <input id="modDevocao" list="modDevocoes" data-ph="personalizar.ph_campo1" placeholder="Ex.: Santa Rita de Cássia" autocomplete="off">
+          <datalist id="modDevocoes"></datalist>
+        </div>
+        <div>
+          <label for="modCor" data-t="personalizar.rot_campo2">Cor</label>
+          <input id="modCor" data-ph="personalizar.ph_campo2" placeholder="rosa, azul, champanhe…" autocomplete="off">
+        </div>
+        <div>
+          <label for="modNomeGrav" data-t="personalizar.rot_campo3">Nome a gravar (opcional)</label>
+          <input id="modNomeGrav" data-ph="personalizar.ph_campo3" placeholder="Ex.: Helena" autocomplete="off">
+        </div>
+        <div>
+          <label for="modPrazo" data-t="personalizar.rot_campo4">Prazo desejado</label>
+          <select id="modPrazo">
+            <option value="">Combinar no WhatsApp</option>
+            <option>Até 7 dias</option>
+            <option>7 a 15 dias</option>
+            <option>Mais de 15 dias</option>
+          </select>
+        </div>
+      </div>
+      <div class="modal-acoes">
+        <button class="btn btn-ouro" id="modAdd"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg> Adicionar à lista</button>
+        <button class="btn btn-linha" id="modZap"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.1.1-1.8-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5-4.5-.2-.2-1.2-1.6-1.2-3s.7-2.1 1-2.4c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .7.5l.9 2.2c.1.2 0 .4-.1.6l-.4.5c-.1.1-.3.3-.1.6.1.3.7 1.2 1.5 1.9 1 .9 1.8 1.2 2.1 1.3.3.1.4.1.6-.1l.9-1c.2-.2.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.2.1.8-.1 1.4z"/></svg> Encomendar no WhatsApp</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ POPUP DE CAPTURA ============ -->
+<div class="pop" id="pop" role="dialog" aria-modal="true" aria-labelledby="popTitulo" hidden>
+  <div class="pop-caixa">
+    <button class="pop-fechar" id="popFechar" aria-label="Fechar">✕</button>
+    <h3 id="popTitulo"></h3>
+    <p class="pop-count" id="popCount" hidden></p>
+    <p id="popTexto"></p>
+    <form id="popForm">
+      <label class="obs-rot" for="popNome">Seu nome</label>
+      <input class="cep" id="popNome" placeholder="Ex.: Maria Helena" autocomplete="name">
+      <label class="obs-rot" for="popWhats">Seu WhatsApp</label>
+      <input class="cep" id="popWhats" placeholder="Ex.: (16) 99999-9999" inputmode="tel" autocomplete="tel" maxlength="16">
+      <p class="campo-erro" id="popErro" hidden>Informe nome e WhatsApp com DDD.</p>
+      <button class="btn btn-zap btn-largo" type="submit" id="popBotao">Quero meu cupom</button>
+      <p class="pop-aviso" id="popAviso"></p>
+    </form>
+    <div class="pop-ok" id="popOk" hidden>
+      <b>Pronto! 🤍</b>
+      <p id="popOkTexto">Anotado por aqui. Fique de olho no seu WhatsApp!</p>
+      <p class="pop-cupom" id="popCupom" hidden></p>
+      <button class="btn btn-linha btn-largo" id="popContinuar" type="button">Continuar olhando</button>
+    </div>
+  </div>
+</div>
+
+<!-- ============ TOAST ============ -->
+<div class="toast" id="toast" role="status" aria-live="polite">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L19 7"/></svg>
+  <span class="toast-txt" id="toastTxt"></span>
+  <button id="toastVer">Ver lista</button>
+</div>
+
+<!-- ============ BARRA FIXA DE CHECKOUT ============ -->
+<div class="barra" id="barra">
+  <div class="barra-info" id="barraInfo" aria-live="polite"></div>
+  <button class="btn btn-zap" id="barraPedido"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.1.1-1.8-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5-4.5-.2-.2-1.2-1.6-1.2-3s.7-2.1 1-2.4c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .7.5l.9 2.2c.1.2 0 .4-.1.6l-.4.5c-.1.1-.3.3-.1.6.1.3.7 1.2 1.5 1.9 1 .9 1.8 1.2 2.1 1.3.3.1.4.1.6-.1l.9-1c.2-.2.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.2.1.8-.1 1.4z"/></svg> Fechar pedido</button>
+</div>
+
+<script src="js/icones.js?v=20261021-estilo3"></script>
+<script src="js/fontes.js?v=20261021-estilo3"></script>
+<script src="js/app.js?v=20261021-estilo3"></script>
+
+
+</body>
+</html>

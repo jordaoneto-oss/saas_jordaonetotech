@@ -1,0 +1,243 @@
+{
+  "botoes": {
+    "caixa": "alta",
+    "formato": "padrao"
+  },
+  "carrinho": {
+    "botao": "Fechar pedido no WhatsApp",
+    "msg_modelo": "Olá, {loja}! 🤍\nVim pelo site e gostaria de encomendar:\n\n{itens}\n\nTotal estimado: {total}{combinar}\n\n{observacao}\n\n{cliente}\n\n{entrega}\n\nPode me confirmar disponibilidade, prazo e o frete?",
+    "cep_placeholder": "Ex.: 14800-000 ou Sua Cidade - UF",
+    "cep_rot": "CEP ou cidade para estimar o frete (opcional)",
+    "nome_placeholder": "Ex.: Seu nome",
+    "nome_rot": "Seu nome (opcional)",
+    "nota": "Nada é cobrado aqui. A lista vai para o WhatsApp da loja, onde combinamos os detalhes e o frete.",
+    "nota_combinar": "Há itens com valor a combinar na sua lista — o orçamento sai na conversa.",
+    "obs_placeholder": "Ex.: cor, tamanho, personalização",
+    "obs_rot": "Observações do pedido",
+    "resumo_vazio": "nenhum item ainda",
+    "titulo": "Minha lista",
+    "total_rot": "Total estimado",
+    "vazio_texto": "Escolha os produtos no catálogo e finalize no WhatsApp.",
+    "vazio_titulo": "Sua lista está vazia.",
+    "whats_placeholder": "Ex.: (16) 99999-9999",
+    "whats_rot": "Seu WhatsApp (para a loja confirmar o pedido) *"
+  },
+  "catalogo": {
+    "busca_placeholder": "Buscar por nome, categoria ou palavra-chave…",
+    "chapeu": "Catálogo",
+    "lead": "Exemplo multi-segmento para homologar: troque o segmento no topo e veja as mesmas peças com outra identidade.",
+    "nota": "Não achou o que procurava? <a href=\"#encomenda\">fale com a gente</a>.",
+    "prazo": "Consulte prazo e frete no WhatsApp.",
+    "titulo": "Escolha, <em>monte sua lista</em>"
+  },
+  "depoimentos": {
+    "chapeu": "Quem já comprou",
+    "faixa": [],
+    "lead": "Cadastre depoimentos reais no painel para exibir aqui.",
+    "lista": [],
+    "titulo": "Clientes <em>satisfeitos</em>"
+  },
+  "devocoes": {
+    "chapeu": "Categorias",
+    "itens": [],
+    "lead": "Categorias neutras que servem para moda, doces, pet, papelaria, bem-estar e utilidades.",
+    "titulo": "Nossas <em>especialidades</em>"
+  },
+  "destaques": {
+    "chapeu": "Em destaque",
+    "ids": [
+      "camiseta-essencial",
+      "brigadeiro-festa",
+      "caderno-artesanal"
+    ],
+    "titulo": "Os <em>favoritos</em>"
+  },
+  "encomenda": {
+    "botao": "Encomendar pelo WhatsApp",
+    "chapeu": "Encomendas",
+    "lead": "Explique aqui como funcionam personalizações, prazos e entregas do seu segmento.",
+    "passos": [
+      {
+        "s": "Descreva o passo 1.",
+        "t": "Você conta a ideia"
+      },
+      {
+        "s": "Descreva o passo 2.",
+        "t": "Combinamos os detalhes"
+      },
+      {
+        "s": "Descreva o passo 3.",
+        "t": "Preparamos com carinho"
+      },
+      {
+        "s": "Descreva o passo 4.",
+        "t": "Chega até você"
+      }
+    ],
+    "titulo": "Peça <em>do seu jeito</em>"
+  },
+  "final": {
+    "chapeu": "Fale com a gente",
+    "cta1": "Falar no WhatsApp",
+    "cta2": "Voltar ao catálogo",
+    "lead": "Chame no WhatsApp e tire suas dúvidas.",
+    "titulo": "Vamos <em>conversar?</em>"
+  },
+  "geral": {
+    "descricao": "Catálogo online modelo para homologação: escolha os produtos, monte sua lista e feche o pedido no WhatsApp.",
+    "instagram": "",
+    "nome": "Loja Modelo (Homologação)",
+    "prazo_producao": "Consulte prazo e frete no WhatsApp",
+    "produto": "Produto em destaque",
+    "categoria": "Produtos",
+    "tagline": "Sua loja online",
+    "title": "Loja Modelo — Catálogo online com pedido no WhatsApp",
+    "zap": "",
+    "zap_tel": ""
+  },
+  "hero": {
+    "chapeu": "Catálogo online · pedido no WhatsApp",
+    "cta1": "Ver o catálogo",
+    "cta2": "Falar no WhatsApp",
+    "fita1": "Sua marca",
+    "fita2": "edite no painel",
+    "lead": "Template neutro para validar qualquer segmento antes de personalizar cores, fontes e textos.",
+    "nota": "Monte sua lista e feche o pedido no WhatsApp",
+    "titulo": "Uma loja neutra,<br>pronta para <em>qualquer segmento.</em>"
+  },
+  "zap": {
+    "msg_ola": "Olá! Vim pelo site da {NOME} e quero saber mais sobre os produtos.",
+    "msg_encomenda": "Olá! Vim pelo site e quero fazer um pedido personalizado. Pode me ajudar?"
+  },
+  "personalizar": {
+    "titulo": "Personalizar este produto",
+    "rot_campo1": "Modelo / linha",
+    "ph_campo1": "Ex.: linha, modelo ou referência",
+    "rot_campo2": "Cor / variação",
+    "ph_campo2": "Ex.: cor, tamanho ou variação",
+    "rot_campo3": "Nome ou texto (opcional)",
+    "ph_campo3": "Ex.: nome para personalizar",
+    "rot_campo4": "Prazo desejado"
+  },
+  "menu": [
+    {
+      "href": "#oficio",
+      "t": "A loja"
+    },
+    {
+      "href": "#catalogo",
+      "t": "Catálogo"
+    },
+    {
+      "href": "#encomenda",
+      "t": "Encomendas"
+    },
+    {
+      "href": "#ocasioes",
+      "t": "Ocasiões"
+    },
+    {
+      "href": "#sobre",
+      "t": "História"
+    }
+  ],
+  "misterios": {
+    "chapeu": "Saiba mais",
+    "itens": [],
+    "lead": "Cadastre cartões informativos no painel para exibir aqui.",
+    "titulo": "Informações <em>úteis</em>"
+  },
+  "ocasioes": {
+    "chapeu": "Ocasiões",
+    "itens": [],
+    "titulo": "Para <em>cada momento</em>"
+  },
+  "oficio": {
+    "chapeu": "Sobre nós",
+    "cta": "Conhecer os produtos",
+    "citacao": "\"Edite esta frase no painel da loja.\"",
+    "fe1": "<b>Qualidade</b> — descreva seu diferencial aqui.",
+    "fe2": "<b>Atendimento</b> — descreva seu diferencial aqui.",
+    "fe3": "<b>Entrega</b> — descreva seu diferencial aqui.",
+    "lead": "Texto neutro de homologação. Substitua pela história real do lojista.",
+    "titulo": "Conte <em>sua história.</em>"
+  },
+  "oracao": {
+    "autor": "Sua loja",
+    "texto": "\"Edite esta frase de destaque no painel da loja.\""
+  },
+  "popup": {
+    "ativo": false,
+    "aviso": "Ao enviar, você concorda em receber novidades no WhatsApp.",
+    "botao": "Quero meu cupom",
+    "cupom": "",
+    "fim": "",
+    "inicio": "",
+    "texto": "Deixe seu nome e WhatsApp que enviamos seu cupom de boas-vindas.",
+    "titulo": "Ganhe 10% na primeira compra"
+  },
+  "rodape": {
+    "cat_titulo": "Catálogo",
+    "como_titulo": "Como comprar",
+    "nota_base": "Edite esta nota no painel da loja.",
+    "sobre": "Catálogo online com pedido no WhatsApp.",
+    "titulo": ""
+  },
+  "selos": [
+    {
+      "s": "Troque no painel",
+      "t": "Qualidade"
+    },
+    {
+      "s": "Troque no painel",
+      "t": "Atendimento"
+    },
+    {
+      "s": "Troque no painel",
+      "t": "Entrega local"
+    },
+    {
+      "s": "Troque no painel",
+      "t": "No WhatsApp"
+    }
+  ],
+  "sobre": {
+    "chapeu": "Nossa história",
+    "cta": "Ver novidades no Instagram",
+    "numeros": [],
+    "p1": "Edite este texto no painel da loja.",
+    "p2": "Conte como tudo começou.",
+    "p3": "E o que move seu trabalho hoje.",
+    "titulo": "Conte <em>sua história</em>"
+  },
+  "visual": {
+    "cores": {
+      "areia": "#f1ebe1",
+      "linha": "#e3d9c8",
+      "marfim": "#faf8f4",
+      "ouro": "#3b5bdb",
+      "ouro-claro": "#8ba3ff",
+      "ouro-fraco": "#e7edfd",
+      "papel": "#ffffff",
+      "rosa": "#c2437e",
+      "rosa-claro": "#fbe7f0",
+      "salvia": "#0e7c6b",
+      "tinta": "#23201a",
+      "tinta-suave": "#6e6455",
+      "zap": "#1f8c5a"
+    },
+    "fontes": {
+      "texto": {
+        "familia": "\"Inter\",-apple-system,BlinkMacSystemFont,\"Segoe UI\",sans-serif",
+        "link": "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap",
+        "nome": "Inter"
+      },
+      "titulos": {
+        "familia": "\"Inter\",-apple-system,BlinkMacSystemFont,\"Segoe UI\",sans-serif",
+        "link": "https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&display=swap",
+        "nome": "Inter"
+      }
+    },
+    "logo": ""
+  }
+}

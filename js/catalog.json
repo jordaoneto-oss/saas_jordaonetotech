@@ -1,0 +1,481 @@
+[
+  {
+    "nome": "Terço de São Miguel — Quaresma",
+    "cat": "essencial",
+    "colecao": "São Miguel Arcanjo",
+    "preco": 59.9,
+    "ordem": 1,
+    "tag": "Promoção",
+    "selo": "Quaresma de São Miguel",
+    "video": "video/video-sao-miguel-quaresma.mp4",
+    "desc": "Contas foscas em tom madeira com as asas e a cruz em dourado. Feito para a Quaresma de São Miguel, os 40 dias que vão de 15 de agosto a 29 de setembro.",
+    "foto": "terco-sao-miguel-quaresma.webp",
+    "id": "sao-miguel-quaresma"
+  },
+  {
+    "id": "compacto",
+    "cat": "essencial",
+    "nome": "Terço Compacto",
+    "foto": "terco-compacto",
+    "tag": "Lançamento",
+    "preco": 29.9,
+    "desc": "Pequeno no tamanho, grande na fé. Feito para a bolsa, o bolso e a rotina.",
+    "ordem": 4
+  },
+  {
+    "nome": "Terço de São Bento",
+    "cat": "essencial",
+    "colecao": "São Bento",
+    "preco": 59.9,
+    "ordem": 3,
+    "tag": "Pronta entrega",
+    "selo": "Pronta entrega",
+    "video": "video/video-sao-bento.mp4",
+    "desc": "Contas resinadas e metais em ouro velho, com a medalha e o crucifixo de São Bento. Devoção e proteção num terço que aguenta o dia a dia.",
+    "foto": "terco-sao-bento-resinado.webp",
+    "id": "sao-bento-resinado"
+  },
+  {
+    "nome": "Terço Santa Teresinha Essencial",
+    "cat": "essencial",
+    "colecao": "Santa Teresinha",
+    "preco": 59.9,
+    "ordem": 2,
+    "tag": "Especial",
+    "selo": null,
+    "video": null,
+    "desc": "Contas vermelhas e brancas com o entremeio da santa. Toda a delicadeza da peça, num acabamento mais leve no bolso.",
+    "foto": "linha-dia-a-dia.webp",
+    "id": "teresinha-essencial"
+  },
+  {
+    "id": "aparecida-roxo",
+    "cat": "essencial",
+    "nome": "Terço Aparecida em Cristal Roxo",
+    "foto": "terco-aparecida-roxo",
+    "preco": 59.9,
+    "desc": "Contas de cristal roxas, Pai-Nossos em porcelana floral e detalhes dourados. Nasceu de uma encomenda, do jeitinho que a cliente pediu.",
+    "ordem": 5
+  },
+  {
+    "id": "fatima",
+    "cat": "essencial",
+    "nome": "Terço de Nossa Senhora de Fátima",
+    "foto": "terco-fatima",
+    "preco": 59.9,
+    "desc": "Rezem o terço todos os dias, ela pediu. Este é o terço feito para essa mensagem virar hábito.",
+    "ordem": 6
+  },
+  {
+    "id": "teresinha-rosa",
+    "cat": "classico",
+    "nome": "Terço Santa Teresinha Rosé",
+    "foto": "terco-santa-teresinha-rosa-v2",
+    "preco": 79.9,
+    "desc": "Cristais em tons de rosa e pink, entremeio com a imagem da santa e crucifixo em ouro velho. A delicadeza da pequena flor em cada conta.",
+    "ordem": 7
+  },
+  {
+    "id": "sao-bento-turquesa",
+    "cat": "essencial",
+    "nome": "Terço São Bento Azul-Turquesa",
+    "foto": "terco-sao-bento-turquesa",
+    "preco": 64.9,
+    "desc": "Contas em azul-turquesa, metais com banho de ouro e cristais furta-cor nos Pai-Nossos. A Cruz Sagrada seja minha luz.",
+    "ordem": 8
+  },
+  {
+    "id": "sagrada-familia-classico",
+    "cat": "essencial",
+    "nome": "Terço Sagrada Família Clássico",
+    "foto": "terco-sagrada-familia-verde",
+    "preco": 64.9,
+    "desc": "Contas escuras com acabamento dourado e o entremeio da Sagrada Família. Sagrada Família, abençoai o nosso lar.",
+    "ordem": 9
+  },
+  {
+    "id": "padre-pio",
+    "cat": "essencial",
+    "nome": "Terço de São Padre Pio",
+    "foto": "terco-sao-padre-pio",
+    "tag": "Masculino",
+    "preco": 64.9,
+    "desc": "Contas marmorizadas, medalhas de São Bento nos Pai-Nossos e acabamento em ouro velho. Uma peça marcante, feita para homens de fé.",
+    "ordem": 10
+  },
+  {
+    "id": "sao-miguel-ouro-velho",
+    "cat": "essencial",
+    "nome": "Terço São Miguel Ouro Velho",
+    "foto": "terco-sao-miguel-verde",
+    "preco": 64.9,
+    "desc": "Contas em tom intenso, com entremeios, passadores e cruz em ouro velho. São Miguel Arcanjo, defendei-nos no combate.",
+    "ordem": 11
+  },
+  {
+    "id": "sagrada-familia-champagne",
+    "cat": "classico",
+    "nome": "Terço da Sagrada Família em Cristal Champagne",
+    "foto": "terco-sagrada-familia-champagne",
+    "tag": "Novo",
+    "preco": 79.9,
+    "desc": "Cristais champagne com brilho furta-cor, pérolas e o entremeio da Sagrada Família em ouro velho, todo trabalhado. Jesus, Maria e José para abençoar o lar.",
+    "video": "video/video-sagrada-familia.mp4",
+    "selo": "Novo",
+    "ordem": 12
+  },
+  {
+    "nome": "Terço Aparecida com Nome",
+    "cat": "classico",
+    "colecao": "Nossa Senhora Aparecida",
+    "preco": 69.9,
+    "ordem": 13,
+    "tag": "Com nome",
+    "selo": null,
+    "video": null,
+    "desc": "Pérolas, entremeio da Padroeira e o nome de quem vai rezar. Mais que um presente: uma lembrança de quem presenteou.",
+    "foto": "terco-aparecida-personalizado.webp",
+    "id": "aparecida-nome"
+  },
+  {
+    "id": "sao-bento-dupla",
+    "cat": "classico",
+    "nome": "Terço São Bento Face Dupla",
+    "foto": "terco-sao-bento-dupla-face",
+    "preco": 69.9,
+    "desc": "A imagem de um lado, a medalha do outro. Contas emborrachadas e metais em ouro velho.",
+    "ordem": 14
+  },
+  {
+    "id": "sao-jose-fosco",
+    "cat": "classico",
+    "nome": "Terço São José Fosco",
+    "foto": "terco-sao-jose-verde",
+    "preco": 75.9,
+    "desc": "Contas foscas em verde profundo com metais dourados. Sóbrio e resistente, para levar todo dia.",
+    "ordem": 15
+  },
+  {
+    "id": "aparecida-azul",
+    "cat": "classico",
+    "nome": "Terço de Nossa Senhora Aparecida",
+    "foto": "terco-aparecida-cristal-azul-v2",
+    "preco": 79.9,
+    "desc": "Cristal azul escuro, Pai-Nossos florais em porcelana pintada, entremeio e cruz dourados. A Padroeira do Brasil na sua oração.",
+    "ordem": 16
+  },
+  {
+    "id": "gracas",
+    "cat": "classico",
+    "nome": "Terço de Nossa Senhora das Graças",
+    "foto": "terco-gracas-porcelana",
+    "tag": "Face dupla",
+    "preco": 79.9,
+    "desc": "Cristal leitoso com Pai-Nossos de porcelana pintada e a Medalha Milagrosa face dupla no entremeio.",
+    "ordem": 17
+  },
+  {
+    "id": "sagrada-familia-rose",
+    "cat": "classico",
+    "nome": "Terço da Sagrada Família",
+    "foto": "terco-sagrada-familia-rose",
+    "tag": "Pelo lar",
+    "preco": 79.9,
+    "desc": "Inspirado no amor e na união de Jesus, Maria e José. Delicado, para quem quer consagrar a casa e rezar em família.",
+    "ordem": 18
+  },
+  {
+    "id": "sagrado-coracao",
+    "cat": "classico",
+    "nome": "Terço do Sagrado Coração de Jesus",
+    "foto": "terco-sagrado-coracao",
+    "tag": "Novo",
+    "preco": 79.9,
+    "desc": "Cristais em tom champagne com brilho furta-cor e o entremeio do Sagrado Coração. Um terço quente, para rezar todo dia.",
+    "ordem": 19
+  },
+  {
+    "id": "sao-jose",
+    "cat": "classico",
+    "nome": "Terço de São José",
+    "foto": "terco-sao-jose",
+    "preco": 79.9,
+    "desc": "Entremeio trabalhado com a imagem de São José e acabamento dourado. Para pedir a intercessão do guardião da Sagrada Família pela família e pelo trabalho.",
+    "ordem": 20
+  },
+  {
+    "id": "carlo-acutis",
+    "cat": "classico",
+    "nome": "Terço de São Carlo Acutis",
+    "foto": "terco-carlo-acutis",
+    "tag": "Jovem santo",
+    "preco": 79.9,
+    "desc": "Metais dourados e cristais em tom azul delicado. Inspirado no jovem santo que buscou a santidade no cotidiano.",
+    "ordem": 21
+  },
+  {
+    "id": "perola-classico",
+    "cat": "classico",
+    "nome": "Terço Pérola Clássico",
+    "foto": "terco-perola-branco",
+    "preco": 79.9,
+    "desc": "Pérolas claras e crucifixo dourado. O terço que combina com tudo e atravessa o tempo.",
+    "ordem": 22
+  },
+  {
+    "id": "terco-mae",
+    "cat": "classico",
+    "nome": "Terço Mãe",
+    "foto": "terco-mae",
+    "tag": "Para a mãe",
+    "preco": 79.9,
+    "desc": "Cristal com brilho furta-cor, peças douradas e detalhes em strass. Uma semi-joia para eternizar o amor mais genuíno.",
+    "ordem": 23
+  },
+  {
+    "id": "espirito-santo-rose",
+    "cat": "classico",
+    "nome": "Terço do Espírito Santo",
+    "foto": "terco-espirito-santo-rose",
+    "preco": 79.9,
+    "desc": "Contas em cristal rosé, entremeios e cruz dourados com delicados detalhes em strass.",
+    "ordem": 24
+  },
+  {
+    "id": "teresinha-vermelho",
+    "cat": "classico",
+    "nome": "Terço de Santa Teresinha",
+    "foto": "terco-santa-teresinha-vermelho",
+    "tag": "Chuva de rosas",
+    "preco": 79.9,
+    "desc": "Cristais vermelhos, Pai-Nossos em porcelana pintada e metais banhados a ouro com strass. O crucifixo e o pingente de rosas lembram a promessa da chuva de rosas.",
+    "ordem": 25
+  },
+  {
+    "id": "santa-rita-vermelho",
+    "cat": "classico",
+    "nome": "Terço Santa Rita Rosas Vermelhas",
+    "foto": "terco-santa-rita-vermelho-v2",
+    "preco": 79.9,
+    "desc": "Contas vermelhas e pérolas brancas, entremeio com a santa em ouro velho e o pingente de rosa. Onde há fé, há milagre.",
+    "ordem": 26
+  },
+  {
+    "id": "guadalupe",
+    "cat": "classico",
+    "nome": "Terço da Virgem de Guadalupe",
+    "foto": "terco-guadalupe-v2",
+    "tag": "Lançamento",
+    "preco": 79.9,
+    "desc": "Não temas, acaso não estou eu aqui, que sou tua Mãe? Cristais em verde jade e entremeio da Virgem morena com strass.",
+    "ordem": 27
+  },
+  {
+    "id": "guadalupe-turquesa",
+    "cat": "classico",
+    "nome": "Terço Guadalupe Turquesa",
+    "foto": "terco-guadalupe-turquesa",
+    "preco": 79.9,
+    "desc": "Cristais azul-turquesa com Pai-Nossos em pink, entremeio dourado da Virgem de Guadalupe e cruz trabalhada.",
+    "ordem": 28
+  },
+  {
+    "id": "guadalupe-cristal",
+    "cat": "classico",
+    "nome": "Terço Guadalupe em Cristal",
+    "foto": "terco-guadalupe-cristal",
+    "preco": 79.9,
+    "desc": "Cristal transparente com Pai-Nossos de porcelana pintada à mão e crucifixo dourado. Leve e luminoso na mão.",
+    "ordem": 29
+  },
+  {
+    "id": "sao-miguel-espada",
+    "cat": "classico",
+    "nome": "Terço de São Miguel Arcanjo",
+    "foto": "terco-sao-miguel-espada-v2",
+    "tag": "Quaresma de São Miguel",
+    "preco": 79.9,
+    "desc": "Cristais champagne e metais banhados a ouro, com o pingente da espada e o entremeio de São Miguel. A proteção do Príncipe da Milícia Celeste.",
+    "ordem": 30
+  },
+  {
+    "id": "santa-gianna",
+    "cat": "classico",
+    "nome": "Terço de Santa Gianna",
+    "foto": "terco-santa-gianna",
+    "tag": "Para gestantes",
+    "preco": 79.9,
+    "desc": "Feito para acompanhar a gestação sob a intercessão de Santa Gianna, que foi médica, esposa e mãe. Pode levar foto no entremeio.",
+    "ordem": 31
+  },
+  {
+    "id": "fatima-perola",
+    "cat": "premium",
+    "nome": "Terço Fátima em Pérola",
+    "foto": "terco-fatima-perola-v2",
+    "preco": 84.9,
+    "desc": "Pérolas de vidro, entremeio da Virgem de Fátima e crucifixo dourado. Clássico, para quem gosta de peça clara.",
+    "ordem": 32
+  },
+  {
+    "id": "santa-rita-rosa",
+    "cat": "premium",
+    "nome": "Terço de Santa Rita de Cássia",
+    "foto": "terco-santa-rita-rosa",
+    "preco": 84.9,
+    "desc": "Contas de vidro rosa com efeito marmorizado, passantes dourados dupla face e entremeio arabesco com strass. Para a advogada das causas impossíveis.",
+    "ordem": 33
+  },
+  {
+    "id": "divino-premium",
+    "cat": "premium",
+    "nome": "Terço Divino Espírito Santo",
+    "foto": "terco-divino-espirito-santo",
+    "preco": 84.9,
+    "desc": "Cristais furta-cor boreal, metais com banho de ouro, acabamento em strass e a medalha do Divino. Uma verdadeira joia de fé.",
+    "ordem": 34
+  },
+  {
+    "id": "zirconia",
+    "cat": "premium",
+    "nome": "Terço Zircônia Furta-Cor",
+    "foto": "terco-zirconia-furta-cor",
+    "preco": 84.9,
+    "desc": "Zircônia facetada com efeito furta-cor, pérolas de vidro e metais banhados a ouro. Elegância, delicadeza e fé em cada detalhe.",
+    "ordem": 35
+  },
+  {
+    "id": "profissao",
+    "cat": "luxo",
+    "nome": "Terço Luxo Profissão",
+    "foto": "terco-profissao-enfermagem",
+    "tag": "Formatura",
+    "preco": 129.9,
+    "desc": "Entremeio dupla face: de um lado o símbolo da sua profissão, do outro Nossa Senhora Aparecida. Feito para qualquer profissão e devoção.",
+    "ordem": 36
+  },
+  {
+    "id": "mae-kit",
+    "cat": "luxo",
+    "nome": "Kit Terço Mãe com Bandeja",
+    "foto": "terco-mae-kit-bandeja",
+    "tag": "Kit",
+    "preco": 129.9,
+    "desc": "O Terço Mãe em versão clean, com bandeja orgânica e imagem minimalista de Nossa Senhora Aparecida. Chega pronto para presentear.",
+    "ordem": 37
+  },
+  {
+    "id": "noiva",
+    "cat": "luxo",
+    "nome": "Terço para Noiva",
+    "foto": "poster-noiva",
+    "tag": "Casamento",
+    "preco": 179.9,
+    "desc": "Pérolas de vidro, entremeio e crucifixo trabalhados com strass, inspirado no Espírito Santo. Para caminhar até o altar de mãos dadas com Deus.",
+    "ordem": 38
+  },
+  {
+    "id": "infantil-anjo",
+    "cat": "infantil",
+    "nome": "Terço Infantil do Anjo da Guarda",
+    "foto": "terco-infantil-anjo-guarda",
+    "tag": "Pronta entrega",
+    "preco": 49.9,
+    "desc": "Porque aos seus anjos dará ordens a teu respeito, para que te guardem em todos os teus caminhos. O básico da linha infantil.",
+    "ordem": 39
+  },
+  {
+    "id": "medalhao-anjo",
+    "cat": "infantil",
+    "nome": "Medalhão do Anjo da Guarda",
+    "foto": "poster-anjo-guarda",
+    "tag": "Para o quarto",
+    "preco": 49.9,
+    "desc": "Para pendurar na porta do quarto ou no berço, com a oração do Anjo da Guarda no verso. Deixa o ambiente acolhedor e cheio de significado.",
+    "ordem": 40
+  },
+  {
+    "id": "infantil-nome",
+    "cat": "infantil",
+    "nome": "Terço Infantil com Nome e Caixinha",
+    "foto": "terco-infantil-nome-caixa",
+    "tag": "Com nome",
+    "preco": 54.9,
+    "desc": "O nome da criança montado letra por letra, caixa presenteável e a oração do Anjo da Guarda. Um presente para guardar para sempre.",
+    "ordem": 41
+  },
+  {
+    "id": "infantil-personalizado",
+    "cat": "infantil",
+    "nome": "Terço Infantil Personalizado",
+    "foto": "terco-infantil-personalizado-v2",
+    "preco": 54.9,
+    "desc": "Contas coloridas com o nome da criança e o cartão do Anjo da Guarda. Ótimo para quem está aprendendo as primeiras orações.",
+    "ordem": 42
+  },
+  {
+    "id": "infantil-vidro",
+    "cat": "infantil",
+    "nome": "Terço Infantil em Contas de Vidro",
+    "foto": "terco-infantil-colorido",
+    "preco": 64.9,
+    "desc": "Cristais em tons pastel com pingentes de anjinho. Perfeito para batizados e para presentear os pequenos.",
+    "ordem": 43
+  },
+  {
+    "id": "primeira-eucaristia",
+    "cat": "infantil",
+    "nome": "Terço de Primeira Eucaristia",
+    "foto": "terco-primeira-eucaristia",
+    "tag": "Em pérolas",
+    "preco": 75.9,
+    "desc": "Pérolas, cálice e crucifixo dourado. A lembrança do dia em que Jesus entra no coração.",
+    "ordem": 44
+  },
+  {
+    "id": "carro-sao-miguel",
+    "cat": "carro",
+    "nome": "Dezena de Carro São Miguel",
+    "foto": "dezena-carro-sao-miguel",
+    "preco": 45.9,
+    "desc": "Cristal verde escuro, com entremeio e cruz de São Miguel em ouro velho. Proteção em todos os caminhos.",
+    "ordem": 45
+  },
+  {
+    "id": "carro-cristovao",
+    "cat": "carro",
+    "nome": "Dezena de Carro São Cristóvão",
+    "foto": "dezena-carro-sao-cristovao",
+    "preco": 45.9,
+    "desc": "O protetor dos motoristas e viajantes, para levar no retrovisor todo dia.",
+    "ordem": 46
+  },
+  {
+    "id": "carro-santa-rita",
+    "cat": "carro",
+    "nome": "Dezena de Carro Santa Rita",
+    "foto": "dezena-carro-santa-rita",
+    "preco": 45.9,
+    "desc": "Contas azuis e a imagem da santa das causas impossíveis. Um lembrete diário de cuidado e esperança.",
+    "ordem": 47
+  },
+  {
+    "id": "carro-sao-bento",
+    "cat": "carro",
+    "nome": "Dezena de Carro São Bento",
+    "foto": "dezena-carro-sao-bento",
+    "preco": 45.9,
+    "desc": "Contas pretas foscas com a medalha de São Bento e crucifixo. Sóbria e protetora.",
+    "ordem": 48
+  },
+  {
+    "id": "carro-profissao",
+    "cat": "carro",
+    "nome": "Dezena Personalizada com a Profissão",
+    "foto": "dezena-retrovisor-profissao",
+    "tag": "Personalizada",
+    "preco": 45.9,
+    "desc": "Entremeio dupla face com Nossa Senhora Aparecida de um lado e o símbolo da profissão do outro.",
+    "ordem": 49
+  }
+]

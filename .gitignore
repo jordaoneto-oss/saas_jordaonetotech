@@ -1,0 +1,44 @@
+# --- Ambiente ---
+.env
+.env.local
+*.env.bak
+
+# --- Python / server ---
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pid
+*.log
+
+# --- Dados sensíveis ---
+tenants/*/admin.json
+tenants/*/leads.json
+tenants/*/ clientes.json
+tenants/*/leads.json
+data/admin.json
+data/leads.json
+db/*.sqlite
+db/*.sqlite3
+db/*.db
+
+# --- Backups ---
+backups/
+backups/**
+*.tar.gz
+
+# --- OS / editor ---
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# --- Node / tooling ---
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# --- Build artefacts ---
+*.bak
+*.tmp

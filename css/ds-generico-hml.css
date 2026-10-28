@@ -1,0 +1,167 @@
+/* ==========================================================================
+   DS Genérico HML v1 — Design System neutro para catálogos multi-segmento
+   Homologação de novas lojas do SaaS.
+   --------------------------------------------------------------------------
+   Referências abertas consultadas (todas MIT/ISC, uso comercial liberado):
+   1) Ícones: Lucide — github.com/lucide-icons/lucide (ISC, 1600+ SVGs,
+      stroke 2px, viewBox 24). Mapeamento em ICONS.md do template.
+   2) Tokens: Open Props — github.com/argyleink/open-props (MIT).
+      Escala de espaço/sombra/raio adaptada abaixo.
+   3) Botões: Primer CSS — github.com/primer/css (MIT, .btn/.btn-primary)
+      + Web Awesome (sucessor do Shoelace, MIT) + Storybook DS.
+   Uso: <link rel="stylesheet" href="css/ds-generico-hml.css">
+   Não quebra o style.css atual: só usa prefixo .ds- e variáveis --ds-*.
+   ========================================================================== */
+
+:root {
+  /* ---- Tokens base (neutros, funcionam p/ qualquer segmento) ---- */
+  --ds-paper: #faf8f4;
+  --ds-surface: #ffffff;
+  --ds-sand: #f1ebe1;
+  --ds-line: #e3d9c8;
+  --ds-ink: #23201a;
+  --ds-muted: #6e6455;
+  --ds-brand: #3b5bdb;          /* azul neutro: contraste 7:1 no branco */
+  --ds-brand-ink: #ffffff;
+  --ds-brand-soft: #e7edfd;
+  --ds-accent: #c08a3e;         /* dourado contido p/ detalhes */
+  --ds-accent-soft: #f5ead3;
+  --ds-success: #1f8c5a;        /* WhatsApp / fechar pedido */
+  --ds-warning: #b7791f;
+  --ds-danger: #c0392b;
+
+  --ds-radius-sm: 6px;
+  --ds-radius-md: 10px;
+  --ds-radius-lg: 16px;
+  --ds-radius-pill: 999px;
+
+  --ds-shadow-sm: 0 1px 2px rgba(35,32,26,.06);
+  --ds-shadow-md: 0 1px 2px rgba(35,32,26,.05), 0 10px 30px rgba(35,32,26,.08);
+  --ds-shadow-lg: 0 4px 14px rgba(35,32,26,.08), 0 28px 64px rgba(35,32,26,.14);
+
+  --ds-font-body: "Inter","Lato",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --ds-font-display: "Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+
+  --ds-space-1: 4px; --ds-space-2: 8px; --ds-space-3: 12px;
+  --ds-space-4: 16px; --ds-space-5: 24px; --ds-space-6: 32px;
+  --ds-space-7: 48px; --ds-space-8: 72px;
+
+  --ds-topo: 68px;
+  color-scheme: light;
+}
+
+/* ---- Presets por segmento: só trocam brand/accent/display. ---- */
+[data-segment="moda"] {
+  --ds-brand: #1f1f23; --ds-brand-soft: #ececee;
+  --ds-accent: #b3894d; --ds-accent-soft: #f4ecdc;
+  --ds-font-display: "Playfair Display",Georgia,serif;
+}
+[data-segment="doces"] {
+  --ds-brand: #c2437e; --ds-brand-soft: #fbe7f0;
+  --ds-accent: #e8a13d; --ds-accent-soft: #fdf0d8;
+  --ds-font-display: "Fraunces",Georgia,serif;
+}
+[data-segment="pet"] {
+  --ds-brand: #0e7c6b; --ds-brand-soft: #ddf2ec;
+  --ds-accent: #f0a63c; --ds-accent-soft: #fdf1da;
+}
+[data-segment="papelaria"] {
+  --ds-brand: #5b5bd6; --ds-brand-soft: #e8e8fb;
+  --ds-accent: #e2603f; --ds-accent-soft: #fbe4da;
+}
+[data-segment="bem-estar"] {
+  --ds-brand: #4a7c59; --ds-brand-soft: #e2efe6;
+  --ds-accent: #c9a227; --ds-accent-soft: #f6efcf;
+  --ds-font-display: "Cormorant Garamond",Georgia,serif;
+}
+[data-segment="utilidades"] {
+  --ds-brand: #2563eb; --ds-brand-soft: #dbeafe;
+  --ds-accent: #0ea5e9; --ds-accent-soft: #dcf2fe;
+}
+
+/* Tema escuro: segue padrão Web Awesome / Open Props (color-scheme). */
+[data-theme="dark"] {
+  --ds-paper: #16130e; --ds-surface: #211b13; --ds-sand: #2a2318;
+  --ds-line: #3d3324; --ds-ink: #f2e9da; --ds-muted: #b8a88f;
+  --ds-brand: #8ba3ff; --ds-brand-ink: #141828; --ds-brand-soft: #2b3350;
+  --ds-accent: #e0bd7d; --ds-accent-soft: #3a2d18;
+  --ds-shadow-md: 0 10px 30px rgba(0,0,0,.4);
+  color-scheme: dark;
+}
+
+.ds-wrap { width: min(1180px, 92vw); margin: 0 auto; }
+.ds-display { font-family: var(--ds-font-display); }
+.ds-muted { color: var(--ds-muted); }
+
+/* ---- Botões (hierarquia Primer/Web Awesome/Storybook) ----
+   .ds-btn base + variantes: primary | outline | ghost | zap | danger
+   Tamanhos: .is-sm | padrão md | .is-lg | .is-block
+   Formato herdado do admin: body[data-btn-formato="pill"|"quadrado"] */
+.ds-btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 12px 22px; border-radius: var(--ds-radius-sm);
+  font-family: var(--ds-font-body); font-size: 13px; font-weight: 700;
+  letter-spacing: .12em; text-transform: uppercase; line-height: 1;
+  border: 1px solid transparent; cursor: pointer; white-space: nowrap;
+  transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+  text-decoration: none;
+}
+.ds-btn svg { width: 16px; height: 16px; flex: none; }
+.ds-btn:hover { transform: translateY(-1px); }
+.ds-btn:active { transform: translateY(0); }
+.ds-btn:focus-visible { outline: 2px solid var(--ds-brand); outline-offset: 2px; }
+.ds-btn[disabled] { opacity: .5; cursor: not-allowed; transform: none; }
+
+.ds-btn-primary { background: var(--ds-brand); color: var(--ds-brand-ink); box-shadow: var(--ds-shadow-sm); }
+.ds-btn-primary:hover { filter: brightness(.94); box-shadow: var(--ds-shadow-md); }
+.ds-btn-outline { border-color: var(--ds-line); color: var(--ds-ink); background: var(--ds-surface); }
+.ds-btn-outline:hover { border-color: var(--ds-brand); color: var(--ds-brand); }
+.ds-btn-ghost { color: var(--ds-brand); background: transparent; }
+.ds-btn-ghost:hover { background: var(--ds-brand-soft); }
+.ds-btn-zap { background: var(--ds-success); color: #fff; }
+.ds-btn-zap:hover { filter: brightness(.93); }
+.ds-btn-danger { background: transparent; border-color: var(--ds-danger); color: var(--ds-danger); }
+.ds-btn.is-sm { padding: 9px 14px; font-size: 12px; }
+.ds-btn.is-lg { padding: 16px 30px; font-size: 14px; }
+.ds-btn.is-block { width: 100%; }
+body[data-btn-formato="pill"] .ds-btn { border-radius: var(--ds-radius-pill); }
+body[data-btn-formato="quadrado"] .ds-btn { border-radius: 2px; }
+body[data-btn-caixa="normal"] .ds-btn { text-transform: none; letter-spacing: .02em; }
+
+/* ---- Ícones: padrão Lucide (stroke 2, round caps) ---- */
+.ds-icon {
+  width: 20px; height: 20px; flex: none;
+  stroke: currentColor; fill: none; stroke-width: 2;
+  stroke-linecap: round; stroke-linejoin: round;
+}
+.ds-icon.is-sm { width: 16px; height: 16px; }
+.ds-icon.is-lg { width: 26px; height: 26px; }
+
+/* ---- Cartões / selos / badges genéricos ---- */
+.ds-card {
+  background: var(--ds-surface); border: 1px solid var(--ds-line);
+  border-radius: var(--ds-radius-md); box-shadow: var(--ds-shadow-sm);
+  overflow: hidden;
+}
+.ds-card-media { aspect-ratio: 4/3; background: var(--ds-sand); display: grid; place-items: center; color: var(--ds-muted); }
+.ds-card-body { padding: var(--ds-space-4); display: grid; gap: 8px; }
+.ds-card-title { font-family: var(--ds-font-display); font-size: 1.2rem; line-height: 1.25; }
+.ds-price { font-weight: 700; font-size: 1.05rem; }
+.ds-price small { display: block; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--ds-muted); font-weight: 400; }
+.ds-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+  background: var(--ds-brand-soft); color: var(--ds-brand);
+  padding: 6px 10px; border-radius: var(--ds-radius-pill);
+}
+.ds-badge.is-accent { background: var(--ds-accent-soft); color: var(--ds-accent); }
+.ds-chip-row { display: flex; flex-wrap: wrap; gap: 8px; }
+.ds-chip {
+  border: 1px solid var(--ds-line); background: var(--ds-surface);
+  padding: 8px 14px; border-radius: var(--ds-radius-pill); font-size: 13px;
+}
+.ds-chip[aria-pressed="true"] { background: var(--ds-ink); color: var(--ds-paper); border-color: var(--ds-ink); }
+
+@media (prefers-reduced-motion: reduce) {
+  .ds-btn { transition: none; }
+}

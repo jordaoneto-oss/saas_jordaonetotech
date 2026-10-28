@@ -1,0 +1,285 @@
+{
+  "geral": {
+    "nome": "",
+    "tagline": "Doces artesanais para festas",
+    "title": "Minha doceria — Bolos e docinhos com encomenda no WhatsApp",
+    "descricao": "Bolos, brigadeiros gourmet e docinhos para aniversários, casamentos e empresas. Monte sua lista e feche a encomenda no WhatsApp.",
+    "instagram": "",
+    "zap": "",
+    "zap_tel": "",
+    "prazo_producao": "encomendas com 3 dias de antecedência · consulte taxa de entrega"
+  },
+  "visual": {
+    "logo": "logo.png",
+    "cores": {
+      "marfim": "#f6f8fb",
+      "areia": "#eef1f6",
+      "papel": "#ffffff",
+      "linha": "#dfe6ef",
+      "tinta": "#17202e",
+      "tinta-suave": "#5b6678",
+      "ouro": "#2563eb",
+      "ouro-claro": "#93c5fd",
+      "ouro-fraco": "#dbeafe",
+      "rosa": "#f472b6",
+      "rosa-claro": "#fce7f3",
+      "salvia": "#34d399",
+      "zap": "#16a34a"
+    },
+    "fontes": {
+      "titulos": {
+        "nome": "Inter",
+        "link": "https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&display=swap",
+        "familia": "\"Inter\",-apple-system,BlinkMacSystemFont,\"Segoe UI\",sans-serif"
+      },
+      "texto": {
+        "nome": "Inter",
+        "link": "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap",
+        "familia": "\"Inter\",-apple-system,BlinkMacSystemFont,\"Segoe UI\",sans-serif"
+      }
+    }
+  },
+  "hero": {
+    "chapeu": "Doceria artesanal · encomendas no WhatsApp",
+    "titulo": "Bolos e docinhos<br>para a sua <em>festa.</em>",
+    "lead": "Brigadeiro gourmet, bolo de festa e docinhos que somem da mesa. Edite este texto no painel e conte sua especialidade.",
+    "cta1": "Ver o cardápio",
+    "cta2": "Falar no WhatsApp",
+    "nota": "Monte sua lista e feche a encomenda no WhatsApp",
+    "fita1": "Feito na véspera",
+    "fita2": "fresco para a festa"
+  },
+  "selos": [
+    {
+      "t": "Feito fresco",
+      "s": "Produzido para a data"
+    },
+    {
+      "t": "Para festas",
+      "s": "Aniversário e casamento"
+    },
+    {
+      "t": "Sob encomenda",
+      "s": "Do seu jeito"
+    },
+    {
+      "t": "Entrega local",
+      "s": "Consulte a taxa"
+    }
+  ],
+  "destaques": {
+    "chapeu": "Em destaque",
+    "titulo": "Os <em>queridinhos</em>",
+    "ids": [
+      "bolo-chocolate-festa",
+      "brigadeiro-gourmet-cx",
+      "beijinho-coco"
+    ]
+  },
+  "oficio": {
+    "chapeu": "Sobre nós",
+    "titulo": "Receita de família, <em>capricho de confeitaria.</em>",
+    "citacao": "\"Edite esta frase no painel da loja.\"",
+    "lead": "Edite este texto no painel e apresente sua cozinha: quem faz, como encomendar e com quanta antecedência.",
+    "fe1": "<b>Ingredientes de verdade</b> — chocolate nobre, leite condensado e manteiga.",
+    "fe2": "<b>Festa completa</b> — bolo + docinhos com desconto no combo.",
+    "fe3": "<b>Do seu jeito</b> — sabor, recheio, cobertura e topo do bolo.",
+    "cta": "Ver o cardápio"
+  },
+  "catalogo": {
+    "chapeu": "Cardápio",
+    "titulo": "Escolha, <em>monte sua lista</em>",
+    "lead": "Os docinhos são vendidos por cento e os bolos por peso. Monte sua lista e toque em \"Fechar pedido\" que tudo chega pronto no WhatsApp.",
+    "prazo": "Encomendas com 3 dias de antecedência. Para o mesmo fim de semana, chame no WhatsApp.",
+    "nota": "Não achou o sabor que queria? <a href=\"#encomenda\" style=\"color:var(--ouro);border-bottom:1px solid var(--ouro-claro)\">a gente faz sob encomenda</a>.",
+    "busca_placeholder": "Buscar por bolo, brigadeiro, sabor…"
+  },
+  "encomenda": {
+    "chapeu": "Encomendas",
+    "titulo": "Sua festa <em>do seu jeito</em>",
+    "lead": "Conte a data da festa, quantos convidados e o que você imaginou. A gente devolve com sabores, valores e prazo.",
+    "passos": [
+      {
+        "t": "Você conta a festa",
+        "s": "Data, nº de convidados e o que você imaginou."
+      },
+      {
+        "t": "Combinamos sabores",
+        "s": "Recheio, cobertura, tamanho do bolo e cento dos docinhos."
+      },
+      {
+        "t": "Produzimos na véspera",
+        "s": "Tudo fresquinho para o dia da festa."
+      },
+      {
+        "t": "Retirada ou entrega",
+        "s": "Combine retirada ou entrega com taxa no WhatsApp."
+      }
+    ],
+    "botao": "Encomendar pelo WhatsApp"
+  },
+  "devocoes": {
+    "chapeu": "Especialidades",
+    "titulo": "Nossas <em>especialidades</em>",
+    "lead": "O que mais sai da nossa cozinha.",
+    "itens": [
+      {
+        "t": "Bolos de festa"
+      },
+      {
+        "t": "Brigadeiros gourmet"
+      },
+      {
+        "t": "Beijinhos"
+      },
+      {
+        "t": "Bolos vulcão"
+      },
+      {
+        "t": "Lembrancinhas"
+      }
+    ]
+  },
+  "ocasioes": {
+    "chapeu": "Ocasiões",
+    "titulo": "Para <em>cada festa</em>",
+    "itens": [
+      {
+        "img": "placeholder.png",
+        "titulo": "Aniversário",
+        "sub": "Bolo + 100 docinhos"
+      },
+      {
+        "img": "placeholder.png",
+        "titulo": "Casamento",
+        "sub": "Bolo de andar + bem-casados"
+      },
+      {
+        "img": "placeholder.png",
+        "titulo": "Empresa",
+        "sub": "Kits e datas comemorativas"
+      }
+    ]
+  },
+  "oracao": {
+    "texto": "\"Edite esta frase de destaque no painel da loja.\"",
+    "autor": "Sua doceria"
+  },
+  "misterios": {
+    "chapeu": "Saiba mais",
+    "titulo": "Como <em>encomendar</em>",
+    "lead": "O básico para sua encomenda sair perfeita.",
+    "itens": [
+      {
+        "dia": "Antecedência",
+        "titulo": "3 dias",
+        "texto": "Bolos e docinhos saem sob encomenda. Para casamento, fale com 30 dias de antecedência."
+      },
+      {
+        "dia": "Pagamento",
+        "titulo": "50% de entrada",
+        "texto": "Confirmamos a data com 50% de entrada via Pix. O restante na entrega."
+      },
+      {
+        "dia": "Entrega",
+        "titulo": "Retirada ou moto",
+        "texto": "Retire na doceria ou receba por entrega com taxa conforme o bairro."
+      }
+    ]
+  },
+  "sobre": {
+    "chapeu": "Nossa história",
+    "titulo": "Começou <em>na cozinha de casa</em>",
+    "p1": "Edite este texto no painel da loja.",
+    "p2": "Conte como tudo começou.",
+    "p3": "E o que move seu trabalho hoje.",
+    "cta": "Ver novidades no Instagram",
+    "numeros": []
+  },
+  "depoimentos": {
+    "chapeu": "Quem já provou",
+    "titulo": "Festas <em>mais doces</em>",
+    "lead": "Cadastre depoimentos reais no painel para exibir aqui.",
+    "lista": [],
+    "faixa": []
+  },
+  "final": {
+    "chapeu": "Fale com a gente",
+    "titulo": "Qual a data <em>da sua festa?</em>",
+    "lead": "Chame no WhatsApp com a data, o nº de convidados e o que você imaginou. Respondemos com sabores, valores e prazo.",
+    "cta1": "Falar no WhatsApp",
+    "cta2": "Voltar ao cardápio"
+  },
+  "rodape": {
+    "titulo": "",
+    "sobre": "Doces artesanais para festas. Monte sua lista e feche a encomenda no WhatsApp.",
+    "cat_titulo": "Cardápio",
+    "como_titulo": "Como encomendar",
+    "nota_base": "Encomendas com antecedência mínima de 3 dias."
+  },
+  "carrinho": {
+    "titulo": "Minha lista",
+    "resumo_vazio": "nenhum doce ainda",
+    "obs_rot": "Detalhes da festa",
+    "obs_placeholder": "Ex.: festa dia 20/12 para 50 pessoas, bolo de chocolate com morango",
+    "nome_rot": "Seu nome (opcional)",
+    "nome_placeholder": "Ex.: Maria Helena",
+    "whats_rot": "Seu WhatsApp (para a loja confirmar o pedido) *",
+    "whats_placeholder": "Ex.: (16) 99999-9999",
+    "cep_rot": "Bairro/cidade para entrega (opcional)",
+    "cep_placeholder": "Ex.: Centro ou Araraquara - SP",
+    "total_rot": "Total estimado",
+    "nota": "Nada é cobrado aqui. A lista vai para o WhatsApp da doceria, onde combinamos sabores, data e entrega.",
+    "nota_combinar": "Há itens com valor a combinar na sua lista — o orçamento sai na conversa.",
+    "botao": "Fechar pedido no WhatsApp",
+    "msg_modelo": "Olá, {loja}! 🤍\nVim pelo site e gostaria de encomendar:\n\n{itens}\n\nTotal estimado: {total}{combinar}\n\n{observacao}\n\n{cliente}\n\n{entrega}\n\nPode me confirmar disponibilidade, prazo e o frete?",
+    "vazio_titulo": "Sua lista está vazia.",
+    "vazio_texto": "Escolha os doces no cardápio e finalize no WhatsApp."
+  },
+  "menu": [
+    {
+      "t": "O ateliê",
+      "href": "#oficio"
+    },
+    {
+      "t": "Catálogo",
+      "href": "#catalogo"
+    },
+    {
+      "t": "Personalizar",
+      "href": "#encomenda"
+    },
+    {
+      "t": "Ocasiões",
+      "href": "#ocasioes"
+    },
+    {
+      "t": "Como rezar",
+      "href": "#terco"
+    },
+    {
+      "t": "História",
+      "href": "#sobre"
+    }
+  ],
+  "botoes": {
+    "formato": "padrao",
+    "caixa": "alta"
+  },
+  "popup": {
+    "ativo": false,
+    "titulo": "Ganhe 10% na primeira peça 🤍",
+    "texto": "Deixe seu nome e WhatsApp que enviamos seu cupom de boas-vindas.",
+    "botao": "Quero meu cupom",
+    "cupom": "",
+    "aviso": "Ao enviar, você concorda em receber novidades no WhatsApp.",
+    "atraso": 25,
+    "intervalo": 7,
+    "inicio": "",
+    "fim": ""
+  },
+  "zap": {
+    "msg_ola": "Olá! Vim pelo site da {NOME} e quero saber mais sobre os produtos.",
+    "msg_encomenda": "Olá! Vim pelo site e gostaria de fazer uma encomenda personalizada. Pode me ajudar?"
+  }
+}

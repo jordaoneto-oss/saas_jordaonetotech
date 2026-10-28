@@ -1,0 +1,1516 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Super Loja · Jordao Neto Tech</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ==========================================================================
+   SUPER LOJA · Plataforma
+   UI alinhada ao editor visual (editor.css): tema claro, azul #116dff,
+   topbar + rail + conteúdo, cards e modais.
+   ========================================================================== */
+:root{
+  --blue:#116dff; --blue-dark:#0b56cc; --blue-soft:#eaf2ff; --blue-line:#c9dcff;
+  --ink:#101828; --ink-2:#344054; --muted:#667085; --muted-2:#98a2b3;
+  --line:#e4e7ec; --line-2:#d0d5dd; --bg:#f2f4f7; --panel:#fff;
+  --ok:#12b76a; --ok-soft:#ecfdf3;
+  --danger:#d92d20; --danger-soft:#fef3f2;
+  --warn:#b54708; --warn-soft:#fffaeb;
+  --radius:12px;
+  --shadow-sm:0 1px 2px rgba(16,24,40,.06);
+  --shadow-md:0 4px 16px rgba(16,24,40,.08);
+  --shadow-lg:0 18px 50px rgba(16,24,40,.18);
+  --topbar:60px; --rail:78px;
+  /* aliases do tema antigo (estilos inline herdados continuam funcionando) */
+  --papel:#fff; --tinta:#101828; --tinta-suave:#667085;
+  --azul:#116dff; --azul-claro:#0b56cc; --menta:#12b76a; --vermelho:#d92d20;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  color:var(--ink);background:var(--bg);font-size:14px;line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+a{color:inherit;text-decoration:none}
+svg{display:block;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+[hidden]{display:none!important}
+::selection{background:var(--blue-soft)}
+h1,h2,h3{margin:0;letter-spacing:-.02em}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;background:#f2f4f7;border:1px solid var(--line);border-radius:5px;padding:1px 5px;font-size:.92em;color:var(--ink-2)}
+:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+
+/* ============ BOTÕES ============ */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:7px;
+  border:1px solid transparent;border-radius:8px;padding:10px 16px;
+  font-weight:600;font-size:14px;line-height:1;white-space:nowrap;
+  transition:background .15s,border-color .15s,color .15s,box-shadow .15s;
+}
+.btn svg{width:16px;height:16px;flex:0 0 auto}
+.btn-primary,.btn-primario{background:var(--blue);border-color:var(--blue);color:#fff;box-shadow:0 1px 2px rgba(17,109,255,.25)}
+.btn-primary:hover,.btn-primario:hover{background:var(--blue-dark);border-color:var(--blue-dark)}
+.btn-secondary,.btn-secundario{background:#fff;border-color:var(--line-2);color:var(--ink-2)}
+.btn-secondary:hover,.btn-secundario:hover{background:#f9fafb;border-color:#b8c0cc}
+.btn-ghost{background:transparent;border-color:transparent;color:var(--ink-2)}
+.btn-ghost:hover{background:#f2f4f7}
+.btn-sm{padding:8px 13px;font-size:13px}
+.btn-block{width:100%}
+.btn:disabled,.btn-primario:disabled,.btn-secundario:disabled{opacity:.55;cursor:not-allowed}
+.btn-danger{background:var(--danger);color:#fff}
+
+.btn-mini{
+  display:inline-flex;align-items:center;justify-content:center;
+  background:#fff;border:1px solid var(--line-2);color:var(--ink-2);
+  border-radius:8px;padding:6px 11px;font-size:12.5px;font-weight:600;
+  transition:background .15s,border-color .15s,color .15s;
+}
+.btn-mini:hover{background:#f9fafb;border-color:#b8c0cc;color:var(--ink)}
+.btn-mini.b-verde{background:var(--ok-soft);border-color:#abefc6;color:#027a48}
+.btn-mini.b-ambar{background:var(--warn-soft);border-color:#fedf89;color:var(--warn)}
+.btn-mini.b-roxo{background:#f4f3ff;border-color:#d9d6fe;color:#5925dc}
+.btn-mini.b-ciano{background:var(--blue-soft);border-color:var(--blue-line);color:var(--blue-dark)}
+.btn-mini.b-cinza{background:#f2f4f7;border-color:var(--line);color:var(--muted)}
+.btn-perigo{background:var(--danger-soft);border:1px solid #fecdca;color:var(--danger);border-radius:8px;padding:6px 11px;font-size:12.5px;font-weight:600}
+.btn-perigo:hover{background:#fee4e2}
+a.link{color:var(--blue);font-weight:600;font-size:13px}
+a.link:hover{text-decoration:underline}
+
+.icon-btn{width:36px;height:36px;display:inline-grid;place-items:center;border:1px solid transparent;border-radius:8px;background:transparent;color:var(--ink-2)}
+.icon-btn svg{width:18px;height:18px}
+.icon-btn:hover{background:#f2f4f7;color:var(--ink)}
+
+.mark{width:40px;height:40px;border-radius:11px;display:grid;place-items:center;background:linear-gradient(135deg,#116dff,#6aa8ff);color:#fff;flex:0 0 auto}
+.mark svg{width:21px;height:21px;stroke-width:1.9}
+.mark.small{width:34px;height:34px;border-radius:9px}
+.mark.small svg{width:18px;height:18px}
+.dot{display:inline-block;width:4px;height:4px;border-radius:50%;background:var(--muted-2);vertical-align:middle;margin:0 4px}
+
+/* ============ LOGIN ============ */
+.login{
+  position:fixed;inset:0;z-index:100;display:none;
+  grid-template-columns:minmax(0,1.06fr) minmax(420px,.94fr);
+  background:var(--bg);
+}
+.login.on{display:grid}
+.login-brand{
+  position:relative;overflow:hidden;color:#fff;padding:30px 42px 26px;
+  display:flex;flex-direction:column;gap:30px;
+  background:
+    radial-gradient(900px 500px at 10% 10%,rgba(80,160,255,.28),transparent 60%),
+    radial-gradient(700px 500px at 95% 90%,rgba(17,109,255,.34),transparent 55%),
+    linear-gradient(145deg,#0b1220,#101d38 55%,#0a1b3d);
+}
+.login-brand::after{
+  content:"";position:absolute;inset:auto -160px -220px auto;width:520px;height:520px;border-radius:50%;
+  border:1px solid rgba(255,255,255,.08);
+  box-shadow:0 0 0 80px rgba(255,255,255,.03),0 0 0 160px rgba(255,255,255,.02);
+  pointer-events:none;
+}
+.login-brand-top{display:flex;align-items:center;gap:12px;position:relative;z-index:1}
+.brand-word{display:flex;flex-direction:column;line-height:1.25}
+.brand-word b{font-size:14px;letter-spacing:.16em;font-weight:800}
+.brand-word em{font-style:normal;font-size:9.5px;letter-spacing:.3em;color:#8fc0ff;font-weight:700}
+.login-copy{position:relative;z-index:1;max-width:560px}
+.eyebrow{margin:0 0 12px;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#8fc0ff}
+.login-copy h1{margin:0 0 16px;font-size:clamp(30px,3.4vw,49px);line-height:1.06;letter-spacing:-.035em;font-weight:700}
+.login-copy h1 em{font-style:normal;color:#7db7ff}
+.login-copy > p{margin:0;max-width:480px;color:#c9d7ee;font-size:15px;line-height:1.65}
+.login-features{list-style:none;margin:24px 0 0;padding:0;display:grid;gap:10px}
+.login-features li{display:flex;align-items:center;gap:10px;color:#dbe7fa;font-size:13.5px}
+.login-features svg{width:19px;height:19px;padding:3px;border-radius:50%;background:rgba(18,183,106,.18);color:#6ee7b7;stroke-width:2.4;flex:0 0 auto}
+.login-mock{
+  position:relative;z-index:1;margin:auto 0 0;width:min(470px,86%);
+  border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.07);
+  border-radius:14px;padding:12px;box-shadow:0 24px 60px rgba(0,0,0,.25);backdrop-filter:blur(8px);
+}
+.mock-top{display:flex;gap:5px;padding:2px 2px 10px}
+.mock-top i{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.3)}
+.mock-hero{background:rgba(255,255,255,.94);border-radius:9px;padding:18px 16px 16px}
+.mock-line{height:8px;border-radius:99px;background:#e1e7ef;margin-bottom:8px}
+.mock-line.tall{height:16px;background:#c9d6ea}
+.w40{width:40%}.w55{width:55%}.w70{width:70%}
+.mock-btns{display:flex;gap:7px;margin-top:12px}
+.mock-btns span{height:22px;width:84px;border-radius:6px;background:#116dff}
+.mock-btns span:last-child{background:#fff;border:1px solid #d0d5dd}
+.mock-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:9px}
+.mock-grid i{display:block;height:60px;border-radius:7px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.12)}
+.mock-tag{position:absolute;right:-14px;bottom:18px;background:#fff;color:#0b3f8f;border-radius:999px;padding:7px 12px;font-size:11px;font-weight:700;box-shadow:0 10px 24px rgba(0,0,0,.22)}
+.login-foot{position:relative;z-index:1;margin:18px 0 0;font-size:11.5px;color:#8fa1c0}
+.login-main{
+  position:relative;display:grid;place-items:center;padding:34px;background:
+    radial-gradient(700px 420px at 110% -10%,#edf4ff,transparent 60%),#f8fafc;
+}
+.login-card{width:min(420px,100%)}
+.login-logo{display:flex;align-items:center;gap:13px;margin-bottom:26px}
+.login-logo img{width:52px;height:52px;border-radius:13px;object-fit:contain;background:#fff;border:1px solid var(--line);padding:4px;box-shadow:var(--shadow-sm)}
+.login-logo h2{margin:0 0 3px;font-size:21px}
+.login-logo p{margin:0;color:var(--muted);font-size:13px}
+.login label,.mod label{display:block;font-size:12.5px;font-weight:600;color:var(--ink-2);margin:0 0 7px}
+.login input,.mod input,.mod select,.mod textarea,.form-nova input,.form-nova select,.campo-busca,.campo-filtro{
+  width:100%;border:1px solid var(--line-2);border-radius:9px;padding:11px 12px;background:#fff;font-size:14px;outline:none;
+  transition:border-color .15s,box-shadow .15s;
+}
+.login input:focus,.mod input:focus,.mod select:focus,.mod textarea:focus,.form-nova input:focus,.form-nova select:focus,.campo-busca:focus,.campo-filtro:focus{
+  border-color:var(--blue);box-shadow:0 0 0 3px rgba(17,109,255,.14);
+}
+.mod input:disabled{background:#f9fafb;color:var(--muted)}
+.password{position:relative}
+.password input{padding-right:46px}
+.password button{
+  position:absolute;right:6px;top:50%;transform:translateY(-50%);
+  width:32px;height:32px;display:grid;place-items:center;border:0;border-radius:7px;background:transparent;color:var(--muted);
+}
+.password button:hover{background:#f2f4f7;color:var(--ink)}
+.password button.on{color:var(--blue);background:var(--blue-soft)}
+.password svg{width:18px;height:18px}
+#formLogin .btn-primary{margin-top:16px;padding:12px 16px}
+.erro{margin:10px 0 0;padding:8px 10px;border-radius:7px;background:var(--danger-soft);border:1px solid #fecdca;color:var(--danger);font-size:12.5px}
+.versao{color:var(--muted-2);font-size:11px;margin:14px 0 0;text-align:center}
+
+/* ============ APP ============ */
+.app{display:none;height:100vh;height:100dvh;flex-direction:column;overflow:hidden;background:var(--bg)}
+.app.on{display:flex}
+.topbar{
+  height:var(--topbar);flex:0 0 auto;display:flex;align-items:center;gap:16px;
+  padding:0 18px;background:#fff;border-bottom:1px solid var(--line);position:relative;z-index:30;
+}
+.topbar-brand{display:flex;align-items:center;gap:10px;min-width:0}
+.topbar-title{display:flex;flex-direction:column;gap:1px;line-height:1.2;min-width:0}
+.topbar-title b{font-size:13.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.topbar-title span{font-size:11px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.topbar-title span em{font-style:normal;color:var(--blue);font-weight:600}
+.topbar-title .dot{width:4px;height:4px;background:var(--muted-2);margin:0 4px;box-shadow:none}
+.topbar-actions{margin-left:auto;display:flex;align-items:center;gap:8px}
+.menu-drop{
+  position:absolute;top:calc(100% + 8px);right:16px;z-index:60;background:#fff;
+  border:1px solid var(--line);border-radius:12px;padding:6px;min-width:220px;box-shadow:var(--shadow-lg);
+}
+.menu-drop[hidden]{display:none}
+.menu-drop button{display:flex;width:100%;text-align:left;background:none;border:0;padding:10px 12px;border-radius:8px;font-size:14px;color:var(--ink-2)}
+.menu-drop button:hover{background:#f2f4f7}
+.menu-drop hr{border:0;border-top:1px solid var(--line);margin:6px 4px}
+
+.app-body{flex:1;display:flex;min-height:0}
+.rail{
+  width:var(--rail);flex:0 0 auto;background:#fff;border-right:1px solid var(--line);
+  display:flex;flex-direction:column;align-items:center;gap:4px;padding:10px 6px;
+}
+.rail button,.rail a{
+  width:100%;display:flex;flex-direction:column;align-items:center;gap:5px;padding:9px 4px;
+  border:0;border-radius:10px;background:transparent;color:var(--muted);
+  font-size:10.5px;font-weight:600;letter-spacing:.02em;white-space:nowrap;
+}
+.rail button svg,.rail a svg{width:20px;height:20px}
+.rail button:hover,.rail a:hover{background:#f9fafb;color:var(--ink-2)}
+.rail button.on{background:var(--blue-soft);color:var(--blue)}
+.rail-label{max-width:100%;overflow:hidden;text-overflow:ellipsis}
+.rail-spacer{flex:1}
+
+.content{flex:1;min-width:0;overflow:auto;background:var(--bg)}
+.wrap{max-width:1180px;margin:0 auto;padding:26px 30px 64px}
+.content-head{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;margin-bottom:18px;flex-wrap:wrap}
+.content-head h1{font-size:22px}
+.content-head p{margin:3px 0 0;color:var(--muted);font-size:13px}
+
+/* ============ CARDS / KPIs ============ */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px;margin-bottom:20px}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px;box-shadow:var(--shadow-sm)}
+.card b{display:block;font-size:24px;line-height:1.15;letter-spacing:-.02em;color:var(--ink)}
+.card span{font-size:12.5px;color:var(--muted)}
+
+/* ============ TABELAS ============ */
+.tabela{
+  width:100%;border-collapse:separate;border-spacing:0;background:#fff;
+  border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-sm);
+}
+.tabela th{
+  background:#f9fafb;color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.06em;
+  font-weight:700;text-align:left;padding:11px 14px;border-bottom:1px solid var(--line);white-space:nowrap;
+}
+.tabela td{padding:12px 14px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;font-size:13.5px}
+.tabela tbody tr:hover{background:#fcfcfd}
+.tabela tr:last-child td{border-bottom:0}
+.tabela select{width:auto;padding:6px 8px;font-size:13px}
+
+/* ============ BUSCA / FILTROS ============ */
+.barra-busca-saas{display:flex;gap:10px;margin-bottom:14px;flex-wrap:wrap}
+.campo-busca{flex:1 1 240px}
+.campo-filtro{flex:0 0 auto;width:auto;min-width:150px}
+
+/* ============ FORMULÁRIOS ============ */
+.form-nova{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:18px;
+  margin:18px 0;box-shadow:var(--shadow-sm);
+}
+.form-nova .btn-primario{justify-self:start}
+.cartao-bloco{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow-sm);margin-bottom:16px}
+.cartao-bloco h3{font-size:15px;margin-bottom:4px}
+.cartao-bloco .form-nova{border:0;box-shadow:none;padding:0;margin:0}
+.cartao-bloco .tabela{border:0;box-shadow:none}
+.cartao-bloco .tabela th{background:transparent}
+#novaPasso2{display:contents}
+.descricao-campo{color:var(--muted);font-size:13px}
+.dica{color:var(--muted);font-size:12.5px;line-height:1.55;margin-top:14px}
+.dica code{white-space:nowrap}
+
+/* ============ PÍLULAS / STATUS ============ */
+.pilula{display:inline-flex;align-items:center;gap:5px;padding:3px 9px;border-radius:999px;font-size:11.5px;font-weight:700;background:#f2f4f7;color:var(--muted);white-space:nowrap}
+.pilula.verde{background:var(--ok-soft);color:#027a48}
+.pilula.amarela{background:var(--warn-soft);color:var(--warn)}
+.pilula.vermelha{background:var(--danger-soft);color:var(--danger)}
+.pilula.cinza{background:#f2f4f7;color:var(--muted)}
+.dot{width:8px;height:8px;background:#d0d5dd;margin-right:6px;vertical-align:middle}
+.dot.on{background:var(--ok);box-shadow:0 0 0 3px rgba(18,183,106,.16)}
+
+/* ============ MODAIS ============ */
+.mod{position:fixed;inset:0;z-index:80;display:flex;align-items:center;justify-content:center;padding:22px;background:rgba(16,24,40,.45);backdrop-filter:blur(3px)}
+.mod[hidden]{display:none}
+.mod-caixa{width:min(94vw,680px);max-height:92vh;overflow:auto;background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px;box-shadow:var(--shadow-lg)}
+.mod-topo{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:18px}
+.mod-topo h3{font-size:18px}
+.mod-caixa .fechar{width:34px;height:34px;display:grid;place-items:center;border:0;border-radius:8px;background:transparent;color:var(--muted);font-size:17px;line-height:1}
+.mod-caixa .fechar:hover{background:#f2f4f7;color:var(--ink)}
+.mod-caixa form > div{margin-bottom:14px}
+.grade-form{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.mod-acoes{display:flex;gap:10px;justify-content:flex-end;margin-top:20px}
+.upload{color:var(--blue)}
+
+/* ============ GRÁFICOS ============ */
+.graf-barras{display:flex;align-items:flex-end;gap:8px;height:160px;padding-top:8px}
+.graf-barras .col{flex:1;display:flex;flex-direction:column;align-items:center;gap:5px;min-width:0;height:100%;justify-content:flex-end}
+.graf-barras .bar{width:100%;max-width:34px;border-radius:6px 6px 2px 2px;background:linear-gradient(180deg,#6aa8ff,#116dff);min-height:3px}
+.graf-barras .bar.zero{background:#e4e7ec}
+.graf-barras .dia{font-size:10.5px;color:var(--muted)}
+.funil-linha{display:grid;grid-template-columns:1fr auto;gap:4px 10px;align-items:center;margin-bottom:10px}
+.funil-linha .trilho{grid-column:1/-1;height:10px;border-radius:99px;background:#f2f4f7;overflow:hidden}
+.funil-linha .trilho i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,#116dff,#12b76a)}
+.rank-linha{display:grid;grid-template-columns:1fr auto;gap:2px 10px;margin-bottom:10px;font-size:13.5px}
+.rank-linha .trilho{grid-column:1/-1;height:8px;border-radius:99px;background:#f2f4f7;overflow:hidden}
+.rank-linha .trilho i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,#116dff,#6aa8ff)}
+
+/* ============ TOAST / MOBILE ============ */
+.toast-admin{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);z-index:120;background:#101828;color:#fff;border:1px solid rgba(255,255,255,.08);padding:11px 18px;border-radius:10px;font-size:13.5px;box-shadow:var(--shadow-lg)}
+.bottombar{display:none}
+.acoes{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.hide-sm{display:inline-flex}
+.only-mobile{display:none!important}
+
+@media(max-width:900px){
+  .login{grid-template-columns:1fr}
+  .login-brand{display:none}
+  .login-main{padding:24px}
+  .rail{display:none}
+  .wrap{padding:18px 14px calc(92px + env(safe-area-inset-bottom))}
+  .hide-sm{display:none}
+  .bottombar{
+    display:flex;position:fixed;left:0;right:0;bottom:0;z-index:40;background:#fff;
+    border-top:1px solid var(--line);padding:8px 6px calc(8px + env(safe-area-inset-bottom));
+    box-shadow:0 -4px 16px rgba(16,24,40,.06);
+  }
+  .bottombar button{
+    flex:1;background:none;border:0;color:var(--muted);display:flex;flex-direction:column;
+    align-items:center;justify-content:center;gap:3px;font-size:10.5px;font-weight:600;
+    padding:6px 2px;min-height:52px;border-radius:8px;
+  }
+  .bottombar button svg{width:21px;height:21px}
+  .bottombar button.on{color:var(--blue);background:var(--blue-soft)}
+  .topbar{padding:0 12px;gap:10px}
+  .topbar-actions .btn span{display:none}
+  .content-head h1{font-size:19px}
+}
+
+@media(max-width:640px){
+  .tabela thead{display:none}
+  .tabela{display:block;background:none;border:0;box-shadow:none}
+  .tabela tbody{display:block}
+  .tabela tr{display:block;background:#fff;border:1px solid var(--line);border-radius:12px;margin-bottom:10px;padding:6px 2px;box-shadow:var(--shadow-sm)}
+  .tabela td{display:block;border:0;padding:7px 12px}
+  .tabela td[data-label]::before{content:attr(data-label);display:block;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:2px}
+  .tabela .acoes{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .tabela .acoes .btn-mini,.tabela .acoes .btn-perigo,.tabela .acoes .link{min-height:44px;display:inline-flex;align-items:center;justify-content:center;border-radius:8px}
+  .tabela .acoes .link{border:1px solid var(--line-2)}
+  .mod{align-items:flex-end;padding:0}
+  .mod-caixa{width:100%;max-width:100%;border-radius:18px 18px 0 0;padding:20px 18px calc(20px + env(safe-area-inset-bottom));max-height:94dvh}
+  .grade-form{grid-template-columns:1fr}
+  .mod-acoes{flex-direction:column}
+  .mod-acoes .btn-primario,.mod-acoes .btn-secundario{width:100%}
+  .form-nova input,.form-nova select,.mod-caixa input,.mod-caixa select,.campo-busca,.campo-filtro,.login input{font-size:16px}
+  #formNova .btn-primario{width:100%}
+  .login input{font-size:16px}
+  .graf-barras .col:nth-child(odd) .dia{visibility:hidden}
+  .content-head{margin-bottom:14px}
+  .cards{grid-template-columns:1fr 1fr;gap:10px}
+  .card{padding:13px 14px}
+  .card b{font-size:20px}
+}
+@media(prefers-reduced-motion:reduce){
+  *{transition:none!important;animation:none!important}
+}
+</style>
+</head>
+<body>
+<div class="login on" id="login">
+  <section class="login-brand" aria-label="Super Loja · Plataforma">
+    <div class="login-brand-top">
+      <span class="mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M4 5h16v14H4z"/><path d="M4 10h16M9 10v9"/></svg>
+      </span>
+      <span class="brand-word"><b>SUPER LOJA</b><em>JORDÃO NETO TECH</em></span>
+    </div>
+    <div class="login-copy">
+      <p class="eyebrow">Plataforma</p>
+      <h1>Todas as lojas.<br><em>Um só painel.</em></h1>
+      <p>Superadmin da plataforma: crie lojas, acompanhe pedidos, gerencie mensalidades, vendas e domínios em um único lugar.</p>
+      <ul class="login-features">
+        <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5L19 7"/></svg> Lojas, domínios e acessos em um só lugar</li>
+        <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5L19 7"/></svg> Financeiro, mensalidades e baixas de pagamento</li>
+        <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5L19 7"/></svg> Vendas, interessados e relatórios das lojas</li>
+      </ul>
+    </div>
+    <div class="login-mock" aria-hidden="true">
+      <div class="mock-top"><i></i><i></i><i></i></div>
+      <div class="mock-hero">
+        <div class="mock-line w40"></div>
+        <div class="mock-line w70 tall"></div>
+        <div class="mock-line w55"></div>
+        <div class="mock-btns"><span></span><span></span></div>
+      </div>
+      <div class="mock-grid"><i></i><i></i><i></i></div>
+      <div class="mock-tag">Lojas no ar</div>
+    </div>
+    <p class="login-foot">Super Loja · Plataforma multi-tenant Jordão Neto Tech</p>
+  </section>
+
+  <main class="login-main">
+    <div class="login-card">
+      <div class="login-logo">
+        <img src="img/marca/simbolo-cor.svg" alt="Super Loja" width="52" height="52">
+        <div><h2>Entrar no superadmin</h2><p>Plataforma Jordão Neto Tech</p></div>
+      </div>
+      <form id="formLogin">
+        <label for="tokenLogin">Token ou senha do superadmin</label>
+        <div class="password">
+          <input type="password" id="tokenLogin" autocomplete="off" required placeholder="Cole o token ou digite a senha">
+          <button type="button" id="verToken" aria-label="Mostrar token" aria-pressed="false">
+            <svg viewBox="0 0 24 24"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12z"/><circle cx="12" cy="12" r="2.6"/></svg>
+          </button>
+        </div>
+        <p class="erro" id="erroLogin" role="alert" hidden>Token inválido.</p>
+        <button class="btn btn-primary btn-block" type="submit">Entrar</button>
+        <p class="versao">versão 6</p>
+      </form>
+    </div>
+  </main>
+</div>
+
+<div class="app" id="app">
+  <header class="topbar">
+    <div class="topbar-brand">
+      <span class="mark small" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M4 5h16v14H4z"/><path d="M4 10h16M9 10v9"/></svg>
+      </span>
+      <div class="topbar-title">
+        <b>Super Loja</b>
+        <span>Plataforma <i class="dot"></i> <em>Jordão Neto Tech</em></span>
+      </div>
+    </div>
+    <div class="topbar-actions">
+      <a class="btn btn-ghost btn-sm hide-sm" href="/landing.html" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M14 4h6v6"/><path d="M20 4 10 14"/><path d="M18 14v5H5V6h5"/></svg>
+        <span>Visualizar landing</span>
+      </a>
+      <button class="btn btn-secondary btn-sm" id="recarregar">
+        <svg viewBox="0 0 24 24"><path d="M20 11a8 8 0 1 0-2.3 6"/><path d="M20 5v6h-6"/></svg>
+        <span>Recarregar</span>
+      </button>
+      <button class="btn btn-secondary btn-sm" id="sair">Sair</button>
+      <button class="icon-btn only-mobile" id="menuBtn" aria-expanded="false" aria-controls="menuDrop" aria-label="Abrir menu">
+        <svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <div class="menu-drop" id="menuDrop" hidden>
+        <button data-menu="lojas">Lojas</button>
+        <button data-menu="fin">Financeiro</button>
+        <button data-menu="vendas">Vendas</button>
+        <button data-menu="rel">Relatórios</button>
+        <hr>
+        <button id="menuRecarregar">↻ Recarregar página</button>
+        <button id="menuSair">Sair</button>
+        <p class="versao" style="text-align:center;margin:6px 0 2px">versão 6</p>
+      </div>
+    </div>
+  </header>
+
+  <div class="app-body">
+    <nav class="rail" aria-label="Seções do superadmin">
+      <button class="on" id="tabLojas" title="Lojas">
+        <svg viewBox="0 0 24 24"><path d="M4 7h16v13H4z"/><path d="M8 7V4h8v3"/></svg>
+        <span class="rail-label">Lojas</span>
+      </button>
+      <button id="tabFin" title="Financeiro">
+        <svg viewBox="0 0 24 24"><path d="M12 3v18M5 8h14M5 8l-2 8h18l-2-8"/></svg>
+        <span class="rail-label">Financeiro</span>
+      </button>
+      <button id="tabVendas" title="Vendas">
+        <svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg>
+        <span class="rail-label">Vendas</span>
+      </button>
+      <button id="tabRel" title="Relatórios">
+        <svg viewBox="0 0 24 24"><path d="M5 20V10M12 20V4M19 20v-7"/></svg>
+        <span class="rail-label">Relatórios</span>
+      </button>
+      <div class="rail-spacer"></div>
+      <a href="/landing.html" target="_blank" rel="noopener" title="Landing de vendas">
+        <svg viewBox="0 0 24 24"><path d="M14 4h6v6"/><path d="M20 4 10 14"/><path d="M18 14v5H5V6h5"/></svg>
+        <span class="rail-label">Landing</span>
+      </a>
+    </nav>
+
+    <main class="content">
+      <div class="wrap">
+        <div class="content-head">
+          <div>
+            <h1 id="viewTitulo">Lojas</h1>
+            <p id="viewSub">Gerencie as lojas, domínios e acessos da plataforma</p>
+          </div>
+        </div>
+
+        <div class="cards" id="kpiTopo" aria-live="polite">
+          <div class="card"><b id="kpiAtivas">—</b><span>Lojas ativas</span></div>
+          <div class="card"><b id="kpiNoAr">—</b><span>No ar agora</span></div>
+          <div class="card"><b id="kpiMrr">—</b><span>MRR</span></div>
+          <div class="card"><b id="kpiAtraso">—</b><span>Em atraso</span></div>
+        </div>
+
+    <div id="view-lojas">
+    <div class="barra-busca-saas" role="search" style="display:flex;gap:10px;margin-bottom:12px;flex-wrap:wrap">
+      <input type="search" id="buscaLojas" class="campo-busca" placeholder="Buscar loja por slug, nome ou domínio…" aria-label="Buscar lojas">
+      <select id="filtroStatusLojas" class="campo-filtro" aria-label="Filtrar por status">
+        <option value="todas">Todas</option>
+        <option value="ativa">Ativas</option>
+        <option value="suspensa">Suspensas</option>
+        <option value="noar">No ar agora</option>
+      </select>
+    </div>
+    <table class="tabela">
+      <thead><tr>
+        <th>Loja</th><th>WhatsApp</th><th>Porta</th><th>Status</th><th>No ar</th><th>Ações</th>
+      </tr></thead>
+      <tbody id="linhas"></tbody>
+    </table>
+
+    <h2 style="margin:22px 0 4px;font-size:18px">Nova loja</h2>
+    <form class="form-nova" id="formNova">
+      <input id="nSlug" placeholder="slug (ex.: doces-da-ana)" pattern="[a-z0-9-]{3,40}" required>
+      <input id="nNome" placeholder="Nome da loja" required>
+      <input id="nZap" placeholder="WhatsApp (só números)" required>
+      <select id="nTemplate" aria-label="Modelo inicial da loja">
+        <option value="generico">Modelo: Genérica</option>
+      </select>
+      <select id="nTema" aria-label="Tema visual inicial">
+        <option value="artesanal">Tema: Artesanal</option>
+      </select>
+      <div style="grid-column:1/-1">
+        <button type="button" class="btn-mini" id="togglePasso2" aria-expanded="false">＋ empresa, domínio e senha (opcional)</button>
+      </div>
+      <div id="novaPasso2" hidden>
+      <input id="nEmail" placeholder="E-mail (opcional)" type="email">
+      <select id="nTipo">
+        <option value="fisica">Pessoa física (CPF)</option>
+        <option value="juridica">Pessoa jurídica (CNPJ)</option>
+      </select>
+      <input id="nDoc" placeholder="CPF/CNPJ (opcional)" inputmode="numeric">
+      <input id="nDominio" placeholder="Domínio próprio (opcional: lojadoana.com.br)">
+      <input id="nSenha" placeholder="Senha inicial (opcional, mín. 6)" minlength="6">
+      </div>
+      <button class="btn-primario" type="submit">Criar ambiente isolado</button>
+    </form>
+
+    <p class="dica">Cada loja é um ambiente isolado em <b>lojas/&lt;slug&gt;/</b> (front + back + dados próprios).
+    Use <b>ligar/desligar</b> para colocar e tirar do ar por aqui, ou no terminal com
+    <code>python3 scripts/lojas.py up|down --slug &lt;slug&gt;</code>.
+    <b>Suspender</b> bloqueia administrativamente (não liga suspensa).
+    <b>Domínio:</b> cada loja atende em <code>&lt;slug&gt;.plataforma.jordaonetotech.com.br</code>; com domínio próprio,
+    o cliente aponta o DNS para a VPS e você registra aqui — depois regenere com
+    <code>python3 scripts/gerar_caddy.py --base plataforma.jordaonetotech.com.br</code> e recarregue o Caddy.
+    Em produção, 1 serviço systemd + HTTPS automático por loja.</p>
+    </div>
+
+    <div id="view-fin" hidden>
+      <div class="cards" id="cardsFin"></div>
+      <table class="tabela">
+        <thead><tr>
+          <th>Loja</th><th>Plano</th><th>Mensalidade</th><th>Vencimento</th><th>Situação</th><th>Ações</th>
+        </tr></thead>
+        <tbody id="linhasFin"></tbody>
+      </table>
+      <p class="dica">A baixa com "adiantar vencimento" soma 1 mês ao vencimento atual. MRR = soma das mensalidades com plano ativo.</p>
+    </div>
+
+    <div id="view-vendas" hidden>      <div class="cartao-bloco" style="background:var(--papel,#fff);border:1px solid var(--linha,#e7d9c4);border-radius:12px;padding:16px;margin-bottom:16px">
+        <h3 style="margin-bottom:4px">Página de vendas <a class="link" href="/landing.html" target="_blank" rel="noopener">(abrir ↗)</a></h3>
+        <p class="descricao-campo" style="margin-bottom:10px">WhatsApp usado nos botões da landing. Sem número, os botões levam ao formulário.</p>
+        <form id="formPlat" class="form-nova" style="margin:0">
+          <input id="plNome" placeholder="Nome da plataforma" maxlength="80">
+          <input id="plDominio" placeholder="Domínio da plataforma (ex.: plataforma.suaempresa.com.br)" maxlength="120" inputmode="url">
+          <input id="plZap" placeholder="WhatsApp (só números, com DDI)" inputmode="numeric">
+          <input id="plZapTela" placeholder="Texto exibido (ex.: (16) 99999-9999)" maxlength="30">
+          <button class="btn-primario" type="submit">Salvar</button>
+        </form>
+      </div>
+      <h2 style="margin:6px 0 4px;font-size:18px">Interessados</h2>
+      <table class="tabela">
+        <thead><tr>
+          <th>Data</th><th>Nome / WhatsApp</th><th>Segmento</th><th>Plano</th><th>Status</th><th>Ações</th>
+        </tr></thead>
+        <tbody id="linhasVendas"></tbody>
+      </table>
+    </div>
+
+    <div id="view-rel" hidden>
+      <div class="cards" id="cardsRel"></div>
+      <div class="cartao-bloco" style="background:var(--papel,#fff);border:1px solid var(--linha,#e7d9c4);border-radius:12px;padding:16px;margin-bottom:16px">
+        <h3 style="margin-bottom:10px">Pedidos por dia <span style="font-weight:normal;color:var(--tinta-suave);font-size:13px">(14 dias)</span></h3>
+        <div id="grafSerie" class="graf-barras"><p style="color:#888">Carregando…</p></div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-bottom:16px">
+        <div class="cartao-bloco" style="background:var(--papel,#fff);border:1px solid var(--linha,#e7d9c4);border-radius:12px;padding:16px;margin:0">
+          <h3 style="margin-bottom:10px">Funil</h3>
+          <div id="funilRel"><p style="color:#888">Carregando…</p></div>
+        </div>
+        <div class="cartao-bloco" style="background:var(--papel,#fff);border:1px solid var(--linha,#e7d9c4);border-radius:12px;padding:16px;margin:0">
+          <h3 style="margin-bottom:10px">Mais pedidas</h3>
+          <div id="topRel"><p style="color:#888">Carregando…</p></div>
+        </div>
+      </div>
+      <div class="cartao-bloco" style="background:var(--papel,#fff);border:1px solid var(--linha,#e7d9c4);border-radius:12px;padding:16px">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px;flex-wrap:wrap">
+          <h3 style="margin:0">Por loja</h3>
+          <button class="btn-mini" id="expCsv">⬇ Exportar CSV</button>
+        </div>
+        <table class="tabela">
+          <thead><tr>
+            <th>Loja</th><th>Pedidos</th><th>Receita</th><th>Situação</th>
+          </tr></thead>
+          <tbody id="linhasRel"></tbody>
+        </table>
+        <p class="dica" id="geradoRel" style="margin-top:10px"></p>
+      </div>
+    </div>
+      </div>
+      <span class="toast-admin" id="toast" hidden></span>
+    </main>
+  </div>
+</div>
+
+<!-- barra inferior fixa (estilo app, só mobile) -->
+<!-- barra inferior fixa (mobile) -->
+<nav class="bottombar" aria-label="Navegação principal">
+  <button data-bb="lojas" class="on"><svg viewBox="0 0 24 24"><path d="M4 7h16v13H4zM8 7V4h8v3"/></svg><span>Lojas</span></button>
+  <button data-bb="fin"><svg viewBox="0 0 24 24"><path d="M12 3v18M5 8h14M5 8l-2 8h18l-2-8"/></svg><span>Financeiro</span></button>
+  <button data-bb="vendas"><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg><span>Vendas</span></button>
+  <button data-bb="rel"><svg viewBox="0 0 24 24"><path d="M5 20V10M12 20V4M19 20v-7"/></svg><span>Relatórios</span></button>
+</nav>
+
+<!-- modal editar loja -->
+<div class="mod" id="modEditar" hidden>
+  <div class="mod-caixa">
+    <div class="mod-topo">
+      <h3>Editar loja</h3>
+      <button class="fechar" id="fechaEditar" aria-label="Fechar">✕</button>
+    </div>
+    <form id="formEditar">
+      <div class="grade-form">
+        <div>
+          <label>Slug (não editável)</label>
+          <input id="eSlug" disabled>
+        </div>
+        <div>
+          <label>Porta (não editável)</label>
+          <input id="ePorta" disabled>
+        </div>
+      </div>
+      <div>
+        <label for="eNome">Nome da loja</label>
+        <input id="eNome" required>
+      </div>
+      <div>
+        <label for="eZap">WhatsApp (só números, com DDI)</label>
+        <input id="eZap" required placeholder="Ex.: 5516999999999">
+      </div>
+      <div>
+        <label for="eEmail">E-mail</label>
+        <input id="eEmail" type="email" placeholder="(opcional)">
+      </div>
+      <div class="grade-form">
+        <div>
+          <label for="eTipo">Tipo</label>
+          <select id="eTipo">
+            <option value="fisica">Pessoa física (CPF)</option>
+            <option value="juridica">Pessoa jurídica (CNPJ)</option>
+          </select>
+        </div>
+        <div>
+          <label for="eDoc">CPF/CNPJ</label>
+          <input id="eDoc" inputmode="numeric" placeholder="Somente números">
+        </div>
+      </div>
+      <div>
+        <label for="eDominio">Domínio próprio (opcional)</label>
+        <input id="eDominio" placeholder="Ex.: lojadoana.com.br">
+        <div id="dnsPainel" style="margin-top:10px;border:1px solid var(--linha);border-radius:12px;padding:12px;background:#f9fafb">
+          <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:8px">
+            <b style="font-size:13.5px">DNS no registro.br</b>
+            <span class="pilula cinza" id="dnsStatus">sem domínio</span>
+          </div>
+          <p class="dica" id="dnsInstr" style="margin:0 0 8px">Informe o domínio e salve. Depois oriente o cliente a apontar no registro.br.</p>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:0 0 8px">
+            <span class="dica" style="margin:0">CNAME gerado p/ o www:</span>
+            <code id="cnameAlvo">—</code>
+            <button class="btn-mini" type="button" id="btnCopyCNAME">⧉ copiar CNAME</button>
+            <span class="pilula cinza" id="cnameStatus">…</span>
+          </div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <button class="btn-mini" type="button" id="btnVerDNS">↻ Verificar DNS</button>
+            <button class="btn-mini" type="button" id="btnCopyDNS">⧉ Copiar instruções p/ cliente</button>
+            <button class="btn-mini" type="button" id="btnCopyCaddy">⧉ Copiar comando Caddy</button>
+            <a class="link" id="btnAbrirSite" href="#" target="_blank" rel="noopener" style="align-self:center">abrir site ↗</a>
+          </div>
+          <p class="dica" id="dnsDetalhe" style="margin:8px 0 0"></p>
+        </div>
+      </div>
+      <p class="dica">Nome e WhatsApp são sincronizados com o site da loja na hora.</p>
+      <div class="mod-acoes">
+        <button class="btn-primario" type="submit">Salvar</button>
+        <button class="btn-secundario" type="button" id="cancelaEditar">Cancelar</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- modal plano/mensalidade -->
+<div class="mod" id="modPlano" hidden>
+  <div class="mod-caixa">
+    <div class="mod-topo">
+      <h3 id="planoTitulo">Plano da loja</h3>
+      <button class="fechar" id="fechaPlano" aria-label="Fechar">✕</button>
+    </div>
+    <form id="formPlano">
+      <div>
+        <label for="pPlano">Plano</label>
+        <select id="pPlano">
+          <option value="">Sem cobrança</option>
+          <option value="basico">Básico</option>
+          <option value="pro">Pro</option>
+        </select>
+      </div>
+      <div>
+        <label for="pMensalidade">Mensalidade (R$)</label>
+        <input id="pMensalidade" inputmode="decimal" placeholder="Ex.: 49.90">
+      </div>
+      <div>
+        <label for="pVencimento">Próximo vencimento</label>
+        <input id="pVencimento" type="date">
+      </div>
+      <div class="mod-acoes">
+        <button class="btn-primario" type="submit">Salvar</button>
+        <button class="btn-secundario" type="button" id="cancelaPlano">Cancelar</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- modal registrar pagamento -->
+<div class="mod" id="modPag" hidden>
+  <div class="mod-caixa">
+    <div class="mod-topo">
+      <h3 id="pagTitulo">Registrar pagamento</h3>
+      <button class="fechar" id="fechaPag" aria-label="Fechar">✕</button>
+    </div>
+    <form id="formPag">
+      <div class="grade-form">
+        <div>
+          <label for="pgValor">Valor (R$)</label>
+          <input id="pgValor" inputmode="decimal" required placeholder="Ex.: 49.90">
+        </div>
+        <div>
+          <label for="pgData">Data do pagamento</label>
+          <input id="pgData" type="date" required>
+        </div>
+      </div>
+      <div class="grade-form">
+        <div>
+          <label for="pgComp">Competência</label>
+          <input id="pgComp" placeholder="AAAA-MM" pattern="\d{4}-\d{2}" required>
+        </div>
+        <div>
+          <label for="pgMeio">Meio</label>
+          <select id="pgMeio">
+            <option>Pix</option><option>Boleto</option><option>Cartão</option>
+            <option>Transferência</option><option>Dinheiro</option><option>Outro</option>
+          </select>
+        </div>
+      </div>
+      <div>
+        <label for="pgObs">Observação (opcional)</label>
+        <input id="pgObs" placeholder="Ex.: comprovante recebido no WhatsApp">
+      </div>
+      <div>
+        <label style="display:flex;gap:8px;align-items:center;font-weight:normal">
+          <input type="checkbox" id="pgAdiantar" checked style="width:auto"> Adiantar vencimento em 1 mês
+        </label>
+      </div>
+      <div class="mod-acoes">
+        <button class="btn-primario" type="submit">Dar baixa</button>
+        <button class="btn-secundario" type="button" id="cancelaPag">Cancelar</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- modal histórico -->
+<div class="mod" id="modHist" hidden>
+  <div class="mod-caixa">
+    <div class="mod-topo">
+      <h3 id="histTitulo">Histórico</h3>
+      <button class="fechar" id="fechaHist" aria-label="Fechar">✕</button>
+    </div>
+    <div id="histCorpo"></div>
+  </div>
+</div>
+
+<!-- modal link de reset -->
+<div class="mod" id="modLink" hidden>
+  <div class="mod-caixa">
+    <div class="mod-topo">
+      <h3>Link de redefinição</h3>
+      <button class="fechar" id="fechaLink" aria-label="Fechar">✕</button>
+    </div>
+    <p class="descricao-campo" style="margin-bottom:10px">Vale 30 minutos e só pode ser usado uma vez. Envie ao cliente:</p>
+    <div style="display:flex;gap:8px">
+      <input id="linkReset" readonly style="flex:1" onclick="this.select()">
+      <button class="btn-primario" id="copiaLink" type="button">Copiar</button>
+    </div>
+    <div class="mod-acoes">
+      <button class="btn-secundario" type="button" id="fechaLink2">Fechar</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+"use strict";
+/* auto-atualização: após cada deploy a página recarrega sozinha 1x (cura cache antigo) */
+try{
+  const BUILD = "2026-10-28-01";
+  if(sessionStorage.getItem("saas_build") !== BUILD){
+    sessionStorage.setItem("saas_build", BUILD);
+    location.reload();
+  }
+}catch(e){}
+const $ = s=>document.querySelector(s);
+/* escape HTML: todo dado vindo do servidor/usuário interpolado em innerHTML
+   passa por aqui (neutraliza XSS armazenado — ex.: nome de interessado) */
+const esc = s=>String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+const tok = ()=> sessionStorage.getItem("saas_tok") || "";
+const baseHost = ()=> location.protocol + "//" + location.hostname;
+
+async function api(caminho, opcoes){
+  const r = await fetch(caminho, Object.assign({}, opcoes||{}, {
+    headers: Object.assign({"Authorization":"Bearer "+tok()},
+      (opcoes&&opcoes.body)?{"Content-Type":"application/json"}:{})
+  }));
+  if(r.status===401||r.status===403){ sair(); throw new Error("não autorizado"); }
+  if(!r.ok){ const j=await r.json().catch(()=>({})); throw new Error(j.erro||("Erro "+r.status)); }
+  return r.json().catch(()=>({}));
+}
+function toast(m){ const t=$("#toast"); t.textContent=m; t.hidden=false; clearTimeout(t._x); t._x=setTimeout(()=>t.hidden=true,3000); }
+function sair(){ sessionStorage.removeItem("saas_tok"); location.reload(); }
+
+/* CPF/CNPJ: máscara e rótulo */
+function soDigitos(v){ return String(v||"").replace(/\D/g,"").slice(0,14); }
+function mascaraDoc(v, tipo){
+  const d = soDigitos(v);
+  if(tipo==="juridica") return d.replace(/^(\d{0,2})(\d{0,3})(\d{0,3})(\d{0,4})(\d{0,2}).*/, (m,a,b,c,e,f)=>[a,b,c,e,f].filter(Boolean).length>1?`${a}.${b}.${c}/${e}${f?"-"+f:""}`.replace(/[.\\/\\-]$/,""):a);
+  return d.replace(/^(\d{0,3})(\d{0,3})(\d{0,3})(\d{0,2}).*/, (m,a,b,c,e)=>[a,b,c,e].filter(Boolean).length>1?`${a}.${b}.${c}${e?"-"+e:""}`.replace(/[.\\-]$/,""):a);
+}
+function rotuloDoc(l){
+  const d = soDigitos(l.doc);
+  if(!d) return "";
+  const tipo = l.doc_tipo || (d.length>11 ? "cnpj" : "cpf");
+  return (tipo==="cnpj"?"CNPJ ":"CPF ") + mascaraDoc(d, tipo==="cnpj"?"juridica":"fisica");
+}
+$("#sair").addEventListener("click", sair);
+
+/* mostrar / ocultar token */
+$("#verToken").addEventListener("click", ()=>{
+  const inp = $("#tokenLogin");
+  const show = inp.type === "password";
+  inp.type = show ? "text" : "password";
+  const b = $("#verToken");
+  b.classList.toggle("on", show);
+  b.setAttribute("aria-pressed", String(show));
+});
+
+/* ESC fecha qualquer modal aberto */
+document.addEventListener("keydown", e=>{
+  if(e.key!=="Escape") return;
+  ["modEditar","modPlano","modPag","modHist","modLink"].forEach(id=>{
+    const m = document.getElementById(id);
+    if(m && !m.hidden) m.hidden = true;
+  });
+  fecharMenu();
+});
+
+/* menu mobile */
+function fecharMenu(){
+  const md = $("#menuDrop");
+  if(md && !md.hidden){ md.hidden = true; $("#menuBtn").setAttribute("aria-expanded", "false"); }
+}
+$("#menuBtn").addEventListener("click", e=>{
+  e.stopPropagation();
+  const md = $("#menuDrop");
+  const abrir = md.hidden;
+  md.hidden = !abrir;
+  $("#menuBtn").setAttribute("aria-expanded", String(abrir));
+});
+document.querySelectorAll("#menuDrop [data-menu]").forEach(b=>b.addEventListener("click", ()=>irAba(b.dataset.menu)));
+document.querySelectorAll(".bottombar [data-bb]").forEach(b=>b.addEventListener("click", ()=>irAba(b.dataset.bb)));
+$("#menuRecarregar").addEventListener("click", ()=>{ fecharMenu(); $("#recarregar").click(); });
+$("#menuSair").addEventListener("click", sair);
+document.addEventListener("click", e=>{
+  const md = $("#menuDrop");
+  if(md && !md.hidden && !e.target.closest("#menuDrop") && !e.target.closest("#menuBtn")) fecharMenu();
+});
+
+/* busca + filtro de lojas (sem acento: "jose" encontra "José") */
+const semAcentoSaas = s => String(s||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase();
+const FILTRO_SAAS = {q:"", status:"todas"};
+$("#buscaLojas").addEventListener("input", e=>{
+  clearTimeout(e.target._t);
+  e.target._t = setTimeout(()=>{ FILTRO_SAAS.q = e.target.value; desenharLojas(); }, 160);
+});
+$("#filtroStatusLojas").addEventListener("change", e=>{ FILTRO_SAAS.status = e.target.value; desenharLojas(); });
+
+function lojasFiltradas(){
+  const q = semAcentoSaas(FILTRO_SAAS.q.trim());
+  return LOJAS.filter(l=>{
+    if(FILTRO_SAAS.status==="ativa" && l.status!=="ativa") return false;
+    if(FILTRO_SAAS.status==="suspensa" && l.status!=="suspensa") return false;
+    if(FILTRO_SAAS.status==="noar" && !l.no_ar) return false;
+    if(!q) return true;
+    return semAcentoSaas((l.slug||"")+" "+(l.nome||"")+" "+(l.dominio||"")+" "+(l.zap||"")).includes(q);
+  });
+}
+
+/* painel de saúde do SaaS (sempre visível) */
+async function carregarKPIs(){
+  try{
+    const [lj, fin] = await Promise.all([
+      api("/api/saas/lojas").catch(()=>({lojas:LOJAS})),
+      api("/api/saas/financeiro").catch(()=>null)
+    ]);
+    const lojas = lj.lojas || LOJAS || [];
+    const ativas = lojas.filter(l=>l.status==="ativa").length;
+    const noar = lojas.filter(l=>l.no_ar).length;
+    $("#kpiAtivas").textContent = `${ativas}/${lojas.length||0}`;
+    $("#kpiNoAr").textContent = String(noar);
+    if(fin){
+      FIN = fin.lojas || FIN;
+      $("#kpiMrr").textContent = brl((fin.resumo||{}).mrr);
+      const atr = (fin.resumo||{}).atrasados || 0;
+      $("#kpiAtraso").textContent = String(atr);
+      $("#kpiAtraso").style.color = atr ? "#FF9B9B" : "";
+    }
+  }catch(e){}
+}
+
+/* contadores nas abas */
+function pintarContasAbas(){
+  const ativas = LOJAS.filter(l=>l.status==="ativa").length;
+  const elLojas = $("#tabLojas .rail-label");
+  if(elLojas) elLojas.textContent = `Lojas${LOJAS.length?` (${LOJAS.length})`:""}`;
+  const atrasadas = (FIN||[]).filter(l=>l.status==="atrasado").length;
+  const elFin = $("#tabFin .rail-label");
+  if(elFin) elFin.textContent = `Financeiro${atrasadas?` (${atrasadas}!)`:""}`;
+}
+
+$("#formLogin").addEventListener("submit", async e=>{
+  e.preventDefault();
+  const t = $("#tokenLogin").value.trim();
+  if(!t){ $("#erroLogin").hidden=false; return; }
+  try{
+    /* aceita senha OU token: o servidor devolve o token de sessão */
+    const r = await fetch("/api/saas/login", {method:"POST", headers:{"Content-Type":"application/json"},
+      body:JSON.stringify({senha:t, token:t})});
+    if(!r.ok) throw new Error("credenciais inválidas");
+    const j = await r.json().catch(()=>({}));
+    const usado = j.token || t;
+    sessionStorage.setItem("saas_tok", usado);
+    const v = await fetch("/api/saas/lojas", {headers:{"Authorization":"Bearer "+usado}});
+    if(!v.ok) throw new Error("não autorizado");
+    $("#erroLogin").hidden = true;
+    entrar();
+  }catch(err){ sessionStorage.removeItem("saas_tok"); $("#erroLogin").hidden=false; }
+});
+function entrar(){ $("#login").classList.remove("on"); $("#app").classList.add("on"); irAbaInicial(); carregarKPIs(); carregarTemas(); }
+
+/* temas visuais + modelos p/ a nova loja */
+let TEMPLATES = [];
+async function carregarTemas(){
+  try{
+    const tj = await api("/api/temas");
+    const sel = $("#nTema");
+    sel.innerHTML = (tj.temas||[]).map(t=>`<option value="${esc(t.id)}">Tema: ${esc(t.nome)}</option>`).join("") || `<option value="artesanal">Tema: Artesanal</option>`;
+  }catch(e){}
+  try{
+    const r = await api("/api/saas/templates");
+    TEMPLATES = r.templates || [];
+    const sel = $("#nTemplate");
+    if(TEMPLATES.length){
+      sel.innerHTML = TEMPLATES.map(t=>`<option value="${esc(t.id)}">Modelo: ${esc(t.nome)}${t.descricao?` — ${esc(t.descricao)}`:""}</option>`).join("");
+      sel.value = TEMPLATES.some(t=>t.id==="generico") ? "generico" : TEMPLATES[0].id;
+    }
+  }catch(e){}
+}
+$("#nTemplate")?.addEventListener("change", ()=>{
+  const t = TEMPLATES.find(x=>x.id===$("#nTemplate").value);
+  if(t && t.tema && $("#nTema").querySelector(`option[value="${t.tema}"]`)){
+    $("#nTema").value = t.tema;
+  }
+});
+
+let LOJAS = [];
+let BASE_DOM = "";
+async function carregar(){
+  let dados;
+  const tb = $("#linhas");
+  tb.innerHTML = `<tr><td colspan="6" style="color:#888">Carregando lojas…</td></tr>`;
+  try{ dados = await api("/api/saas/lojas"); }
+  catch(e){ toast("Erro: "+e.message); tb.innerHTML = `<tr><td colspan="6" style="color:#888">Falha ao carregar. Tente Recarregar.</td></tr>`; return; }
+  LOJAS = dados.lojas || [];
+  BASE_DOM = dados.base_domain || "";
+  pintarContasAbas();
+  desenharLojas();
+}
+function desenharLojas(){
+  const tb = $("#linhas");
+  if(!LOJAS.length){
+    tb.innerHTML = `<tr><td colspan="6" style="color:#888">Nenhuma loja isolada ainda. Crie a primeira no formulário abaixo.</td></tr>`;
+    return;
+  }
+  const lista = lojasFiltradas();
+  if(!lista.length){
+    tb.innerHTML = `<tr><td colspan="6" style="color:#888">Nenhuma loja corresponde à busca. Ajuste o termo ou o filtro.</td></tr>`;
+    return;
+  }
+  tb.innerHTML = lista.map(l=>{
+    const dom = String(l.dominio||"");
+    const host = location.hostname;
+    const ehIp = /^[0-9.]+$/.test(host) || host === "localhost";
+    /* usa o domínio base da plataforma (ex.: plataforma.jordaonetotech.com.br) para montar <slug>.<base> */
+    const baseDom = BASE_DOM || host.replace(/^admin\./,"");
+    const base = dom ? "https://"+dom : (ehIp ? `${location.protocol}//${host}:${l.porta}` : "https://"+l.slug+"."+baseDom);
+    const dominioVisivel = dom || (baseDom ? `${l.slug}.${baseDom}` : "(sem domínio)");
+    const front = `${base}/`;
+    const painel = `${base}/editor.html`;
+    return `<tr>
+      <td data-label="Loja"><b>${esc(l.slug)}</b><br><span style="color:#888">${esc(l.nome)}</span><br><span style="color:#888;font-size:12px">${esc(dominioVisivel)}</span><br><span style="color:#888;font-size:12px">${esc(rotuloDoc(l)||"(sem CPF/CNPJ)")}</span></td>
+      <td data-label="WhatsApp">${esc(l.zap||"—")}</td>
+      <td data-label="Porta">${l.porta}</td>
+      <td data-label="Status"><span class="pilula ${l.status==="ativa"?"verde":"cinza"}">${esc(l.status)}</span></td>
+      <td data-label="No ar"><span class="dot ${l.no_ar?"on":""}"></span>${l.no_ar?"sim":"não"}</td>
+      <td data-label="Ações"><div class="acoes">
+        <a class="link" href="${esc(front)}" target="_blank" rel="noopener">site</a>
+        <a class="link" href="${esc(painel)}" target="_blank" rel="noopener">painel</a>
+        <button class="btn-mini ${l.no_ar?"b-ambar":"b-verde"}" data-power="${esc(l.slug)}" data-ar="${l.no_ar?1:0}">${l.no_ar?"⏸ desligar":"▶ ligar"}</button>
+        <button class="btn-mini" data-edit="${esc(l.slug)}">✎ editar</button>
+        <button class="btn-mini b-roxo" data-reset="${esc(l.slug)}" data-base="${esc(base)}">reset senha</button>
+        <button class="btn-mini b-ciano" data-dom="${esc(l.slug)}" data-atual="${esc(dom)}">domínio</button>
+        <button class="btn-mini ${l.status==="ativa"?"b-ambar":"b-verde"}" data-toggle="${esc(l.slug)}" data-st="${esc(l.status)}">${l.status==="ativa"?"suspender":"ativar"}</button>
+        <button class="btn-mini b-perigo" data-del="${esc(l.slug)}">remover</button>
+      </div></td>
+    </tr>`;
+  }).join("");
+  tb.querySelectorAll("[data-power]").forEach(b=>b.addEventListener("click", async ()=>{
+    const acao = b.dataset.ar==="1" ? "desligar" : "ligar";
+    b.disabled = true;
+    try{
+      const r = await api("/api/saas/lojas/"+encodeURIComponent(b.dataset.power)+"/"+acao, {method:"POST"});
+      toast(r.msg || (r.no_ar ? "Loja no ar." : "Loja parada."));
+      carregar();
+    }catch(e){ toast("Erro: "+e.message); b.disabled=false; }
+  }));
+  function abrirEditar(slug){
+    const l = LOJAS.find(x=>x.slug===slug);
+    if(!l) return;
+    $("#eSlug").value = l.slug;
+    $("#ePorta").value = l.porta;
+    $("#eNome").value = l.nome || "";
+    $("#eZap").value = l.zap || "";
+    $("#eEmail").value = l.email || "";
+    $("#eDominio").value = l.dominio || "";
+    const dig = soDigitos(l.doc);
+    $("#eTipo").value = l.doc_tipo === "cnpj" || (!l.doc_tipo && dig.length > 11) ? "juridica" : "fisica";
+    $("#eDoc").value = mascaraDoc(dig, $("#eTipo").value);
+    $("#modEditar").hidden = false;
+    try{ atualizarPainelDNS(); }catch(e){}
+    try{ atualizarCNAME(); }catch(e){}
+  }
+  tb.querySelectorAll("[data-reset]").forEach(b=>b.addEventListener("click", async ()=>{
+    if(!confirm(`Gerar link de redefinição para '${b.dataset.reset}'? Vale 30 min e só pode ser usado uma vez.`)) return;
+    try{
+      const r = await api("/api/saas/lojas/"+encodeURIComponent(b.dataset.reset)+"/reset-senha", {method:"POST"});
+      $("#linkReset").value = b.dataset.base + "/admin-completo.html?reset=" + r.token;
+      $("#modLink").hidden = false;
+      $("#linkReset").select();
+    }catch(e){ toast("Erro: "+e.message); }
+  }));
+  tb.querySelectorAll("[data-edit]").forEach(b=>b.addEventListener("click", ()=>abrirEditar(b.dataset.edit)));
+  tb.querySelectorAll("[data-dom]").forEach(b=>b.addEventListener("click", ()=>abrirEditar(b.dataset.dom)));
+  tb.querySelectorAll("[data-toggle]").forEach(b=>b.addEventListener("click", async ()=>{
+    const novo = b.dataset.st==="ativa" ? "suspensa" : "ativa";
+    if(novo==="suspensa" && !confirm(`Suspender '${b.dataset.toggle}'? O processo dela continua rodando até você pará-lo.`)) return;
+    try{ await api("/api/saas/lojas/"+encodeURIComponent(b.dataset.toggle),
+      {method:"PUT", body:JSON.stringify({status:novo})}); toast("Loja "+novo+"."); carregar(); }
+    catch(e){ toast("Erro: "+e.message); }
+  }));
+  tb.querySelectorAll("[data-del]").forEach(b=>b.addEventListener("click", async ()=>{
+    const slug = b.dataset.del;
+    const conf = prompt(`REMOVER '${slug}'?\nApaga a pasta inteira lojas/${slug}/. Não pode ser desfeito.\n\nPara confirmar, digite o slug da loja:`);
+    if(conf === null) return;
+    if(conf.trim().toLowerCase() !== slug){
+      toast("Remoção cancelada — o slug não confere.");
+      return;
+    }
+    try{ await api("/api/saas/lojas/"+encodeURIComponent(b.dataset.del), {method:"DELETE"});
+      toast("Loja removida."); carregar(); }
+    catch(e){ toast("Erro: "+e.message); }
+  }));
+}
+/* ---------- financeiro ---------- */
+let FIN = [];
+/* ---------- vendas (plataforma + interessados) ---------- */
+$("#recarregar").addEventListener("click", ()=>{
+  if(!$("#view-fin").hidden) carregarFin();
+  else if(!$("#view-vendas").hidden) carregarVendas();
+  else if(!$("#view-rel").hidden) carregarRel();
+  else carregar();
+});
+$("#tabLojas").addEventListener("click", ()=>irAba("lojas"));
+$("#tabFin").addEventListener("click", ()=>irAba("fin"));
+$("#tabVendas").addEventListener("click", ()=>irAba("vendas"));
+$("#tabRel").addEventListener("click", ()=>irAba("rel"));
+const ST_INT = {novo:["novo","verde"], contatado:["contatado","amarela"], convertido:["convertido","verde"], descartado:["descartado","cinza"]};
+async function carregarVendas(){
+  try{
+    const p = await api("/api/saas/plataforma");
+    $("#plNome").value = p.nome || "";
+    $("#plDominio").value = p.dominio || "";
+    $("#plZap").value = p.whatsapp || "";
+    $("#plZapTela").value = p.whatsapp_tela || "";
+  }catch(e){}
+  let lst = [];
+  try{ lst = await api("/api/saas/interesses"); }
+  catch(e){ toast("Erro: "+e.message); return; }
+  $("#linhasVendas").innerHTML = lst.length ? lst.map(l=>{
+    const tel = String(l.whatsapp||"").replace(/\D/g,"");
+    const st = ST_INT[l.status]||["—","cinza"];
+    return `<tr>
+      <td data-label="Data">${esc(dataBR(l.ts?l.ts.slice(0,10):""))}</td>
+      <td data-label="Cliente"><b>${esc(l.nome)}</b><br>${tel?`<a class="link" href="https://wa.me/${tel}" target="_blank" rel="noopener">${esc(l.whatsapp)}</a>`:esc(l.whatsapp)}</td>
+      <td data-label="Segmento">${esc(l.segmento||"—")}</td>
+      <td data-label="Plano">${esc(l.plano||"—")}</td>
+      <td data-label="Status"><span class="pilula ${st[1]}">${st[0]}</span></td>
+      <td data-label="Ações"><div class="acoes">
+        <select data-st-int="${l.id}" aria-label="Status do interessado">
+          ${Object.keys(ST_INT).map(k=>`<option value="${k}"${k===l.status?" selected":""}>${ST_INT[k][0]}</option>`).join("")}
+        </select>
+        <button class="btn-perigo" data-del-int="${l.id}">apagar</button>
+      </div></td>
+    </tr>`;
+  }).join("") : `<tr><td colspan="6" style="color:#888">Nenhum interessado ainda. Divulgue /landing.html.</td></tr>`;
+  $("#linhasVendas").querySelectorAll("[data-st-int]").forEach(s=>s.addEventListener("change", async ()=>{
+    try{
+      await api("/api/saas/interesses/"+encodeURIComponent(s.dataset.stInt), {method:"PUT", body:JSON.stringify({status:s.value})});
+      toast("Status atualizado."); carregarVendas();
+    }catch(e){ toast("Erro: "+e.message); }
+  }));
+  $("#linhasVendas").querySelectorAll("[data-del-int]").forEach(b=>b.addEventListener("click", async ()=>{
+    if(!confirm("Apagar este interessado?")) return;
+    try{
+      await api("/api/saas/interesses/"+encodeURIComponent(b.dataset.delInt), {method:"DELETE"});
+      toast("Apagado."); carregarVendas();
+    }catch(e){ toast("Erro: "+e.message); }
+  }));
+}
+/* ---------- relatórios ---------- */
+let REL = null;
+async function carregarRel(){
+  $("#cardsRel").innerHTML = "";
+  try{ REL = await api("/api/saas/resumo"); }
+  catch(e){ toast("Erro: "+e.message); return; }
+  const t = REL.totais || {};
+  const card = (v, s)=>`<div class="card"><b>${v}</b><span>${s}</span></div>`;
+  $("#cardsRel").innerHTML =
+    card(brl(t.receita), "Receita · 14 dias") +
+    card(t.pedidos ?? 0, "Pedidos · 14 dias") +
+    card(brl(t.ticket_medio), "Ticket médio") +
+    card(t.novos ?? 0, "A responder");
+  /* série 14 dias */
+  const serie = REL.serie || [];
+  const maxP = Math.max(1, ...serie.map(d=>d.pedidos||0));
+  $("#grafSerie").innerHTML = serie.map(d=>{
+    const h = Math.round((d.pedidos||0)/maxP*110);
+    const dia = dataBR(d.dia);
+    return `<div class="col" title="${dia}: ${d.pedidos||0} pedidos · ${brl(d.receita)}"><div class="bar ${(d.pedidos||0)?"":"zero"}" style="height:${h}px"></div><span class="dia">${dia.slice(0,5)}</span></div>`;
+  }).join("") || `<p style="color:#888">Sem movimento nos últimos 14 dias.</p>`;
+  /* funil */
+  const etapas = [
+    ["Interessados", t.interessados || 0],
+    ["Contatos no site", t.contatos || 0],
+    ["Pedidos fechados", t.pedidos || 0],
+  ];
+  const maxF = Math.max(1, ...etapas.map(e=>e[1]));
+  $("#funilRel").innerHTML = etapas.map(([nome, n])=>
+    `<div class="funil-linha"><span>${nome}</span><b>${n}</b><div class="trilho"><i style="width:${Math.round(n/maxF*100)}%"></i></div></div>`).join("");
+  /* top produtos */
+  const top = REL.top_produtos || [];
+  const maxT = Math.max(1, ...top.map(p=>p.qtd||0));
+  $("#topRel").innerHTML = top.length ? top.slice(0,5).map(p=>
+    `<div class="rank-linha"><span>${esc(p.nome)}</span><b>${p.qtd}× · ${brl(p.receita)}</b><div class="trilho"><i style="width:${Math.round((p.qtd||0)/maxT*100)}%"></i></div></div>`).join("")
+    : `<p style="color:#888">Sem pedidos registrados ainda.</p>`;
+  /* por loja */
+  const lojas = REL.lojas || [];
+  $("#linhasRel").innerHTML = lojas.length ? lojas.map(l=>`<tr>
+      <td data-label="Loja"><b>${esc(l.slug)}</b><br><span style="color:#888">${esc(l.nome)}</span></td>
+      <td data-label="Pedidos">${l.pedidos ?? 0}</td>
+      <td data-label="Receita">${brl(l.receita)}</td>
+      <td data-label="Situação">${l.no_ar?`<span class="dot on"></span>no ar`:`<span class="dot"></span>parada`}${(l.novos||0)?` <span class="pilula verde">${l.novos} novos</span>`:""}</td>
+    </tr>`).join("")
+    : `<tr><td colspan="4" style="color:#888">Nenhuma loja cadastrada.</td></tr>`;
+  $("#geradoRel").textContent = "Atualizado em " + (REL.gerado_em||"—").replace("T", " ") + " · período: últimos 14 dias.";
+}
+$("#expCsv").addEventListener("click", ()=>{
+  if(!REL || !REL.lojas){ toast("Abra a aba Relatórios primeiro."); return; }
+  const lin = [["loja","nome","status","plano","produtos","pedidos","receita","contatos","novos"]];
+  REL.lojas.forEach(l=>lin.push([l.slug, l.nome||"", l.status||"", l.plano||"",
+    l.produtos??0, l.pedidos??0, l.receita??0, l.contatos??0, l.novos??0]));
+  const csv = "\uFEFF" + lin.map(r=>r.map(c=>`"${String(c).replace(/"/g,'""')}"`).join(";")).join("\r\n");
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(new Blob([csv], {type:"text/csv;charset=utf-8"}));
+  a.download = "relatorio-lojas.csv";
+  a.click();
+  setTimeout(()=>URL.revokeObjectURL(a.href), 2000);
+  toast("CSV exportado.");
+});
+$("#formPlat").addEventListener("submit", async e=>{
+  e.preventDefault();
+  try{
+    await api("/api/saas/plataforma", {method:"PUT", body:JSON.stringify({
+      nome:$("#plNome").value.trim(), dominio:$("#plDominio").value.trim(),
+      whatsapp:$("#plZap").value.trim(), whatsapp_tela:$("#plZapTela").value.trim()})});
+    toast("Página de vendas atualizada.");
+  }catch(err){ toast("Erro: "+err.message); }
+});
+const brl = n => (Number(n)||0).toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
+const dataBR = iso => { const m = /^(\d{4})-(\d{2})-(\d{2})/.exec(String(iso||"")); return m ? `${m[3]}/${m[2]}/${m[1]}` : "—"; };
+const hojeISO = ()=> new Date().toISOString().slice(0,10);
+const mesAtual = ()=> new Date().toISOString().slice(0,7);
+const ST_FIN = {
+  em_dia:["em dia","verde"], vence_proximo:["vence em breve","amarela"],
+  atrasado:["em atraso","vermelha"], sem_cobranca:["sem cobrança","cinza"],
+  sem_vencimento:["sem vencimento","cinza"]
+};
+const TITULOS_ABA = {
+  lojas:["Lojas","Gerencie as lojas, domínios e acessos da plataforma"],
+  fin:["Financeiro","Mensalidades, vencimentos e baixas de pagamento"],
+  vendas:["Vendas","Página de vendas, WhatsApp e interessados"],
+  rel:["Relatórios","Pedidos, receita e funil das lojas"]
+};
+function irAba(nome){
+  const abas = [["lojas","Lojas"],["fin","Fin"],["vendas","Vendas"],["rel","Rel"]];
+  const tt = TITULOS_ABA[nome] || TITULOS_ABA.lojas;
+  const elTit = $("#viewTitulo"); if(elTit) elTit.textContent = tt[0];
+  const elSub = $("#viewSub"); if(elSub) elSub.textContent = tt[1];
+  const kp = $("#kpiTopo"); if(kp) kp.hidden = (nome==="fin" || nome==="rel");
+  abas.forEach(([v,suf])=>{
+    $("#tab"+suf).classList.toggle("on", v===nome);
+    $("#view-"+v).hidden = v!==nome;
+  });
+  try{ history.replaceState(null, "", nome==="lojas" ? location.pathname : "#"+nome); }catch(e){}
+  document.querySelectorAll("#menuDrop [data-menu]").forEach(b=>b.classList.toggle("on", b.dataset.menu===nome));
+  document.querySelectorAll(".bottombar [data-bb]").forEach(b=>b.classList.toggle("on", b.dataset.bb===nome));
+  fecharMenu();
+  if(nome==="fin") carregarFin();
+  else if(nome==="vendas") carregarVendas();
+  else if(nome==="rel") carregarRel();
+  else carregar();
+}
+/* deep-link: F5 mantém a aba (#fin, #vendas, #rel) */
+function irAbaInicial(){
+  const h = (location.hash||"").replace("#","");
+  irAba(h==="fin"||h==="vendas"||h==="rel" ? h : "lojas");
+}
+function stFin(l){
+  let txt = (ST_FIN[l.status]||["—","cinza"])[0], cls = (ST_FIN[l.status]||["—","cinza"])[1];
+  if(l.status==="atrasado" && l.dias!=null) txt = `atrasado ${-l.dias}d`;
+  if(l.status==="vence_proximo" && l.dias!=null) txt = l.dias===0 ? "vence hoje" : `vence em ${l.dias}d`;
+  return `<span class="pilula ${cls}">${txt}</span>`;
+}
+async function carregarFin(){
+  let dados;
+  try{ dados = await api("/api/saas/financeiro"); }
+  catch(e){ toast("Erro: "+e.message); return; }
+  FIN = dados.lojas || [];
+  const r = dados.resumo || {};
+  $("#cardsFin").innerHTML = `
+    <div class="card"><b>${brl(r.mrr)}</b><span>MRR (mensalidades ativas)</span></div>
+    <div class="card"><b>${brl(r.recebido_mes)}</b><span>Recebido em ${esc(r.mes)}</span></div>
+    <div class="card"><b>${r.atrasados||0}</b><span>lojas em atraso</span></div>
+    <div class="card"><b>${r.sem_cobranca||0}</b><span>sem cobrança definida</span></div>`;
+  try{ pintarContasAbas(); }catch(e){}
+  $("#linhasFin").innerHTML = FIN.length ? FIN.map(l=>`<tr>
+      <td data-label="Loja"><b>${esc(l.slug)}</b><br><span style="color:#888">${esc(l.nome)}</span></td>
+      <td data-label="Plano">${l.plano?`<span class="pilula ${l.plano==="pro"?"verde":"cinza"}">${l.plano}</span>`:"—"}</td>
+      <td data-label="Mensalidade">${l.mensalidade?brl(l.mensalidade):"—"}</td>
+      <td data-label="Vencimento">${dataBR(l.vencimento)}</td>
+      <td data-label="Situação">${stFin(l)}</td>
+      <td data-label="Ações"><div class="acoes">
+        <button class="btn-mini b-verde" data-pag="${l.slug}">✓ dar baixa</button>
+        <button class="btn-mini" data-plano="${l.slug}">⚙ plano</button>
+        <button class="btn-mini b-cinza" data-hist="${l.slug}">histórico (${l.n_pagamentos||0})</button>
+      </div></td>
+    </tr>`).join("")
+    : `<tr><td colspan="6" style="color:#888">Nenhuma loja cadastrada.</td></tr>`;
+  $("#linhasFin").querySelectorAll("[data-pag]").forEach(b=>b.addEventListener("click", ()=>{
+    const l = FIN.find(x=>x.slug===b.dataset.pag);
+    $("#pagTitulo").textContent = "Dar baixa — " + b.dataset.pag;    $("#pgValor").value = l && l.mensalidade ? l.mensalidade : "";
+    $("#pgData").value = hojeISO();
+    $("#pgComp").value = mesAtual();
+    $("#pgMeio").value = "Pix";
+    $("#pgObs").value = "";
+    $("#pgAdiantar").checked = true;
+    $("#modPag").hidden = false;
+    $("#modPag").dataset.slug = b.dataset.pag;
+  }));
+  $("#linhasFin").querySelectorAll("[data-plano]").forEach(b=>b.addEventListener("click", ()=>{
+    const l = FIN.find(x=>x.slug===b.dataset.plano);
+    $("#planoTitulo").textContent = "Plano — " + b.dataset.plano;
+    $("#pPlano").value = (l && l.plano) || "";
+    $("#pMensalidade").value = (l && l.mensalidade) || "";
+    $("#pVencimento").value = (l && l.vencimento) || "";
+    $("#modPlano").hidden = false;
+    $("#modPlano").dataset.slug = b.dataset.plano;
+  }));
+  $("#linhasFin").querySelectorAll("[data-hist]").forEach(b=>b.addEventListener("click", ()=>abrirHist(b.dataset.hist)));
+}
+async function abrirHist(slug){
+  $("#histTitulo").textContent = "Histórico — " + slug;
+  $("#histCorpo").innerHTML = `<p style="color:#888">Carregando...</p>`;
+  $("#modHist").hidden = false;
+  $("#modHist").dataset.slug = slug;
+  try{
+    const d = await api("/api/saas/financeiro/"+encodeURIComponent(slug));
+    const pags = d.pagamentos || [];
+    $("#histCorpo").innerHTML = pags.length ? `<table class="tabela"><thead><tr>
+      <th>Data</th><th>Comp.</th><th>Valor</th><th>Meio</th><th>Status</th><th></th></tr></thead><tbody>` +
+      pags.map(p=>`<tr><td data-label="Data">${esc(dataBR(p.data))}</td><td data-label="Comp.">${esc(p.competencia)}</td>
+        <td data-label="Valor">${brl(p.valor)}</td><td data-label="Meio">${esc(p.meio)}</td>
+        <td data-label="Status"><span class="pilula ${p.status==="pago"?"verde":p.status==="pendente"?"amarela":"cinza"}">${esc(p.status)}</span></td>
+        <td data-label="Ações">${p.obs?`<span style="font-size:12px;color:#888">${esc(p.obs)}</span>`:""} <button class="btn-perigo" data-del-pag="${esc(p.id)}">excluir</button></td>
+      </tr>`).join("") + `</tbody></table>`
+      : `<p style="color:#888">Nenhum pagamento registrado.</p>`;
+    $("#histCorpo").querySelectorAll("[data-del-pag]").forEach(x=>x.addEventListener("click", async ()=>{
+      if(!confirm("Excluir este lançamento?")) return;
+      try{
+        await api("/api/saas/financeiro/"+encodeURIComponent(slug)+"/pagamentos/"+encodeURIComponent(x.dataset.delPag), {method:"DELETE"});
+        toast("Lançamento excluído."); abrirHist(slug); carregarFin();
+      }catch(e){ toast("Erro: "+e.message); }
+    }));
+  }catch(e){ $("#histCorpo").innerHTML = `<p>Erro: ${esc(e.message)}</p>`; }
+}
+$("#fechaPlano").addEventListener("click", ()=>{ $("#modPlano").hidden = true; });
+$("#cancelaPlano").addEventListener("click", ()=>{ $("#modPlano").hidden = true; });
+$("#fechaPag").addEventListener("click", ()=>{ $("#modPag").hidden = true; });
+$("#cancelaPag").addEventListener("click", ()=>{ $("#modPag").hidden = true; });
+$("#fechaHist").addEventListener("click", ()=>{ $("#modHist").hidden = true; });
+$("#fechaLink").addEventListener("click", ()=>{ $("#modLink").hidden = true; });
+$("#fechaLink2").addEventListener("click", ()=>{ $("#modLink").hidden = true; });
+$("#copiaLink").addEventListener("click", async ()=>{
+  const inp = $("#linkReset");
+  inp.select();
+  try{ await navigator.clipboard.writeText(inp.value); toast("Link copiado!"); }
+  catch(e){ document.execCommand("copy"); toast("Link selecionado — use Ctrl+C."); }
+});
+$("#formPlano").addEventListener("submit", async e=>{
+  e.preventDefault();
+  const slug = $("#modPlano").dataset.slug;
+  try{
+    await api("/api/saas/financeiro/"+encodeURIComponent(slug), {method:"PUT", body:JSON.stringify({
+      plano:$("#pPlano").value, mensalidade:$("#pMensalidade").value, vencimento:$("#pVencimento").value})});
+    $("#modPlano").hidden = true;
+    toast("Plano atualizado."); carregarFin();
+  }catch(err){ toast("Erro: "+err.message); }
+});
+$("#formPag").addEventListener("submit", async e=>{
+  e.preventDefault();
+  const slug = $("#modPag").dataset.slug;
+  try{
+    const r = await api("/api/saas/financeiro/"+encodeURIComponent(slug)+"/pagamentos",
+      {method:"POST", body:JSON.stringify({valor:$("#pgValor").value, data:$("#pgData").value,
+        competencia:$("#pgComp").value, meio:$("#pgMeio").value, status:"pago",
+        obs:$("#pgObs").value, adiantar_vencimento:$("#pgAdiantar").checked})});
+    $("#modPag").hidden = true;
+    toast("Baixa registrada. Novo vencimento: "+dataBR(r.vencimento)+".");
+    carregarFin();
+  }catch(err){ toast("Erro: "+err.message); }
+});
+$("#fechaEditar").addEventListener("click", ()=>{ $("#modEditar").hidden = true; });
+$("#cancelaEditar").addEventListener("click", ()=>{ $("#modEditar").hidden = true; });
+$("#formEditar").addEventListener("submit", async e=>{
+  e.preventDefault();
+  const slug = $("#eSlug").value;
+  const body = {nome:$("#eNome").value.trim(), zap:$("#eZap").value.trim(),
+    email:$("#eEmail").value.trim(), dominio:$("#eDominio").value.trim(),
+    doc:soDigitos($("#eDoc").value)};
+  try{
+    await api("/api/saas/lojas/"+encodeURIComponent(slug), {method:"PUT", body:JSON.stringify(body)});
+    $("#modEditar").hidden = true;
+    toast("Loja atualizada (site sincronizado).");
+    carregar();
+  }catch(err){ toast("Erro: "+err.message); }
+});
+
+/* ---------- domínio próprio / registro.br ---------- */
+let SAAS_INFO = {ip_publico:"", base_domain:"plataforma.jordaonetotech.com.br", caddy_cmd:"python3 scripts/gerar_caddy.py --base plataforma.jordaonetotech.com.br"};
+async function carregarInfo(){
+  try{ SAAS_INFO = Object.assign(SAAS_INFO, await api("/api/saas/info")); }catch(e){}
+  return SAAS_INFO;
+}
+function dominioAtual(){ return ($("#eDominio").value||"").trim().toLowerCase().replace(/^www\./,"").replace(/\.$/,""); }
+function pintarDNS(estado, texto){
+  const el = $("#dnsStatus");
+  el.className = "pilula " + (estado==="ok"?"verde":estado==="erro"?"vermelha":estado==="aviso"?"amarela":"cinza");
+  el.textContent = texto;
+}
+async function atualizarPainelDNS(){
+  await carregarInfo();
+  const dom = dominioAtual();
+  const slug = $("#eSlug").value || "";
+  const ip = SAAS_INFO.ip_publico || "<IP-da-VPS>";
+  const base = SAAS_INFO.base_domain || "plataforma.jordaonetotech.com.br";
+  $("#btnAbrirSite").href = dom ? "https://"+dom : (slug ? `https://${slug}.${base}` : "#");
+  if(!dom){
+    pintarDNS("", "sem domínio");
+    $("#dnsInstr").innerHTML = `Sem domínio próprio: a loja atende em <code>${esc(slug)||"&lt;slug&gt;"}.${esc(base)}</code> (wildcard <code>* ${esc(base)}</code> já apontado). Para usar domínio do cliente, digite acima e salve.`;
+    $("#dnsDetalhe").textContent = "";
+    return;
+  }
+  pintarDNS("", "não verificado");
+  $("#dnsInstr").innerHTML = `No <b>registro.br do cliente</b> (${esc(dom)} &gt; Zona DNS), criar:<br>• <code>${esc(dom)}</code> &nbsp;tipo <code>A</code> → <code>${esc(ip)}</code> (na raiz, CNAME é proibido)<br>• <code>www</code> tipo <code>CNAME</code> → <code>${esc(slug||"&lt;slug&gt;")}.${esc(base)}</code> (se o IP da VPS mudar, o www acompanha sozinho)<br>Depois: <code>${esc(SAAS_INFO.caddy_cmd)}</code> + <code>systemctl reload caddy</code>.`;
+  $("#dnsDetalhe").textContent = "";
+}
+async function atualizarCNAME(){
+  /* CNAME gerado pelo SaaS p/ o www do cliente (+ se resolve p/ a VPS) */
+  const slug = (($("#eSlug").value||"").trim().toLowerCase());
+  const alvo = $("#cnameAlvo"), st = $("#cnameStatus");
+  if(!slug){ alvo.textContent = "—"; st.className = "pilula cinza"; st.textContent = "…"; st.title = ""; return; }
+  try{
+    const r = await api("/api/saas/receita/"+encodeURIComponent(slug));
+    alvo.textContent = r.cname_alvo || "—";
+    st.title = r.aviso || "";
+    if(r.cname_ok){ st.className = "pilula verde"; st.textContent = "resolve p/ VPS"; }
+    else { st.className = "pilula amarela"; st.textContent = "não resolve (veja wildcard)"; }
+  }catch(e){ alvo.textContent = "—"; st.className = "pilula cinza"; st.textContent = "…"; st.title = ""; }
+}
+$("#btnCopyCNAME").addEventListener("click", async ()=>{
+  const t = $("#cnameAlvo").textContent;
+  if(!t || t === "—"){ toast("Nada para copiar."); return; }
+  try{ await navigator.clipboard.writeText(t); toast("CNAME copiado!"); }
+  catch(e){ prompt("Copie o CNAME:", t); }
+});
+async function verificarDNS(){
+  const dom = dominioAtual();
+  if(!dom){ toast("Informe o domínio primeiro."); return; }
+  pintarDNS("", "verificando…");
+  $("#dnsDetalhe").textContent = "";
+  try{
+    const r = await api("/api/saas/dns/"+encodeURIComponent(dom));
+    const ip = r.esperado || "?";
+    const raiz = (r.resolvido||{})[r.dominio]||[];
+    const www = (r.resolvido||{})["www."+r.dominio]||[];
+    if(r.ok){ pintarDNS("ok", "DNS ok — pode gerar Caddy"); }
+    else if(r.ok_raiz || r.ok_www){ pintarDNS("aviso", "propagando (parcial)"); }
+    else { pintarDNS("erro", "DNS não aponta"); }
+    $("#dnsDetalhe").textContent = `@ → ${raiz.length?raiz.join(", "):"não resolve"} · www → ${www.length?www.join(", "):"não resolve"} · esperado: ${ip} · ${r.proximo_passo||""}`;
+  }catch(e){ pintarDNS("erro", "falha ao verificar"); $("#dnsDetalhe").textContent = e.message; }
+}
+$("#btnVerDNS").addEventListener("click", verificarDNS);
+$("#eDominio").addEventListener("input", ()=>{ clearTimeout(window._dnsT); window._dnsT = setTimeout(atualizarPainelDNS, 400); });
+$("#btnCopyDNS").addEventListener("click", async ()=>{
+  const dom = dominioAtual(); const ip = SAAS_INFO.ip_publico || "<IP-da-VPS>";
+  const slug = ($("#eSlug").value||"").trim();
+  const base = SAAS_INFO.base_domain || "plataforma.jordaonetotech.com.br";
+  const wwwCname = slug ? `${slug}.${base}` : "";
+  const txt = dom
+    ? `Para seu site abrir em https://${dom} com cadeado, entre em registro.br > ${dom} > DNS e crie:\n1) ${dom}  tipo A  ->  ${ip}\n2) www  tipo ${wwwCname ? `CNAME  ->  ${wwwCname}` : `A  ->  ${ip}`}\nAguarde 2-4h e me avise.${slug?`\nEnquanto isso sua loja já está no ar em https://${slug}.${base}`:""}`
+    : "Informe o domínio da loja primeiro.";
+  try{ await navigator.clipboard.writeText(txt); toast("Instruções copiadas!"); }
+  catch(e){ prompt("Copie as instruções:", txt); }
+});
+$("#btnCopyCaddy").addEventListener("click", async ()=>{
+  const cmd = (SAAS_INFO.caddy_cmd||"python3 scripts/gerar_caddy.py") + " && sudo systemctl reload caddy";
+  try{ await navigator.clipboard.writeText(cmd); toast("Comando copiado!"); }
+  catch(e){ prompt("Copie o comando:", cmd); }
+});
+
+/* passo 2 do cadastro (opcional, colapsado) */
+$("#togglePasso2").addEventListener("click", ()=>{
+  const p2 = $("#novaPasso2");
+  const abrir = p2.hidden;
+  p2.hidden = !abrir;
+  /* filhos participam da grade do formulário quando aberto */
+  p2.style.display = abrir ? "contents" : "";
+  const b = $("#togglePasso2");
+  b.textContent = abrir ? "－ empresa, domínio e senha (opcional)" : "＋ empresa, domínio e senha (opcional)";
+  b.setAttribute("aria-expanded", String(abrir));
+});
+$("#nTipo").addEventListener("change", ()=>{
+  const t = $("#nTipo").value;
+  $("#nDoc").placeholder = t==="juridica" ? "CNPJ (14 dígitos)" : "CPF (obrigatório)";
+  $("#nDoc").value = mascaraDoc($("#nDoc").value, t);
+});$("#nDoc").addEventListener("input", ()=>{ $("#nDoc").value = mascaraDoc($("#nDoc").value, $("#nTipo").value); });
+$("#eTipo").addEventListener("change", ()=>{ $("#eDoc").value = mascaraDoc($("#eDoc").value, $("#eTipo").value); });
+$("#eDoc").addEventListener("input", ()=>{ $("#eDoc").value = mascaraDoc($("#eDoc").value, $("#eTipo").value); });
+
+$("#formNova").addEventListener("submit", async e=>{
+  e.preventDefault();
+  const tipo = $("#nTipo").value;
+  const doc = soDigitos($("#nDoc").value);
+  if(doc && doc.length !== (tipo==="juridica"?14:11)){ toast(tipo==="juridica"?"CNPJ precisa de 14 dígitos.":"CPF precisa de 11 dígitos."); return; }
+  const body = {slug:$("#nSlug").value.trim().toLowerCase(), nome:$("#nNome").value.trim(),
+    zap:$("#nZap").value.trim(), email:$("#nEmail").value.trim(), doc,
+    dominio:$("#nDominio").value.trim(), senha_inicial:$("#nSenha").value,
+    template:$("#nTemplate")?.value || "generico",
+    tema:$("#nTema").value || "artesanal"};
+  try{
+    const l = await api("/api/saas/lojas", {method:"POST", body:JSON.stringify(body)});
+    toast(`Loja criada na porta ${l.porta}. Suba o processo dela para entrar no ar.`);
+    e.target.reset(); if($("#nTemplate")) $("#nTemplate").value = "generico"; $("#nTema").value = "artesanal"; carregar();
+  }catch(err){ toast("Erro: "+err.message); }
+});
+
+if(tok()){ api("/api/saas/lojas").then(()=>entrar()).catch(()=>{ sair(); }); }
+})();
+</script>
+</body>
+</html>
