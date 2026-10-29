@@ -1016,12 +1016,16 @@ function desenharLojas(){
     const dom = String(l.dominio||"");
     const host = location.hostname;
     const ehIp = /^[0-9.]+$/.test(host) || host === "localhost";
+    /* em workers.dev (sem wildcard DNS) o isolamento é por ?loja=<slug> */
+    const semWildcard = host.endsWith(".workers.dev") || ehIp;
     /* usa o domínio base da plataforma (ex.: plataforma.jordaonetotech.com.br) para montar <slug>.<base> */
     const baseDom = BASE_DOM || host.replace(/^admin\./,"");
     const base = dom ? "https://"+dom : (ehIp ? `${location.protocol}//${host}:${l.porta}` : "https://"+l.slug+"."+baseDom);
+    const qs = (!dom && semWildcard) ? "?loja="+encodeURIComponent(l.slug) : "";
+    const raiz = semWildcard && !dom ? location.origin : base;
     const dominioVisivel = dom || (baseDom ? `${l.slug}.${baseDom}` : "(sem domínio)");
-    const front = `${base}/`;
-    const painel = `${base}/editor.html`;
+    const front = `${raiz}/${qs}`;
+    const painel = `${raiz}/editor.html${qs}`;
     return `<tr>
       <td data-label="Loja"><b>${esc(l.slug)}</b><br><span style="color:#888">${esc(l.nome)}</span><br><span style="color:#888;font-size:12px">${esc(dominioVisivel)}</span><br><span style="color:#888;font-size:12px">${esc(rotuloDoc(l)||"(sem CPF/CNPJ)")}</span></td>
       <td data-label="WhatsApp">${esc(l.zap||"—")}</td>
@@ -1033,7 +1037,7 @@ function desenharLojas(){
         <a class="link" href="${esc(painel)}" target="_blank" rel="noopener">painel</a>
         <button class="btn-mini ${l.no_ar?"b-ambar":"b-verde"}" data-power="${esc(l.slug)}" data-ar="${l.no_ar?1:0}">${l.no_ar?"⏸ desligar":"▶ ligar"}</button>
         <button class="btn-mini" data-edit="${esc(l.slug)}">✎ editar</button>
-        <button class="btn-mini b-roxo" data-reset="${esc(l.slug)}" data-base="${esc(base)}">reset senha</button>
+        <button class="btn-mini b-roxo" data-reset="${esc(l.slug)}" data-base="${esc(raiz)}" data-qs="${esc(qs)}">reset senha</button>
         <button class="btn-mini b-ciano" data-dom="${esc(l.slug)}" data-atual="${esc(dom)}">domínio</button>
         <button class="btn-mini ${l.status==="ativa"?"b-ambar":"b-verde"}" data-toggle="${esc(l.slug)}" data-st="${esc(l.status)}">${l.status==="ativa"?"suspender":"ativar"}</button>
         <button class="btn-mini b-perigo" data-del="${esc(l.slug)}">remover</button>
@@ -1069,7 +1073,8 @@ function desenharLojas(){
     if(!confirm(`Gerar link de redefinição para '${b.dataset.reset}'? Vale 30 min e só pode ser usado uma vez.`)) return;
     try{
       const r = await api("/api/saas/lojas/"+encodeURIComponent(b.dataset.reset)+"/reset-senha", {method:"POST"});
-      $("#linkReset").value = b.dataset.base + "/admin-completo.html?reset=" + r.token;
+      const q = b.dataset.qs || "";
+      $("#linkReset").value = b.dataset.base + "/admin-completo.html" + q + (q ? "&" : "?") + "reset=" + r.token;
       $("#modLink").hidden = false;
       $("#linkReset").select();
     }catch(e){ toast("Erro: "+e.message); }
@@ -1408,7 +1413,11 @@ async function atualizarPainelDNS(){
   const slug = $("#eSlug").value || "";
   const ip = SAAS_INFO.ip_publico || "<IP-da-VPS>";
   const base = SAAS_INFO.base_domain || "plataforma.jordaonetotech.com.br";
-  $("#btnAbrirSite").href = dom ? "https://"+dom : (slug ? `https://${slug}.${base}` : "#");
+  const host = location.hostname;
+  const semWildcard = host.endsWith(".workers.dev") || host === "localhost" || /^[0-9.]+$/.test(host);
+  $("#btnAbrirSite").href = dom
+    ? "https://"+dom
+    : (slug ? (semWildcard ? `${location.origin}/?loja=${encodeURIComponent(slug)}` : `https://${slug}.${base}`) : "#");
   if(!dom){
     pintarDNS("", "sem domínio");
     $("#dnsInstr").innerHTML = `Sem domínio próprio: a loja atende em <code>${esc(slug)||"&lt;slug&gt;"}.${esc(base)}</code> (wildcard <code>* ${esc(base)}</code> já apontado). Para usar domínio do cliente, digite acima e salve.`;
@@ -1504,7 +1513,7 @@ $("#formNova").addEventListener("submit", async e=>{
     tema:$("#nTema").value || "artesanal"};
   try{
     const l = await api("/api/saas/lojas", {method:"POST", body:JSON.stringify(body)});
-    toast(`Loja criada na porta ${l.porta}. Suba o processo dela para entrar no ar.`);
+    toast(`Loja '${l.slug}' criada e no ar. Acesse pelo link "site" na tabela.`);
     e.target.reset(); if($("#nTemplate")) $("#nTemplate").value = "generico"; $("#nTema").value = "artesanal"; carregar();
   }catch(err){ toast("Erro: "+err.message); }
 });

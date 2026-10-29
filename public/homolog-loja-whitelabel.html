@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="pt-BR" data-segment="restaurante" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Loja Whitelabel — Catálogo Multi-Segmento (Homologação v2)</title>
+<meta name="description" content="Versão de homologação de loja whitelabel: catálogo digital multi-segmento, modo híbrido, checkout integrado e domínio próprio. Inspirado no Katalog.">
+<style>
+:root{
+  --ds-brand:#e63946;--ds-brand-ink:#fff;--ds-accent:#ffb703;--ds-paper:#ffffff;--ds-surface:#f8f9fa;--ds-ink:#1d3557;--ds-muted:#6c757d;--ds-line:#dee2e6;--ds-radius-sm:8px;--ds-radius-md:14px;--ds-radius-lg:20px;--ds-font-display:"Instrument Serif",Georgia,serif;--ds-font-body:"Inter",ui-sans-serif,system-ui,sans-serif;
+  --ds-surface-2:#f1f3f5;--ds-track:#e9ecef;
+}
+[data-segment="restaurante"]{--ds-brand:#e63946;--ds-accent:#ffb703}
+[data-segment="moda"]{--ds-brand:#4361ee;--ds-accent:#3a0ca3}
+[data-segment="pet"]{--ds-brand:#2a9d8f;--ds-accent:#264653}
+[data-segment="papelaria"]{--ds-brand:#f4a261;--ds-accent:#e76f51}
+[data-segment="utilidades"]{--ds-brand:#6c757d;--ds-accent:#adb5bd}
+[data-segment="bem-estar"]{--ds-brand:#c792ea;--ds-accent:#b0e0e6}
+[data-segment="doces"]{--ds-brand:#f72585;--ds-accent:#fc4f4f}
+[data-segment="neutro"]{--ds-brand:#6c757d;--ds-accent:#adb5bd}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--ds-font-body);background:var(--ds-paper);color:var(--ds-ink);margin:0;line-height:1.65;font-size:16px}
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,0.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--ds-line)}
+.ds-wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+header .ds-wrap{display:flex;align-items:center;gap:12px;padding:14px 0;flex-wrap:wrap;justify-content:space-between}
+header h1{font-family:var(--ds-font-display);font-size:22px;margin:0;line-height:1.15}
+.logo-dot{width:36px;height:36px;border-radius:10px;background:var(--ds-brand);color:var(--ds-brand-ink);display:grid;place-items:center;font-weight:800;font-family:var(--ds-font-display);font-size:18px}
+.tag{display:inline-block;padding:3px 8px;border-radius:999px;font-weight:600;font-size:11px;letter-spacing:.5px;background:var(--ds-brand);color:var(--ds-brand-ink);box-shadow:0 2px 6px rgba(0,0,0,.08)}
+
+main{padding:28px 0}
+.section{padding:28px 0;border-bottom:1px solid var(--ds-line)}
+h2{font-family:var(--ds-font-display);font-size:28px;margin:0 0 10px;line-height:1.15}
+
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center;padding:40px 0}
+@media(max-width:860px){.hero{grid-template-columns:1fr}}
+.hero h1{font-size:clamp(2.2rem,5vw,3.5rem);line-height:1.1;margin:0 0 10px;letter-spacing:-.02em}
+.hero p{color:var(--ds-muted);font-size:18px;margin:0 0 14px}
+
+.seg-row{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0}
+button.d-chip{font:inherit;padding:8px 14px;border:1px solid var(--ds-line);border-radius:999px;background:var(--ds-surface);color:var(--ds-ink);cursor:pointer;font-weight:600;transition:all .15s}
+button.d-chip[aria-pressed="true"]{background:var(--ds-brand);color:var(--ds-brand-ink);border-color:var(--ds-brand);box-shadow:0 4px 14px rgba(0,0,0,.12)}
+button.d-chip:hover{border-color:#adb5bd}
+
+.btn-primary{background:var(--ds-brand);color:var(--ds-brand-ink);padding:12px 22px;border:none;border-radius:var(--ds-radius-sm);font-weight:700;font-family:inherit;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.12);transition:filter .15s}
+.btn-primary:hover{filter:brightness(1.08)}
+
+.grid-btns{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:16px}
+.card{background:var(--ds-surface);border:1px solid var(--ds-line);border-radius:var(--ds-radius-md);padding:20px;box-shadow:0 1px 4px rgba(0,0,0,.03)}
+.card h3{font-family:var(--ds-font-display);font-size:18px;margin:0 0 6px}
+
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:14px 0}
+input.txt{font:inherit;padding:10px 12px;border:1px solid var(--ds-line);border-radius:var(--ds-radius-sm);background:var(--ds-surface);color:var(--ds-ink);min-width:260px}
+
+.grid-cat{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;margin-top:16px}
+.product{background:var(--ds-surface);border:1px solid var(--ds-line);border-radius:var(--ds-radius-md);padding:14px;box-shadow:0 1px 3px rgba(0,0,0,.02);transition:border-color .15s}
+.product:hover{border-color:#ced4da}
+.product img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--ds-radius-sm);background:#e9ecef;display:block}
+.product h3{font-family:var(--ds-font-display);font-size:18px;margin:8px 0 4px}
+.product .price{font-weight:700;color:var(--ds-brand);font-size:22px}
+
+.check{columns:2;gap:24px;font-size:14px;margin-top:12px}
+.check li{margin-bottom:8px;break-inside:avoid}
+@media(max-width:700px){.check{columns:1}}
+
+footer{padding:28px 0;font-size:13px;color:var(--ds-muted);border-top:1px solid var(--ds-line);display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:space-between}
+
+.banners{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-top:14px}
+.banner{background:linear-gradient(135deg,var(--ds-brand),var(--ds-accent));color:#fff;padding:18px;border-radius:var(--ds-radius-md);font-family:var(--ds-font-display);font-size:18px}
+.banner small{display:block;font-family:var(--ds-font-body);font-size:13px;opacity:.9;margin-top:4px}
+</style>
+</head>
+<body data-btn-formato="padrao" data-btn-caixa="alta">
+
+<header role="banner" aria-label="Loja Whitelabel">
+  <div class="ds-wrap" style="display:flex;align-items:center;gap:14px;padding:14px 0;flex-wrap:wrap">
+    <a href="#" class="logo-dot" aria-label="Voltar ao catálogo">✦</a>
+    <div style="flex:1;min-width:200px">
+      <h1>Catálogo Pro <span class="tag">Loja Whitelabel — HML v2</span></h1>
+      <div style="font-size:13px;color:var(--ds-muted)">Segmento atual: <b id="segLabel">Restaurante</b>  •  Tema: <b>Claro</b>  •  Domínio: <b>padariajoao.catalogopro.com.br</b></div>
+    </div>
+    <a href="homolog-super-admin.html" class="btn-ghost" style="padding:8px 14px">Super Admin</a>
+    <a href="homolog-network-admin.html" class="btn-ghost" style="padding:8px 14px">Network Admin</a>
+    <button class="btn-primary" onclick="toggleTheme()">Tema</button>
+  </div>
+</header>
+
+<main class="ds-wrap" aria-label="Catálogo da loja">
+
+  <section aria-label="Identidade e seletor de segmento" class="section" style="padding-top:10px">
+    <div class="hero">
+      <div>
+        <h1>Uma loja neutra,<br>pronta para qualquer segmento.</h1>
+        <p>Troque o segmento abaixo. O layout permanece idêntico — apenas <code>--ds-brand</code> e <code>--ds-accent</code> mudam, garantindo consistência visual entre restaurante, moda, pet e muito mais.</p>
+        <div class="seg-row" role="group" aria-label="Segmentos">
+          <button class="d-chip" data-seg="restaurante" aria-pressed="true" onclick="setSeg(this)">Restaurante</button>
+          <button class="d-chip" data-seg="moda" aria-pressed="false" onclick="setSeg(this)">Moda</button>
+          <button class="d-chip" data-seg="pet" aria-pressed="false" onclick="setSeg(this)">Pet</button>
+          <button class="d-chip" data-seg="papelaria" aria-pressed="false" onclick="setSeg(this)">Papeleria</button>
+          <button class="d-chip" data-seg="utilidades" aria-pressed="false" onclick="setSeg(this)">Utilidades</button>
+          <button class="d-chip" data-seg="bem-estar" aria-pressed="false" onclick="setSeg(this)">Bem-estar</button>
+          <button class="d-chip" data-seg="doces" aria-pressed="false" onclick="setSeg(this)">Doces</button>
+        </div>
+        <div class="toolbar">
+          <label>Formato botão:
+            <select id="selFormato" onchange="setForm(this.value)"><option value="padrao">Padrão</option><option value="pill">Pill</option><option value="quadrado">Quadrado</option></select>
+          </label>
+          <label>Caixa:
+            <select id="selCaixa" onchange="setCaixa(this.value)"><option value="alta">Alta (caixa alta)</option><option value="normal">Normal</option></select>
+          </label>
+        </div>
+      </div>
+      <div>
+        <div class="card" style="background:var(--ds-brand);color:var(--ds-brand-ink);border:none">
+          <h2 style="margin:0 0 6px;color:inherit">Experiência Whitelabel</h2>
+          <p style="margin:0;color:rgba(255,255,255,.95)">Cliente final nunca vê "Katalog". Cada revenda opera com subdomínio, logo, cores e painel isolado. O design system neutro permite ativar novos segmentos sem reescrever CSS.</p>
+          <a href="homolog-network-admin.html" style="display:inline-block;margin-top:10px;background:#fff;color:var(--ds-brand);padding:8px 14px;border-radius:6px;font-weight:700;text-decoration:none">Ver Network Admin →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section aria-label="Botões — Hierarquia única" class="section" id="botoes">
+    <h2>Hierarquia única (inspirada em Primer + Web Awesome)</h2>
+    <p style="color:var(--ds-muted);margin-top:-6px">5 variantes, 3 tamanhos. Regra: 1 primário por tela; checkout sempre <b>Zap</b>; destrutivo sempre outline.</p>
+    <div class="grid-btns">
+      <div class="card"><h3 style="margin-top:0">Primary</h3><button class="btn-primary" onclick="addCart()">Adicionar à lista</button><button class="btn-primary" style="padding:6px 10px;font-size:12px">SM</button> <button class="btn-primary" style="padding:14px 22px;font-size:18px">LG</button></div>
+      <div class="card"><h3 style="margin-top:0">Zap (conversão)</h3><button class="btn-primary" style="background:#ffb703;color:#212529;box-shadow:0 4px 14px rgba(255,183,3,.35)" onclick="checkout()">Fechar pedido</button><button class="btn-primary" style="background:#ffb703;color:#212529;display:block;width:100%;margin-top:8px">Fechar pedido · block</button></div>
+      <div class="card"><h3 style="margin-top:0">Outline / Ghost</h3><button class="btn-ghost">Continuar olhando</button> <button class="btn-ghost">Ver detalhes →</button> <button class="btn-ghost" style="color:#c92a2a;border-color:#c92a2a">Excluir item</button></div>
+    </div>
+  </section>
+
+  <section aria-label="Catálogo multi-segmento" id="catalogo" class="section">
+    <h2>8 produtos de exemplo · 6 segmentos</h2>
+    <div class="toolbar">
+      <input class="txt" id="busca" type="search" placeholder="Buscar no catálogo demo…" aria-label="Buscar catálogo" oninput="filterCat(this.value)">
+      <select id="filtroCat" aria-label="Filtrar por categoria" onchange="filterCatBy(this.value)">
+        <option value="tudo">Tudo</option><option value="restaurante">Restaurante</option><option value="moda">Moda</option><option value="pet">Pet</option><option value="papelaria">Papeleria</option><option value="utilidades">Utilidades</option><option value="bem-estar">Bem-estar</option><option value="doces">Doces</option>
+      </select>
+    </div>
+    <div class="grid-cat" id="gradeCat"></div>
+    <p style="font-size:13px;color:var(--ds-muted);margin-top:14px">Fonte demo: catálogo multi-segmento. Cada produto pode ser atribuído a qualquer segmento via token CSS — nenhuma alteração de layout necessária.</p>
+  </section>
+
+  <section aria-label="Modos de exibição" class="section">
+    <h2>Dois modos, um catálogo</h2>
+    <div class="banners">
+      <div class="banner" aria-label="Modo catálogo visual"><div>Modo Catálogo</div><small>Grid de cards com fotos grandes. Perfeito para lojas e vitrines visuais.</small></div>
+      <div class="banner" aria-label="Modo cardápio compactado" style="--ds-brand:#ffb703;--ds-accent:#e76f51"><div>Modo Cardápio</div><small>Lista compacta com foco no preço. Ideal para restaurantes e lanchonetes.</small></div>
+    </div>
+  </section>
+
+  <section aria-label="Checklist de homologação" class="section">
+    <h2>Checklist de homologação (para vendas B2B)</h2>
+    <div style="columns:2;gap:24px;font-size:14px">
+      <ul class="check">
+        <li>Trocar segmento não quebra layout nem corta texto (testar 6 + dark).</li>
+        <li>Botão primário sempre visível; checkout usa variante Zap.</li>
+        <li>Dark mode automático respeita preferência do sistema.</li>
+        <li>Catálogo funciona offline (PWA / service worker).</li>
+        <li>Domínio próprio com SSL configurado.</li>
+      </ul>
+      <ul class="check">
+        <li>Super Admin: criação de tenant em menos de 2 min.</li>
+        <li>Network Admin: loja vinculada + marca própria ativa.</li>
+        <li>Loja: catálogo demo com busca + filtro por segmento.</li>
+        <li>White Label: cliente final não vê "Katalog" nem "Super Admin".</li>
+        <li>Base de dados multi-tenant isolada por slug.</li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer class="ds-wrap" aria-label="Rodapé da loja">
+  <div>
+    <b>Loja Whitelabel — Homologação v2</b>  •  Modelo multi-segmento via tokens CSS  •  Inspirado em www.katalog.com.br
+  </div>
+  <div style="font-size:12px">
+    <a href="homolog-super-admin.html" style="margin-right:12px;color:var(--ds-muted)">Super Admin</a>
+    <a href="homolog-network-admin.html" style="margin-right:12px;color:var(--ds-muted)">Network Admin</a>
+  </div>
+</footer>
+
+<script>
+const products=[
+  {name:"Moqueca",cat:"restaurante",eco:"R$ 42,00",img:"https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=400&q=80"},
+  {name:"Camisa Polo",cat:"moda",eco:"R$ 89,90",img:"https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&q=80"},
+  {name:"Ração Premium",cat:"pet",eco:"R$ 129,90",img:"https://images.unsplash.com/photo-1589924691995-400dc9ecc119?w=400&q=80"},
+  {name:"Caderno Artesanal",cat:"papelaria",eco:"R$ 24,50",img:"https://images.unsplash.com/photo-1517842645767-c639520867ae?w=400&q=80"},
+  {name:"Sabão Natural",cat:"utilidades",eco:"R$ 15,00",img:"https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&q=80"},
+  {name:"Óleo Essencial",cat:"bem-estar",eco:"R$ 35,00",img:"https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=400&q=80"},
+  {name:"Torta de Figo",cat:"doces",eco:"R$ 22,00",img:"https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?w=400&q=80"},
+  {name:"Panqueca Combo",cat:"restaurante",eco:"R$ 58,00",img:"https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400&q=80"},
+];
+function renderCat(){
+  const g=document.getElementById('gradeCat'); g.innerHTML='';
+  products.forEach(p=>{
+    const el=document.createElement('article'); el.className='product'; el.setAttribute('data-cat',p.cat); el.setAttribute('aria-label',p.name);
+    el.innerHTML='<img src="'+p.img+'" alt="'+p.name+'" loading="lazy"><h3>'+p.name+'</h3><p style="margin:0;color:var(--ds-muted);font-size:13px">Categoria: '+p.cat+' • '+(p.cat==='restaurante'?'Cardápio':'Catálogo')+'</p><div style="display:flex;align-items:center;justify-content:space-between;margin-top:10px"><div class="price">'+p.eco+'</div><button class="btn-primary" style="padding:6px 12px;font-size:13px" onclick="addCart(\''+p.name+'\')">Adicionar</button></div>';
+    g.appendChild(el);
+  });
+}
+function filterCat(v){
+  const q=v.toLowerCase(); document.querySelectorAll('.product').forEach(el=>{ el.style.display=(el.innerText.toLowerCase().includes(q))?'block':'none'; });
+}
+function filterCatBy(cat){
+  document.querySelectorAll('.product').forEach(el=>{ el.style.display=(cat==='tudo'||el.getAttribute('data-cat')===cat)?'block':'none'; });
+}
+function setSeg(btn){
+  document.querySelectorAll('.d-chip').forEach(b=>b.setAttribute('aria-pressed','false'));
+  btn.setAttribute('aria-pressed','true');
+  const s=btn.getAttribute('data-seg'); document.documentElement.setAttribute('data-segment',s);
+  document.getElementById('segLabel').textContent=btn.textContent;
+  // update items categories for demo
+  const all=document.querySelectorAll('.product');
+}
+function toggleTheme(){
+  const d=document.documentElement.getAttribute('data-theme');
+  const n=d==='dark'?'light':'dark';
+  document.documentElement.setAttribute('data-theme',n);
+}
+function setForm(v){ document.body.setAttribute('data-btn-formato',v); }
+function setCaixa(v){ document.body.setAttribute('data-btn-caixa',v); }
+function addCart(n){ alert('Adicionado ao carrinho: '+(n||'item')+' — checkout integrado via Pix / Cartão / Boleto (simulado).'); }
+function checkout(){ alert('Checkout — Pedido fechado. Pagamento simulado via PIX. Comanda impressa automaticamente (simulado).'); }
+renderCat();
+</script>
+
+</body>
+</html>

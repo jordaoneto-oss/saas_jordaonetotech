@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Editor visual da loja</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="editor.css?v=20261020-producao3">
+</head>
+<body>
+
+<!-- ============ LOGIN ============ -->
+<div class="login" id="login">
+  <section class="login-brand" aria-label="Editor visual de lojas">
+    <div class="login-brand-top">
+      <span class="mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M4 5h16v14H4z"/><path d="M4 10h16M9 10v9"/></svg>
+      </span>
+    </div>
+    <div class="login-copy">
+      <p class="eyebrow">Jordao Neto Tech</p>
+      <h1>Personalize sua loja<br><em>do seu jeito.</em></h1>
+      <p>Edite textos, fotos, produtos, cores e fontes com prévia ao vivo. Publique quando estiver pronto, sem código e sem depender de suporte técnico.</p>
+      <ul class="login-features">
+        <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5L19 7"/></svg> Prévia ao vivo em desktop, tablet e celular</li>
+        <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5L19 7"/></svg> Edição por seção com clique direto no site</li>
+        <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5L19 7"/></svg> Temas, cores, fontes e catálogo em um só lugar</li>
+      </ul>
+    </div>
+    <div class="login-mock" aria-hidden="true">
+      <div class="mock-top"><i></i><i></i><i></i></div>
+      <div class="mock-hero">
+        <div class="mock-line w40"></div>
+        <div class="mock-line w70 tall"></div>
+        <div class="mock-line w55"></div>
+        <div class="mock-btns"><span></span><span></span></div>
+      </div>
+      <div class="mock-grid"><i></i><i></i><i></i></div>
+      <div class="mock-tag">Prévia ao vivo</div>
+    </div>
+    <p class="login-foot">Editor visual Jordao Neto Tech · os dados salvos vão para a loja selecionada.</p>
+  </section>
+
+  <main class="login-main">
+    <div class="login-card">
+      <div class="login-logo">
+        <img id="loginLogo" src="img/logo.webp" alt="Logo da loja" width="52" height="52" onerror="this.onerror=null;this.src='img/logo.webp'">
+        <div>
+          <h2>Entrar no editor</h2>
+          <p id="loginLoja">Painel da loja</p>
+        </div>
+      </div>
+
+      <form id="formLogin" autocomplete="on">
+        <label for="senhaLogin">Senha do painel</label>
+        <div class="password">
+          <input type="password" id="senhaLogin" autocomplete="current-password" required placeholder="Digite sua senha">
+          <button type="button" id="verSenha" aria-label="Mostrar senha" aria-pressed="false">
+            <svg viewBox="0 0 24 24"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12z"/><circle cx="12" cy="12" r="2.6"/></svg>
+          </button>
+        </div>
+        <p class="erro" id="erroLogin" role="alert" hidden>Senha incorreta.</p>
+        <button type="submit" class="btn btn-primary btn-block" id="btnEntrar">Entrar</button>
+      </form>
+    </div>
+    <p class="login-help">Esqueceu a senha? Use o painel completo para gerar um link de redefinição.</p>
+  </main>
+</div>
+
+<!-- ============ EDITOR ============ -->
+<div class="editor" id="app" hidden>
+  <header class="topbar">
+    <div class="topbar-brand">
+      <span class="mark small" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M4 5h16v14H4z"/><path d="M4 10h16M9 10v9"/></svg>
+      </span>
+      <div class="topbar-title">
+        <b id="lojaNome">Minha loja</b>
+        <span>Editor visual <i class="dot"></i> <em>Página inicial</em></span>
+      </div>
+    </div>
+
+    <div class="topbar-center">
+      <button class="icon-btn" id="undo" aria-label="Desfazer" title="Desfazer (Ctrl+Z)" disabled>
+        <svg viewBox="0 0 24 24"><path d="M9 7 4 12l5 5"/><path d="M4 12h9a6 6 0 0 1 0 12"/></svg>
+      </button>
+      <button class="icon-btn" id="redo" aria-label="Refazer" title="Refazer (Ctrl+Y)" disabled>
+        <svg viewBox="0 0 24 24"><path d="M15 7l5 5-5 5"/><path d="M20 12h-9a6 6 0 0 0 0 12"/></svg>
+      </button>
+      <span class="save-state" id="saveState"><i></i> Tudo salvo</span>
+    </div>
+
+    <div class="topbar-right">
+      <div class="devices" role="group" aria-label="Tamanho da prévia">
+        <button data-device="desktop" class="on" aria-label="Desktop" title="Desktop">
+          <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="1"/><path d="M8 20h8M12 16v4"/></svg>
+        </button>
+        <button data-device="tablet" aria-label="Tablet" title="Tablet">
+          <svg viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M11 18h2"/></svg>
+        </button>
+        <button data-device="mobile" aria-label="Celular" title="Celular">
+          <svg viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg>
+        </button>
+      </div>
+      <a class="btn btn-ghost btn-sm" id="viewSite" href="/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M14 4h6v6"/><path d="M20 4 10 14"/><path d="M18 14v5H5V6h5"/></svg>
+        Visualizar
+      </a>
+      <button class="btn btn-secondary btn-sm" id="saveBtn">
+        <svg viewBox="0 0 24 24"><path d="M5 4h12l2 2v14H5z"/><path d="M8 4v5h7V4M8 20v-6h8v6"/></svg>
+        Salvar
+      </button>
+      <button class="btn btn-primary btn-sm" id="publishBtn">Publicar</button>
+      <button class="icon-btn" id="logoutBtn" aria-label="Sair" title="Sair">
+        <svg viewBox="0 0 24 24"><path d="M10 4H5v16h5"/><path d="M14 8l4 4-4 4M9 12h9"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <div class="editor-body">
+    <nav class="rail" aria-label="Ferramentas do editor">
+      <button data-panel="paginas" class="on" aria-label="Páginas" title="Páginas">
+        <svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M9 4v16"/></svg>
+        <span>Páginas</span>
+      </button>
+      <button data-panel="design" aria-label="Design" title="Design">
+        <svg viewBox="0 0 24 24"><circle cx="13.5" cy="6.5" r="2.2"/><circle cx="17.5" cy="10.5" r="2.2"/><circle cx="8.5" cy="7.5" r="2.2"/><circle cx="6.5" cy="12.5" r="2.2"/><path d="M12 2a10 10 0 1 0 10 10"/></svg>
+        <span>Design</span>
+      </button>
+      <button data-panel="catalogo" aria-label="Catálogo" title="Catálogo">
+        <svg viewBox="0 0 24 24"><path d="M4 7h16v13H4z"/><path d="M8 7V4h8v3M9 12h6"/></svg>
+        <span>Catálogo</span>
+      </button>
+      <button data-panel="config" aria-label="Configurações" title="Configurações">
+        <svg viewBox="0 0 24 24"><path d="M4 7h10M18 7h2M4 12h3M11 12h9M4 17h8M16 17h4"/><circle cx="16" cy="7" r="2"/><circle cx="9" cy="12" r="2"/><circle cx="14" cy="17" r="2"/></svg>
+        <span>Ajustes</span>
+      </button>
+      <button id="gestaoBtn" aria-label="Gestão de pedidos, clientes e relatórios" title="Pedidos, clientes e relatórios">
+        <svg viewBox="0 0 24 24"><path d="M9 4h6v3H9z"/><path d="M7 4H5v16h14V4h-2"/><path d="M9 11h6M9 15h4"/></svg>
+        <span>Gestão</span>
+      </button>
+      <div class="rail-spacer"></div>
+      <button id="helpBtn" aria-label="Ajuda e atalhos" title="Ajuda e atalhos">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 4.2 1.8c-.8.7-1.7 1.2-1.7 2.7"/><path d="M12 17h.01"/></svg>
+        <span>Ajuda</span>
+      </button>
+    </nav>
+
+    <aside class="panel" id="panel" aria-label="Painel de ferramentas"></aside>
+
+    <main class="canvas" id="canvas">
+      <div class="canvas-bar">
+        <button class="icon-btn canvas-menu" id="togglePanel" aria-label="Abrir painel">
+          <svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+        <div class="canvas-title">
+          <b>Página inicial</b>
+          <span id="canvasHint">Clique em uma seção do site para editar</span>
+        </div>
+        <div class="canvas-tools">
+          <button class="icon-btn" id="zoomOut" aria-label="Diminuir zoom" title="Diminuir zoom">
+            <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6"/><path d="M20 20l-3.5-3.5M8 11h6"/></svg>
+          </button>
+          <span class="zoom-label" id="zoomLabel">100%</span>
+          <button class="icon-btn" id="zoomIn" aria-label="Aumentar zoom" title="Aumentar zoom">
+            <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6"/><path d="M20 20l-3.5-3.5M8 11h6M11 8v6"/></svg>
+          </button>
+        </div>
+      </div>
+      <div class="stage" id="stage">
+        <div class="frame-wrap" id="frameWrap">
+          <iframe id="preview" title="Prévia da loja"></iframe>
+        </div>
+      </div>
+    </main>
+
+    <aside class="inspector" id="inspector" aria-label="Propriedades da seção" hidden></aside>
+  </div>
+</div>
+
+
+<!-- ============ GESTÃO (pedidos, clientes e relatórios) ============ -->
+<div class="gestao" id="gestao" role="dialog" aria-modal="true" aria-labelledby="gestaoTitulo" hidden>
+  <header class="gestao-topo">
+    <div class="gestao-head">
+      <svg viewBox="0 0 24 24"><path d="M9 4h6v3H9z"/><path d="M7 4H5v16h14V4h-2"/><path d="M9 11h6M9 15h4"/></svg>
+      <div><b id="gestaoTitulo">Gestão da loja</b><span>Pedidos, clientes e relatórios</span></div>
+    </div>
+    <nav class="gestao-tabs" aria-label="Seções da gestão">
+      <button class="on" type="button" data-gestao-tab="pedidos">Pedidos</button>
+      <button type="button" data-gestao-tab="clientes">Clientes</button>
+      <button type="button" data-gestao-tab="vendidos">Relatórios</button>
+    </nav>
+    <button class="btn btn-secondary btn-sm" type="button" id="gestaoFechar">Voltar ao editor</button>
+  </header>
+  <iframe id="gestaoFrame" title="Gestão de pedidos, clientes e relatórios"></iframe>
+</div>
+
+<!-- ============ MODAL DE PRODUTO ============ -->
+<div class="modal" id="modalProduto" hidden>
+  <div class="modal-box">
+    <div class="modal-head">
+      <div>
+        <span class="modal-eyebrow">Catálogo</span>
+        <h3 id="prodTitulo">Novo produto</h3>
+      </div>
+      <button class="icon-btn" id="fechaProduto" aria-label="Fechar">
+        <svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+    </div>
+    <form id="formProduto">
+      <div class="form-grid">
+        <div class="fld full">
+          <label for="pNome">Nome do produto</label>
+          <input id="pNome" required placeholder="Ex.: Terço de São Miguel">
+        </div>
+        <div class="fld">
+          <label for="pCat">Linha / categoria</label>
+          <input id="pCat" list="listaCats" placeholder="Ex.: premium" autocomplete="off">
+          <datalist id="listaCats"></datalist>
+        </div>
+        <div class="fld">
+          <label for="pColecao">Coleção</label>
+          <select id="pColecao"></select>
+        </div>
+        <div class="fld">
+          <label for="pPreco">Preço (vazio = Sob consulta)</label>
+          <input id="pPreco" inputmode="decimal" placeholder="Ex.: 59.90">
+        </div>
+        <div class="fld">
+          <label for="pOrdem">Posição na vitrine</label>
+          <input id="pOrdem" inputmode="numeric" placeholder="Ex.: 1">
+        </div>
+        <div class="fld">
+          <label for="pTag">Etiqueta</label>
+          <input id="pTag" placeholder="Ex.: Novo">
+        </div>
+        <div class="fld">
+          <label for="pSelo">Selo do destaque</label>
+          <input id="pSelo" placeholder="Ex.: Lançamento">
+        </div>
+        <div class="fld full">
+          <label for="pVideo">Vídeo do destaque (opcional)</label>
+          <input id="pVideo" placeholder="Ex.: video/minha-peca.mp4">
+          <label class="upload" style="margin-top:7px" for="pVideoUpload">
+            <svg viewBox="0 0 24 24"><path d="M12 16V4M7 9l5-5 5 5"/><path d="M4 16v4h16v-4"/></svg>
+            Enviar vídeo
+            <input type="file" id="pVideoUpload" accept="video/mp4,video/webm">
+          </label>
+        </div>
+        <div class="fld full">
+          <label for="pDesc">Descrição</label>
+          <textarea id="pDesc" rows="3" placeholder="Conte o que torna esta peça especial"></textarea>
+        </div>
+        <div class="fld full">
+          <label for="pFoto">Foto</label>
+          <div class="photo-row">
+            <img id="pFotoPrev" alt="" hidden>
+            <div class="photo-controls">
+              <select id="pFoto"></select>
+              <label class="upload" for="pUpload">
+                <svg viewBox="0 0 24 24"><path d="M12 16V4M7 9l5-5 5 5"/><path d="M4 16v4h16v-4"/></svg>
+                Enviar nova imagem
+                <input type="file" id="pUpload" accept="image/webp,image/png,image/jpeg">
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-actions">
+        <button type="button" class="btn btn-ghost" id="cancelarProduto">Cancelar</button>
+        <button type="submit" class="btn btn-primary" id="salvarProduto">Salvar produto</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- ============ MODAL DE AJUDA ============ -->
+<div class="modal" id="modalAjuda" hidden>
+  <div class="modal-box small">
+    <div class="modal-head">
+      <div>
+        <span class="modal-eyebrow">Editor visual</span>
+        <h3>Como personalizar</h3>
+      </div>
+      <button class="icon-btn" id="fechaAjuda" aria-label="Fechar">
+        <svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+    </div>
+    <div class="help-list">
+      <div><b>1. Escolha uma seção</b><span>Clique direto na prévia ou use a lista em Páginas. O painel da direita abre os campos daquela seção.</span></div>
+      <div><b>2. Edite sem medo</b><span>As mudanças aparecem na hora. Use Desfazer (Ctrl+Z) para voltar atrás.</span></div>
+      <div><b>3. Ajuste a identidade</b><span>Em Design você troca tema, cores, fontes, botões e logo.</span></div>
+      <div><b>4. Organize a página</b><span>Em Páginas, use as setas para mudar a ordem ou o olho para ocultar uma seção.</span></div>
+      <div><b>5. Salve e publique</b><span>Salvar grava as alterações na loja. Publicar grava e recarrega a prévia com a versão final.</span></div>
+      <div><b>Atalhos</b><span>Ctrl+S salva · Ctrl+Z desfaz · Ctrl+Y refaz · Esc fecha painéis e janelas.</span></div>
+    </div>
+    <p class="help-note">As alterações são salvas nesta loja. O painel completo continua disponível em <code>admin-completo.html</code>.</p>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+<script src="editor.js?v=20261020-producao3"></script>
+</body>
+</html>

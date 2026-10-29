@@ -7,7 +7,7 @@
     "ordem": 1,
     "tag": "Promoção",
     "selo": "Quaresma de São Miguel",
-    "video": "video/video-sao-miguel-quaresma.mp4",
+    "video": "",
     "desc": "Contas foscas em tom madeira com as asas e a cruz em dourado. Feito para a Quaresma de São Miguel, os 40 dias que vão de 15 de agosto a 29 de setembro.",
     "foto": "terco-sao-miguel-quaresma.webp",
     "id": "sao-miguel-quaresma"
@@ -30,7 +30,7 @@
     "ordem": 3,
     "tag": "Pronta entrega",
     "selo": "Pronta entrega",
-    "video": "video/video-sao-bento.mp4",
+    "video": "",
     "desc": "Contas resinadas e metais em ouro velho, com a medalha e o crucifixo de São Bento. Devoção e proteção num terço que aguenta o dia a dia.",
     "foto": "terco-sao-bento-resinado.webp",
     "id": "sao-bento-resinado"
@@ -120,7 +120,7 @@
     "tag": "Novo",
     "preco": 79.9,
     "desc": "Cristais champagne com brilho furta-cor, pérolas e o entremeio da Sagrada Família em ouro velho, todo trabalhado. Jesus, Maria e José para abençoar o lar.",
-    "video": "video/video-sagrada-familia.mp4",
+    "video": "",
     "selo": "Novo",
     "ordem": 12
   },

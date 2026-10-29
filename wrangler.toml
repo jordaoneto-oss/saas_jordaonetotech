@@ -1,5 +1,30 @@
 name = "saas-jordaonetotech"
+main = "src/index.ts"
 compatibility_date = "2026-10-23"
+compatibility_flags = ["nodejs_compat"]
 
+# Front estático (assets)
 [assets]
-directory = "."
+directory = "public"
+binding = "ASSETS"
+# o Worker precisa rodar antes para resolver config/catálogo/SEO por tenant
+run_worker_first = true
+
+# D1 — banco SQLite
+[[d1_databases]]
+binding = "DB"
+database_name = "saas-pump"
+database_id = "89b5e1b9-1056-4ee2-a4a3-9d2b16fdaf73"
+
+# R2 — imagens e vídeos
+[[r2_buckets]]
+binding = "IMAGES"
+bucket_name = "lojas-images"
+
+# KV — sessões / tokens de reset
+[[kv_namespaces]]
+binding = "SESSION_KV"
+id = "39679f44c2954acf8ea01007544fe497"
+
+[build]
+command = "npm run build"

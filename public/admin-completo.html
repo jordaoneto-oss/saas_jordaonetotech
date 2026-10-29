@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Painel completo da loja</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="admin.css?v=20261020-producao7">
+</head>
+<body>
+<script>
+try{
+  if(new URLSearchParams(location.search).has("embed")){
+    document.body.classList.add("embed");
+  }
+}catch(e){}
+</script>
+
+<!-- ============ LOGIN ============ -->
+<div class="login on" id="login">
+  <form class="cartao" id="formLogin">
+    <img id="logoLogin" src="img/logo.webp" alt="Logo da loja" width="90" height="90" onerror="this.onerror=null;this.src='img/logo.webp'">
+    <h1 id="tituloPainel">Painel da loja</h1>
+    <p class="subtitulo">Acompanhe pedidos, clientes, catálogo e conteúdo do site.</p>
+    <label for="senhaLogin">Senha</label>
+    <div class="campo-senha">
+      <input type="password" id="senhaLogin" autocomplete="current-password" required>
+      <button type="button" class="ver-senha" id="verSenha" aria-label="Mostrar senha" aria-pressed="false">👁</button>
+    </div>
+    <button class="btn-primario" type="submit">Entrar</button>
+    <p class="erro" id="erroLogin" role="alert" hidden>Senha incorreta.</p>
+    <p class="subtitulo" style="margin-top:10px;font-size:13px">Esqueceu a senha? Peça um link de redefinição ao suporte.</p>
+    <p class="marca-tech"><b>Jordao Neto Tech</b><span>Tecnologia para lojas que vendem no WhatsApp.</span></p>
+  </form>
+  <form class="cartao" id="formReset" hidden>
+    <h1>Definir nova senha</h1>
+    <p class="subtitulo">Link válido por 30 minutos e de uso único.</p>
+    <label for="novaReset">Nova senha (mín. 6 caracteres)</label>
+    <div class="campo-senha">
+      <input type="password" id="novaReset" autocomplete="new-password" minlength="6" required>
+      <button type="button" class="ver-senha" data-ver="novaReset" aria-label="Mostrar senha" aria-pressed="false">👁</button>
+    </div>
+    <label for="novaReset2">Confirmar nova senha</label>
+    <input type="password" id="novaReset2" autocomplete="new-password" minlength="6" required>
+    <button class="btn-primario" type="submit">Salvar nova senha</button>
+    <p class="erro" id="erroReset" hidden></p>
+  </form>
+</div>
+
+<!-- ============ APLICAÇÃO ============ -->
+<div class="app" id="app">
+  <div class="veu-menu" id="veuMenu" hidden></div>
+  <aside class="menu" id="menu">
+    <div class="menu-topo">
+      <img id="logoMenu" src="img/logo.webp" alt="" width="42" height="42">
+      <b id="nomeMenu">Minha loja</b>
+    </div>
+    <nav>
+      <button class="aba on" data-aba="painel"><svg viewBox="0 0 24 24"><path d="M4 13h6V4H4zM14 20h6v-9h-6zM14 4v6h6V4zM4 20h6v-4H4z"/></svg> Início</button>
+      <button class="aba" data-aba="paginas"><svg viewBox="0 0 24 24"><path d="M5 4h14v16H5zM8 8h8M8 12h8M8 16h5"/></svg> Conteúdo do site</button>
+      <button class="aba" data-aba="produtos"><svg viewBox="0 0 24 24"><path d="M4 7h16v13H4zM8 7V4h8v3"/></svg> Produtos <span class="conta" id="contaProdutos" hidden></span></button>
+      <button class="aba" data-aba="pedidos"><svg viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg> Pedidos <span class="conta" id="contaPedidos" hidden></span></button>
+      <button class="aba" data-aba="clientes"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg> Clientes <span class="conta" id="contaClientes" hidden></span></button>
+      <button class="aba" data-aba="vendidos"><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg> Relatórios</button>
+      <button class="aba" data-aba="lista"><svg viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg> Finalizar compra</button>
+      <button class="aba" data-aba="visual"><svg viewBox="0 0 24 24"><circle cx="13.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="10.5" r="2.5"/><circle cx="8.5" cy="7.5" r="2.5"/><circle cx="6.5" cy="12.5" r="2.5"/><path d="M12 2a10 10 0 1 0 10 10"/></svg> Aparência</button>
+      <button class="aba" data-aba="config"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9 17 7M7 17l-2.1 2.1"/></svg> Configurações</button>
+    </nav>
+    <div class="menu-pe">
+      <a id="verSite" href="/" target="_blank" rel="noopener">Ver o site ↗</a>
+      <button class="sair" id="sair">Sair</button>
+    </div>
+  </aside>
+
+  <main class="conteudo" id="conteudo">
+    <header class="topo">
+      <button class="hamburguer" id="hamburguer" aria-label="Abrir menu" aria-expanded="false">☰</button>
+      <h2 id="tituloAba">Painel</h2>
+      <span class="toast-admin" id="toastAdmin" role="status" aria-live="polite" hidden></span>
+    </header>
+    <section id="aba-painel" class="aba-conteudo on"></section>
+    <section id="aba-paginas" class="aba-conteudo"></section>
+    <section id="aba-produtos" class="aba-conteudo"></section>
+    <section id="aba-pedidos" class="aba-conteudo"></section>
+    <section id="aba-clientes" class="aba-conteudo"></section>
+    <section id="aba-vendidos" class="aba-conteudo"></section>
+    <section id="aba-lista" class="aba-conteudo"></section>
+    <section id="aba-visual" class="aba-conteudo"></section>
+    <section id="aba-config" class="aba-conteudo"></section>
+  </main>
+</div>
+
+<!-- modal genérico de produto -->
+<div class="mod" id="modProduto" hidden>
+  <div class="mod-caixa">
+    <div class="mod-topo">
+      <h3 id="modProdutoTitulo">Novo produto</h3>
+      <button class="fechar" id="fechaProduto" aria-label="Fechar">✕</button>
+    </div>
+    <form id="formProduto">
+      <div class="grade-form">
+        <div>
+          <label for="pNome">Nome</label>
+          <input id="pNome" required>
+        </div>
+        <div>
+          <label for="pCat">Linha / categoria (digite para criar nova)</label>
+          <input id="pCat" list="listaCats" placeholder="Ex.: Essencial ou nova linha" autocomplete="off">
+          <datalist id="listaCats">
+            <option value="essencial">Essencial</option>
+            <option value="classico">Clássica</option>
+            <option value="premium">Premium</option>
+            <option value="luxo">Luxo</option>
+            <option value="infantil">Para os pequenos</option>
+            <option value="carro">Para o carro</option>
+          </datalist>
+        </div>
+        <div>
+          <label for="pColecao">Coleção (da lista em Conteúdo do site › Coleções)</label>
+          <select id="pColecao"></select>
+        </div>
+        <div>
+          <label for="pPreco">Preço (deixe vazio p/ "Sob consulta")</label>
+          <input id="pPreco" inputmode="decimal" placeholder="Ex.: 59.90">
+        </div>
+        <div>
+          <label for="pOrdem">Posição na vitrine (1 aparece primeiro)</label>
+          <input id="pOrdem" inputmode="numeric" placeholder="Ex.: 1">
+        </div>
+        <div>
+          <label for="pTag">Etiqueta (opcional)</label>
+          <input id="pTag" placeholder="Ex.: Novo">
+        </div>
+        <div>
+          <label for="pSelo">Selo do destaque (opcional)</label>
+          <input id="pSelo" placeholder="Ex.: Lançamento">
+        </div>
+        <div>
+          <label for="pVideo">Vídeo do destaque (opcional)</label>
+          <input id="pVideo" placeholder="Ex.: video/meu-video.mp4">
+        </div>
+      </div>
+      <div>
+        <label for="pDesc">Descrição</label>
+        <textarea id="pDesc" rows="3"></textarea>
+      </div>
+      <div>
+        <label for="pFoto">Foto</label>
+        <select id="pFoto"></select>
+        <label class="upload" for="pUpload">Ou enviar uma imagem nova
+          <input type="file" id="pUpload" accept="image/webp,image/png,image/jpeg">
+        </label>
+        <img id="pFotoPrev" alt="" hidden>
+      </div>
+      <div class="mod-acoes">
+        <button class="btn-primario" type="submit">Salvar produto</button>
+        <button class="btn-secundario" type="button" id="cancelarProduto">Cancelar</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="admin.js?v=20261020-producao7"></script>
+</body>
+</html>

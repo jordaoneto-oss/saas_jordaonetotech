@@ -124,7 +124,7 @@ const CARRINHO_GRUPOS = [
 
 const SECOES = [
   {id:"hero", nome:"Capa inicial", desc:"Primeira dobra com título e botões", campos:[
-    {k:"midia", r:"Imagem ou vídeo da capa", t:"media", padrao:"video/video-guadalupe.mp4", d:"Envie uma imagem ou um vídeo curto (MP4/WebM). O vídeo toca sem som."},
+    {k:"midia", r:"Imagem ou vídeo da capa", t:"media", padrao:"img/poster-guadalupe.webp", d:"Envie uma imagem ou um vídeo curto (MP4/WebM). O vídeo toca sem som."},
     {k:"poster", r:"Imagem de capa do vídeo", t:"image", padrao:"img/poster-guadalupe.webp", d:"Aparece enquanto o vídeo carrega. Para usar uma imagem fixa, escolha a imagem no campo acima."},
     {k:"chapeu", r:"Chamada pequena", t:"text"},
     {k:"titulo", r:"Título", t:"html", d:"Aceita <em>, <b> e <br>."},
@@ -175,7 +175,7 @@ const SECOES = [
     {k:"nota", r:"Nota final", t:"html"}
   ]},
   {id:"encomenda", nome:"Sob encomenda", desc:"Passo a passo do pedido", campos:[
-    {k:"midia", r:"Imagem ou vídeo da seção", t:"media", padrao:"video/video-esmeralda.mp4", d:"Aceita imagem ou vídeo curto (MP4/WebM)."},
+    {k:"midia", r:"Imagem ou vídeo da seção", t:"media", padrao:"img/poster-esmeralda.webp", d:"Aceita imagem ou vídeo curto (MP4/WebM)."},
     {k:"poster", r:"Imagem de capa do vídeo", t:"image", padrao:"img/poster-esmeralda.webp", d:"Aparece enquanto o vídeo carrega."},
     {k:"chapeu", r:"Chamada pequena", t:"text"},
     {k:"titulo", r:"Título", t:"html"},

@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "CMS Super Loja - static site",
   "scripts": {
-    "build": "echo 'Static site - no build needed'"
+    "build": "node scripts/build-public.mjs",
+    "deploy": "npm run build && wrangler deploy src/index.ts"
   }
 }

@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="pt-BR" data-segment="neutro" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Homologação — Template Genérico Multi-Segmento (HML v1)</title>
+<meta name="description" content="Versão de homologação do template de novas lojas: design system neutro, botões, ícones Lucide e catálogo multi-segmento.">
+<link rel="stylesheet" href="css/ds-generico-hml.css">
+<style>
+  body{font-family:var(--ds-font-body);background:var(--ds-paper);color:var(--ds-ink);margin:0;line-height:1.65}
+  header.hml{position:sticky;top:0;z-index:50;background:var(--ds-surface);border-bottom:1px solid var(--ds-line)}
+  header.hml .ds-wrap{display:flex;align-items:center;gap:12px;padding:12px 0;flex-wrap:wrap}
+  .logo-dot{width:34px;height:34px;border-radius:10px;background:var(--ds-brand);color:var(--ds-brand-ink);display:grid;place-items:center;font-weight:800}
+  .seg-row{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0}
+  main section{padding:40px 0;border-bottom:1px solid var(--ds-line)}
+  h1,h2{font-family:var(--ds-font-display);line-height:1.15;margin:0 0 10px}
+  h1{font-size:clamp(2rem,4.5vw,3rem)} h2{font-size:1.5rem}
+  .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center}
+  @media(max-width:860px){.hero-grid{grid-template-columns:1fr}}
+  .grid-btns{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:16px}
+  .grid-icons{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:10px;margin-top:16px}
+  .icon-cell{background:var(--ds-surface);border:1px solid var(--ds-line);border-radius:var(--ds-radius-md);padding:14px 8px;text-align:center;display:grid;gap:6px;justify-items:center}
+  .icon-cell small{font-size:11px;color:var(--ds-muted)}
+  .grid-cat{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px;margin-top:16px}
+  .toolbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:14px 0}
+  select,.txt{font:inherit;padding:10px 12px;border:1px solid var(--ds-line);border-radius:var(--ds-radius-sm);background:var(--ds-surface);color:var(--ds-ink)}
+  table.tok{width:100%;border-collapse:collapse;font-size:14px;background:var(--ds-surface);border:1px solid var(--ds-line);border-radius:var(--ds-radius-md);overflow:hidden}
+  table.tok th,table.tok td{padding:10px 12px;border-bottom:1px solid var(--ds-line);text-align:left}
+  .sw{width:34px;height:22px;border-radius:999px;border:1px solid var(--ds-line);display:inline-block;vertical-align:middle}
+  .check{columns:2;gap:24px;font-size:14px} .check li{margin-bottom:8px;break-inside:avoid}
+  @media(max-width:700px){.check{columns:1}}
+  footer{padding:32px 0;font-size:13px;color:var(--ds-muted)}
+  code{background:var(--ds-sand);padding:2px 6px;border-radius:6px;font-size:.85em}
+</style>
+</head>
+<body data-btn-formato="padrao" data-btn-caixa="alta">
+
+<header class="hml">
+  <div class="ds-wrap">
+    <div class="logo-dot" aria-hidden="true">H</div>
+    <div style="flex:1;min-width:200px">
+      <b class="ds-display">Template Genérico · Homologação v1</b><br>
+      <span class="ds-muted" style="font-size:13px">Troque o segmento e valide a mesma loja em 6 identidades. Sematech: <code>?segmento=doces&tema=dark</code></span>
+    </div>
+    <button class="ds-btn ds-btn-outline is-sm" id="btnTheme" type="button">Tema: claro</button>
+    <a class="ds-btn ds-btn-primary is-sm" href="#catalogo">Ver catálogo</a>
+  </div>
+</header>
+
+<main class="ds-wrap">
+
+  <section aria-label="Seletor de segmento">
+    <p class="ds-badge">Passo 1 · Escolha o segmento</p>
+    <h1>Uma loja neutra,<br>pronta para qualquer segmento.</h1>
+    <p class="ds-muted">O design system abaixo usa tokens neutros. Cada segmento só troca <code>--ds-brand</code>, <code>--ds-accent</code> e a fonte de título — o layout continua idêntico.</p>
+    <div class="seg-row" role="group" aria-label="Segmentos">
+      <button class="ds-chip" data-seg="neutro" aria-pressed="true">Neutro</button>
+      <button class="ds-chip" data-seg="moda" aria-pressed="false">Moda</button>
+      <button class="ds-chip" data-seg="doces" aria-pressed="false">Doces</button>
+      <button class="ds-chip" data-seg="pet" aria-pressed="false">Pet</button>
+      <button class="ds-chip" data-seg="papelaria" aria-pressed="false">Papelaria</button>
+      <button class="ds-chip" data-seg="bem-estar" aria-pressed="false">Bem-estar</button>
+      <button class="ds-chip" data-seg="utilidades" aria-pressed="false">Utilidades</button>
+    </div>
+    <div class="toolbar">
+      <label>Formato botão:
+        <select id="selFormato"><option value="padrao">Padrão</option><option value="pill">Pill</option><option value="quadrado">Quadrado</option></select>
+      </label>
+      <label>Caixa:
+        <select id="selCaixa"><option value="alta">Alta (caixa alta)</option><option value="normal">Normal</option></select>
+      </label>
+    </div>
+  </section>
+
+  <section aria-label="Botões">
+    <p class="ds-badge is-accent">Passo 2 · Botões</p>
+    <h2>Hierarquia única (inspirada em Primer + Web Awesome)</h2>
+    <p class="ds-muted">5 variantes, 3 tamanhos. Regra: 1 primário por tela; checkout sempre <code>zap</code>; destrutivo sempre <code>danger</code> outline.</p>
+    <div class="grid-btns">
+      <div class="ds-card"><div class="ds-card-body">
+        <span class="ds-badge">Primary · ação principal</span>
+        <button class="ds-btn ds-btn-primary" type="button"><svg class="ds-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 7h12l1 13H5z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>Adicionar à lista</button>
+        <button class="ds-btn ds-btn-primary is-sm" type="button">Primário SM</button>
+        <button class="ds-btn ds-btn-primary is-lg" type="button">Primário LG</button>
+      </div></div>
+      <div class="ds-card"><div class="ds-card-body">
+        <span class="ds-badge">Zap · conversão</span>
+        <button class="ds-btn ds-btn-zap" type="button"><svg class="ds-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a9 9 0 1 1-16.5 5L3 21l4.2-1.4A9 9 0 0 1 21 12z"/><path d="M9 9.5c.5 2.5 3 5 5.5 5.5l1-1.5 2 1c-.3 1.5-1.2 2-2.5 1.8-3.5-.5-6.5-3.5-7-7-.2-1.3.3-2.2 1.8-2.5l1 2z"/></svg>Fechar pedido</button>
+        <button class="ds-btn ds-btn-zap is-block" type="button">Fechar pedido · block</button>
+      </div></div>
+      <div class="ds-card"><div class="ds-card-body">
+        <span class="ds-badge">Outline / Ghost · secundárias</span>
+        <button class="ds-btn ds-btn-outline" type="button">Continuar olhando</button>
+        <button class="ds-btn ds-btn-ghost" type="button">Ver detalhes →</button>
+        <button class="ds-btn ds-btn-danger is-sm" type="button">Excluir item</button>
+      </div></div>
+    </div>
+  </section>
+
+  <section aria-label="Ícones">
+    <p class="ds-badge">Passo 3 · Ícones (Lucide, ISC)</p>
+    <h2>Traço único: 24px · stroke 2 · round</h2>
+    <p class="ds-muted">Fonte: <code>github.com/lucide-icons/lucide</code> (ISC, 1600+ ícones). Mapeamento completo em <code>saas/templates/generico-hml/ICONS.md</code>. WhatsApp/Instagram usam traço próprio neutro (marcas).</p>
+    <div class="grid-icons" id="iconGrid"></div>
+  </section>
+
+  <section id="catalogo" aria-label="Catálogo demo">
+    <p class="ds-badge is-accent">Passo 4 · Catálogo multi-segmento</p>
+    <h2>8 produtos de exemplo · 6 segmentos</h2>
+    <div class="toolbar">
+      <input class="txt" id="busca" type="search" placeholder="Buscar no catálogo demo…" aria-label="Buscar no catálogo demo">
+      <select id="filtroCat" aria-label="Filtrar categoria">
+        <option value="tudo">Tudo</option><option value="moda">Moda</option><option value="doces">Doces</option>
+        <option value="pet">Pet</option><option value="papelaria">Papelaria</option><option value="bem-estar">Bem-estar</option><option value="utilidades">Utilidades</option>
+      </select>
+    </div>
+    <div class="grid-cat" id="gradeCat"></div>
+    <p class="ds-muted" style="margin-top:12px">Fonte: <code>saas/templates/generico-hml/catalog.json</code>. Fotos vazias de propósito — o lojista envia no painel.</p>
+  </section>
+
+  <section aria-label="Tokens">
+    <p class="ds-badge">Passo 5 · Tokens (Open Props, MIT)</p>
+    <h2>O que o lojista pode trocar sem quebrar nada</h2>
+    <div style="overflow:auto"><table class="tok">
+      <tr><th>Token</th><th>Valor neutro</th><th>Amostra</th><th>Onde usa</th></tr>
+      <tr><td><code>--ds-brand</code></td><td>#3b5bdb</td><td><span class="sw" style="background:#3b5bdb"></span></td><td>CTAs, links, foco</td></tr>
+      <tr><td><code>--ds-accent</code></td><td>#c08a3e</td><td><span class="sw" style="background:#c08a3e"></span></td><td>Selos, preço destaque</td></tr>
+      <tr><td><code>--ds-success</code></td><td>#1f8c5a</td><td><span class="sw" style="background:#1f8c5a"></span></td><td>WhatsApp / checkout</td></tr>
+      <tr><td><code>--ds-paper / surface / line</code></td><td>#faf8f4 / #fff / #e3d9c8</td><td><span class="sw" style="background:#faf8f4"></span> <span class="sw" style="background:#fff"></span> <span class="sw" style="background:#e3d9c8"></span></td><td>Fundo, cartões, bordas</td></tr>
+      <tr><td><code>--ds-radius</code></td><td>6 / 10 / 16 / pill</td><td><code>sm md lg pill</code></td><td>Botões, cartões, badges</td></tr>
+      <tr><td><code>fontes</code></td><td>Inter (body+display)</td><td class="ds-display">Aa 123</td><td>Serifada só em moda/doces/bem-estar</td></tr>
+    </table></div>
+    <p class="ds-muted">Refs: Open Props <code>github.com/argyleink/open-props</code> · Primer botões <code>github.com/primer/css</code> · Web Awesome (ex-Shoelace) <code>github.com/shoelace-style/webawesome</code> · Storybook DS.</p>
+  </section>
+
+  <section aria-label="Checklist">
+    <p class="ds-badge">Passo 6 · Aceite da homologação</p>
+    <h2>Checklist antes de liberar para venda</h2>
+    <ol class="check">
+      <li>Trocar segmento não quebra layout nem corta texto (testar 6 + dark).</li>
+      <li>Contraste: brand sobre branco ≥ 4.5:1; checar modo escuro.</li>
+      <li>Botões: só 1 primário por dobra; zap só no checkout.</li>
+      <li>Ícones todos com <code>aria-hidden</code> ou <code>aria-label</code> no botão.</li>
+      <li>Catálogo vazio mostra estado vazio (não grade quebrada).</li>
+      <li>Produto <code>preco:null</code> exibe “Sob consulta”, sem R$ 0,00.</li>
+      <li>Busca + filtro + ordenação funcionam com 0, 1 e 100 itens.</li>
+      <li>WhatsApp com DDD obrigatório antes de fechar pedido.</li>
+      <li>Rodapé sem endereço público por padrão (opt-in por loja).</li>
+      <li>Lighthouse mobile ≥ 90 em performance/a11y (imagens lazy).</li>
+    </ol>
+  </section>
+
+</main>
+
+<footer><div class="ds-wrap">
+  HML v1 · Template <code>generico-hml</code> · Tokens <code>tokens.json</code> · Ícones <code>ICONS.md</code> · Catálogo <code>catalog.json</code><br>
+  Para criar loja real: super admin → Nova loja → template <code>generico-hml</code> → slug da loja → Ligar.
+</div></footer>
+
+<script>
+const ICONS = [
+  ["bag","M6 7h12l1 13H5z|M9 7a3 3 0 0 1 6 0"],
+  ["search","M11 5a6 6 0 1 0 0 12 6 6 0 0 0 0-12z|M20 20l-3.5-3.5"],
+  ["plus","M12 5v14|M5 12h14"],
+  ["minus","M5 12h14"],
+  ["x","M6 6l12 12|M18 6L6 18"],
+  ["check","M5 12l5 5L19 7"],
+  ["truck","M3 7h11v8H3z|M14 10h4l3 3v2h-7z|M7 18a1.6 1.6 0 1 0 0-.01|M17 18a1.6 1.6 0 1 0 0-.01"],
+  ["shield","M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z|M9 12l2 2 4-4"],
+  ["star","M12 3l2.7 5.6 6.1.8-4.5 4.2 1.1 6-5.4-3-5.4 3 1.1-6L3.2 9.4l6.1-.8z"],
+  ["heart","M12 20s-7-4.3-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 10c0 5.7-7 10-7 10z"],
+  ["zap-chat","M21 12a9 9 0 1 1-16.5 5L3 21l4.2-1.4A9 9 0 0 1 21 12z"],
+  ["pin","M12 21s-6-5.2-6-10a6 6 0 0 1 12 0c0 4.8-6 10-6 10z|M12 12a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"],
+  ["clock","M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18z|M12 7v5l3 2"],
+  ["filter","M4 6h16|M7 12h10|M10 18h4"],
+  ["arrow","M4 12h15|M13 6l6 6-6 6"],
+  ["store","M4 9l1-4h14l1 4|M4 9v11h16V9|M4 9h16|M9 20v-6h6v6"],
+  ["box","M12 3l8 4v10l-8 4-8-4V7z|M4 7l8 4 8-4|M12 11v10"],
+  ["insta","M8 3h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8a5 5 0 0 1 5-5z|M12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8z|M17 6.5a1 1 0 1 0 0 .01"]
+];
+const ig = document.getElementById("iconGrid");
+ig.innerHTML = ICONS.map(([n,d]) =>
+  `<div class="icon-cell"><svg class="ds-icon is-lg" viewBox="0 0 24 24" aria-hidden="true">${d.split("|").map(p=>`<path d="${p}"/>`).join("")}</svg><b style="font-size:12px">${n}</b><small>lucide:${n}</small></div>`
+).join("");
+
+const root = document.documentElement;
+const params = new URLSearchParams(location.search);
+function setSeg(s){ root.dataset.segment = s;
+  document.querySelectorAll("[data-seg]").forEach(b=>b.setAttribute("aria-pressed", b.dataset.seg===s ? "true":"false")); }
+document.querySelectorAll("[data-seg]").forEach(b=>b.onclick=()=>setSeg(b.dataset.seg));
+if (params.get("segmento")) setSeg(params.get("segmento"));
+if (params.get("tema")==="dark"){ root.dataset.theme="dark"; }
+
+const btnTheme = document.getElementById("btnTheme");
+function paintTheme(){ btnTheme.textContent = "Tema: " + (root.dataset.theme==="dark"?"escuro":"claro"); }
+btnTheme.onclick = ()=>{ root.dataset.theme = root.dataset.theme==="dark"?"light":"dark"; paintTheme(); };
+paintTheme();
+
+document.getElementById("selFormato").onchange = e=>document.body.dataset.btnFormato=e.target.value;
+document.getElementById("selCaixa").onchange = e=>document.body.dataset.btnCaixa=e.target.value;
+
+let CAT = [];
+fetch("saas/templates/generico-hml/catalog.json").then(r=>r.json()).then(j=>{CAT=j;render();}).catch(()=>{CAT=[];render();});
+const BRL = v => v==null ? "Sob consulta" : v.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
+function render(){
+  const q = (document.getElementById("busca").value||"").toLowerCase();
+  const c = document.getElementById("filtroCat").value;
+  const list = CAT.filter(p => (c==="tudo"||p.cat===c) && (!q || (p.nome+" "+p.desc+" "+p.tag).toLowerCase().includes(q)));
+  document.getElementById("gradeCat").innerHTML = list.length ? list.map(p=>`
+    <article class="ds-card"><div class="ds-card-media">
+      <svg class="ds-icon is-lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 4v10l-8 4-8-4V7z"/><path d="M4 7l8 4 8-4"/><path d="M12 11v10"/></svg>
+    </div><div class="ds-card-body">
+      ${p.badge?`<span class="ds-badge ${/consulta|encomenda/i.test(p.badge)?"is-accent":""}">${p.badge}</span>`:""}
+      <div class="ds-card-title">${p.nome}</div>
+      <small class="ds-muted">${p.tag}</small>
+      <p class="ds-muted" style="font-size:14px">${p.desc}</p>
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:4px">
+        <span class="ds-price">${BRL(p.preco)}</span>
+        <button class="ds-btn ${p.preco==null?"ds-btn-outline":"ds-btn-primary"} is-sm" type="button">Quero</button>
+      </div>
+    </div></article>`).join("")
+    : `<div class="ds-card"><div class="ds-card-body"><b>Nada por aqui (estado vazio OK).</b><span class="ds-muted">Ajuste a busca ou cadastre produtos no painel.</span></div></div>`;
+}
+document.getElementById("busca").oninput = render;
+document.getElementById("filtroCat").onchange = render;
+</script>
+</body>
+</html>

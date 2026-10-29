@@ -1,0 +1,486 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Super Loja · Jordao Neto Tech — Sua loja online vendendo no WhatsApp em 1 dia</title>
+<meta name="description" content="Catálogo online profissional para pequenos lojistas. Cliente monta a lista e o pedido cai pronto no seu WhatsApp. A partir de R$ 29,90/mês, sem taxa por venda.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="img/marca/simbolo-cor.png">
+<style>
+:root{--bg:#070D1A;--soft:#0C1428;--papel:#0E1730;--linha:rgba(148,175,220,.16);--tinta:#EEF3FA;--suave:#9AA7BD;--azul:#2E7CFF;--azul-claro:#7AA5FF;--azul-fraco:rgba(0,87,255,.14);--menta:#00D9A5;--zap:#25b86a;--serif:"Poppins",-apple-system,"Segoe UI",sans-serif;--sans:"Inter",-apple-system,"Segoe UI",sans-serif;--raio:20px;--sombra:0 24px 70px rgba(0,0,0,.5)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--bg);color:var(--tinta);line-height:1.65;-webkit-font-smoothing:antialiased}
+.env{max-width:1120px;margin:0 auto;padding:0 22px}
+header.topo{position:sticky;top:0;background:rgba(7,13,26,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--linha);z-index:20}
+header.topo .env{display:flex;align-items:center;justify-content:space-between;padding:12px 22px}
+.marca img{height:38px;display:block}
+.brandlock{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brandlock img{height:44px;width:44px;flex:none}
+.brandlock .bt{line-height:1.2}
+.brandlock .bt b{display:block;font-family:var(--serif);font-weight:800;font-size:20px;letter-spacing:2.5px;color:#fff}
+.brandlock .bt span{display:block;font-size:10px;letter-spacing:3px;color:var(--menta);font-weight:700}
+nav.menu{display:flex;gap:24px;align-items:center}
+nav.menu a{color:var(--tinta);text-decoration:none;font-size:15px;font-weight:600}
+.btn{display:inline-block;padding:14px 32px;border-radius:99px;text-decoration:none;font-weight:700;font-size:15px;border:0;cursor:pointer;transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn-azul{background:linear-gradient(135deg,#2E7CFF,#0057FF);color:#fff;box-shadow:0 10px 34px rgba(0,87,255,.5)}
+.btn-linha{border:1.5px solid var(--azul);color:#fff;background:rgba(0,87,255,.08)}
+.btn-zap{background:linear-gradient(135deg,#25b86a,#1f8c5a);color:#fff;box-shadow:0 10px 30px rgba(37,184,106,.35)}
+.btn-grande{padding:17px 44px;font-size:17px}
+.hero{position:relative;overflow:hidden;background:radial-gradient(900px 480px at 85% -5%,rgba(0,217,165,.14),transparent 60%),radial-gradient(1000px 560px at 8% 0%,rgba(0,87,255,.30),transparent 60%)}
+.hero::after{content:"";position:absolute;inset:auto 0 0 0;height:1px;background:linear-gradient(90deg,transparent,var(--linha),transparent)}
+.hero .env{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;padding:88px 22px 76px}
+.selo-topo{display:inline-flex;align-items:center;gap:8px;background:rgba(0,217,165,.10);border:1px solid rgba(0,217,165,.35);border-radius:99px;padding:7px 16px;font-size:13px;font-weight:600;color:var(--menta)}
+.selo-topo .ponto{width:8px;height:8px;border-radius:50%;background:var(--menta)}
+.hero h1{font-family:var(--serif);font-size:clamp(2.3rem,4.6vw,3.5rem);line-height:1.12;margin:20px 0;font-weight:800;letter-spacing:-.5px}
+.hero h1 .marca-texto{background:linear-gradient(92deg,var(--azul),#00b98c);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .lead{font-size:1.16rem;color:var(--suave);max-width:520px}
+.ctas{display:flex;gap:14px;margin-top:30px;flex-wrap:wrap}
+.microprova{display:flex;gap:18px;margin-top:22px;flex-wrap:wrap;font-size:13.5px;color:var(--suave)}
+.microprova b{color:#fff}
+.mock{background:#0B1330;border:1px solid var(--linha);border-radius:22px;box-shadow:var(--sombra);overflow:hidden}
+.mock-bar{display:flex;align-items:center;gap:8px;padding:12px 16px;border-bottom:1px solid var(--linha);background:#0A1128}
+.mock-bar i{width:11px;height:11px;border-radius:50%;background:#D7E1F2}
+.mock-bar i:first-child{background:#FF5F57}.mock-bar i:nth-child(2){background:#FEBC2E}.mock-bar i:nth-child(3){background:#28C840}
+.mock-url{flex:1;background:#070D1A;border:1px solid var(--linha);border-radius:99px;font-size:12px;color:var(--suave);padding:5px 14px;margin-left:6px}
+.mock-corpo{padding:18px;display:grid;gap:12px}
+.mock-loja{display:flex;gap:12px;align-items:center}
+.mock-logo{width:42px;height:42px;border-radius:12px;background:linear-gradient(135deg,var(--azul),#00b98c);color:#fff;font-family:var(--serif);font-weight:700;display:flex;align-items:center;justify-content:center}
+.mock-cards{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
+.mini{background:#131D3A;border:1px solid var(--linha);border-radius:12px;padding:10px;text-align:left}
+.mini .foto{height:64px;border-radius:8px;background:linear-gradient(135deg,#1E3A8A,#0B3B32);margin-bottom:8px}
+.mini b{display:block;font-size:11px}
+.mini span{font-size:11px;color:var(--menta);font-weight:700}
+.mock-zap{background:#0E3B2E;border:1px solid rgba(0,217,165,.35);border-radius:14px 14px 4px 14px;padding:12px 14px;font-size:12.5px;color:#C9F5E5;justify-self:end;max-width:85%}
+.mock-zap b{color:var(--menta)}
+.flut{position:absolute;background:#101B3A;border:1px solid var(--linha);border-radius:14px;box-shadow:var(--sombra);padding:10px 16px;font-size:13px;font-weight:700;color:#fff}
+.flut small{display:block;font-weight:400;color:var(--suave);font-size:11.5px}
+.flut.f1{top:6%;right:-8px}.flut.f2{bottom:8%;left:-14px}
+.faixa-logos{border-top:1px solid var(--linha);border-bottom:1px solid var(--linha);background:#090F20}
+.faixa-logos .env{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;padding:18px 22px;font-size:13.5px;color:var(--suave);font-weight:600}
+.faixa-logos span{background:#131D3A;border:1px solid var(--linha);border-radius:99px;padding:6px 16px}
+section.bloco{padding:84px 0}
+.centro{text-align:center}
+.chapeu{letter-spacing:3px;font-size:12px;color:var(--menta);font-weight:700;text-transform:uppercase}
+h2.titulo{font-family:var(--serif);font-size:clamp(1.8rem,3.4vw,2.6rem);margin:14px 0 8px;letter-spacing:-.4px}
+h2.titulo em{color:var(--azul-claro);font-style:normal}
+nav.menu a.navlink{color:var(--suave)}
+nav.menu a.navlink:hover{color:#fff}
+.hero{background:radial-gradient(900px 480px at 85% -5%,rgba(0,217,165,.14),transparent 60%),radial-gradient(1000px 560px at 8% 0%,rgba(0,87,255,.30),transparent 60%)}
+.hero h1 .marca-texto{background:linear-gradient(92deg,#6EA8FF,#00D9A5);-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{color:var(--suave);max-width:660px;margin:0 auto;font-size:1.05rem}
+.dor{background:#0B1330;border:1px solid var(--linha);color:var(--tinta);border-radius:24px;padding:52px 44px;margin-top:40px;display:grid;grid-template-columns:1fr 1fr;gap:36px}
+.dor h3{font-family:var(--serif);font-size:1.5rem;margin-bottom:14px}
+.dor ul{list-style:none}
+.dor li{padding:9px 0 9px 30px;position:relative;font-size:15px;color:#8B96AC}
+.dor.solucao li{color:var(--tinta)}
+.dor.problema li::before{content:"✕";position:absolute;left:2px;color:#FF7A7A;font-weight:700}
+.dor .solucao li::before{content:"✓";position:absolute;left:2px;color:var(--menta);font-weight:700;font-size:16px}
+.grade{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px;margin-top:40px}
+.cartao{background:linear-gradient(180deg,#101A36,#0C1428);border:1px solid var(--linha);border-radius:var(--raio);padding:30px 26px;transition:transform .15s,box-shadow .15s}
+.cartao:hover{transform:translateY(-4px);box-shadow:var(--sombra);border-color:rgba(0,87,255,.5)}
+.cartao .ico{width:48px;height:48px;border-radius:14px;background:rgba(0,87,255,.16);display:flex;align-items:center;justify-content:center;font-size:24px}
+.cartao h3{font-family:var(--serif);font-size:1.2rem;margin:14px 0 6px}
+.cartao p{font-size:14.5px;color:var(--suave)}
+.tabela-compare{width:100%;border-collapse:separate;border-spacing:0;margin-top:36px;background:#0C1428;border:1px solid var(--linha);border-radius:18px;overflow:hidden;font-size:14.5px}
+.tabela-compare th,.tabela-compare td{padding:14px 16px;text-align:left;border-bottom:1px solid var(--linha)}
+.tabela-compare th{background:#060B16;color:#fff;font-family:var(--serif)}
+.tabela-compare th.destaque-col{background:linear-gradient(135deg,#0057FF,#0040C0)}
+.tabela-compare td{color:var(--suave)}
+.tabela-compare td:first-child{color:var(--tinta);font-weight:600}
+.tabela-compare td.destaque-col{background:rgba(0,87,255,.14);font-weight:700;color:#fff}
+.simulador{background:linear-gradient(135deg,#002FA3,#0057FF 60%,#009E7E 130%);border:1px solid rgba(122,165,255,.35);border-radius:24px;color:#fff;padding:48px 40px;margin-top:40px;display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center}
+.simulador label{display:block;font-size:13.5px;opacity:.85;margin:16px 0 6px}
+.simulador input{width:100%;padding:13px;border:0;border-radius:12px;font-size:16px;font-family:var(--sans);background:#fff;color:#111}
+.simulador .resultado{background:rgba(0,0,0,.28);border:1px solid rgba(255,255,255,.2);border-radius:18px;padding:28px;text-align:center}
+.simulador .resultado b{display:block;font-size:2.6rem;color:var(--menta)}
+.simulador .resultado span{font-size:14px;opacity:.9}
+.passos{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:18px;margin-top:40px;text-align:left}
+.passo{background:var(--papel);border:1px solid var(--linha);border-radius:var(--raio);padding:28px 24px;position:relative}
+.passo h3{margin:4px 0 6px;font-size:16px}
+.passo p{font-size:14px;color:var(--suave)}
+.passo .num{display:inline-flex;width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#2E7CFF,#0057FF);color:#fff;font-weight:700;align-items:center;justify-content:center;margin-bottom:12px;font-family:var(--serif)}
+.toggle{display:inline-flex;background:#131D3A;border:1px solid var(--linha);border-radius:99px;padding:5px;margin-top:22px}
+.toggle button{border:0;background:transparent;padding:10px 26px;border-radius:99px;font-weight:700;font-size:14px;cursor:pointer;color:var(--suave)}
+.toggle button.on{background:var(--azul);color:#fff;box-shadow:0 4px 14px rgba(0,87,255,.5)}
+.planos{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:22px;margin-top:34px;align-items:stretch;text-align:left}
+.plano{background:linear-gradient(180deg,#101A36,#0B1226);border:1px solid var(--linha);border-radius:22px;padding:36px 32px;display:flex;flex-direction:column}
+.plano.destaque{border:1.5px solid var(--azul);box-shadow:0 18px 60px rgba(0,87,255,.35);position:relative}
+.plano .tag{position:absolute;top:-15px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,#2E7CFF,#0057FF);color:#fff;font-size:12px;font-weight:700;padding:5px 18px;border-radius:99px;white-space:nowrap}
+.plano h3{font-family:var(--serif);font-size:1.5rem}
+.preco{font-size:2.7rem;font-weight:800;margin:10px 0 2px;letter-spacing:-1px}
+.preco small{font-size:14px;font-weight:400;color:var(--suave)}
+.setup{font-size:13px;color:var(--suave);margin-bottom:18px}
+.plano ul{list-style:none;margin:0 0 26px;flex:1}
+.plano li{padding:7px 0 7px 28px;position:relative;font-size:14.5px;color:#D5DDEF}
+.plano li::before{content:"✓";position:absolute;left:4px;color:var(--menta);font-weight:700}
+.plano li.off{color:#5A6578;text-decoration:line-through}
+.plano li.off::before{content:"—";color:#5A6578}
+.garantia{display:flex;gap:22px;align-items:center;background:rgba(0,217,165,.08);border:1.5px dashed rgba(0,217,165,.5);border-radius:var(--raio);padding:28px 30px;margin-top:28px;text-align:left}
+.garantia b{color:#fff}
+.garantia div{color:var(--suave)}
+.garantia .selo{font-size:44px}
+.depoimentos{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin-top:36px;text-align:left}
+.depo{background:#0E1730;border:1px solid var(--linha);border-radius:var(--raio);padding:28px}
+.depo .estrelas{color:#F5A623;letter-spacing:2px}
+.depo p{font-size:15px;margin:12px 0;color:#D5DDEF}
+.depo b{display:block;font-size:14px}.depo span{font-size:13px;color:var(--suave)}
+.faq{max-width:740px;margin:32px auto 0;text-align:left}
+.faq details{background:#0E1730;border:1px solid var(--linha);border-radius:14px;padding:18px 22px;margin-bottom:10px}
+.faq summary{cursor:pointer;font-weight:700;font-size:15.5px}
+.faq p{margin-top:8px;font-size:14.5px;color:var(--suave)}
+.form-caixa{background:linear-gradient(180deg,#101A36,#0B1226);border:1px solid var(--linha);border-radius:24px;padding:42px 36px;max-width:640px;margin:32px auto 0;box-shadow:var(--sombra)}
+.form-caixa label{display:block;text-align:left;font-size:14px;font-weight:700;margin:14px 0 6px}
+.form-caixa input,.form-caixa select{width:100%;padding:13px;border:1.5px solid #263252;border-radius:12px;font-size:15px;font-family:var(--sans);background:#070D1A;color:#fff}
+.form-caixa select option{background:#0B1330}
+.form-caixa input:focus,.form-caixa select:focus{outline:none;border-color:var(--azul)}
+.form-caixa .linha{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+footer{background:#04070F;border-top:1px solid var(--linha);color:#8B96AC;padding:52px 0 90px;margin-top:40px}
+footer .env{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+footer .marca img{height:34px}
+footer a{color:var(--azul-claro)}
+.zap-flut{position:fixed;right:20px;bottom:20px;width:58px;height:58px;border-radius:50%;background:var(--zap);display:none;align-items:center;justify-content:center;font-size:28px;box-shadow:0 12px 30px rgba(31,140,90,.4);z-index:30;text-decoration:none}
+.barra-mobile{display:none;position:fixed;bottom:0;left:0;right:0;background:#0A1128;border-top:1px solid var(--linha);padding:10px 16px;z-index:30}
+.barra-mobile .btn{width:100%;text-align:center}
+.toast{position:fixed;bottom:90px;left:50%;transform:translateX(-50%);background:#131D3A;border:1px solid var(--linha);color:#fff;padding:13px 24px;border-radius:12px;display:none;z-index:50;max-width:90%}
+.rv{opacity:0;transform:translateY(26px);transition:opacity .6s,transform .6s}
+.rv.vis{opacity:1;transform:none}
+@media(max-width:900px){.hero .env{grid-template-columns:1fr;padding:60px 22px}.dor,.simulador{grid-template-columns:1fr}}
+@media(max-width:760px){nav.menu a.navlink{display:none}.form-caixa .linha{grid-template-columns:1fr}.barra-mobile{display:block}footer{padding-bottom:150px}.flut{display:none}}
+/* ---------- pack mobile ---------- */
+a,button{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+@media(max-width:760px){
+  .form-caixa input,.form-caixa select,.simulador input{font-size:16px}
+  .btn{min-height:48px;display:inline-flex;align-items:center;justify-content:center}
+  .barra-mobile{padding-bottom:calc(10px + env(safe-area-inset-bottom))}
+  .zap-flut{bottom:calc(84px + env(safe-area-inset-bottom));right:14px}
+  .toast{bottom:calc(150px + env(safe-area-inset-bottom))}
+  .hero h1{font-size:2.05rem}
+  .planos{grid-template-columns:1fr}
+  .simulador,.dor,.case{padding:32px 22px}
+  .tabela-compare{font-size:13px}
+  .tabela-compare th,.tabela-compare td{padding:11px 10px}
+  .toggle{width:100%;justify-content:center}
+  .mock-cards{grid-template-columns:1fr 1fr 1fr;gap:8px}
+}
+@media(max-width:380px){
+  .hero h1{font-size:1.8rem}
+  .ctas .btn{width:100%}
+  .preco{font-size:2.2rem}
+}
+</style>
+</head>
+<body>
+
+<header class="topo">
+  <div class="env">
+    <div class="marca"><a class="brandlock" href="#" aria-label="Super Loja · Jordao Neto Tech"><img src="img/marca/simbolo-cor.svg" alt="JN"><span class="bt"><b>SUPER LOJA</b><span>JORDÃO NETO TECH</span></span></a></div>
+    <nav class="menu">
+      <a class="navlink" href="#recursos">Recursos</a>
+      <a class="navlink" href="#planos">Planos</a>
+      <a class="navlink" href="#faq">Dúvidas</a>
+      <a class="btn btn-azul" style="padding:11px 24px" data-cta="topo" href="#interesse">Quero a minha</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<div class="hero">
+  <div class="env">
+    <div>
+      <span class="selo-topo"><span class="ponto"></span> Vagas de setup abertas esta semana</span>
+      <h1>Pare de vender no direct bagunçado. <span class="marca-texto">Venda no automático.</span></h1>
+      <p class="lead">Sua loja online no ar em 1 dia: o cliente monta a lista no catálogo e o pedido cai pronto no seu WhatsApp. Sem taxa por venda, sem fidelidade.</p>
+      <div class="ctas">
+        <a class="btn btn-azul btn-grande" href="#planos">Ver planos</a>
+        <a class="btn btn-linha btn-grande" data-cta="hero" href="#interesse">Falar no WhatsApp</a>
+      </div>
+      <div class="microprova">
+        <span>✅ <b>7 dias</b> de garantia</span>
+        <span>✅ <b>0%</b> de comissão</span>
+        <span>✅ Setup em <b>1 dia útil</b></span>
+      </div>
+    </div>
+    <div style="position:relative">
+      <div class="mock">
+        <div class="mock-bar"><i></i><i></i><i></i><span class="mock-url">sualoja.superloja.com.br</span></div>
+        <div class="mock-corpo">
+          <div class="mock-loja"><span class="mock-logo">SL</span><div><b style="font-size:14px">Sua Loja</b><br><span style="font-size:11.5px;color:var(--suave)">Catálogo online</span></div></div>
+          <div class="mock-cards">
+            <div class="mini"><div class="foto"></div><b>Produto 1</b><span>R$ 49,90</span></div>
+            <div class="mini"><div class="foto"></div><b>Produto 2</b><span>R$ 79,90</span></div>
+            <div class="mini"><div class="foto"></div><b>Produto 3</b><span>R$ 59,90</span></div>
+          </div>
+          <div class="mock-zap"><b>Pedido recebido ✅</b><br>2x Produto 1 · 1x Produto 3<br>Total: R$ 159,70</div>
+        </div>
+      </div>
+      <div class="flut f1">+1 pedido<small>agora mesmo</small></div>
+      <div class="flut f2">R$ 0<small>taxa por venda</small></div>
+    </div>
+  </div>
+</div>
+
+<div class="faixa-logos"><div class="env">
+  <span>Artesanato</span><span>Moda</span><span>Beleza</span><span>Doces &amp; Bolos</span><span>Artigos religiosos</span><span>Semi-joias</span>
+</div></div>
+
+<div class="env">
+  <section class="bloco centro rv" id="recursos">
+    <p class="chapeu">A dor e a solução</p>
+    <h2 class="titulo">Vender pelo direct <em>custa vendas</em></h2>
+    <div class="dor problema" style="text-align:left">
+      <div>
+        <h3>😩 Do jeito antigo</h3>
+        <ul>
+          <li>Cliente pergunta preço 5x, você responde 5x</li>
+          <li>Pedido se perde no meio da conversa</li>
+          <li>Catálogo em PDF desatualizado no drive</li>
+          <li>Parece amador perto da concorrência</li>
+        </ul>
+      </div>
+      <div class="solucao">
+        <h3>✨ Com a Super Loja</h3>
+        <ul>
+          <li>Preço e foto sempre visíveis, 24h por dia</li>
+          <li>Pedido chega pronto: itens, total e dados</li>
+          <li>Você atualiza preço em 1 minuto no painel</li>
+          <li>Link profissional na bio do Instagram</li>
+        </ul>
+      </div>
+    </div>
+    <div class="grade" style="text-align:left;margin-top:22px">
+      <div class="cartao"><div class="ico">🛍️</div><h3>Catálogo que vende sozinho</h3><p>Busca, filtros e ordenação. No celular, instala como app.</p></div>
+      <div class="cartao"><div class="ico">💬</div><h3>Checkout no WhatsApp</h3><p>Zero fricção: sem cadastro, sem carrinho abandonado, sem taxa.</p></div>
+      <div class="cartao"><div class="ico">⚙️</div><h3>Painel à prova de leigo</h3><p>Trocar preço e foto é tão fácil quanto postar um story.</p></div>
+      <div class="cartao"><div class="ico">🌐</div><h3>Seu domínio</h3><p><i>sualoja.com.br</i> no Pro, ou subdomínio grátis na hora.</p></div>
+    </div>
+  </section>
+
+  <section class="bloco centro rv">
+    <p class="chapeu">Compare</p>
+    <h2 class="titulo">Por que lojistas <em>trocam pela Super Loja</em></h2>
+    <div style="overflow-x:auto">
+    <table class="tabela-compare">
+      <thead><tr><th></th><th class="destaque-col">Super Loja</th><th>Plataformas grandes</th><th>PDF / direct</th></tr></thead>
+      <tbody>
+        <tr><td>Taxa por venda</td><td class="destaque-col">R$ 0</td><td>2% a 5%</td><td>R$ 0</td></tr>
+        <tr><td>No ar em 1 dia, montada pra você</td><td class="destaque-col">✅</td><td>Você monta sozinho</td><td>—</td></tr>
+        <tr><td>Pedido organizado no WhatsApp</td><td class="destaque-col">✅</td><td>Checkout frio com cadastro</td><td>❌ bagunça</td></tr>
+        <tr>        <td>Mensalidade</td><td class="destaque-col">R$ 29,90–49,90</td><td>R$ 149+</td><td>R$ 0 (e 0 vendas)</td>
+        <tr><td>Fidelidade</td><td class="destaque-col">Nunca</td><td>12 meses</td><td>—</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </section>
+
+  <section class="bloco centro rv">
+    <p class="chapeu">Simule</p>
+    <h2 class="titulo">Quanto a loja <em>se paga?</em></h2>
+    <p class="sub">Ajuste e veja: na maioria dos casos, 2 vendas no mês já pagam o plano.</p>
+    <div class="simulador" style="text-align:left">
+      <div>
+        <label for="simTicket">Ticket médio do seu produto (R$)</label>
+        <input id="simTicket" type="number" value="80" min="1">
+        <label for="simVendas">Vendas extras por mês com a loja</label>
+        <input id="simVendas" type="number" value="10" min="1">
+      </div>
+      <div class="resultado">
+        <b id="simValor">R$ 800</b>
+        <span>de receita extra/mês · o Básico custa R$ 29,90</span>
+        <div style="margin-top:18px"><a class="btn btn-zap" href="#interesse">Quero esse resultado</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bloco centro rv" id="como">
+    <p class="chapeu">Como funciona</p>
+    <h2 class="titulo">Do "quero" ao vendendo <em>em 4 passos</em></h2>
+    <div class="passos">
+      <div class="passo"><span class="num">1</span><h3>Você chama</h3><p>Formulário ou WhatsApp. Entendemos seu negócio em minutos.</p></div>
+      <div class="passo"><span class="num">2</span><h3>A gente monta</h3><p>Fotos, produtos, preços e sua identidade no ar em 1 dia útil.</p></div>
+      <div class="passo"><span class="num">3</span><h3>Você divulga</h3><p>Link na bio e nos stories. A gente te dá o passo a passo.</p></div>
+      <div class="passo"><span class="num">4</span><h3>Você vende</h3><p>Pedidos prontos no WhatsApp. Sem comissão, sem intermediário.</p></div>
+    </div>
+  </section>
+
+  <section class="bloco centro rv" id="planos">
+    <p class="chapeu">Planos</p>
+    <h2 class="titulo">Menos que o lucro de <em>uma única venda</em></h2>
+    <p class="sub">O Básico sai R$ 29,90/mês — uma venda de R$ 80 paga quase 3 meses. Sem taxa por venda, sem fidelidade, 7 dias de garantia.</p>
+    <div class="toggle"><button id="tgMensal" class="on">Mensal</button><button id="tgAnual">Anual −20%</button></div>
+    <div class="planos">
+      <div class="plano">
+        <h3>Básico</h3>
+        <div class="preco"><span data-m="R$ 29,90" data-a="R$ 24,90">R$ 29,90</span><small>/mês</small></div>
+        <p class="setup">+ setup único de R$ 199 · <span data-m="cobrança mensal" data-a="2 meses grátis no anual">cobrança mensal</span></p>
+        <ul>
+          <li>Catálogo com até 100 produtos</li>
+          <li>Pedido no WhatsApp</li>
+          <li>Painel administrativo</li>
+          <li>Endereço sualoja.superloja.com.br</li>
+          <li class="off">Domínio próprio</li>
+          <li class="off">Produtos ilimitados</li>
+        </ul>
+        <a class="btn btn-linha" data-plano="Básico" href="#interesse">Quero o Básico</a>
+      </div>
+      <div class="plano destaque">
+        <span class="tag">MAIS CONTRATADO</span>
+        <h3>Pro</h3>
+        <div class="preco"><span data-m="R$ 49,90" data-a="R$ 41,90">R$ 49,90</span><small>/mês</small></div>
+        <p class="setup">+ setup único de R$ 199 · <span data-m="cobrança mensal" data-a="2 meses grátis no anual">cobrança mensal</span></p>
+        <ul>
+          <li>Produtos ilimitados</li>
+          <li>Pedido no WhatsApp</li>
+          <li>Painel administrativo</li>
+          <li>Domínio próprio (sualoja.com.br)</li>
+          <li>Identidade visual completa</li>
+          <li>Suporte prioritário</li>
+        </ul>
+        <a class="btn btn-azul" data-plano="Pro" href="#interesse">Quero o Pro</a>
+      </div>
+    </div>
+    <div class="garantia" style="text-align:left">
+      <span class="selo">🔄</span>
+      <div><b>Troque de plano quando quiser.</b> Subir para o Pro libera tudo na hora. Descer para o Básico vale a partir do próximo ciclo — e a gente cuida da transição com você (veja as regras abaixo).</div>
+    </div>
+    <div class="grade" style="text-align:left;margin-top:18px">
+      <div class="cartao"><div class="ico">🚀</div><h3>Upgrade imediato</h3><p>Produtos ilimitados, domínio próprio e suporte prioritário liberados na hora, sem perder nada.</p></div>
+      <div class="cartao"><div class="ico">⬇️</div><h3>Downgrade sem susto</h3><p>Vale no próximo ciclo. Produtos além de 100 ficam ocultos (não apagados) e o domínio próprio é desconectado — sua loja volta ao endereço grátis.</p></div>
+    </div>
+    <div class="garantia" style="text-align:left">
+      <span class="selo">🛡️</span>
+      <div><b>Garantia incondicional de 7 dias.</b> Se sua loja não ficar no ar como prometido, devolvemos 100% do setup. O risco é nosso, não seu.</div>
+    </div>
+  </section>
+
+  <section class="bloco centro rv">
+    <p class="chapeu">Quem usa</p>
+    <h2 class="titulo">Lojistas <em>de verdade</em></h2>
+    <div class="depoimentos">
+      <div class="depo"><div class="estrelas">★★★★★</div><p>"Saí do catálogo em PDF para uma loja de verdade. O pedido chega pronto no meu WhatsApp, não perco mais venda no direct."</p><b>Ateliê Santo Terço</b><span>Artesanato religioso · loja ativa</span></div>
+      <div class="depo"><div class="estrelas">★★★★★</div><p>"Em um dia estava vendendo. Minhas clientes amaram montar a lista sozinhas."</p><b>Sua loja aqui</b><span>As próximas histórias são das nossas clientes</span></div>
+    </div>
+  </section>
+
+  <section class="bloco rv" id="faq">
+    <div class="centro"><p class="chapeu">Dúvidas</p>
+    <h2 class="titulo">Antes de <em>decidir</em></h2></div>
+    <div class="faq">
+      <details><summary>Preciso de CNPJ para ter minha loja?</summary><p>Não. Pessoa física com CPF já pode contratar.</p></details>
+      <details><summary>Como meus clientes pagam?</summary><p>Do jeito que você já vende: Pix, cartão ou dinheiro combinados no WhatsApp. Sem intermediário e sem taxa — 100% seu.</p></details>
+      <details><summary>Em quanto tempo fica pronta?</summary><p>Setup em até 1 dia útil após você enviar fotos, preços e logo.</p></details>
+      <details><summary>E se eu não gostar?</summary><p>7 dias de garantia incondicional: devolvemos o setup, sem perguntas.</p></details>
+      <details><summary>Posso usar meu próprio domínio?</summary><p>Sim, no Pro. No Básico você ganha um endereço profissional na hora.</p></details>
+      <details><summary>Não sei mexer com tecnologia. E agora?</summary><p>A gente monta tudo. O painel foi feito para quem só sabe usar WhatsApp — e o suporte ajuda direto por lá.</p></details>
+      <details><summary>Minhas fotos não são profissionais.</summary><p>O setup inclui orientação de foto com celular + tratamento das imagens. Foto que vende, a gente resolve junto.</p></details>
+      <details><summary>Tem fidelidade ou multa?</summary><p>Nunca. Cancelou, a loja sai do ar no fim do ciclo pago.</p></details>
+      <details><summary>Posso trocar de plano depois?</summary><p>Sim, a qualquer momento. <b>Upgrade</b> (Básico → Pro): libera na hora. <b>Downgrade</b> (Pro → Básico): vale a partir do próximo ciclo já pago, com duas limitações — produtos além dos 100 primeiros ficam <b>ocultos</b> (nada é apagado, voltam se você subir de novo) e o <b>domínio próprio é desconectado</b>, com a loja voltando ao endereço grátis. A gente faz a transição com você.</p></details>
+    </div>
+  </section>
+
+  <section class="bloco centro rv" id="interesse">
+    <p class="chapeu">Último passo</p>
+    <h2 class="titulo">Sua loja no ar <em>amanhã</em></h2>
+    <p class="sub">Preencha e chamamos você no WhatsApp ainda hoje. Sem compromisso.</p>
+    <form class="form-caixa" id="formInteresse">
+      <label for="iNome">Seu nome</label>
+      <input id="iNome" required placeholder="Como podemos te chamar?" autocomplete="name">
+      <div class="linha">
+        <div>
+          <label for="iWhats">Seu WhatsApp</label>
+          <input id="iWhats" required inputmode="tel" placeholder="(16) 99999-9999" autocomplete="tel">
+        </div>
+        <div>
+          <label for="iPlano">Plano de interesse</label>
+          <select id="iPlano"><option>Básico</option><option>Pro</option><option>Não sei ainda</option></select>
+        </div>
+      </div>
+      <label for="iSeg">O que você vende?</label>
+      <select id="iSeg">
+        <option>Artesanato</option><option>Moda / Roupas</option><option>Beleza / Cosméticos</option>
+        <option>Alimentação / Doces</option><option>Artigos religiosos</option><option>Outro</option>
+      </select>
+      <div style="margin-top:24px"><button class="btn btn-zap btn-grande" type="submit" style="width:100%">Quero minha loja 🚀</button></div>
+      <p style="font-size:13px;color:var(--suave);margin-top:12px">🔒 Seus dados servem só para entrarmos em contato. Nada de spam.</p>
+    </form>
+  </section>
+</div>
+</main>
+
+<footer>
+  <div class="env">
+    <div><div class="marca"><span class="brandlock"><img src="img/marca/simbolo-cor.svg" alt="JN"><span class="bt"><b>SUPER LOJA</b><span>JORDÃO NETO TECH</span></span></span></div><br><span style="font-size:13px">Catálogos que vendem no WhatsApp</span></div>
+    <div style="font-size:14px"><a data-cta="rodape" href="#interesse">Quero a minha loja</a></div>
+  </div>
+</footer>
+
+<div class="barra-mobile"><a class="btn btn-azul" href="#interesse">Quero minha loja 🚀</a></div>
+<a class="zap-flut" data-cta="flut" href="#interesse" aria-label="Falar no WhatsApp">💬</a>
+
+<div class="toast" id="toast"></div>
+
+<script>
+(function(){
+"use strict";
+const $ = (s,e=document)=>e.querySelector(s);
+const $$ = (s,e=document)=>[...e.querySelectorAll(s)];
+let ZAP = "";
+const toast = m => { const t=$("#toast"); t.textContent=m; t.style.display="block"; clearTimeout(t._x); t._x=setTimeout(()=>t.style.display="none",3800); };
+const zapLink = txt => "https://wa.me/"+ZAP+"?text="+encodeURIComponent(txt);
+
+/* reveal on scroll */
+const obs = new IntersectionObserver(es=>es.forEach(en=>{ if(en.isIntersecting){ en.target.classList.add("vis"); obs.unobserve(en.target); } }),{threshold:.08});
+$$(".rv").forEach(el=>obs.observe(el));
+
+/* CTAs de WhatsApp */
+fetch("/api/saas/plataforma").then(r=>r.json()).then(p=>{
+  ZAP = String(p.whatsapp||"").replace(/\D/g,"");
+  if(!ZAP) return;
+  $$("[data-cta]").forEach(a=>{ a.href = zapLink("Olá! Vi o site da Super Loja e quero minha loja online."); });
+  const z = $(".zap-flut"); if(z) z.style.display = "flex";
+}).catch(()=>{});
+
+/* plano pré-seleciona no form */
+$$("[data-plano]").forEach(a=>a.addEventListener("click", ()=>{ $("#iPlano").value = a.dataset.plano; }));
+
+/* toggle mensal/anual */
+const setBilling = anual => {
+  $("#tgMensal").classList.toggle("on", !anual);
+  $("#tgAnual").classList.toggle("on", anual);
+  $$("[data-m]").forEach(el=>{ el.textContent = anual ? el.dataset.a : el.dataset.m; });
+};
+$("#tgMensal").addEventListener("click", ()=>setBilling(false));
+$("#tgAnual").addEventListener("click", ()=>setBilling(true));
+
+/* simulador de receita */
+function simular(){
+  const t = Math.max(1, parseFloat($("#simTicket").value) || 0);
+  const v = Math.max(1, parseFloat($("#simVendas").value) || 0);
+  $("#simValor").textContent = (t*v).toLocaleString("pt-BR",{style:"currency",currency:"BRL",maximumFractionDigits:0});
+}
+["simTicket","simVendas"].forEach(id=>$("#"+id).addEventListener("input", simular));
+simular();
+
+/* formulário de interesse */
+$("#formInteresse").addEventListener("submit", async e=>{
+  e.preventDefault();
+  const body = {nome:$("#iNome").value.trim(), whatsapp:$("#iWhats").value.trim(),
+    segmento:$("#iSeg").value, plano:$("#iPlano").value};
+  if(!body.nome || !body.whatsapp){ toast("Preencha nome e WhatsApp."); return; }
+  try{
+    const r = await fetch("/api/saas/interesse", {method:"POST",
+      headers:{"Content-Type":"application/json"}, body:JSON.stringify(body)});
+    if(r.status===429){ toast("Calma! Tente de novo em 1 minuto."); return; }
+    if(!r.ok) throw new Error();
+    e.target.reset();
+    toast("Recebido! Vamos te chamar no WhatsApp ainda hoje. 🤍");
+  }catch(err){ toast("Não foi possível enviar. Tente de novo."); }
+});
+})();
+</script>
+</body>
+</html>
