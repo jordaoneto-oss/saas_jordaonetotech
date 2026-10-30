@@ -1,0 +1,408 @@
+{
+  "geral": {
+    "nome": "Casa Editorial",
+    "tagline": "Objetos para morar devagar",
+    "title": "Casa Editorial — Objetos autorais para morar devagar",
+    "descricao": "Cerâmica, linho, madeira e aromas em pequenos lotes. Uma curadoria de objetos autorais para deixar a casa com a sua cara.",
+    "instagram": "",
+    "zap": "5511999999999",
+    "zap_tel": "(11) 99999-9999",
+    "prazo_producao": "peças produzidas em pequenos lotes · envio em até 5 dias úteis",
+    "produto": "Objetos de casa",
+    "categoria": "Casa e lifestyle"
+  },
+  "visual": {
+    "logo": "logo.png",
+    "cores": {
+      "marfim": "#f6f1e7",
+      "areia": "#ece3d3",
+      "papel": "#fffdf8",
+      "linha": "#ddd0bb",
+      "tinta": "#211d17",
+      "tinta-suave": "#6b6153",
+      "ouro": "#b4552d",
+      "ouro-claro": "#d98a63",
+      "ouro-fraco": "#f6e4d8",
+      "rosa": "#8a9a7b",
+      "rosa-claro": "#e6ece1",
+      "salvia": "#6f7d5c",
+      "zap": "#1f7a4d"
+    },
+    "fontes": {
+      "titulos": {
+        "nome": "Fraunces",
+        "link": "https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&display=swap",
+        "familia": "\"Fraunces\",Georgia,serif"
+      },
+      "texto": {
+        "nome": "DM Sans",
+        "link": "https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap",
+        "familia": "\"DM Sans\",-apple-system,BlinkMacSystemFont,\"Segoe UI\",sans-serif"
+      }
+    },
+    "raio": "0px",
+    "container": "1240px"
+  },
+  "hero": {
+    "chapeu": "Coleção outono · 2026",
+    "titulo": "A casa também<br><em>conta histórias.</em>",
+    "lead": "Objetos de cerâmica, linho e madeira escolhidos para durar. Peças autorais, produzidas em pequenos lotes, para quem gosta de morar com intenção.",
+    "cta1": "Explorar a coleção",
+    "cta2": "Nossa história",
+    "nota": "Peças autorais · produção em pequenos lotes · envio consciente",
+    "fita1": "Feito para durar",
+    "fita2": "não para acompanhar tendência"
+  },
+  "selos": [
+    {
+      "t": "Pequenos lotes",
+      "s": "Nada de produção em massa"
+    },
+    {
+      "t": "Materiais naturais",
+      "s": "Cerâmica, linho e madeira"
+    },
+    {
+      "t": "Feito no Brasil",
+      "s": "Ateliês parceiros"
+    },
+    {
+      "t": "Envio consciente",
+      "s": "Embalagem sem plástico"
+    }
+  ],
+  "destaques": {
+    "chapeu": "Seleção da semana",
+    "titulo": "Peças que <em>aquecem</em> o ambiente",
+    "ids": [
+      "vaso-ceramica",
+      "manta-algodao",
+      "vela-artesanal",
+      "bandeja-madeira"
+    ]
+  },
+  "oficio": {
+    "chapeu": "Nosso ateliê",
+    "titulo": "A beleza do <em>imperfeito.</em>",
+    "citacao": "\"Cada peça sai diferente da outra. É isso que faz ela ser sua.\"",
+    "lead": "Trabalhamos com ateliês pequenos, de pessoas que conhecem o processo inteiro. A cerâmica tem marcas da mão, o linho amassa com o uso e a madeira ganha história. A gente gosta assim.",
+    "fe1": "<b>Origem rastreável</b> — sabemos quem fez e de onde veio cada peça.",
+    "fe2": "<b>Produção lenta</b> — pequenos lotes, sem pressa e sem sobra.",
+    "fe3": "<b>Reparo e cuidado</b> — orientamos como cuidar para durar mais.",
+    "cta": "Conhecer os ateliês"
+  },
+  "catalogo": {
+    "chapeu": "Catálogo",
+    "titulo": "Objetos para <em>todos os dias</em>",
+    "lead": "Uma seleção enxuta de peças que usam, lavam e envelhecem bem. Toque para adicionar à sua lista.",
+    "prazo": "Produção em pequenos lotes. Prazo e frete confirmados no WhatsApp.",
+    "nota": "Procura uma peça específica? <a href=\"#final\">Conte para a gente</a>.",
+    "busca_placeholder": "Buscar por peça, material ou ambiente…"
+  },
+  "encomenda": {
+    "chapeu": "Encomendas",
+    "titulo": "Peça <em>do seu jeito</em>",
+    "lead": "Edite este texto no painel e explique como funcionam as encomendas.",
+    "passos": [
+      {
+        "t": "Você conta a ideia",
+        "s": "Descreva o passo 1."
+      },
+      {
+        "t": "Combinamos os detalhes",
+        "s": "Descreva o passo 2."
+      },
+      {
+        "t": "Preparamos com carinho",
+        "s": "Descreva o passo 3."
+      },
+      {
+        "t": "Chega até você",
+        "s": "Descreva o passo 4."
+      }
+    ],
+    "botao": "Encomendar pelo WhatsApp"
+  },
+  "devocoes": {
+    "chapeu": "Coleções",
+    "titulo": "Três formas de <em>morar</em>",
+    "lead": "Comece pelo ambiente que você quer transformar. Cada coleção foi montada para conversar entre si.",
+    "itens": [
+      {
+        "t": "Mesa posta",
+        "cor": [
+          "#d8b98c",
+          "#a97d4f"
+        ],
+        "icone": "copo"
+      },
+      {
+        "t": "Sala de estar",
+        "cor": [
+          "#c9b79d",
+          "#8f7b62"
+        ],
+        "icone": "manta"
+      },
+      {
+        "t": "Quarto e banho",
+        "cor": [
+          "#b9c0a8",
+          "#7f8a6e"
+        ],
+        "icone": "vela"
+      }
+    ]
+  },
+  "ocasioes": {
+    "chapeu": "Ocasiões",
+    "titulo": "Para <em>cada momento</em>",
+    "itens": []
+  },
+  "oracao": {
+    "texto": "\"A casa não precisa ser perfeita. Precisa parecer com quem mora nela.\"",
+    "autor": "Casa Editorial"
+  },
+  "misterios": {
+    "chapeu": "Saiba mais",
+    "titulo": "Informações <em>úteis</em>",
+    "lead": "Cadastre cartões informativos no painel para exibir aqui.",
+    "itens": []
+  },
+  "sobre": {
+    "chapeu": "Nossa história",
+    "titulo": "Conte <em>sua história</em>",
+    "p1": "Edite este texto no painel da loja.",
+    "p2": "Conte como tudo começou.",
+    "p3": "E o que move seu trabalho hoje.",
+    "cta": "Ver novidades no Instagram",
+    "numeros": []
+  },
+  "depoimentos": {
+    "chapeu": "Quem leva para casa",
+    "titulo": "Histórias que <em>continuam</em>",
+    "lead": "Cada peça sai daqui com uma história. Estas são algumas que voltaram para contar:",
+    "lista": [
+      {
+        "texto": "\"O vaso chegou embalado com um cuidado que eu não esperava. A cor é ainda mais bonita ao vivo e já virou o centro da mesa.\"",
+        "nome": "Beatriz",
+        "contexto": "Vaso cerâmica areia"
+      },
+      {
+        "texto": "\"A manta é leve e quente na medida. Uso todos os dias no sofá e continua impecável depois de lavar.\"",
+        "nome": "Helena",
+        "contexto": "Manta de algodão cru"
+      },
+      {
+        "texto": "\"Comprei a vela de presente e acabei ficando com ela. O cheiro é discreto e a embalagem dispensa papel de presente.\"",
+        "nome": "Clara",
+        "contexto": "Vela artesanal figo"
+      }
+    ],
+    "faixa": [
+      {
+        "t": "100%",
+        "s": "peças autorais"
+      },
+      {
+        "t": "12",
+        "s": "ateliês parceiros"
+      },
+      {
+        "t": "5 dias",
+        "s": "para postar"
+      }
+    ]
+  },
+  "final": {
+    "chapeu": "Vamos conversar",
+    "titulo": "Tem um espaço<br><em>esperando por você?</em>",
+    "lead": "Conte o ambiente, a paleta ou a peça que você procura. A gente ajuda a compor e envia opções com prazo e frete.",
+    "cta1": "Falar no WhatsApp",
+    "cta2": "Voltar ao catálogo"
+  },
+  "rodape": {
+    "titulo": "Casa Editorial",
+    "sobre": "Curadoria de objetos autorais para casa. Cerâmica, linho, madeira e aromas em pequenos lotes, feitos no Brasil.",
+    "cat_titulo": "Coleções",
+    "como_titulo": "Ajuda",
+    "nota_base": "Peças artesanais: variações de tom, textura e forma fazem parte."
+  },
+  "carrinho": {
+    "titulo": "Minha lista",
+    "resumo_vazio": "nenhum item ainda",
+    "obs_rot": "Observações do pedido",
+    "obs_placeholder": "Ex.: cor, tamanho, personalização",
+    "nome_rot": "Seu nome (opcional)",
+    "nome_placeholder": "Ex.: Maria Helena",
+    "whats_rot": "Seu WhatsApp (para a loja confirmar o pedido) *",
+    "whats_placeholder": "Ex.: (16) 99999-9999",
+    "cep_rot": "CEP ou cidade para estimar o frete (opcional)",
+    "cep_placeholder": "Ex.: 14800-000 ou Araraquara - SP",
+    "total_rot": "Total estimado",
+    "nota": "Nada é cobrado aqui. A lista vai para o WhatsApp da loja, onde combinamos os detalhes e o frete.",
+    "nota_combinar": "Há itens com valor a combinar na sua lista — o orçamento sai na conversa.",
+    "botao": "Fechar pedido no WhatsApp",
+    "msg_modelo": "Olá, {loja}! 🤍\nVim pelo site e gostaria de encomendar:\n\n{itens}\n\nTotal estimado: {total}{combinar}\n\n{observacao}\n\n{cliente}\n\n{entrega}\n\nPode me confirmar disponibilidade, prazo e o frete?",
+    "vazio_titulo": "Sua lista está vazia.",
+    "vazio_texto": "Escolha os produtos no catálogo e finalize no WhatsApp."
+  },
+  "menu": [
+    {
+      "t": "Coleções",
+      "href": "#devocoes"
+    },
+    {
+      "t": "Destaques",
+      "href": "#destaques"
+    },
+    {
+      "t": "Ateliê",
+      "href": "#oficio"
+    },
+    {
+      "t": "Catálogo",
+      "href": "#catalogo"
+    },
+    {
+      "t": "Histórias",
+      "href": "#depoimentos"
+    }
+  ],
+  "botoes": {
+    "formato": "quadrado",
+    "caixa": "normal"
+  },
+  "popup": {
+    "ativo": false,
+    "titulo": "Ganhe 10% na primeira peça 🤍",
+    "texto": "Deixe seu nome e WhatsApp que enviamos seu cupom de boas-vindas.",
+    "botao": "Quero meu cupom",
+    "cupom": "",
+    "aviso": "Ao enviar, você concorda em receber novidades no WhatsApp.",
+    "atraso": 25,
+    "intervalo": 7,
+    "inicio": "",
+    "fim": ""
+  },
+  "zap": {
+    "msg_ola": "Olá! Vim pelo site da {NOME} e quero saber mais sobre os produtos.",
+    "msg_encomenda": "Olá! Vim pelo site e gostaria de fazer uma encomenda personalizada. Pode me ajudar?"
+  },
+  "template": {
+    "id": "editorial-hml",
+    "nome": "Editorial Casa",
+    "versao": "1.0-hml",
+    "status": "homologacao",
+    "foco": "loja-conceito e storytelling",
+    "segmento": "casa / lifestyle / marcas autorais"
+  },
+  "header": {
+    "variant": "centered"
+  },
+  "anuncio": {
+    "texto": "",
+    "link": "",
+    "botao": ""
+  },
+  "layout": {
+    "secoes": [
+      {
+        "id": "hero",
+        "visivel": true
+      },
+      {
+        "id": "selos",
+        "visivel": true
+      },
+      {
+        "id": "devocoes",
+        "visivel": true
+      },
+      {
+        "id": "destaques",
+        "visivel": true
+      },
+      {
+        "id": "oficio",
+        "visivel": true
+      },
+      {
+        "id": "oracao",
+        "visivel": true
+      },
+      {
+        "id": "catalogo",
+        "visivel": true
+      },
+      {
+        "id": "depoimentos",
+        "visivel": true
+      },
+      {
+        "id": "final",
+        "visivel": true
+      },
+      {
+        "id": "rodape",
+        "visivel": true
+      }
+    ]
+  },
+  "presets": [
+    {
+      "nome": "Terracota",
+      "cores": {
+        "marfim": "#f6f1e7",
+        "areia": "#ece3d3",
+        "papel": "#fffdf8",
+        "linha": "#ddd0bb",
+        "tinta": "#211d17",
+        "tinta-suave": "#6b6153",
+        "ouro": "#b4552d",
+        "ouro-claro": "#d98a63",
+        "ouro-fraco": "#f6e4d8",
+        "rosa": "#8a9a7b",
+        "rosa-claro": "#e6ece1",
+        "salvia": "#6f7d5c",
+        "zap": "#1f7a4d"
+      }
+    },
+    {
+      "nome": "Oliva",
+      "cores": {
+        "marfim": "#f3f2e9",
+        "areia": "#e6e5d6",
+        "papel": "#fdfcf6",
+        "linha": "#d2d1bd",
+        "tinta": "#20231b",
+        "tinta-suave": "#626757",
+        "ouro": "#5f7248",
+        "ouro-claro": "#8fa176",
+        "ouro-fraco": "#e5ead9",
+        "rosa": "#b07a4f",
+        "rosa-claro": "#f0e0d0",
+        "salvia": "#7d8a63",
+        "zap": "#1f7a4d"
+      }
+    },
+    {
+      "nome": "Papel",
+      "cores": {
+        "marfim": "#faf8f3",
+        "areia": "#f0ece2",
+        "papel": "#ffffff",
+        "linha": "#e0dacd",
+        "tinta": "#1f1d19",
+        "tinta-suave": "#6a655b",
+        "ouro": "#2f2c27",
+        "ouro-claro": "#6b655a",
+        "ouro-fraco": "#ece8df",
+        "rosa": "#a8875c",
+        "rosa-claro": "#f1e8d9",
+        "salvia": "#7d8a75",
+        "zap": "#1f7a4d"
+      }
+    }
+  ]
+}

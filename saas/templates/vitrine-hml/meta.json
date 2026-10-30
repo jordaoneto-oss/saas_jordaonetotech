@@ -1,0 +1,20 @@
+{
+  "id": "vitrine-hml",
+  "nome": "Vitrine Express",
+  "descricao": "Moda, acessórios e utilidades com curadoria. Escolha as peças, monte sua lista e finalize o pedido no WhatsApp.",
+  "segmento": "varejo / moda / acessórios",
+  "tema": "vitrine",
+  "versao": "1.0-hml",
+  "status": "homologacao",
+  "foco": "loja virtual de conversão",
+  "modulos": [
+    "hero",
+    "selos",
+    "destaques",
+    "catalogo",
+    "oficio",
+    "depoimentos",
+    "final",
+    "rodape"
+  ]
+}

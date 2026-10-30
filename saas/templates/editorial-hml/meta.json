@@ -1,0 +1,22 @@
+{
+  "id": "editorial-hml",
+  "nome": "Editorial Casa",
+  "descricao": "Cerâmica, linho, madeira e aromas em pequenos lotes. Uma curadoria de objetos autorais para deixar a casa com a sua cara.",
+  "segmento": "casa / lifestyle / marcas autorais",
+  "tema": "editorial",
+  "versao": "1.0-hml",
+  "status": "homologacao",
+  "foco": "loja-conceito e storytelling",
+  "modulos": [
+    "hero",
+    "selos",
+    "devocoes",
+    "destaques",
+    "oficio",
+    "oracao",
+    "catalogo",
+    "depoimentos",
+    "final",
+    "rodape"
+  ]
+}

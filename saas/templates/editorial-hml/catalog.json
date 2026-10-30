@@ -1,0 +1,130 @@
+[
+  {
+    "id": "vaso-ceramica",
+    "nome": "Vaso cerâmica areia",
+    "cat": "Casa",
+    "tag": "Casa",
+    "preco": 189,
+    "desc": "Torneado à mão, esmalte fosco e base selada. 24 cm de altura.",
+    "foto": "",
+    "badge": "Feito à mão",
+    "selo": "Feito à mão",
+    "cor": [
+      "#e7d8c3",
+      "#cbb69a"
+    ],
+    "icone": "vaso"
+  },
+  {
+    "id": "manta-algodao",
+    "nome": "Manta de algodão cru",
+    "cat": "Têxtil",
+    "tag": "Têxtil",
+    "preco": 249,
+    "desc": "Tecelagem manual em algodão orgânico. 1,30 × 1,80 m.",
+    "foto": "",
+    "badge": "",
+    "selo": "",
+    "cor": [
+      "#efe6d7",
+      "#d3c3ad"
+    ],
+    "icone": "manta"
+  },
+  {
+    "id": "copo-ambar",
+    "nome": "Copo âmbar soprado",
+    "cat": "Mesa",
+    "tag": "Mesa",
+    "preco": 69,
+    "desc": "Vidro soprado artesanal, 300 ml. Pequenas bolhas fazem parte.",
+    "foto": "",
+    "badge": "Novo",
+    "selo": "Novo",
+    "cor": [
+      "#d9b98c",
+      "#b8875a"
+    ],
+    "icone": "copo"
+  },
+  {
+    "id": "bandeja-madeira",
+    "nome": "Bandeja madeira freijó",
+    "cat": "Mesa",
+    "tag": "Mesa",
+    "preco": 159,
+    "desc": "Madeira de reflorestamento com acabamento em óleo natural. 40 × 25 cm.",
+    "foto": "",
+    "badge": "",
+    "selo": "",
+    "cor": [
+      "#d8c2a4",
+      "#a9855f"
+    ],
+    "icone": "bandeja"
+  },
+  {
+    "id": "vela-artesanal",
+    "nome": "Vela artesanal figo",
+    "cat": "Aroma",
+    "tag": "Aroma",
+    "preco": 89,
+    "desc": "Cera de coco, pavio de algodão e essência de figo. 220 g.",
+    "foto": "",
+    "badge": "Mais vendido",
+    "selo": "Mais vendido",
+    "cor": [
+      "#e3d3bf",
+      "#bfa98e"
+    ],
+    "icone": "vela"
+  },
+  {
+    "id": "caderno-linho",
+    "nome": "Caderno capa linho",
+    "cat": "Papelaria",
+    "tag": "Papelaria",
+    "preco": 74,
+    "desc": "96 páginas pautadas, capa em linho e costura aparente.",
+    "foto": "",
+    "badge": "",
+    "selo": "",
+    "cor": [
+      "#d9d3c6",
+      "#b3aa99"
+    ],
+    "icone": "caderno"
+  },
+  {
+    "id": "bolsa-linho",
+    "nome": "Bolsa de linho",
+    "cat": "Acessórios",
+    "tag": "Acessórios",
+    "preco": 219,
+    "desc": "Linho lavado, alças reforçadas e forro interno. Cabe notebook 13\".",
+    "foto": "",
+    "badge": "",
+    "selo": "",
+    "cor": [
+      "#e8ddcb",
+      "#c7b69c"
+    ],
+    "icone": "bolsa"
+  },
+  {
+    "id": "aromatizante",
+    "nome": "Aromatizante cítrico",
+    "cat": "Aroma",
+    "tag": "Aroma",
+    "preco": 79,
+    "desc": "Óleos essenciais de laranja, limão e cedro. 200 ml.",
+    "foto": "",
+    "badge": "Sob encomenda",
+    "selo": "Sob encomenda",
+    "cor": [
+      "#e6ddc7",
+      "#c4b590"
+    ],
+    "icone": "aroma"
+  }
+]

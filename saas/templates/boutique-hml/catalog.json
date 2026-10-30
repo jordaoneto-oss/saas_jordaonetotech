@@ -1,0 +1,130 @@
+[
+  {
+    "id": "colar-fio-ouro",
+    "nome": "Colar fio dourado",
+    "cat": "Colares",
+    "tag": "Colares",
+    "preco": 329,
+    "desc": "Corrente veneziana em banho de ouro 18k, 45 cm com extensor.",
+    "foto": "",
+    "badge": "Assinatura",
+    "selo": "Assinatura",
+    "cor": [
+      "#d8c39a",
+      "#a98a5c"
+    ],
+    "icone": "colar"
+  },
+  {
+    "id": "brinco-argola",
+    "nome": "Brinco argola texturizada",
+    "cat": "Brincos",
+    "tag": "Brincos",
+    "preco": 189,
+    "desc": "Argola média com textura martelada e fecho de pressão.",
+    "foto": "",
+    "badge": "Mais vendido",
+    "selo": "Mais vendido",
+    "cor": [
+      "#e2d0ae",
+      "#b99a6d"
+    ],
+    "icone": "brinco"
+  },
+  {
+    "id": "anel-signet",
+    "nome": "Anel signet clássico",
+    "cat": "Anéis",
+    "tag": "Anéis",
+    "preco": 279,
+    "desc": "Aro largo com face oval lisa. Disponível do 14 ao 24.",
+    "foto": "",
+    "badge": "",
+    "selo": "",
+    "cor": [
+      "#d5c3a4",
+      "#a78a62"
+    ],
+    "icone": "anel"
+  },
+  {
+    "id": "pulseira-elos",
+    "nome": "Pulseira de elos",
+    "cat": "Pulseiras",
+    "tag": "Pulseiras",
+    "preco": 249,
+    "desc": "Elos ovais com fecho de mosquetão. 18 cm ajustável.",
+    "foto": "",
+    "badge": "Novo",
+    "selo": "Novo",
+    "cor": [
+      "#dfcda9",
+      "#b39568"
+    ],
+    "icone": "pulseira"
+  },
+  {
+    "id": "perfume-ambar",
+    "nome": "Perfume âmbar noir 50 ml",
+    "cat": "Fragrâncias",
+    "tag": "Fragrâncias",
+    "preco": 389,
+    "desc": "Âmbar, baunilha e madeiras. Fixação de 8 a 10 horas.",
+    "foto": "",
+    "badge": "Exclusivo",
+    "selo": "Exclusivo",
+    "cor": [
+      "#c9b18d",
+      "#8f6f4d"
+    ],
+    "icone": "perfume"
+  },
+  {
+    "id": "vela-noir",
+    "nome": "Vela noir 220 g",
+    "cat": "Casa",
+    "tag": "Casa",
+    "preco": 159,
+    "desc": "Cera vegetal, pavio de algodão e essência amadeirada.",
+    "foto": "",
+    "badge": "",
+    "selo": "",
+    "cor": [
+      "#d8c9b2",
+      "#a88f70"
+    ],
+    "icone": "vela"
+  },
+  {
+    "id": "estojo-joias",
+    "nome": "Estojo de joias em veludo",
+    "cat": "Acessórios",
+    "tag": "Acessórios",
+    "preco": 129,
+    "desc": "Estojo compacto com divisórias e fecho magnético.",
+    "foto": "",
+    "badge": "",
+    "selo": "",
+    "cor": [
+      "#c9b8a6",
+      "#9a8069"
+    ],
+    "icone": "estojo"
+  },
+  {
+    "id": "kit-presente",
+    "nome": "Kit presente assinatura",
+    "cat": "Kits",
+    "tag": "Kits",
+    "preco": 499,
+    "desc": "Colar, brinco e embalagem de presente em estojo rígido.",
+    "foto": "",
+    "badge": "Sob encomenda",
+    "selo": "Sob encomenda",
+    "cor": [
+      "#dcc9a6",
+      "#b08d5f"
+    ],
+    "icone": "kit"
+  }
+]

@@ -95,6 +95,102 @@
           "familia": "\"Lato\",-apple-system,BlinkMacSystemFont,\"Segoe UI\",sans-serif"
         }
       }
+    },
+    {
+      "id": "vitrine",
+      "nome": "Vitrine",
+      "descricao": "Claro e direto, com índigo e âmbar. Feito para lojas de conversão rápida.",
+      "cores": {
+        "areia": "#f4f6fb",
+        "linha": "#e3e8f2",
+        "marfim": "#ffffff",
+        "ouro": "#4f46e5",
+        "ouro-claro": "#818cf8",
+        "ouro-fraco": "#eef2ff",
+        "papel": "#ffffff",
+        "rosa": "#f59e0b",
+        "rosa-claro": "#fef3c7",
+        "salvia": "#10b981",
+        "tinta": "#0f172a",
+        "tinta-suave": "#5b6577",
+        "zap": "#16a34a"
+      },
+      "fontes": {
+        "titulos": {
+          "nome": "Manrope",
+          "link": "https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&display=swap",
+          "familia": "\"Manrope\",-apple-system,BlinkMacSystemFont,\"Segoe UI\",sans-serif"
+        },
+        "texto": {
+          "nome": "Inter",
+          "link": "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap",
+          "familia": "\"Inter\",-apple-system,BlinkMacSystemFont,\"Segoe UI\",sans-serif"
+        }
+      }
+    },
+    {
+      "id": "editorial",
+      "nome": "Editorial",
+      "descricao": "Creme, terracota e serifa. Para marcas autorais e lojas-conceito.",
+      "cores": {
+        "areia": "#ece3d3",
+        "linha": "#ddd0bb",
+        "marfim": "#f6f1e7",
+        "ouro": "#b4552d",
+        "ouro-claro": "#d98a63",
+        "ouro-fraco": "#f6e4d8",
+        "papel": "#fffdf8",
+        "rosa": "#8a9a7b",
+        "rosa-claro": "#e6ece1",
+        "salvia": "#6f7d5c",
+        "tinta": "#211d17",
+        "tinta-suave": "#6b6153",
+        "zap": "#1f7a4d"
+      },
+      "fontes": {
+        "titulos": {
+          "nome": "Fraunces",
+          "link": "https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&display=swap",
+          "familia": "\"Fraunces\",Georgia,serif"
+        },
+        "texto": {
+          "nome": "DM Sans",
+          "link": "https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap",
+          "familia": "\"DM Sans\",-apple-system,BlinkMacSystemFont,\"Segoe UI\",sans-serif"
+        }
+      }
+    },
+    {
+      "id": "boutique",
+      "nome": "Boutique",
+      "descricao": "Escuro com dourado e serifa fina. Para peças premium e atendimento concierge.",
+      "cores": {
+        "areia": "#151310",
+        "linha": "#332d24",
+        "marfim": "#0d0c0a",
+        "ouro": "#c8a96a",
+        "ouro-claro": "#e2c995",
+        "ouro-fraco": "#2a2318",
+        "papel": "#1b1814",
+        "rosa": "#a8735b",
+        "rosa-claro": "#2e211b",
+        "salvia": "#7f8b72",
+        "tinta": "#f4ecdd",
+        "tinta-suave": "#b7a98f",
+        "zap": "#2f9e68"
+      },
+      "fontes": {
+        "titulos": {
+          "nome": "Cormorant Garamond",
+          "link": "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap",
+          "familia": "\"Cormorant Garamond\",Georgia,serif"
+        },
+        "texto": {
+          "nome": "Inter",
+          "link": "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap",
+          "familia": "\"Inter\",-apple-system,BlinkMacSystemFont,\"Segoe UI\",sans-serif"
+        }
+      }
     }
   ]
 }

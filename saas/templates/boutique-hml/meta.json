@@ -1,0 +1,21 @@
+{
+  "id": "boutique-hml",
+  "nome": "Boutique Noir",
+  "descricao": "Joias em banho de ouro 18k, pedras naturais e objetos de desejo em edição limitada. Atendimento concierge pelo WhatsApp.",
+  "segmento": "joias / beleza / presentes",
+  "tema": "boutique",
+  "versao": "1.0-hml",
+  "status": "homologacao",
+  "foco": "loja premium e atendimento concierge",
+  "modulos": [
+    "hero",
+    "selos",
+    "destaques",
+    "oficio",
+    "catalogo",
+    "encomenda",
+    "depoimentos",
+    "final",
+    "rodape"
+  ]
+}

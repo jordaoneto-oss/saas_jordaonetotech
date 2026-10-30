@@ -1,0 +1,371 @@
+{
+  "geral": {
+    "nome": "Boutique Noir",
+    "tagline": "Joias e objetos de desejo",
+    "title": "Boutique Noir — Joias em banho de ouro e edições limitadas",
+    "descricao": "Joias em banho de ouro 18k, pedras naturais e objetos de desejo em edição limitada. Atendimento concierge pelo WhatsApp.",
+    "instagram": "",
+    "zap": "5511999999999",
+    "zap_tel": "(11) 99999-9999",
+    "prazo_producao": "peças sob encomenda · produção de 7 a 12 dias úteis",
+    "produto": "Joias e objetos",
+    "categoria": "Joias e beleza"
+  },
+  "visual": {
+    "logo": "logo.png",
+    "cores": {
+      "marfim": "#0d0c0a",
+      "areia": "#151310",
+      "papel": "#1b1814",
+      "linha": "#332d24",
+      "tinta": "#f4ecdd",
+      "tinta-suave": "#b7a98f",
+      "ouro": "#c8a96a",
+      "ouro-claro": "#e2c995",
+      "ouro-fraco": "#2a2318",
+      "rosa": "#a8735b",
+      "rosa-claro": "#2e211b",
+      "salvia": "#7f8b72",
+      "zap": "#2f9e68"
+    },
+    "fontes": {
+      "titulos": {
+        "nome": "Cormorant Garamond",
+        "link": "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap",
+        "familia": "\"Cormorant Garamond\",Georgia,serif"
+      },
+      "texto": {
+        "nome": "Inter",
+        "link": "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap",
+        "familia": "\"Inter\",-apple-system,BlinkMacSystemFont,\"Segoe UI\",sans-serif"
+      }
+    },
+    "raio": "0px",
+    "container": "1200px"
+  },
+  "hero": {
+    "chapeu": "Coleção assinatura",
+    "titulo": "O luxo de<br><em>ser você.</em>",
+    "lead": "Joias em banho de ouro 18k, pedras naturais e peças em edição limitada. Atendimento concierge para escolher com calma e receber em casa.",
+    "cta1": "Ver a coleção",
+    "cta2": "Agendar atendimento",
+    "nota": "Embalagem de presente inclusa · envio segurado para todo o Brasil",
+    "fita1": "Edição limitada",
+    "fita2": "feita para durar"
+  },
+  "selos": [
+    {
+      "t": "Banho de ouro 18k",
+      "s": "Garantia de 12 meses"
+    },
+    {
+      "t": "Pedras naturais",
+      "s": "Selecionadas uma a uma"
+    },
+    {
+      "t": "Embalagem presente",
+      "s": "Pronta para presentear"
+    },
+    {
+      "t": "Envio segurado",
+      "s": "Para todo o Brasil"
+    }
+  ],
+  "destaques": {
+    "chapeu": "Seleção assinatura",
+    "titulo": "Peças para <em>lembrar</em>",
+    "ids": [
+      "colar-fio-ouro",
+      "brinco-argola",
+      "anel-signet",
+      "perfume-ambar"
+    ]
+  },
+  "oficio": {
+    "chapeu": "O atelier",
+    "titulo": "Feito para <em>poucos.</em>",
+    "citacao": "\"Uma joia não precisa gritar. Ela precisa ficar.\"",
+    "lead": "Cada peça nasce de uma conversa: a ocasião, a pele, o jeito de usar. Trabalhamos com produção pequena, acabamento manual e pedras escolhidas uma a uma.",
+    "fe1": "<b>Banho de ouro 18k</b> — espessura reforçada e garantia de 12 meses.",
+    "fe2": "<b>Pedras naturais</b> — selecionadas por tom, corte e transparência.",
+    "fe3": "<b>Atendimento concierge</b> — acompanhamento do pedido ao pós-venda.",
+    "cta": "Conhecer o atelier"
+  },
+  "catalogo": {
+    "chapeu": "Coleção",
+    "titulo": "Objetos de <em>desejo</em>",
+    "lead": "Peças em edição limitada, prontas para envio ou sob encomenda. Selecione e fale com o concierge para confirmar detalhes.",
+    "prazo": "Peças sob encomenda: 7 a 12 dias úteis. Pronta entrega: envio em 2 dias.",
+    "nota": "Quer uma peça personalizada? <a href=\"#encomenda\">Fale com o atelier</a>.",
+    "busca_placeholder": "Buscar por peça, pedra ou coleção…"
+  },
+  "encomenda": {
+    "chapeu": "Atendimento concierge",
+    "titulo": "Do primeiro <em>olhar</em> ao presente",
+    "lead": "Um atendimento próximo para escolher a peça certa, ajustar o tamanho e cuidar de cada detalhe da entrega.",
+    "passos": [
+      {
+        "t": "Escolha a peça",
+        "s": "Monte sua lista ou envie uma referência pelo WhatsApp."
+      },
+      {
+        "t": "Atendimento concierge",
+        "s": "Confirmamos pedra, tamanho, prazo e forma de pagamento."
+      },
+      {
+        "t": "Embalagem e envio",
+        "s": "A peça sai em estojo, com embalagem de presente e envio segurado."
+      }
+    ],
+    "botao": "Agendar atendimento"
+  },
+  "devocoes": {
+    "chapeu": "Categorias",
+    "titulo": "Nossas <em>especialidades</em>",
+    "lead": "Cadastre itens no painel para exibir aqui.",
+    "itens": []
+  },
+  "ocasioes": {
+    "chapeu": "Ocasiões",
+    "titulo": "Para <em>cada momento</em>",
+    "itens": []
+  },
+  "oracao": {
+    "texto": "\"Edite esta frase de destaque no painel da loja.\"",
+    "autor": "Sua loja"
+  },
+  "misterios": {
+    "chapeu": "Saiba mais",
+    "titulo": "Informações <em>úteis</em>",
+    "lead": "Cadastre cartões informativos no painel para exibir aqui.",
+    "itens": []
+  },
+  "sobre": {
+    "chapeu": "Nossa história",
+    "titulo": "Conte <em>sua história</em>",
+    "p1": "Edite este texto no painel da loja.",
+    "p2": "Conte como tudo começou.",
+    "p3": "E o que move seu trabalho hoje.",
+    "cta": "Ver novidades no Instagram",
+    "numeros": []
+  },
+  "depoimentos": {
+    "chapeu": "Quem já recebeu",
+    "titulo": "Histórias <em>para guardar</em>",
+    "lead": "Cada peça carrega uma ocasião. Algumas palavras de quem escolheu a Boutique Noir:",
+    "lista": [
+      {
+        "texto": "\"Comprei o colar para o meu aniversário e foi um dos presentes mais bonitos que já recebi. O acabamento é impecável e a embalagem emociona.\"",
+        "nome": "Larissa",
+        "contexto": "Colar fio dourado"
+      },
+      {
+        "texto": "\"O atendimento pelo WhatsApp foi cuidadoso do início ao fim. Me ajudaram a escolher o tamanho e a peça chegou antes do prazo.\"",
+        "nome": "Patrícia",
+        "contexto": "Brinco argola"
+      },
+      {
+        "texto": "\"Pedi o kit presente para a minha mãe. Ela usou todos os dias desde então. Voltarei para a próxima ocasião.\"",
+        "nome": "Renata",
+        "contexto": "Kit presente assinatura"
+      }
+    ],
+    "faixa": [
+      {
+        "t": "18k",
+        "s": "banho de ouro"
+      },
+      {
+        "t": "12 meses",
+        "s": "de garantia"
+      },
+      {
+        "t": "100%",
+        "s": "embalagem presente"
+      }
+    ]
+  },
+  "final": {
+    "chapeu": "Atendimento privado",
+    "titulo": "Vamos encontrar<br><em>a sua peça?</em>",
+    "lead": "Conte a ocasião, o estilo e o orçamento. O concierge responde com opções selecionadas, prazo e condições.",
+    "cta1": "Falar com o concierge",
+    "cta2": "Voltar à coleção"
+  },
+  "rodape": {
+    "titulo": "Boutique Noir",
+    "sobre": "Joias em banho de ouro 18k, pedras naturais e objetos de desejo em edição limitada. Atendimento concierge e envio segurado.",
+    "cat_titulo": "Coleção",
+    "como_titulo": "Atendimento",
+    "nota_base": "Peças artesanais: pequenas variações de pedra e acabamento fazem parte."
+  },
+  "carrinho": {
+    "titulo": "Minha lista",
+    "resumo_vazio": "nenhum item ainda",
+    "obs_rot": "Observações do pedido",
+    "obs_placeholder": "Ex.: cor, tamanho, personalização",
+    "nome_rot": "Seu nome (opcional)",
+    "nome_placeholder": "Ex.: Maria Helena",
+    "whats_rot": "Seu WhatsApp (para a loja confirmar o pedido) *",
+    "whats_placeholder": "Ex.: (16) 99999-9999",
+    "cep_rot": "CEP ou cidade para estimar o frete (opcional)",
+    "cep_placeholder": "Ex.: 14800-000 ou Araraquara - SP",
+    "total_rot": "Total estimado",
+    "nota": "Nada é cobrado aqui. A lista vai para o WhatsApp da loja, onde combinamos os detalhes e o frete.",
+    "nota_combinar": "Há itens com valor a combinar na sua lista — o orçamento sai na conversa.",
+    "botao": "Fechar pedido no WhatsApp",
+    "msg_modelo": "Olá, {loja}! 🤍\nVim pelo site e gostaria de encomendar:\n\n{itens}\n\nTotal estimado: {total}{combinar}\n\n{observacao}\n\n{cliente}\n\n{entrega}\n\nPode me confirmar disponibilidade, prazo e o frete?",
+    "vazio_titulo": "Sua lista está vazia.",
+    "vazio_texto": "Escolha os produtos no catálogo e finalize no WhatsApp."
+  },
+  "menu": [
+    {
+      "t": "Coleção",
+      "href": "#destaques"
+    },
+    {
+      "t": "Atelier",
+      "href": "#oficio"
+    },
+    {
+      "t": "Catálogo",
+      "href": "#catalogo"
+    },
+    {
+      "t": "Atendimento",
+      "href": "#encomenda"
+    }
+  ],
+  "botoes": {
+    "formato": "quadrado",
+    "caixa": "alta"
+  },
+  "popup": {
+    "ativo": false,
+    "titulo": "Ganhe 10% na primeira peça 🤍",
+    "texto": "Deixe seu nome e WhatsApp que enviamos seu cupom de boas-vindas.",
+    "botao": "Quero meu cupom",
+    "cupom": "",
+    "aviso": "Ao enviar, você concorda em receber novidades no WhatsApp.",
+    "atraso": 25,
+    "intervalo": 7,
+    "inicio": "",
+    "fim": ""
+  },
+  "zap": {
+    "msg_ola": "Olá! Vim pelo site da {NOME} e quero saber mais sobre os produtos.",
+    "msg_encomenda": "Olá! Vim pelo site e gostaria de fazer uma encomenda personalizada. Pode me ajudar?"
+  },
+  "template": {
+    "id": "boutique-hml",
+    "nome": "Boutique Noir",
+    "versao": "1.0-hml",
+    "status": "homologacao",
+    "foco": "loja premium e atendimento concierge",
+    "segmento": "joias / beleza / presentes"
+  },
+  "header": {
+    "variant": "minimal"
+  },
+  "anuncio": {
+    "texto": "Atendimento concierge · embalagem de presente inclusa · envio segurado",
+    "link": "#final",
+    "botao": "Falar agora"
+  },
+  "layout": {
+    "secoes": [
+      {
+        "id": "hero",
+        "visivel": true
+      },
+      {
+        "id": "selos",
+        "visivel": true
+      },
+      {
+        "id": "destaques",
+        "visivel": true
+      },
+      {
+        "id": "oficio",
+        "visivel": true
+      },
+      {
+        "id": "catalogo",
+        "visivel": true
+      },
+      {
+        "id": "encomenda",
+        "visivel": true
+      },
+      {
+        "id": "depoimentos",
+        "visivel": true
+      },
+      {
+        "id": "final",
+        "visivel": true
+      },
+      {
+        "id": "rodape",
+        "visivel": true
+      }
+    ]
+  },
+  "presets": [
+    {
+      "nome": "Noir",
+      "cores": {
+        "marfim": "#0d0c0a",
+        "areia": "#151310",
+        "papel": "#1b1814",
+        "linha": "#332d24",
+        "tinta": "#f4ecdd",
+        "tinta-suave": "#b7a98f",
+        "ouro": "#c8a96a",
+        "ouro-claro": "#e2c995",
+        "ouro-fraco": "#2a2318",
+        "rosa": "#a8735b",
+        "rosa-claro": "#2e211b",
+        "salvia": "#7f8b72",
+        "zap": "#2f9e68"
+      }
+    },
+    {
+      "nome": "Champagne",
+      "cores": {
+        "marfim": "#f8f3e9",
+        "areia": "#efe6d5",
+        "papel": "#fffdf8",
+        "linha": "#dfd1b9",
+        "tinta": "#2a2117",
+        "tinta-suave": "#7a6a55",
+        "ouro": "#a98443",
+        "ouro-claro": "#c9a96e",
+        "ouro-fraco": "#f0e6d2",
+        "rosa": "#b07a5a",
+        "rosa-claro": "#f2e2d7",
+        "salvia": "#7f8b72",
+        "zap": "#1f7a4d"
+      }
+    },
+    {
+      "nome": "Esmeralda",
+      "cores": {
+        "marfim": "#0a100e",
+        "areia": "#101a16",
+        "papel": "#14201b",
+        "linha": "#263a32",
+        "tinta": "#eef4ed",
+        "tinta-suave": "#a9b8ad",
+        "ouro": "#c9a96e",
+        "ouro-claro": "#e3c995",
+        "ouro-fraco": "#1c2b24",
+        "rosa": "#b07a5a",
+        "rosa-claro": "#2a1f1a",
+        "salvia": "#8fa88f",
+        "zap": "#2f9e68"
+      }
+    }
+  ]
+}

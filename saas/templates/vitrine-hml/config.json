@@ -1,0 +1,371 @@
+{
+  "geral": {
+    "nome": "Nova Vitrine",
+    "tagline": "Sua loja online, pronta para vender",
+    "title": "Nova Vitrine — Loja online com checkout no WhatsApp",
+    "descricao": "Moda, acessórios e utilidades com curadoria. Escolha as peças, monte sua lista e finalize o pedido no WhatsApp.",
+    "instagram": "",
+    "zap": "5511999999999",
+    "zap_tel": "(11) 99999-9999",
+    "prazo_producao": "envio em até 2 dias úteis · frete confirmado no WhatsApp",
+    "produto": "Produtos selecionados",
+    "categoria": "Varejo"
+  },
+  "visual": {
+    "logo": "logo.png",
+    "cores": {
+      "marfim": "#ffffff",
+      "areia": "#f4f6fb",
+      "papel": "#ffffff",
+      "linha": "#e3e8f2",
+      "tinta": "#0f172a",
+      "tinta-suave": "#5b6577",
+      "ouro": "#4f46e5",
+      "ouro-claro": "#818cf8",
+      "ouro-fraco": "#eef2ff",
+      "rosa": "#f59e0b",
+      "rosa-claro": "#fef3c7",
+      "salvia": "#10b981",
+      "zap": "#16a34a"
+    },
+    "fontes": {
+      "titulos": {
+        "nome": "Manrope",
+        "link": "https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&display=swap",
+        "familia": "\"Manrope\",-apple-system,BlinkMacSystemFont,\"Segoe UI\",sans-serif"
+      },
+      "texto": {
+        "nome": "Inter",
+        "link": "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap",
+        "familia": "\"Inter\",-apple-system,BlinkMacSystemFont,\"Segoe UI\",sans-serif"
+      }
+    },
+    "raio": "14px",
+    "container": "1180px"
+  },
+  "hero": {
+    "chapeu": "Nova coleção · outono 2026",
+    "titulo": "Peças que resolvem<br>o seu <em>dia.</em>",
+    "lead": "Curadoria de moda, acessórios e utilidades para quem quer praticidade sem abrir mão do estilo. Escolha, monte sua lista e finalize no WhatsApp.",
+    "cta1": "Ver a coleção",
+    "cta2": "Falar com a loja",
+    "nota": "Troca fácil em até 7 dias · atendimento humano de verdade",
+    "fita1": "Curadoria semanal",
+    "fita2": "novidades toda quinta"
+  },
+  "selos": [
+    {
+      "t": "Envio rápido",
+      "s": "Postado em até 2 dias"
+    },
+    {
+      "t": "Troca fácil",
+      "s": "7 dias para trocar"
+    },
+    {
+      "t": "Compra segura",
+      "s": "Pedido confirmado no WhatsApp"
+    },
+    {
+      "t": "Curadoria",
+      "s": "Peças escolhidas uma a uma"
+    }
+  ],
+  "destaques": {
+    "chapeu": "Mais desejados",
+    "titulo": "Os <em>favoritos</em> da semana",
+    "ids": [
+      "camiseta-essencial",
+      "bolsa-transversal",
+      "tenis-urbano",
+      "garrafa-termica"
+    ]
+  },
+  "oficio": {
+    "chapeu": "Sobre a vitrine",
+    "titulo": "Uma loja pequena,<br><em>escolhida a dedo.</em>",
+    "citacao": "\"Menos opções, mais acerto. Cada peça entra na vitrine porque a gente usaria.\"",
+    "lead": "A Nova Vitrine nasceu para encurtar o caminho entre você e o que funciona: peças versáteis, fornecedores testados e atendimento de gente para gente.",
+    "fe1": "<b>Curadoria real</b> — testamos textura, caimento e acabamento antes de publicar.",
+    "fe2": "<b>Estoque enxuto</b> — menos excesso, mais peças que você realmente veste.",
+    "fe3": "<b>Atendimento direto</b> — dúvida de tamanho? Chama no WhatsApp e a gente ajuda.",
+    "cta": "Conhecer a loja"
+  },
+  "catalogo": {
+    "chapeu": "Catálogo",
+    "titulo": "Escolha as suas <em>peças</em>",
+    "lead": "Filtre por categoria, busque pelo nome e monte sua lista. O pedido chega organizado no WhatsApp da loja.",
+    "prazo": "Enviamos para todo o Brasil. Frete e prazo são confirmados no atendimento.",
+    "nota": "Não encontrou seu tamanho? <a href=\"#final\">Fale com a gente</a> que verificamos com o fornecedor.",
+    "busca_placeholder": "Buscar por peça, cor ou categoria…"
+  },
+  "encomenda": {
+    "chapeu": "Encomendas",
+    "titulo": "Peça <em>do seu jeito</em>",
+    "lead": "Edite este texto no painel e explique como funcionam as encomendas.",
+    "passos": [
+      {
+        "t": "Você conta a ideia",
+        "s": "Descreva o passo 1."
+      },
+      {
+        "t": "Combinamos os detalhes",
+        "s": "Descreva o passo 2."
+      },
+      {
+        "t": "Preparamos com carinho",
+        "s": "Descreva o passo 3."
+      },
+      {
+        "t": "Chega até você",
+        "s": "Descreva o passo 4."
+      }
+    ],
+    "botao": "Encomendar pelo WhatsApp"
+  },
+  "devocoes": {
+    "chapeu": "Categorias",
+    "titulo": "Nossas <em>especialidades</em>",
+    "lead": "Cadastre itens no painel para exibir aqui.",
+    "itens": []
+  },
+  "ocasioes": {
+    "chapeu": "Ocasiões",
+    "titulo": "Para <em>cada momento</em>",
+    "itens": []
+  },
+  "oracao": {
+    "texto": "\"Edite esta frase de destaque no painel da loja.\"",
+    "autor": "Sua loja"
+  },
+  "misterios": {
+    "chapeu": "Saiba mais",
+    "titulo": "Informações <em>úteis</em>",
+    "lead": "Cadastre cartões informativos no painel para exibir aqui.",
+    "itens": []
+  },
+  "sobre": {
+    "chapeu": "Nossa história",
+    "titulo": "Conte <em>sua história</em>",
+    "p1": "Edite este texto no painel da loja.",
+    "p2": "Conte como tudo começou.",
+    "p3": "E o que move seu trabalho hoje.",
+    "cta": "Ver novidades no Instagram",
+    "numeros": []
+  },
+  "depoimentos": {
+    "chapeu": "Quem comprou",
+    "titulo": "Avaliações <em>reais</em>",
+    "lead": "Mais de 1.200 pedidos enviados. Algumas palavras de quem já recebeu:",
+    "lista": [
+      {
+        "texto": "\"A camiseta tem um caimento perfeito e o tecido é gostoso de verdade. Chegou antes do prazo e a embalagem é caprichada.\"",
+        "nome": "Marina",
+        "contexto": "Camiseta essencial"
+      },
+      {
+        "texto": "\"Comprei a bolsa para viajar e virou a minha favorita. Cabe tudo e não pesa. O atendimento no WhatsApp respondeu na hora.\"",
+        "nome": "Camila",
+        "contexto": "Bolsa transversal"
+      },
+      {
+        "texto": "\"Tênis leve, confortável e do jeito que aparecia nas fotos. Troquei o número sem burocracia e chegou rápido.\"",
+        "nome": "Rafael",
+        "contexto": "Tênis urbano"
+      }
+    ],
+    "faixa": [
+      {
+        "t": "4,9/5",
+        "s": "média das avaliações"
+      },
+      {
+        "t": "1.200+",
+        "s": "pedidos enviados"
+      },
+      {
+        "t": "24h",
+        "s": "resposta no WhatsApp"
+      }
+    ]
+  },
+  "final": {
+    "chapeu": "Fale com a loja",
+    "titulo": "Ficou na dúvida?<br><em>A gente ajuda.</em>",
+    "lead": "Manda o que você procura, seu tamanho ou uma referência. Respondemos em horário comercial com opções, prazo e frete.",
+    "cta1": "Chamar no WhatsApp",
+    "cta2": "Voltar ao catálogo"
+  },
+  "rodape": {
+    "titulo": "Nova Vitrine",
+    "sobre": "Curadoria de moda, acessórios e utilidades. Compra pelo site, atendimento no WhatsApp e envio para todo o Brasil.",
+    "cat_titulo": "Comprar",
+    "como_titulo": "Ajuda",
+    "nota_base": "Preços e estoque sujeitos a alteração. Imagens ilustrativas."
+  },
+  "carrinho": {
+    "titulo": "Minha lista",
+    "resumo_vazio": "nenhum item ainda",
+    "obs_rot": "Observações do pedido",
+    "obs_placeholder": "Ex.: cor, tamanho, personalização",
+    "nome_rot": "Seu nome (opcional)",
+    "nome_placeholder": "Ex.: Maria Helena",
+    "whats_rot": "Seu WhatsApp (para a loja confirmar o pedido) *",
+    "whats_placeholder": "Ex.: (16) 99999-9999",
+    "cep_rot": "CEP ou cidade para estimar o frete (opcional)",
+    "cep_placeholder": "Ex.: 14800-000 ou Araraquara - SP",
+    "total_rot": "Total estimado",
+    "nota": "Nada é cobrado aqui. A lista vai para o WhatsApp da loja, onde combinamos os detalhes e o frete.",
+    "nota_combinar": "Há itens com valor a combinar na sua lista — o orçamento sai na conversa.",
+    "botao": "Fechar pedido no WhatsApp",
+    "msg_modelo": "Olá, {loja}! 🤍\nVim pelo site e gostaria de encomendar:\n\n{itens}\n\nTotal estimado: {total}{combinar}\n\n{observacao}\n\n{cliente}\n\n{entrega}\n\nPode me confirmar disponibilidade, prazo e o frete?",
+    "vazio_titulo": "Sua lista está vazia.",
+    "vazio_texto": "Escolha os produtos no catálogo e finalize no WhatsApp."
+  },
+  "menu": [
+    {
+      "t": "Novidades",
+      "href": "#destaques"
+    },
+    {
+      "t": "Catálogo",
+      "href": "#catalogo"
+    },
+    {
+      "t": "A loja",
+      "href": "#oficio"
+    },
+    {
+      "t": "Avaliações",
+      "href": "#depoimentos"
+    }
+  ],
+  "botoes": {
+    "formato": "pill",
+    "caixa": "alta"
+  },
+  "popup": {
+    "ativo": false,
+    "titulo": "Ganhe 10% na primeira peça 🤍",
+    "texto": "Deixe seu nome e WhatsApp que enviamos seu cupom de boas-vindas.",
+    "botao": "Quero meu cupom",
+    "cupom": "",
+    "aviso": "Ao enviar, você concorda em receber novidades no WhatsApp.",
+    "atraso": 25,
+    "intervalo": 7,
+    "inicio": "",
+    "fim": ""
+  },
+  "zap": {
+    "msg_ola": "Olá! Vim pelo site da {NOME} e quero saber mais sobre os produtos.",
+    "msg_encomenda": "Olá! Vim pelo site e gostaria de fazer uma encomenda personalizada. Pode me ajudar?"
+  },
+  "template": {
+    "id": "vitrine-hml",
+    "nome": "Vitrine Express",
+    "versao": "1.0-hml",
+    "status": "homologacao",
+    "foco": "loja virtual de conversão",
+    "segmento": "varejo / moda / acessórios"
+  },
+  "header": {
+    "variant": "promo"
+  },
+  "anuncio": {
+    "texto": "Frete grátis acima de R$ 199 · cupom BEMVINDA10 na primeira compra",
+    "link": "#catalogo",
+    "botao": "Aproveitar"
+  },
+  "layout": {
+    "secoes": [
+      {
+        "id": "hero",
+        "visivel": true
+      },
+      {
+        "id": "selos",
+        "visivel": true
+      },
+      {
+        "id": "destaques",
+        "visivel": true
+      },
+      {
+        "id": "catalogo",
+        "visivel": true
+      },
+      {
+        "id": "oficio",
+        "visivel": true
+      },
+      {
+        "id": "depoimentos",
+        "visivel": true
+      },
+      {
+        "id": "final",
+        "visivel": true
+      },
+      {
+        "id": "rodape",
+        "visivel": true
+      }
+    ]
+  },
+  "presets": [
+    {
+      "nome": "Índigo",
+      "cores": {
+        "marfim": "#ffffff",
+        "areia": "#f4f6fb",
+        "papel": "#ffffff",
+        "linha": "#e3e8f2",
+        "tinta": "#0f172a",
+        "tinta-suave": "#5b6577",
+        "ouro": "#4f46e5",
+        "ouro-claro": "#818cf8",
+        "ouro-fraco": "#eef2ff",
+        "rosa": "#f59e0b",
+        "rosa-claro": "#fef3c7",
+        "salvia": "#10b981",
+        "zap": "#16a34a"
+      }
+    },
+    {
+      "nome": "Coral",
+      "cores": {
+        "marfim": "#fffaf7",
+        "areia": "#fdf0e9",
+        "papel": "#ffffff",
+        "linha": "#f0ddd2",
+        "tinta": "#241512",
+        "tinta-suave": "#766057",
+        "ouro": "#e0523f",
+        "ouro-claro": "#f08a72",
+        "ouro-fraco": "#fde7df",
+        "rosa": "#f2b544",
+        "rosa-claro": "#fdf1d6",
+        "salvia": "#3f8f6b",
+        "zap": "#178a4c"
+      }
+    },
+    {
+      "nome": "Grafite",
+      "cores": {
+        "marfim": "#f7f7f5",
+        "areia": "#ededE8",
+        "papel": "#ffffff",
+        "linha": "#d9d9d2",
+        "tinta": "#1c1c1a",
+        "tinta-suave": "#66665f",
+        "ouro": "#2f3437",
+        "ouro-claro": "#5b6165",
+        "ouro-fraco": "#e8e9e6",
+        "rosa": "#c08a3e",
+        "rosa-claro": "#f5ead6",
+        "salvia": "#5f7d61",
+        "zap": "#1f8c5a"
+      }
+    }
+  ]
+}

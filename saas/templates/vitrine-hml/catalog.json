@@ -1,0 +1,130 @@
+[
+  {
+    "id": "camiseta-essencial",
+    "nome": "Camiseta essencial algodão",
+    "cat": "Moda",
+    "tag": "Moda",
+    "preco": 89.9,
+    "desc": "Algodão penteado 30.1, caimento reto e gola reforçada. Do P ao GG.",
+    "foto": "",
+    "badge": "Mais vendido",
+    "selo": "Mais vendido",
+    "cor": [
+      "#e7e2d8",
+      "#c9c0b2"
+    ],
+    "icone": "camiseta"
+  },
+  {
+    "id": "bolsa-transversal",
+    "nome": "Bolsa transversal compacta",
+    "cat": "Acessórios",
+    "tag": "Acessórios",
+    "preco": 149.9,
+    "desc": "Nylon reciclado, alça ajustável e bolso interno. Cabe celular, carteira e chaves.",
+    "foto": "",
+    "badge": "Novo",
+    "selo": "Novo",
+    "cor": [
+      "#d9c7b4",
+      "#b39a80"
+    ],
+    "icone": "bolsa"
+  },
+  {
+    "id": "tenis-urbano",
+    "nome": "Tênis urbano leve",
+    "cat": "Calçados",
+    "tag": "Calçados",
+    "preco": 219.9,
+    "desc": "Solado macio e cabedal respirável. Numeração 34 ao 44.",
+    "foto": "",
+    "badge": "",
+    "selo": "",
+    "cor": [
+      "#d7dde4",
+      "#aeb9c4"
+    ],
+    "icone": "tenis"
+  },
+  {
+    "id": "garrafa-termica",
+    "nome": "Garrafa térmica 500 ml",
+    "cat": "Utilidades",
+    "tag": "Utilidades",
+    "preco": 79.9,
+    "desc": "Inox 18/8, mantém gelado por 12h. Tampa antivazamento.",
+    "foto": "",
+    "badge": "Pronta entrega",
+    "selo": "Pronta entrega",
+    "cor": [
+      "#cfe0dc",
+      "#9dbbb4"
+    ],
+    "icone": "garrafa"
+  },
+  {
+    "id": "oculos-sol",
+    "nome": "Óculos de sol acetato",
+    "cat": "Acessórios",
+    "tag": "Acessórios",
+    "preco": 129.9,
+    "desc": "Proteção UV400, lentes polarizadas e case rígido incluso.",
+    "foto": "",
+    "badge": "",
+    "selo": "",
+    "cor": [
+      "#e4d6c3",
+      "#c2a98d"
+    ],
+    "icone": "oculos"
+  },
+  {
+    "id": "mochila-compacta",
+    "nome": "Mochila compacta urbana",
+    "cat": "Acessórios",
+    "tag": "Acessórios",
+    "preco": 189.9,
+    "desc": "Compartimento para notebook 14\", tecido resistente à água.",
+    "foto": "",
+    "badge": "Mais vendido",
+    "selo": "Mais vendido",
+    "cor": [
+      "#d6d9cf",
+      "#aab0a2"
+    ],
+    "icone": "mochila"
+  },
+  {
+    "id": "kit-meias",
+    "nome": "Kit 3 pares de meias",
+    "cat": "Moda",
+    "tag": "Moda",
+    "preco": 39.9,
+    "desc": "Algodão com elastano, punho confortável. Cores neutras.",
+    "foto": "",
+    "badge": "",
+    "selo": "",
+    "cor": [
+      "#ece7df",
+      "#d5cec3"
+    ],
+    "icone": "meia"
+  },
+  {
+    "id": "bone-aba",
+    "nome": "Boné aba curva",
+    "cat": "Acessórios",
+    "tag": "Acessórios",
+    "preco": 59.9,
+    "desc": "Ajuste traseiro e bordado discreto. Aba curva com estrutura firme.",
+    "foto": "",
+    "badge": "Novo",
+    "selo": "Novo",
+    "cor": [
+      "#dfd3c3",
+      "#b9a78f"
+    ],
+    "icone": "bone"
+  }
+]
