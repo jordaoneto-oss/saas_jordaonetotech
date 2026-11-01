@@ -850,7 +850,7 @@ function renderSecoes(){
   if(!CFG) return;
   // selos
   const selos = Array.isArray(CFG.selos) ? CFG.selos : null;
-  const elSelos = $(".selos .env");
+  const elSelos = $(".selos .selos-grade");
   if(elSelos && selos){
     const html = selos.map((s,i)=>{
       const icone = iconeSeloSrc(s.icone);

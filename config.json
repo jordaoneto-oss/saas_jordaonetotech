@@ -51,6 +51,9 @@
     "fita1": "Peça única",
     "fita2": "montada uma a uma"
   },
+  "diferenciais": {
+    "chapeu": ""
+  },
   "selos": [
     {
       "t": "Feito à mão",
@@ -205,6 +208,7 @@
     ]
   },
   "oracao": {
+    "chapeu": "",
     "texto": "\"Segure o terço com fé. Cada Ave-Maria é um passo em direção ao coração de Jesus pelas mãos de Maria.\"",
     "autor": "Ateliê Santo Terço"
   },
@@ -301,6 +305,7 @@
     "cta2": "Voltar ao catálogo"
   },
   "rodape": {
+    "chapeu": "",
     "titulo": "Ateliê Santo Terço",
     "sobre": "Terços artesanais feitos com fé. Cada peça é montada à mão, com intenção, oração e amor. Enviamos para todo o Brasil.",
     "cat_titulo": "Catálogo",

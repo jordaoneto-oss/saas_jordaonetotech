@@ -51,7 +51,15 @@ body.arrumar-modal{overflow:hidden}
 .chapeu{
   font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.3em;
   text-transform:uppercase;color:var(--ouro);margin-bottom:15px;
+  overflow-wrap:anywhere;
 }
+/* chapéu opcional: sem conteúdo, não ocupa espaço */
+.chapeu:empty{display:none}
+.chapeu img{
+  height:1.25em;width:auto;max-width:100%;vertical-align:-.22em;
+  border-radius:4px;display:inline-block;
+}
+.chapeu a{color:inherit;text-decoration:underline;text-underline-offset:2px}
 .titulo{font-size:clamp(2.1rem,4.6vw,3.4rem)}
 .titulo em{font-style:italic;color:var(--ouro)}
 .lead{font-size:1.08rem;color:var(--tinta-suave);max-width:60ch;font-weight:300}
@@ -159,8 +167,9 @@ nav a:hover::after{right:0}
 .fita span{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--tinta-suave)}
 
 /* ---------- selos ---------- */
-.selos{border-top:1px solid var(--linha);border-bottom:1px solid var(--linha);background:rgba(243,233,220,.5)}
-.selos .env{display:grid;grid-template-columns:repeat(4,1fr)}
+.selos{border-top:1px solid var(--linha);border-bottom:1px solid var(--linha);background:rgba(243,233,220,.5);padding:30px 0}
+.selos .chapeu{text-align:center;margin-bottom:18px}
+.selos .selos-grade{display:grid;grid-template-columns:repeat(4,1fr)}
 .selo-item{padding:30px 20px;text-align:center;border-right:1px solid var(--linha)}
 .selo-item:last-child{border-right:0}
 .selo-item svg{width:26px;height:26px;stroke:var(--ouro);fill:none;stroke-width:1.3;margin:0 auto 10px}
@@ -355,7 +364,8 @@ button.devocao .n{font-family:var(--sans);font-size:.85em;color:var(--tinta-suav
 .cartao-oracao::before{content:"";position:absolute;inset:11px;border:1px solid var(--ouro-fraco);pointer-events:none}
 .cartao-oracao::after{content:"";position:absolute;inset:16px;border:1px solid rgba(208,174,114,.35);pointer-events:none}
 .cartao-oracao svg.cruz{width:34px;height:44px;stroke:var(--ouro-claro);fill:none;stroke-width:1.2;margin:0 auto 20px}
-.cartao-oracao p{font-family:var(--serif);font-size:clamp(1.3rem,2.6vw,1.72rem);font-style:italic;line-height:1.6;color:var(--tinta)}
+.cartao-oracao p:not(.chapeu){font-family:var(--serif);font-size:clamp(1.3rem,2.6vw,1.72rem);font-style:italic;line-height:1.6;color:var(--tinta)}
+.cartao-oracao .chapeu{margin-bottom:18px}
 .cartao-oracao cite{display:block;margin-top:20px;font-family:var(--sans);font-style:normal;font-size:12.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--tinta-suave)}
 
 /* ---------- sobre ---------- */
@@ -403,6 +413,7 @@ button.devocao .n{font-family:var(--sans);font-size:.85em;color:var(--tinta-suav
 
 /* ---------- rodapé ---------- */
 footer{background:var(--tinta);color:#bcaf9f;padding:66px 0 0;font-size:14.5px}
+footer .chapeu{color:var(--ouro-claro);margin-bottom:24px}
 .pe-grade{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:48px;padding-bottom:44px}
 footer h4{font-family:var(--serif);color:#f2e9dd;font-size:1.3rem;margin-bottom:16px;font-weight:500}
 footer a:hover{color:var(--ouro-claro)}
@@ -603,7 +614,7 @@ footer a:hover{color:var(--ouro-claro)}
   .hero{padding-top:calc(var(--topo) + 32px)}
   .moldura{max-width:400px;margin:0 auto}
   .par-fotos{margin:0 auto}
-  .selos .env{grid-template-columns:1fr 1fr}
+  .selos .selos-grade{grid-template-columns:1fr 1fr}
   .selo-item:nth-child(2){border-right:0}
   .selo-item:nth-child(-n+2){border-bottom:1px solid var(--linha)}
   .pe-grade{grid-template-columns:1fr;gap:34px}
@@ -658,7 +669,8 @@ footer a:hover{color:var(--ouro-claro)}
 }
 
 @media (max-width:560px){
-  .selos .env{grid-template-columns:1fr}
+  .chapeu{letter-spacing:.2em}
+  .selos .selos-grade{grid-template-columns:1fr}
   .selo-item{border-right:0;border-bottom:1px solid var(--linha);padding:22px 16px}
   .selo-item:last-child{border-bottom:0}
   .selo-item:nth-child(2){border-right:0}

@@ -1,7 +1,7 @@
 /* Service Worker da loja (cache versionado por release) */
 "use strict";
 
-const CACHE = "site-20261101-p0p2";
+const CACHE = "site-20261101-chapeu";
 const CORE = [
   "./",
   "./index.html",

@@ -136,7 +136,9 @@ const SECOES = [
     {k:"fita1", r:"Selo - linha 1", t:"text"},
     {k:"fita2", r:"Selo - linha 2", t:"text"}
   ]},
-  {id:"selos", nome:"Diferenciais", desc:"Faixa de confiança com 4 selos", campos:[], array:"selos", arrayCampos:[
+  {id:"selos", nome:"Diferenciais", desc:"Faixa de confiança com 4 selos", prefixo:"diferenciais", campos:[
+    {k:"chapeu", r:"Chamada pequena", t:"html"}
+  ], array:"selos", arrayCampos:[
     {k:"icone", r:"Imagem ou ícone", t:"image", d:"Opcional. Vazio usa o ícone padrão da posição."},
     {k:"t", r:"Título", t:"text"},
     {k:"s", r:"Detalhe", t:"text"}
@@ -200,6 +202,7 @@ const SECOES = [
     {k:"sub", r:"Subtítulo", t:"text"}
   ]},
   {id:"oracao", nome:"Frase de destaque", desc:"Citação entre seções", campos:[
+    {k:"chapeu", r:"Chamada pequena", t:"html"},
     {k:"texto", r:"Texto", t:"html"},
     {k:"autor", r:"Assinatura", t:"text"}
   ]},
@@ -245,6 +248,7 @@ const SECOES = [
     {k:"cta2", r:"Botão secundário", t:"text"}
   ]},
   {id:"rodape", nome:"Rodapé", desc:"Contatos e links do pé da página", campos:[
+    {k:"chapeu", r:"Chamada pequena", t:"html"},
     {k:"titulo", r:"Título", t:"text"},
     {k:"sobre", r:"Sobre a loja", t:"html"},
     {k:"cat_titulo", r:"Coluna catálogo", t:"text"},
@@ -971,7 +975,8 @@ function renderInspector(){
   const corpo = [];
   corpo.push(`<div class="insp-body">`);
   if(sec.campos && sec.campos.length){
-    corpo.push(`<div class="insp-group"><h4>Textos</h4>${sec.campos.map(c=>campoHtml(c, sec.id + "." + c.k, getPath(state.cfg, sec.id + "." + c.k))).join("")}</div>`);
+    const prefixo = sec.prefixo || sec.id;
+    corpo.push(`<div class="insp-group"><h4>Textos</h4>${sec.campos.map(c=>campoHtml(c, prefixo + "." + c.k, getPath(state.cfg, prefixo + "." + c.k))).join("")}</div>`);
   }
   if(sec.array) corpo.push(listaArray(sec, caminhoArray(sec), sec.arrayCampos || [], sec.array === "selos" ? "Selos" : (sec.id === "destaques" ? "Destaques" : "Itens")));
   if(sec.array2) corpo.push(listaArray(sec, caminhoArray2(sec), sec.array2Campos || [], "Faixa de números"));
