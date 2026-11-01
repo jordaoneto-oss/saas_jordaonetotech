@@ -797,6 +797,7 @@ async function handleApi(request: Request, env: Env, url: URL, path: string): Pr
   if (path === "/api/temas" && method === "GET") {
     const base = {
       marfim: "#fbf5ee",
+      menu: "#fbf5ee",
       areia: "#f3e9dc",
       papel: "#fffcf7",
       linha: "#e7d9c4",
@@ -821,12 +822,12 @@ async function handleApi(request: Request, env: Env, url: URL, path: string): Pr
         {
           id: "luxo",
           nome: "Luxo",
-          cores: { ...base, marfim: "#0f0f0f", areia: "#171717", papel: "#111111", linha: "#2c2c2c", tinta: "#f5f0e6", "tinta-suave": "#bdb3a2", ouro: "#c9a227" },
+          cores: { ...base, marfim: "#0f0f0f", menu: "#0f0f0f", areia: "#171717", papel: "#111111", linha: "#2c2c2c", tinta: "#f5f0e6", "tinta-suave": "#bdb3a2", ouro: "#c9a227" },
         },
         {
           id: "clinica",
           nome: "Clean",
-          cores: { ...base, marfim: "#f7fafc", areia: "#eef4f8", papel: "#ffffff", linha: "#dbe7ef", tinta: "#16303f", "tinta-suave": "#5b7382", ouro: "#2f80ed" },
+          cores: { ...base, marfim: "#f7fafc", menu: "#f7fafc", areia: "#eef4f8", papel: "#ffffff", linha: "#dbe7ef", tinta: "#16303f", "tinta-suave": "#5b7382", ouro: "#2f80ed" },
         },
         {
           id: "vitrine",
@@ -834,6 +835,7 @@ async function handleApi(request: Request, env: Env, url: URL, path: string): Pr
           cores: {
             ...base,
             marfim: "#ffffff",
+            menu: "#ffffff",
             areia: "#f4f6fb",
             papel: "#ffffff",
             linha: "#e3e8f2",
@@ -858,6 +860,7 @@ async function handleApi(request: Request, env: Env, url: URL, path: string): Pr
           cores: {
             ...base,
             marfim: "#f6f1e7",
+            menu: "#f6f1e7",
             areia: "#ece3d3",
             papel: "#fffdf8",
             linha: "#ddd0bb",
@@ -882,6 +885,7 @@ async function handleApi(request: Request, env: Env, url: URL, path: string): Pr
           cores: {
             ...base,
             marfim: "#0d0c0a",
+            menu: "#0d0c0a",
             areia: "#151310",
             papel: "#1b1814",
             linha: "#332d24",

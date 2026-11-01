@@ -238,6 +238,7 @@ const injetaFonte = link => {
   l.setAttribute("data-fonte","");
   document.head.appendChild(l);
 };
+let coresAplicadas = [];
 function aplicarVisual(c){
   if(!c || typeof c !== "object") return;
   const logo = document.querySelector("[data-logo]");
@@ -247,10 +248,15 @@ function aplicarVisual(c){
     if(at) at.href = "img/"+c.logo;
   }
   const cores = c.cores || {};
-  Object.keys(cores).forEach(k=>{
-    if(typeof cores[k]==="string" && cores[k]) html.style.setProperty("--"+k, cores[k]);
-  });
-  try{ const tc = document.querySelector('meta[name="theme-color"]'); if(tc && cores.marfim) tc.setAttribute("content", cores.marfim); }catch(e){}
+  const novasCores = Object.keys(cores).filter(k=>typeof cores[k]==="string" && cores[k]);
+  /* remove variáveis que deixaram de existir (troca de tema não deixa cor "presa") */
+  coresAplicadas.forEach(k=>{ if(!novasCores.includes(k)) html.style.removeProperty("--"+k); });
+  novasCores.forEach(k=> html.style.setProperty("--"+k, cores[k]));
+  coresAplicadas = novasCores;
+  const corMenu = cores.menu || cores.marfim;
+  if(corMenu) html.style.setProperty("--menu-fg", contrasteTexto(corMenu));
+  else html.style.removeProperty("--menu-fg");
+  try{ const tc = document.querySelector('meta[name="theme-color"]'); if(tc && corMenu) tc.setAttribute("content", corMenu); }catch(e){}
   const f = c.fontes || {};
   if(f.titulos && f.titulos.familia){
     html.style.setProperty("--serif", f.titulos.familia);
@@ -278,7 +284,7 @@ function aplicarConfig(c){
   aplicarMidias(c);
   $$("[data-t-html]").forEach(el=>{
     const v = obter(el.dataset.tHtml);
-    if(v !== undefined) el.innerHTML = String(v);
+    if(v !== undefined) el.innerHTML = sanitizarHtml(v);
   });
   $$("[data-t]").forEach(el=>{
     const v = obter(el.dataset.t);
@@ -304,6 +310,77 @@ function aplicarConfig(c){
 
 /* ---------- seções dinâmicas (cada loja tem as suas via config.json) ---------- */
 const esc = s => String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+
+/* HTML editável (chamada pequena, títulos, textos): allowlist curta.
+   Evita XSS armazenado via onerror/onload e mantém apenas imagens locais/HTTPS. */
+const TAGS_HTML_PERMITIDAS = new Set(["EM","B","STRONG","I","BR","SPAN","SMALL","U","S","IMG","A"]);
+function sanitizarHtml(v){
+  const tpl = document.createElement("template");
+  tpl.innerHTML = String(v==null?"":v);
+  const limpar = raiz => {
+    [...raiz.childNodes].forEach(node=>{
+      if(node.nodeType === 8){ node.remove(); return; }
+      if(node.nodeType !== 1) return;
+      const tag = node.tagName;
+      if(tag === "SCRIPT" || tag === "STYLE" || tag === "IFRAME" || tag === "OBJECT" || tag === "EMBED"){
+        node.remove(); return;
+      }
+      if(!TAGS_HTML_PERMITIDAS.has(tag)){
+        limpar(node);
+        const frag = document.createDocumentFragment();
+        while(node.firstChild) frag.appendChild(node.firstChild);
+        node.replaceWith(frag);
+        return;
+      }
+      [...node.attributes].forEach(attr=>{
+        const nome = attr.name.toLowerCase();
+        if(tag === "IMG"){
+          if(nome === "src"){
+            const src = String(attr.value||"").trim();
+            const ok = /^(img\/|\.\/img\/|https:\/\/)/i.test(src) || /^data:image\//i.test(src);
+            if(ok) node.setAttribute("src", src); else node.removeAttribute("src");
+          } else if(!["alt","loading","width","height"].includes(nome)){
+            node.removeAttribute(attr.name);
+          }
+        } else if(tag === "A"){
+          if(nome === "href"){
+            const href = String(attr.value||"").trim();
+            if(/^(javascript|data|vbscript):/i.test(href)) node.removeAttribute("href");
+            else node.setAttribute("href", href);
+          } else if(!["target","rel"].includes(nome)){
+            node.removeAttribute(attr.name);
+          }
+        } else {
+          node.removeAttribute(attr.name);
+        }
+      });
+      limpar(node);
+    });
+  };
+  limpar(tpl.content);
+  return tpl.innerHTML;
+}
+
+function corParaRgb(cor){
+  const s = String(cor||"").trim();
+  let m = s.match(/^#([0-9a-f]{3})$/i);
+  if(m) return [0,1,2].map(i=>parseInt(m[1][i]+m[1][i],16));
+  m = s.match(/^#([0-9a-f]{6})$/i);
+  if(m) return [0,2,4].map(i=>parseInt(m[1].slice(i,i+2),16));
+  m = s.match(/^rgba?\(([^)]+)\)/i);
+  if(m){ const p = m[1].split(",").map(x=>parseFloat(x)); if(p.length >= 3) return [p[0],p[1],p[2]]; }
+  return null;
+}
+function contrasteTexto(cor){
+  const rgb = corParaRgb(cor);
+  if(!rgb) return "#33291f";
+  const [r,g,b] = rgb.map(v=>{
+    v = Math.max(0,Math.min(255,v))/255;
+    return v <= .03928 ? v/12.92 : Math.pow((v+.055)/1.055,2.4);
+  });
+  const luminancia = .2126*r + .7152*g + .0722*b;
+  return luminancia > .45 ? "#1f1a14" : "#ffffff";
+}
 const ICONES_SELO = [
   '<svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-7-10a7 7 0 0 1 14 0c0 5.5-7 10-7 10z"/><circle cx="12" cy="11" r="2.5"/></svg>',
   '<svg viewBox="0 0 24 24"><path d="M12 3v18M7 8h10"/></svg>',
@@ -340,6 +417,7 @@ function elementoLayout(id){
   }
 }
 
+let ordemAplicada = "";
 function aplicarLayout(l){
   if(!l || !Array.isArray(l.secoes)) return;
   const main = document.querySelector("main");
@@ -349,9 +427,14 @@ function aplicarLayout(l){
     const el = elementoLayout(s.id);
     if(!el) return;
     el.setAttribute("data-oculta", s.visivel === false ? "1" : "0");
+    el.dataset.layoutSec = s.id;
     ordem.push(el);
   });
   if(!main) return;
+  /* só reordena quando a ordem realmente mudou: evita reflow/salto a cada tecla */
+  const assinatura = ordem.map(el=>el.dataset.layoutSec).join(">");
+  if(assinatura === ordemAplicada) return;
+  ordemAplicada = assinatura;
   ordem.forEach(el=>{ if(el.parentElement === main) main.appendChild(el); });
 }
 

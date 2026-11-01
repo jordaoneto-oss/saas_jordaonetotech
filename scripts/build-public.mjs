@@ -35,6 +35,7 @@ const files = [
   "config.json",
   "manifest.webmanifest",
   "robots.txt",
+  "sw.js",
 ];
 
 for (const f of files) {

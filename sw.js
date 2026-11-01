@@ -1,7 +1,7 @@
 /* Service Worker da loja (cache versionado por release) */
 "use strict";
 
-const CACHE = "site-20261021-1811";
+const CACHE = "site-20261101-p0p2";
 const CORE = [
   "./",
   "./index.html",
@@ -63,6 +63,23 @@ self.addEventListener("fetch", e => {
   if (DINAMICOS.some(d => url.pathname.endsWith(d))) {
     e.respondWith(
       fetch(req).catch(() => caches.match(req))
+    );
+    return;
+  }
+
+  /* CSS e JS: rede primeiro (correções do editor chegam na hora),
+     com fallback para o cache quando estiver offline */
+  if (/\.(css|js)$/i.test(url.pathname)) {
+    e.respondWith(
+      fetch(req)
+        .then(res => {
+          if (res.ok) {
+            const clone = res.clone();
+            caches.open(CACHE).then(c => c.put(req, clone));
+          }
+          return res;
+        })
+        .catch(() => caches.match(req))
     );
     return;
   }

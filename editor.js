@@ -29,7 +29,8 @@ const CORES_INFO = [
   {k:"rosa", r:"Tom de apoio"},
   {k:"rosa-claro", r:"Tom de apoio claro"},
   {k:"salvia", r:"Tom neutro verde"},
-  {k:"zap", r:"WhatsApp"}
+  {k:"zap", r:"WhatsApp"},
+  {k:"menu", r:"Menu do topo"}
 ];
 
 const FONTS = [
@@ -124,9 +125,9 @@ const CARRINHO_GRUPOS = [
 
 const SECOES = [
   {id:"hero", nome:"Capa inicial", desc:"Primeira dobra com título e botões", campos:[
-    {k:"midia", r:"Imagem ou vídeo da capa", t:"media", padrao:"img/poster-guadalupe.webp", d:"Envie uma imagem ou um vídeo curto (MP4/WebM). O vídeo toca sem som."},
+    {k:"midia", r:"Imagem ou vídeo da capa", t:"media", padrao:"video/video-guadalupe.mp4", d:"Envie uma imagem ou um vídeo curto (MP4/WebM). O vídeo toca sem som."},
     {k:"poster", r:"Imagem de capa do vídeo", t:"image", padrao:"img/poster-guadalupe.webp", d:"Aparece enquanto o vídeo carrega. Para usar uma imagem fixa, escolha a imagem no campo acima."},
-    {k:"chapeu", r:"Chamada pequena", t:"text"},
+    {k:"chapeu", r:"Chamada pequena", t:"html"},
     {k:"titulo", r:"Título", t:"html", d:"Aceita <em>, <b> e <br>."},
     {k:"lead", r:"Texto de apoio", t:"html"},
     {k:"cta1", r:"Botão principal", t:"text"},
@@ -141,7 +142,7 @@ const SECOES = [
     {k:"s", r:"Detalhe", t:"text"}
   ]},
   {id:"destaques", nome:"Destaques", desc:"Cartões em evidência", campos:[
-    {k:"chapeu", r:"Chamada pequena", t:"text"},
+    {k:"chapeu", r:"Chamada pequena", t:"html"},
     {k:"titulo", r:"Título", t:"html"}
   ], array:"itens", arrayCampos:[
     {k:"id", r:"Produto (opcional)", t:"produto", d:"Com produto, o botão adiciona à Minha Lista. Sem produto, use o link abaixo."},
@@ -157,7 +158,7 @@ const SECOES = [
   {id:"oficio", nome:"O ateliê", desc:"História e materiais", campos:[
     {k:"foto1", r:"Foto principal", t:"media", padrao:"img/detalhe-mao-boreal.webp", d:"Aceita imagem ou vídeo."},
     {k:"foto2", r:"Foto secundária", t:"media", padrao:"img/detalhe-santa-rita.webp", d:"Aceita imagem ou vídeo."},
-    {k:"chapeu", r:"Chamada pequena", t:"text"},
+    {k:"chapeu", r:"Chamada pequena", t:"html"},
     {k:"titulo", r:"Título", t:"html"},
     {k:"citacao", r:"Citação", t:"html"},
     {k:"lead", r:"Texto", t:"html"},
@@ -167,7 +168,7 @@ const SECOES = [
     {k:"cta", r:"Botão", t:"text"}
   ]},
   {id:"catalogo", nome:"Catálogo", desc:"Vitrine com busca e filtros", campos:[
-    {k:"chapeu", r:"Chamada pequena", t:"text"},
+    {k:"chapeu", r:"Chamada pequena", t:"html"},
     {k:"titulo", r:"Título", t:"html"},
     {k:"lead", r:"Texto de apoio", t:"html"},
     {k:"busca_placeholder", r:"Exemplo da busca", t:"text"},
@@ -175,9 +176,9 @@ const SECOES = [
     {k:"nota", r:"Nota final", t:"html"}
   ]},
   {id:"encomenda", nome:"Sob encomenda", desc:"Passo a passo do pedido", campos:[
-    {k:"midia", r:"Imagem ou vídeo da seção", t:"media", padrao:"img/poster-esmeralda.webp", d:"Aceita imagem ou vídeo curto (MP4/WebM)."},
+    {k:"midia", r:"Imagem ou vídeo da seção", t:"media", padrao:"video/video-esmeralda.mp4", d:"Aceita imagem ou vídeo curto (MP4/WebM)."},
     {k:"poster", r:"Imagem de capa do vídeo", t:"image", padrao:"img/poster-esmeralda.webp", d:"Aparece enquanto o vídeo carrega."},
-    {k:"chapeu", r:"Chamada pequena", t:"text"},
+    {k:"chapeu", r:"Chamada pequena", t:"html"},
     {k:"titulo", r:"Título", t:"html"},
     {k:"lead", r:"Texto", t:"html"},
     {k:"botao", r:"Botão", t:"text"}
@@ -186,12 +187,12 @@ const SECOES = [
     {k:"s", r:"Passo - detalhe", t:"html"}
   ]},
   {id:"devocoes", nome:"Devoções", desc:"Coleções e santos atendidos", campos:[
-    {k:"chapeu", r:"Chamada pequena", t:"text"},
+    {k:"chapeu", r:"Chamada pequena", t:"html"},
     {k:"titulo", r:"Título", t:"html"},
     {k:"lead", r:"Texto", t:"html"}
   ], array:"itens", arrayCampos:[{k:"t", r:"Devoção / coleção", t:"text"}]},
   {id:"ocasioes", nome:"Ocasiões", desc:"Cartões de data especial", campos:[
-    {k:"chapeu", r:"Chamada pequena", t:"text"},
+    {k:"chapeu", r:"Chamada pequena", t:"html"},
     {k:"titulo", r:"Título", t:"html"}
   ], array:"itens", arrayCampos:[
     {k:"img", r:"Foto ou vídeo", t:"media"},
@@ -203,7 +204,7 @@ const SECOES = [
     {k:"autor", r:"Assinatura", t:"text"}
   ]},
   {id:"misterios", nome:"Como rezar", desc:"Cartões por dia da semana", campos:[
-    {k:"chapeu", r:"Chamada pequena", t:"text"},
+    {k:"chapeu", r:"Chamada pequena", t:"html"},
     {k:"titulo", r:"Título", t:"html"},
     {k:"lead", r:"Texto", t:"html"}
   ], array:"itens", arrayCampos:[
@@ -214,7 +215,7 @@ const SECOES = [
   {id:"sobre", nome:"A história", desc:"Origem da marca e números", campos:[
     {k:"foto1", r:"Foto principal", t:"media", padrao:"img/encomendas-do-dia.webp", d:"Aceita imagem ou vídeo."},
     {k:"foto2", r:"Foto secundária", t:"media", padrao:"img/embalagem-presente.webp", d:"Aceita imagem ou vídeo."},
-    {k:"chapeu", r:"Chamada pequena", t:"text"},
+    {k:"chapeu", r:"Chamada pequena", t:"html"},
     {k:"titulo", r:"Título", t:"html"},
     {k:"p1", r:"Parágrafo 1", t:"html"},
     {k:"p2", r:"Parágrafo 2", t:"html"},
@@ -225,7 +226,7 @@ const SECOES = [
     {k:"s", r:"Legenda", t:"text"}
   ]},
   {id:"depoimentos", nome:"Avaliações", desc:"Provas sociais de clientes", campos:[
-    {k:"chapeu", r:"Chamada pequena", t:"text"},
+    {k:"chapeu", r:"Chamada pequena", t:"html"},
     {k:"titulo", r:"Título", t:"html"},
     {k:"lead", r:"Texto", t:"html"}
   ], array:"lista", arrayCampos:[
@@ -237,7 +238,7 @@ const SECOES = [
     {k:"s", r:"Legenda", t:"text"}
   ]},
   {id:"final", nome:"Convite final", desc:"Chamada para o WhatsApp", campos:[
-    {k:"chapeu", r:"Chamada pequena", t:"text"},
+    {k:"chapeu", r:"Chamada pequena", t:"html"},
     {k:"titulo", r:"Título", t:"html"},
     {k:"lead", r:"Texto", t:"html"},
     {k:"cta1", r:"Botão principal", t:"text"},
@@ -255,9 +256,32 @@ const SECOES = [
 const state = {
   cfg:null, produtos:[], imagens:[], midias:[], temas:[], demo:false,
   selected:"hero", panel:"paginas", inspTab:"conteudo",
-  device:"desktop", zoom:100, dirty:false, framePronto:false,
+  device:"desktop", zoom:100, dirty:false, framePronto:false, erroPreview:false,
   history:[], redo:[], ultimoHist:0
 };
+
+const UI_KEY = "wixeditor_ui:" + (LOJA || "default");
+let previewTimer = null, draftTimer = null;
+function lerUI(){
+  try{
+    const d = JSON.parse(localStorage.getItem(UI_KEY) || "{}");
+    if(d && ["desktop","tablet","mobile"].includes(d.device)) state.device = d.device;
+    if(d && Number.isFinite(+d.zoom)) state.zoom = Math.min(150, Math.max(50, +d.zoom));
+  }catch(e){}
+}
+function salvarUI(){
+  try{ localStorage.setItem(UI_KEY, JSON.stringify({device:state.device, zoom:state.zoom})); }catch(e){}
+}
+function aplicarUI(){
+  const app = $("#app");
+  if(app) app.dataset.device = state.device;
+  $$(".devices [data-device]").forEach(x=>x.classList.toggle("on", x.dataset.device === state.device));
+  const wrap = $("#frameWrap");
+  if(wrap) wrap.style.zoom = String(state.zoom / 100);
+  const lab = $("#zoomLabel");
+  if(lab) lab.textContent = state.zoom + "%";
+}
+lerUI();
 
 function secoesLayout(){
   const l = state.cfg && state.cfg.layout;
@@ -266,7 +290,7 @@ function secoesLayout(){
   SECOES.forEach(s=>{ if(!ids.includes(s.id)) atual.push({id:s.id, visivel:true}); });
   return atual.filter(s=>SECOES.some(x=>x.id===s.id));
 }
-function salvarLayout(lista){ state.cfg.layout = {secoes: lista.map(s=>({id:s.id, visivel:s.visivel!==false, icone:s.icone||""}))}; }
+function salvarLayout(lista){ state.cfg.layout = {secoes: lista.map(s=>({id:s.id, visivel:s.visivel!==false, icone:s.icone||"", nome:s.nome||""}))}; }
 
 function getPath(o,p){
   let v = o;
@@ -386,7 +410,12 @@ function montarConfigBase(cfg){
   if(!c.layout || !Array.isArray(c.layout.secoes)) c.layout = {secoes:[]};
   c.layout.secoes = SECOES.map(s=>{
     const achado = (c.layout.secoes||[]).find(x=>x && x.id === s.id);
-    return {id:s.id, visivel: achado ? achado.visivel !== false : true, icone: (achado && ICONES[achado.icone]) ? achado.icone : ""};
+    return {
+      id:s.id,
+      visivel: achado ? achado.visivel !== false : true,
+      icone: (achado && ICONES[achado.icone]) ? achado.icone : "",
+      nome: (achado && typeof achado.nome === "string") ? achado.nome : ""
+    };
   });
   return c;
 }
@@ -490,7 +519,7 @@ function abrirEditor(){
   document.title = "Editor visual · " + nome;
   $("#viewSite").href = "/" + QLOJA;
   const d = lerDraft();
-  if(d && d.cfg){
+  if(d && d.cfg && (state.demo || d.salvo !== true)){
     state.cfg = montarConfigBase(d.cfg);
     if(state.demo && Array.isArray(d.produtos)) state.produtos = d.produtos;
     state.dirty = !d.salvo;
@@ -501,6 +530,7 @@ function abrirEditor(){
     $("#canvasHint").textContent = "Demonstração: as alterações ficam apenas neste navegador";
   }
   pintarSaveEstado(state.dirty ? "dirty" : "ok");
+  aplicarUI();
   renderPanel();
   renderInspector();
   aplicarSelecao();
@@ -512,7 +542,7 @@ function elementoSecao(id){
   if(!doc) return null;
   switch(id){
     case "hero": return doc.querySelector("section.hero");
-    case "selos": return doc.querySelector(".selos");
+    case "selos": return doc.querySelector(".selos, section.selos, #selos");
     case "destaques": return doc.querySelector("section.destaques");
     case "oficio": return doc.querySelector("section.oficio");
     case "catalogo": return doc.querySelector("#catalogo");
@@ -555,11 +585,15 @@ function marcarSecoes(){
   const doc = $("#preview").contentDocument;
   if(!doc) return;
   injetarEstiloFrame(doc);
+  $$("[data-editor-sec]", doc).forEach(el=>{
+    el.removeAttribute("data-editor-sec");
+    el.removeAttribute("data-editor-label");
+  });
   SECOES.forEach(s=>{
     const el = elementoSecao(s.id);
     if(!el) return;
     el.setAttribute("data-editor-sec", s.id);
-    el.setAttribute("data-editor-label", s.nome);
+    el.setAttribute("data-editor-label", nomeSecao(s.id));
   });
 }
 
@@ -609,10 +643,25 @@ function aplicarSelecao(){
 
 function atualizarPreview(){
   if(!state.framePronto) return;
+  clearTimeout(previewTimer);
+  previewTimer = setTimeout(aplicarPreviewAgora, 90);
+}
+
+function aplicarPreviewAgora(){
+  if(!state.framePronto) return;
   window.__editorPreview = {config: state.cfg, produtos: state.produtos};
   const w = $("#preview").contentWindow;
   if(w && typeof w.__editorApply === "function"){
-    try{ w.__editorApply(state.cfg, state.produtos); }catch(e){}
+    try{
+      w.__editorApply(state.cfg, state.produtos);
+      state.erroPreview = false;
+    }catch(e){
+      console.error("[editor] falha ao aplicar a prévia:", e);
+      if(!state.erroPreview){
+        state.erroPreview = true;
+        toast("A prévia não pôde ser atualizada. Veja o console (F12).", true);
+      }
+    }
   }
   marcarSecoes();
   aplicarSelecao();
@@ -621,15 +670,35 @@ function atualizarPreview(){
 function nomeSecao(id){
   if(id === "menu") return "Menu do topo";
   if(id === "carrinho") return "Minha Lista";
+  const item = secoesLayout().find(s=>s.id===id);
+  if(item && item.nome) return item.nome;
   const s = SECOES.find(x=>x.id===id);
   return s ? s.nome : id;
+}
+
+function atualizarScrim(){
+  const s = $("#scrim");
+  if(!s) return;
+  const p = $("#panel");
+  const insp = $("#inspector");
+  const painelAberto = p && (window.innerWidth <= 980 ? p.classList.contains("open") : !p.classList.contains("oculto"));
+  const inspAberto = insp && !insp.hidden;
+  s.hidden = !((window.innerWidth <= 980 && painelAberto) || (window.innerWidth <= 1120 && inspAberto));
+}
+
+function fecharInspector(){
+  const insp = $("#inspector");
+  if(insp) insp.hidden = true;
+  atualizarScrim();
 }
 
 function abrirPainel(){
   const p = $("#panel");
   if(!p) return;
   p.classList.remove("oculto");
+  if(window.innerWidth <= 1120) fecharInspector();
   if(window.innerWidth <= 980) p.classList.add("open");
+  atualizarScrim();
 }
 
 function fecharPainel(){
@@ -637,6 +706,7 @@ function fecharPainel(){
   if(!p) return;
   if(window.innerWidth <= 980) p.classList.remove("open");
   else p.classList.add("oculto");
+  atualizarScrim();
 }
 
 function alternarPainel(){
@@ -661,22 +731,36 @@ function selecionar(id, rolar){
   aplicarSelecao();
   renderInspector();
   $("#inspector").hidden = false;
+  if(window.innerWidth <= 980) fecharPainel();
+  atualizarScrim();
   $("#canvasHint").textContent = nomeSecao(id) + " — edite os campos à direita";
   if(rolar !== false){
     const el = elementoSecao(id);
-    if(el && el.scrollIntoView) { try{ el.scrollIntoView({block:"start"}); }catch(e){} }
+    if(el) rolarParaSecao(el);
   }
+}
+
+function rolarParaSecao(el){
+  try{
+    const doc = el.ownerDocument;
+    const win = doc.defaultView;
+    const topo = parseFloat(win.getComputedStyle(doc.documentElement).getPropertyValue("--topo")) || 0;
+    const y = el.getBoundingClientRect().top + win.scrollY - topo - 16;
+    win.scrollTo({top: Math.max(0, y), behavior:"smooth"});
+  }catch(e){}
 }
 
 function marcarSujo(){
   state.dirty = true;
   pintarSaveEstado("dirty");
-  salvarLocal(false);
+  clearTimeout(draftTimer);
+  draftTimer = setTimeout(()=>salvarLocal(false), 250);
 }
 
 async function salvar(silencioso){
   if(state.demo){
     sincronizarDestaques();
+    clearTimeout(draftTimer);
     salvarLocal(true);
     state.dirty = false;
     pintarSaveEstado("ok");
@@ -687,6 +771,7 @@ async function salvar(silencioso){
   try{
     sincronizarDestaques();
     await api("/api/admin/config", {method:"PUT", body: state.cfg});
+    clearTimeout(draftTimer);
     limparDraft();
     state.dirty = false;
     pintarSaveEstado("ok");
@@ -796,7 +881,8 @@ function campoHtml(campo, path, valor){
   let inp = "";
   const v = (valor===undefined || valor===null) ? "" : valor;
   if(campo.t==="html" || campo.t==="textarea"){
-    inp = `<textarea data-path="${esc(path)}" rows="${campo.linhas || (campo.t==="html"?4:3)}">${esc(v)}</textarea>`;
+    const seguro = campo.t === "html" ? String(v).replace(/<\/textarea/gi, "&lt;/textarea") : esc(v);
+    inp = `<textarea data-path="${esc(path)}" rows="${campo.linhas || (campo.t==="html"?4:3)}">${seguro}</textarea>`;
   } else if(campo.t==="select"){
     inp = `<select data-path="${esc(path)}">${(campo.op||[]).map(o=>`<option value="${esc(o.v)}"${String(v)===String(o.v)?" selected":""}>${esc(o.r)}</option>`).join("")}</select>`;
   } else if(campo.t==="check"){
@@ -879,6 +965,7 @@ function renderInspector(){
   const sec = SECOES.find(x=>x.id===state.selected) || SECOES[0];
   const layout = secoesLayout();
   const item = layout.find(s=>s.id===sec.id);
+  const nomeAtual = nomeSecao(sec.id);
   const visivel = item ? item.visivel !== false : true;
   const temArray = !!(sec.array || sec.array2);
   const corpo = [];
@@ -892,7 +979,7 @@ function renderInspector(){
   insp.innerHTML = `
     <div class="insp-head">
       <span class="ic">${iconeSecao(sec.id)}</span>
-      <span class="meta"><b>${esc(sec.nome)}</b><span>${esc(sec.desc)}</span></span>
+      <span class="meta"><b>${esc(nomeAtual)}</b><span>${esc(sec.desc)}</span></span>
       <button class="icon-btn" data-act="fechar-insp" title="Fechar">${miniIcone(MINI.close)}</button>
     </div>
     <div class="insp-tabs">
@@ -951,7 +1038,7 @@ function painelPaginas(){
     const vis = s.visivel !== false;
     return `<li data-sec="${s.id}" draggable="true" class="${s.id===state.selected?"on":""}">
       <span class="grip" title="Arraste para reordenar">${miniIcone(MINI.grip)}</span>
-      <button class="sec-main" data-act="sel" data-sec="${s.id}">${iconeSecao(s.id)}<span><b>${esc(meta.nome)}</b><small>${esc(meta.desc)}</small></span></button>
+      <div class="sec-main" data-act="sel" data-sec="${s.id}" role="button" tabindex="0">${iconeSecao(s.id)}<span><b>${esc(s.nome||meta.nome)}</b><input class="nome-edit" data-act="nome" value="${esc(s.nome||meta.nome)}" data-sec="${s.id}" aria-label="Nome da seção"><small>${esc(meta.desc)}</small></span></div>
       <button class="mini" data-act="subir" data-sec="${s.id}" title="Mover para cima"${i===0?" disabled":""}>${miniIcone(MINI.up)}</button>
       <button class="mini" data-act="descer" data-sec="${s.id}" title="Mover para baixo"${i===layout.length-1?" disabled":""}>${miniIcone(MINI.down)}</button>
       <button class="mini ${vis?"":"off"}" data-act="olho" data-sec="${s.id}" title="${vis?"Ocultar seção":"Mostrar seção"}">${miniIcone(vis?MINI.eye:MINI.eyeOff)}</button>
@@ -1022,11 +1109,15 @@ function painelDesign(){
     </button>`;
   }).join("") || '<p class="empty-insp">Nenhum tema disponível.</p>';
   const coresHtml = CORES_INFO.map(c=>{
-    const val = cores[c.k] || "#000000";
-    return `<label class="color-item">
-      <input type="color" data-cor="${esc(c.k)}" value="${esc(val)}">
-      <span class="color-meta"><label>${esc(c.r)}</label><input type="text" data-cor-txt="${esc(c.k)}" value="${esc(val)}"></span>
-    </label>`;
+    const computada = getComputedStyle(document.documentElement).getPropertyValue("--" + c.k).trim();
+    const base = /^var\(/i.test(computada) ? "" : computada;
+    const val = cores[c.k] || base || (c.k === "menu" ? (cores.marfim || "#fbf5ee") : "#000000");
+    const hex = /^#([0-9a-f]{6})$/i.test(val) ? val : "#000000";
+    const idPick = "pick-" + c.k;
+    return `<div class="color-item">
+      <input id="${esc(idPick)}" type="color" data-cor="${esc(c.k)}" value="${esc(hex)}" aria-label="${esc(c.r)}">
+      <span class="color-meta"><label class="color-nome" for="${esc(idPick)}">${esc(c.r)}</label><input type="text" data-cor-txt="${esc(c.k)}" value="${esc(val)}" spellcheck="false"></span>
+    </div>`;
   }).join("");
   const logo = state.cfg.visual && state.cfg.visual.logo;
   return `<div class="panel-section-title">Logo</div>
@@ -1102,6 +1193,7 @@ function painelConfig(){
         <a class="btn btn-secondary" href="${painelLink("vendidos")}" data-gestao="vendidos" target="_blank" rel="noopener">Relatórios</a>
         <a class="btn btn-ghost" href="${painelLink("")}" target="_blank" rel="noopener">Painel completo</a>
         <a class="btn btn-ghost" href="/${QLOJA}" target="_blank" rel="noopener">Ver a loja</a>
+        ${lerDraft() ? `<button type="button" class="btn btn-ghost" data-act="descartar-draft">Descartar rascunho local</button>` : ""}
       </div>
     </div>`;
 }
@@ -1175,7 +1267,10 @@ function aplicarTema(id){
   if(!t) return;
   registrarHistorico(true);
   state.cfg.visual = state.cfg.visual || {};
-  state.cfg.visual.cores = clone(t.cores || {});
+  const atuais = state.cfg.visual.cores || {};
+  const cores = clone(t.cores || {});
+  if(!cores.menu && atuais.menu) cores.menu = atuais.menu;
+  state.cfg.visual.cores = cores;
   state.cfg.visual.fontes = clone(t.fontes || {});
   state.cfg.visual.tema = t.nome;
   marcarSujo();
@@ -1203,14 +1298,22 @@ function aplicarFonte(quem, nome){
   atualizarPreview();
 }
 
+function corValida(v){
+  const s = String(v||"").trim();
+  return /^#([0-9a-f]{3}|[0-9a-f]{6}|[0-9a-f]{8})$/i.test(s) ||
+         /^(rgb|rgba|hsl|hsla)\([^)]+\)$/i.test(s);
+}
+
 function setCor(k, val){
+  if(!corValida(val)) return false;
   registrarHistorico(true);
   state.cfg.visual = state.cfg.visual || {};
   state.cfg.visual.cores = state.cfg.visual.cores || {};
-  state.cfg.visual.cores[k] = val;
+  state.cfg.visual.cores[k] = String(val).trim();
   state.cfg.visual.tema = "personalizado";
   marcarSujo();
   atualizarPreview();
+  return true;
 }
 
 function registrarHistorico(forcar){
@@ -1345,6 +1448,7 @@ function ligarPainel(){
     else if(a === "set-icone") setIcone(b.dataset.sec, b.dataset.icone);
     else if(a === "sel-menu") selecionar("menu");
     else if(a === "sel-carrinho") selecionar("carrinho");
+    else if(a === "descartar-draft"){ limparDraft(); toast("Rascunho local descartado."); carregarDados(); }
     else if(a === "tema") aplicarTema(b.dataset.id);
     else if(a === "novo-prod") abrirProduto(null);
     else if(a === "edit-prod") abrirProduto(b.dataset.id);
@@ -1359,6 +1463,14 @@ function ligarPainel(){
     }
   });
 
+  panel.addEventListener("keydown", e=>{
+    if(e.key !== "Enter" && e.key !== " ") return;
+    const b = e.target.closest && e.target.closest('[data-act="sel"]');
+    if(!b || e.target.classList.contains("nome-edit")) return;
+    e.preventDefault();
+    selecionar(b.dataset.sec);
+  });
+
   panel.addEventListener("input", e=>{
     const el = e.target;
     if(el.id === "buscaProd"){ renderListaProdutos(el.value); return; }
@@ -1371,11 +1483,17 @@ function ligarPainel(){
     }
     if(el.dataset.corTxt){
       const val = el.value.trim();
-      if(/^#[0-9a-f]{6}$/i.test(val)){
-        const c = panel.querySelector(`[data-cor="${el.dataset.corTxt}"]`);
-        if(c) c.value = val;
+      const card = el.closest(".color-item");
+      if(corValida(val)){
+        if(card) card.classList.remove("invalido");
+        if(/^#([0-9a-f]{6})$/i.test(val)){
+          const c = panel.querySelector(`[data-cor="${el.dataset.corTxt}"]`);
+          if(c) c.value = val;
+        }
+        setCor(el.dataset.corTxt, val);
+      } else if(card){
+        card.classList.add("invalido");
       }
-      setCor(el.dataset.corTxt, val);
       return;
     }
     if("logo" in el.dataset){
@@ -1385,6 +1503,23 @@ function ligarPainel(){
       marcarSujo();
       renderPanel();
       atualizarPreview();
+      return;
+    }
+    if(el.dataset.sec && el.classList.contains("nome-edit")){
+      registrarHistorico();
+      const layout = secoesLayout();
+      const item = layout.find(s=>s.id===el.dataset.sec);
+      if(item){
+        item.nome = el.value;
+        salvarLayout(layout);
+        const rotulo = el.closest(".sec-main")?.querySelector("b");
+        if(rotulo) rotulo.textContent = el.value || nomeSecao(el.dataset.sec);
+        const tituloInsp = $("#inspector .insp-head b");
+        if(tituloInsp && state.selected === el.dataset.sec) tituloInsp.textContent = nomeSecao(el.dataset.sec);
+        marcarSujo();
+        marcarSecoes();
+        aplicarSelecao();
+      }
       return;
     }
     if(el.dataset.path){
@@ -1403,6 +1538,14 @@ function ligarPainel(){
 
   panel.addEventListener("change", e=>{
     const el = e.target;
+    if(el.dataset.corTxt){
+      if(!corValida(el.value)){
+        const atual = (state.cfg.visual && state.cfg.visual.cores && state.cfg.visual.cores[el.dataset.corTxt]) || "";
+        el.value = atual;
+        el.closest(".color-item")?.classList.remove("invalido");
+      }
+      return;
+    }
     if(el.dataset.uploadLogo !== undefined){
       enviarLogo(el.files && el.files[0]);
       el.value = "";
@@ -1472,9 +1615,9 @@ function ligarInspetor(){
     if(!b) return;
     const a = b.dataset.act;
     if(a === "fechar-insp"){
-      insp.hidden = true;
       state.selected = "";
       aplicarSelecao();
+      fecharInspector();
       return;
     }
     if(a === "ver-carrinho"){
@@ -1546,6 +1689,7 @@ function ligarTopo(){
     state.device = b.dataset.device;
     $("#app").dataset.device = state.device;
     $$(".devices [data-device]").forEach(x=>x.classList.toggle("on", x === b));
+    salvarUI();
   }));
   $$(".rail [data-panel]").forEach(b=>b.addEventListener("click", ()=>{
     state.panel = b.dataset.panel;
@@ -1680,6 +1824,7 @@ function mudarZoom(delta){
   const wrap = $("#frameWrap");
   wrap.style.zoom = String(state.zoom / 100);
   $("#zoomLabel").textContent = state.zoom + "%";
+  salvarUI();
 }
 
 function ligarModais(){
@@ -1964,6 +2109,13 @@ function init(){
   ligarModais();
   ligarTeclado();
   atualizarUndoRedo();
+  const scrim = $("#scrim");
+  if(scrim) scrim.addEventListener("click", ()=>{
+    if(window.innerWidth <= 980) fecharPainel();
+    fecharInspector();
+  });
+  window.addEventListener("resize", atualizarScrim);
+  window.addEventListener("beforeunload", ()=>{ if(state.dirty) salvarLocal(false); });
   carregarTenant();
   if(sessionStorage.getItem("tok")) tentarEntrar();
 }
