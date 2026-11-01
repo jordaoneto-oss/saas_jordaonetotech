@@ -1,8 +1,9 @@
 {
+  "template": "vitrine-hml",
   "geral": {
-    "nome": "Ateliê Santo Terço",
+    "nome": "Loja Modelo",
     "tagline": "Terços feitos à mão",
-    "title": "Ateliê Santo Terço — Terços artesanais feitos à mão, com fé",
+    "title": "Loja Modelo — Terços artesanais feitos à mão, com fé",
     "descricao": "Terços, dezenas de carro e terços infantis feitos à mão, peça por peça, em cristal, pérola e porcelana pintada. Personalizamos com nome, devoção e cor. Enviamos para todo o Brasil, pedido pelo WhatsApp.",
     "instagram": "https://www.instagram.com/atelie_santotercoo/",
     "zap": "5516991038587",
@@ -206,7 +207,7 @@
   },
   "oracao": {
     "texto": "\"Segure o terço com fé. Cada Ave-Maria é um passo em direção ao coração de Jesus pelas mãos de Maria.\"",
-    "autor": "Ateliê Santo Terço"
+    "autor": "Loja Modelo"
   },
   "misterios": {
     "chapeu": "A oração de cada dia",
@@ -301,7 +302,7 @@
     "cta2": "Voltar ao catálogo"
   },
   "rodape": {
-    "titulo": "Ateliê Santo Terço",
+    "titulo": "Loja Modelo",
     "sobre": "Terços artesanais feitos com fé. Cada peça é montada à mão, com intenção, oração e amor. Enviamos para todo o Brasil.",
     "cat_titulo": "Catálogo",
     "como_titulo": "Como comprar",

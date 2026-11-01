@@ -412,6 +412,7 @@ function montarConfigBase(cfg){
     c.destaques.itens = (Array.isArray(c.destaques.ids) ? c.destaques.ids : []).map(id=>({id:String(id)}));
   }
   if(!c.layout || !Array.isArray(c.layout.secoes)) c.layout = {secoes:[]};
+  if(typeof c.template !== "string" || !c.template.trim()) c.template = "";
   c.layout.secoes = SECOES.map(s=>{
     const achado = (c.layout.secoes||[]).find(x=>x && x.id === s.id);
     return {
@@ -568,7 +569,12 @@ function carregarPreview(){
   window.__editorPreview = {config: state.cfg, produtos: state.produtos};
   const f = $("#preview");
   f.onload = ()=>prepararFrame();
-  f.src = "/" + (QLOJA ? QLOJA + "&editor=1" : "?editor=1");
+  const tpl = (state.cfg && state.cfg.template ? String(state.cfg.template).trim() : "");
+  if(tpl === "vitrine-hml"){
+    f.src = "/template-vitrine.html" + (QLOJA ? "?loja=" + QLOJA : "");
+  } else {
+    f.src = "/" + (QLOJA ? QLOJA + "&editor=1" : "?editor=1");
+  }
 }
 
 function injetarEstiloFrame(doc){
