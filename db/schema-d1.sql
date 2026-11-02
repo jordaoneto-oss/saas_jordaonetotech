@@ -88,6 +88,14 @@ CREATE TABLE products (
   created_at TEXT DEFAULT (datetime('now'))
 );
 CREATE INDEX IF NOT EXISTS products_tenant ON products(tenant_id, ativo, ordem);
+CREATE TABLE IF NOT EXISTS categories (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  nome TEXT NOT NULL DEFAULT '',
+  tenant_id TEXT NOT NULL DEFAULT '',
+  created_at TEXT DEFAULT (datetime('now'))
+);
+CREATE INDEX IF NOT EXISTS categories_tenant_nome ON categories(tenant_id, nome);
+
 
 -- ---------- leads / pedidos / interessados ----------
 CREATE TABLE leads (

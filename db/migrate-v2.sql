@@ -238,3 +238,11 @@ DROP TABLE IF EXISTS _old_site_configs;
 DROP TABLE IF EXISTS _old_users;
 DROP TABLE IF EXISTS _old_subscriptions;
 DROP TABLE IF EXISTS _old_tenants;
+CREATE TABLE IF NOT EXISTS categories (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  nome TEXT NOT NULL DEFAULT '',
+  tenant_id TEXT NOT NULL DEFAULT '',
+  created_at TEXT DEFAULT (datetime('now'))
+);
+CREATE INDEX IF NOT EXISTS categories_tenant_nome ON categories(tenant_id, nome);
+

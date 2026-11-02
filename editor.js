@@ -91,14 +91,14 @@ const ICONE_PADRAO = {
   misterios:"relogio", sobre:"usuario", depoimentos:"balao", final:"telefone", rodape:"rodape"
 };
 const MENU_CAMPOS = [
-  {k:"t", r:"Texto do link", t:"text"},
+  {k:"t", r:"Texto do link", t:"html"},
   {k:"href", r:"Link", t:"text", d:"Use #secao para âncoras (ex.: #catalogo) ou uma URL completa."}
 ];
 const CARRINHO_GRUPOS = [
   {r:"Minha lista", campos:[
-    {k:"titulo", r:"Título da lista", t:"text"},
-    {k:"resumo_vazio", r:"Resumo quando vazia", t:"text"},
-    {k:"vazio_titulo", r:"Título quando vazia", t:"text"},
+    {k:"titulo", r:"Título da lista", t:"html"},
+    {k:"resumo_vazio", r:"Resumo quando vazia", t:"html"},
+    {k:"vazio_titulo", r:"Título quando vazia", t:"html"},
     {k:"vazio_texto", r:"Texto quando vazia", t:"textarea"}
   ]},
   {r:"Dados do cliente", campos:[
@@ -140,8 +140,8 @@ const SECOES = [
     {k:"chapeu", r:"Chamada pequena", t:"html"}
   ], array:"selos", arrayCampos:[
     {k:"icone", r:"Imagem ou ícone", t:"image", d:"Opcional. Vazio usa o ícone padrão da posição."},
-    {k:"t", r:"Título", t:"text"},
-    {k:"s", r:"Detalhe", t:"text"}
+    {k:"t", r:"Título", t:"html"},
+    {k:"s", r:"Detalhe", t:"html"}
   ]},
   {id:"destaques", nome:"Destaques", desc:"Cartões em evidência", campos:[
     {k:"chapeu", r:"Chamada pequena", t:"html"},
@@ -149,7 +149,7 @@ const SECOES = [
   ], array:"itens", arrayCampos:[
     {k:"id", r:"Produto (opcional)", t:"produto", d:"Com produto, o botão adiciona à Minha Lista. Sem produto, use o link abaixo."},
     {k:"midia", r:"Imagem ou vídeo", t:"media", d:"Vazio usa a foto ou o vídeo do produto."},
-    {k:"titulo", r:"Título", t:"text", d:"Vazio usa o nome do produto."},
+    {k:"titulo", r:"Título", t:"html", d:"Vazio usa o nome do produto."},
     {k:"texto", r:"Texto", t:"html", d:"Vazio usa a descrição do produto."},
     {k:"preco", r:"Preço (texto)", t:"text", d:"Ex.: R$ 59,90. Vazio usa o preço do produto."},
     {k:"preco_nota", r:"Observação do preço", t:"text", d:"Ex.: à vista, promocional."},
@@ -185,26 +185,27 @@ const SECOES = [
     {k:"lead", r:"Texto", t:"html"},
     {k:"botao", r:"Botão", t:"text"}
   ], array:"passos", arrayCampos:[
-    {k:"t", r:"Passo - título", t:"text"},
+    {k:"t", r:"Passo - título", t:"html"},
     {k:"s", r:"Passo - detalhe", t:"html"}
   ]},
   {id:"devocoes", nome:"Devoções", desc:"Coleções e santos atendidos", campos:[
     {k:"chapeu", r:"Chamada pequena", t:"html"},
     {k:"titulo", r:"Título", t:"html"},
     {k:"lead", r:"Texto", t:"html"}
-  ], array:"itens", arrayCampos:[{k:"t", r:"Devoção / coleção", t:"text"}]},
+  ], array:"itens", arrayCampos:[{k:"t", r:"Devoção / coleção", t:"html"}]},
   {id:"ocasioes", nome:"Ocasiões", desc:"Cartões de data especial", campos:[
     {k:"chapeu", r:"Chamada pequena", t:"html"},
-    {k:"titulo", r:"Título", t:"html"}
+    {k:"titulo", r:"Título", t:"html"},
+    {k:"descricao", r:"Descrição", t:"html"}
   ], array:"itens", arrayCampos:[
     {k:"img", r:"Foto ou vídeo", t:"media"},
-    {k:"titulo", r:"Título", t:"text"},
-    {k:"sub", r:"Subtítulo", t:"text"}
+    {k:"titulo", r:"Título", t:"html"},
+    {k:"sub", r:"Subtítulo", t:"html"}
   ]},
   {id:"oracao", nome:"Frase de destaque", desc:"Citação entre seções", campos:[
     {k:"chapeu", r:"Chamada pequena", t:"html"},
     {k:"texto", r:"Texto", t:"html"},
-    {k:"autor", r:"Assinatura", t:"text"}
+    {k:"autor", r:"Assinatura", t:"html"}
   ]},
   {id:"misterios", nome:"Como rezar", desc:"Cartões por dia da semana", campos:[
     {k:"chapeu", r:"Chamada pequena", t:"html"},
@@ -212,7 +213,7 @@ const SECOES = [
     {k:"lead", r:"Texto", t:"html"}
   ], array:"itens", arrayCampos:[
     {k:"dia", r:"Dias", t:"text"},
-    {k:"titulo", r:"Título", t:"text"},
+    {k:"titulo", r:"Título", t:"html"},
     {k:"texto", r:"Texto", t:"html"}
   ]},
   {id:"sobre", nome:"A história", desc:"Origem da marca e números", campos:[
@@ -226,7 +227,7 @@ const SECOES = [
     {k:"cta", r:"Botão", t:"text"}
   ], array:"numeros", arrayCampos:[
     {k:"v", r:"Número", t:"text"},
-    {k:"s", r:"Legenda", t:"text"}
+    {k:"s", r:"Legenda", t:"html"}
   ]},
   {id:"depoimentos", nome:"Avaliações", desc:"Provas sociais de clientes", campos:[
     {k:"chapeu", r:"Chamada pequena", t:"html"},
@@ -234,11 +235,11 @@ const SECOES = [
     {k:"lead", r:"Texto", t:"html"}
   ], array:"lista", arrayCampos:[
     {k:"texto", r:"Depoimento", t:"html"},
-    {k:"nome", r:"Nome", t:"text"},
-    {k:"contexto", r:"Contexto", t:"text"}
+    {k:"nome", r:"Nome", t:"html"},
+    {k:"contexto", r:"Contexto", t:"html"}
   ], array2:"faixa", array2Campos:[
-    {k:"t", r:"Número", t:"text"},
-    {k:"s", r:"Legenda", t:"text"}
+    {k:"t", r:"Número", t:"html"},
+    {k:"s", r:"Legenda", t:"html"}
   ]},
   {id:"final", nome:"Convite final", desc:"Chamada para o WhatsApp", campos:[
     {k:"chapeu", r:"Chamada pequena", t:"html"},
@@ -249,11 +250,22 @@ const SECOES = [
   ]},
   {id:"rodape", nome:"Rodapé", desc:"Contatos e links do pé da página", campos:[
     {k:"chapeu", r:"Chamada pequena", t:"html"},
-    {k:"titulo", r:"Título", t:"text"},
+    {k:"titulo", r:"Título", t:"html"},
     {k:"sobre", r:"Sobre a loja", t:"html"},
-    {k:"cat_titulo", r:"Coluna catálogo", t:"text"},
-    {k:"como_titulo", r:"Coluna como comprar", t:"text"},
-    {k:"nota_base", r:"Nota final", t:"html"}
+    {k:"cat_titulo", r:"Coluna catálogo", t:"html"},
+    {k:"como_titulo", r:"Coluna como comprar", t:"html"},
+    {k:"cat_essencial", r:"Texto", t:"html"},
+    {k:"cat_classica", r:"Texto", t:"html"},
+    {k:"cat_premium", r:"Texto", t:"html"},
+    {k:"cat_pequenos", r:"Texto", t:"html"},
+    {k:"cat_dezenas", r:"Texto", t:"html"},
+    {k:"cat_sob", r:"Texto", t:"html"},
+    {k:"zap_rodape", r:"Texto", t:"html"},
+    {k:"zap_direct", r:"Texto", t:"html"},
+    {k:"zap_envio", r:"Texto", t:"html"},
+    {k:"como_rezar", r:"Texto", t:"html"},
+    {k:"nota_base", r:"Nota final", t:"html"},
+    {array:"links_rodape", arrayCampos:[{k:"t",r:"Texto",t:"html"},{k:"href",r:"Link (ex: #catalogo)",t:"text"}]}
   ]}
 ];
 
@@ -426,7 +438,7 @@ function montarConfigBase(cfg){
 }
 
 function imagensDeProdutos(prods){
-  const set = new Set(["logo.webp","logo-retangular.webp","placeholder.png"]);
+  const set = new Set(["logo.webp","logo-retangular.webp","logo-default.webp","placeholder.png"]);
   (prods||[]).forEach(p=>{ if(p && p.foto) set.add(String(p.foto).split("/").pop()); });
   if(state.cfg && state.cfg.visual && state.cfg.visual.logo) set.add(String(state.cfg.visual.logo).split("/").pop());
   return [...set];
@@ -470,7 +482,7 @@ async function carregarTenant(){
       $("#lojaNome").textContent = nomeCfg;
     }
     const logo = c && c.visual && c.visual.logo;
-    $("#loginLogo").src = logo ? fotoSrc(logo) : comLoja("img/logo.webp");
+    $("#loginLogo").src = logo ? fotoSrc(logo) : comLoja("img/logo-default.webp");
   }catch(e){}
 }
 
@@ -740,6 +752,7 @@ function selecionar(id, rolar){
   }catch(e){}
   aplicarSelecao();
   renderInspector();
+  if(state.panel === "paginas") renderPanel();
   $("#inspector").hidden = false;
   if(window.innerWidth <= 980) fecharPainel();
   atualizarScrim();
@@ -892,7 +905,7 @@ function campoHtml(campo, path, valor){
   const v = (valor===undefined || valor===null) ? "" : valor;
   if(campo.t==="html" || campo.t==="textarea"){
     const seguro = campo.t === "html" ? String(v).replace(/<\/textarea/gi, "&lt;/textarea") : esc(v);
-    inp = `<textarea data-path="${esc(path)}" rows="${campo.linhas || (campo.t==="html"?4:3)}">${seguro}</textarea>`;
+    inp = `<div class="ed-texto" contenteditable="true" data-path="${esc(path)}" spellcheck="false">${seguro}</div>`;
   } else if(campo.t==="select"){
     inp = `<select data-path="${esc(path)}">${(campo.op||[]).map(o=>`<option value="${esc(o.v)}"${String(v)===String(o.v)?" selected":""}>${esc(o.r)}</option>`).join("")}</select>`;
   } else if(campo.t==="check"){
@@ -1438,6 +1451,7 @@ function removerItem(path, i){
 
 function valorCampo(el){
   if(el.type === "checkbox") return el.checked;
+  if(el.classList && el.classList.contains("ed-texto")) return el.innerHTML;
   if(el.dataset && el.dataset.num) {
     const n = Number(String(el.value).replace(",", "."));
     return isFinite(n) ? n : "";
@@ -1918,6 +1932,33 @@ function abrirProduto(id){
   $("#pDesc").value = p ? (p.desc||"") : "";
   const cats = [...new Set(state.produtos.map(x=>x.cat).filter(Boolean))];
   $("#listaCats").innerHTML = cats.map(c=>`<option value="${esc(c)}"></option>`).join("");
+  const sel = $("#pCatList");
+  sel.innerHTML = cats.map(c=>`<div class="cat-row" data-cat="${esc(c)}" style="display:flex;align-items:center;justify-content:space-between;padding:6px 8px;border-bottom:1px solid var(--linha);cursor:pointer"><span>${esc(c)}</span><button type="button" class="cat-del" data-cat="${esc(c)}" style="background:transparent;border:0;color:#b42318;font-size:14px;cursor:pointer;padding:2px 4px">×</button></div>`).join("");
+  sel.addEventListener("click", e=>{
+    const row = e.target.closest ? e.target.closest(".cat-row") : null;
+    const btn = e.target.closest ? e.target.closest(".cat-del") : null;
+    if(btn){
+      const cat = btn.dataset.cat;
+      if(!cat || !confirm("Remover categoria \""+cat+"\" de todos os produtos?")) return;
+      state.produtos = state.produtos.map(x=>x.cat===cat?{...x,cat:""}:x);
+      registrarHistorico(true); marcarSujo(); atualizarPreview();
+      abrirProduto(editandoProduto);
+      return;
+    }
+    if(row){
+      $("#pCat").value = row.dataset.cat || "";
+    }
+  });
+  $("#tagsCats").innerHTML = cats.map(c=>`<button type="button" class="tag-cat" data-cat="${esc(c)}" style="background:var(--marfim);border:1px solid var(--linha);border-radius:6px;padding:3px 8px;font-size:11px;color:var(--tinta);cursor:pointer">${esc(c)} ×</button>`).join("");
+  $("#tagsCats").addEventListener("click", e=>{
+    const btn = e.target.closest && e.target.closest(".tag-cat");
+    if(!btn) return;
+    const cat = btn.dataset.cat;
+    if(!cat || !confirm("Remover categoria \""+cat+"\" de todos os produtos?")) return;
+    state.produtos = state.produtos.map(p=>{ if(p.cat===cat) return {...p, cat:""}; return p; });
+    registrarHistorico(true); marcarSujo(); atualizarPreview();
+    abrirProduto(editandoProduto);
+  }, {once:true});
   const colecoes = [...new Set(state.produtos.map(x=>x.colecao).filter(Boolean))];
   const dev = (state.cfg.devocoes && Array.isArray(state.cfg.devocoes.itens)) ? state.cfg.devocoes.itens : [];
   dev.forEach(d=>{ const t = String((d && (d.t||d)) || "").trim(); if(t && !colecoes.includes(t)) colecoes.push(t); });
@@ -2131,6 +2172,95 @@ function init(){
   if(sessionStorage.getItem("tok")) tentarEntrar();
 }
 
+function aplicarFormato(el, tag, val){
+  el.focus();
+  const s = el.selectionStart, e = el.selectionEnd, v = el.value;
+  if(s===e) return; // nada selecionado
+  const txt = v.substring(s,e);
+  const open = tag==="b"?"<b>":tag==="i"?"<i>":tag==="tamanho"?`<span style="font-size:${esc(val||"1.15em")}!important">`:tag==="cor"?`<span style="color:${esc(val||"#d39c9c")}!important">`:"";
+  const close = tag==="b"?"</b>":tag==="i"?"</i>":tag==="tamanho"||tag==="cor"?"</span>":"";
+  el.value = v.substring(0,s) + open + txt + close + v.substring(e);
+  el.selectionStart = s + open.length;
+  el.selectionEnd = s + open.length + txt.length;
+}
+
+function initToolbar(){
+  document.addEventListener("focusin", e=>{
+    const ta = e.target.closest ? e.target.closest(".ed-texto") : null;
+    if(!ta) return;
+    const fld = ta.closest(".fld");
+    if(!fld) return;
+    if(!fld.querySelector(".toolbar-formato")){
+      const tb = document.createElement("div");
+      tb.className = "toolbar-formato";
+      tb.innerHTML = `<button type="button" data-cmd="bold" title="Negrito">B</button>` +
+        `<button type="button" data-cmd="italic" title="Itálico">I</button>` +
+        `<span class="sep"></span>` +
+        `<button type="button" data-cmd="fontSize" data-val="3" title="Aumentar">A+</button>` +
+        `<button type="button" data-cmd="fontSize" data-val="1" title="Diminuir">A-</button>` +
+        `<span class="sep"></span>` +
+        `<button type="button" data-cmd="foreColor" data-val="#d39c9c" title="Ouro">●</button>` +
+        `<button type="button" data-cmd="foreColor" data-val="#33291f" title="Tinta">●</button>` +
+        `<input type="color" class="rgbPicker" value="#d39c9c" style="width:30px;height:30px;padding:0;border:0;background:transparent;cursor:pointer;flex:0 0 auto">`;
+      fld.insertBefore(tb, ta);
+    }
+    const tb = fld.querySelector(".toolbar-formato");
+    if(tb) tb.classList.add("on");
+  });
+  document.addEventListener("focusout", e=>{
+    const ta = e.target.closest ? e.target.closest(".ed-texto") : null;
+    if(!ta) return;
+    const fld = ta.closest(".fld");
+    if(fld){
+      const tb = fld.querySelector(".toolbar-formato");
+      if(tb) setTimeout(()=>{ if(!fld.contains(document.activeElement)) tb.classList.remove("on"); }, 150);
+    }
+  });
+  document.addEventListener("click", e=>{
+    const btn = e.target.closest ? e.target.closest(".toolbar-formato button") : null;
+    if(!btn) return;
+    const fld = btn.closest(".toolbar-formato").closest(".fld");
+    const ta = fld ? fld.querySelector(".ed-texto") : null;
+    if(!ta) return;
+    ta.focus();
+    const cmd = btn.dataset.cmd;
+    const val = btn.dataset.val || "";
+    if(cmd) document.execCommand(cmd, false, val || undefined);
+    if(ta && ta.isContentEditable){
+      const spans = ta.querySelectorAll ? ta.querySelectorAll("font,span") : [];
+      spans.forEach(s=>{
+        if(s.style.color && s.style.color.indexOf("important")==-1) s.style.color = s.style.color + " !important";
+        if(s.style.fontSize && s.style.fontSize.indexOf("important")==-1) s.style.fontSize = s.style.fontSize + " !important";
+      });
+    }
+  });
+  document.addEventListener("input", e=>{
+    if(e.target.classList && e.target.classList.contains("rgbPicker")){
+      const ta = e.target.closest(".toolbar-formato")?.closest(".fld")?.querySelector(".ed-texto");
+      if(ta) {
+        ta.focus();
+        const sel = window.getSelection();
+        if(sel.rangeCount){
+          const r = sel.getRangeAt(0);
+          try{
+            const s = document.createElement("span");
+            s.style.color = e.target.value + " !important";
+            r.surroundContents(s);
+          }catch(err){
+            const txt = sel.toString();
+            if(txt){
+              const nodo = document.createElement("span");
+              nodo.innerHTML = `<span style="color:${e.target.value} !important">${esc(txt)}</span>`;
+              r.deleteContents(); r.insertNode(nodo);
+            }
+          }
+        }
+      }
+    }
+  });
+}
+
 init();
+initToolbar();
 
 })();

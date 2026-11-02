@@ -201,12 +201,11 @@ section,footer,.selos,.final,.oracao{scroll-margin-top:calc(var(--topo) + 18px)}
 
 /* ---------- destaques em vídeo ---------- */
 .destaques{background:var(--areia);border-bottom:1px solid var(--linha)}
-.grade-dest{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:26px}
-.dest{background:var(--papel);border:1px solid rgba(231,217,196,.8);border-radius:var(--raio);overflow:hidden;
-      display:flex;flex-direction:column;box-shadow:var(--sombra);transition:.35s cubic-bezier(.2,.7,.3,1)}
-.dest:hover{transform:translateY(-4px);box-shadow:var(--sombra-alta)}
-.dest video{width:100%;aspect-ratio:3/4;object-fit:cover;display:block;background:var(--areia)}
-.dest-corpo{padding:20px 20px 22px;display:flex;flex-direction:column;flex:1}
+.grade-dest{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px}
+.dest{max-width:320px;margin:0 auto}
+.dest:hover{transform:translateY(-3px)}
+.dest video{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;background:var(--areia)}
+.dest-corpo{padding:14px 16px 16px;display:flex;flex-direction:column;flex:1}
 .dest-corpo b{font-family:var(--serif);font-size:1.3rem;font-weight:500;line-height:1.2;display:block;margin-bottom:6px}
 .dest-corpo p{font-size:13.5px;color:var(--tinta-suave);line-height:1.6;flex:1;margin-bottom:15px}
 .dest-pe{display:flex;align-items:center;justify-content:space-between;gap:12px}
@@ -328,6 +327,7 @@ button.devocao .n{font-family:var(--sans);font-size:.85em;color:var(--tinta-suav
 .devocao.on .n{color:#fff}
 
 /* ---------- ocasiões ---------- */
+.ocasioes .descricao{color:var(--tinta-suave);font-size:14px;line-height:1.45;margin-top:4px;max-width:520px;word-break:break-word;overflow-wrap:break-word;white-space:normal}
 .ocasioes{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px}
 .ocasiao{position:relative;overflow:hidden;border-radius:var(--raio);aspect-ratio:3/4;box-shadow:var(--sombra)}
 .ocasiao img,.ocasiao video{width:100%;height:100%;object-fit:cover;transition:transform 1s cubic-bezier(.2,.7,.3,1)}
@@ -340,7 +340,7 @@ button.devocao .n{font-family:var(--sans);font-size:.85em;color:var(--tinta-suav
 .ocasiao span{font-size:13px;opacity:.9}
 
 /* ---------- mistérios ---------- */
-.misterios{background:var(--rosa-claro);border-top:1px solid var(--linha);border-bottom:1px solid var(--linha)}
+.misterios{background:var(--areia);border-top:1px solid var(--linha);border-bottom:1px solid var(--linha)}
 .grade-mist{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;margin-top:8px}
 .mist{
   background:var(--papel);border:1px solid rgba(231,217,196,.9);border-radius:var(--raio);
@@ -358,8 +358,7 @@ button.devocao .n{font-family:var(--sans);font-size:.85em;color:var(--tinta-suav
   box-shadow:var(--sombra-alta);border-radius:var(--raio);
 }
 .cartao-oracao::before{content:"";position:absolute;inset:11px;border:1px solid var(--ouro-fraco);pointer-events:none}
-.cartao-oracao::after{content:"";position:absolute;inset:16px;border:1px solid rgba(208,174,114,.35);pointer-events:none}
-.cartao-oracao svg.cruz{width:34px;height:44px;stroke:var(--ouro-claro);fill:none;stroke-width:1.2;margin:0 auto 20px}
+.cartao-oracao::after{content:"";position:absolute;inset:16px;border:1px solid color-mix(in srgb,var(--ouro-claro) 35%,transparent);pointer-events:none}
 .cartao-oracao p:not(.chapeu){font-family:var(--serif);font-size:clamp(1.3rem,2.6vw,1.72rem);font-style:italic;line-height:1.6;color:var(--tinta)}
 .cartao-oracao .chapeu{margin-bottom:18px}
 .cartao-oracao cite{display:block;margin-top:20px;font-family:var(--sans);font-style:normal;font-size:12.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--tinta-suave)}
@@ -437,7 +436,7 @@ footer a:hover{color:var(--ouro-claro)}
 .gaveta{
   position:fixed;top:0;right:0;bottom:0;width:min(430px,100vw);background:var(--marfim);z-index:90;
   transform:translateX(100%);transition:transform .42s cubic-bezier(.32,.72,.35,1);
-  display:flex;flex-direction:column;box-shadow:-16px 0 50px rgba(51,41,31,.2);
+  display:flex;flex-direction:column;box-shadow:-16px 0 50px rgba(51,41,31,.2);overflow-y:auto;overscroll-behavior:contain
 }
 .gaveta.on{transform:none}
 .gaveta-topo{

@@ -351,7 +351,14 @@ function sanitizarHtml(v){
             node.removeAttribute(attr.name);
           }
         } else {
-          node.removeAttribute(attr.name);
+          if(nome === "style"){
+            const val = String(attr.value || "").toLowerCase();
+            if(val.indexOf("expression") !== -1 || val.indexOf("javascript:") !== -1){
+              node.removeAttribute(attr.name);
+            }
+          } else {
+            node.removeAttribute(attr.name);
+          }
         }
       });
       limpar(node);

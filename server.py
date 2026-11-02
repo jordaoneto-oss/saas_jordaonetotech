@@ -369,8 +369,22 @@ def status_pedido(v):
     return s if s in STATUS_PEDIDO else "novo"
 
 
+def sincroniza_cliente(leads_path, clientes_path):
+    """Garante que clientes de pedidos/contatos estejam salvos."""
+    try:
+        leads = ler(leads_path, [])
+        extras = ler(clientes_path, {}) if isinstance(leads_path, str) else {}
+        if not isinstance(extras, dict): extras = {}
+        for l in leads:
+            zap = normaliza_zap(l.get("whatsapp"))
+            if zap and zap not in extras:
+                extras[zap] = {"tags": [], "notas": "", "updated_at": agora_iso()}
+        gravar(clientes_path, extras)
+    except Exception:
+        pass
+
 def agora_iso():
-    return time.strftime("%Y-%m-%dT%H:%M:%S")
+    return time.strftime("%Y-%m-%dT%H:%M:%S") + "+00:00"
 
 
 def data_conclusao(lead):
@@ -1508,6 +1522,19 @@ class Handler(BaseHTTPRequestHandler):
                 return
             self._json(ler(TP["catalogo"], []))
             return
+        if rota == "/api/admin/categorias":
+            if not self._precisa_admin(slug): return
+            try:
+                conn = sqlite3.connect(os.path.join(BASE, "db", "database.db")) if os.path.exists(os.path.join(BASE, "db", "database.db")) else sqlite3.connect(os.path.join(BASE, "tenants", slug, "data.db"))
+                cur = conn.cursor()
+                cur.execute("SELECT id, nome FROM categories WHERE tenant_id = ? OR tenant_id = '' ORDER BY nome", (slug,))
+                lista = [{"id": row[0], "nome": row[1]} for row in cur.fetchall()]
+                conn.close()
+            except Exception:
+                lista = []
+            self._json({"ok": True, "dados": lista})
+            return
+
         if rota == "/api/admin/leads":
             if not self._precisa_admin(slug):
                 return
@@ -2029,6 +2056,50 @@ class Handler(BaseHTTPRequestHandler):
             gravar(TP["catalogo"], prods)
             self._json(b)
             return
+        if rota == "/api/admin/categorias":
+            if not self._precisa_admin(slug): return
+            b = self._corpo()
+            action = str(b.get("action") or "").strip().lower()
+            nome = str(b.get("nome") or "").strip()
+            if action == "excluir":
+                cat_id = b.get("id")
+                try:
+                    conn = sqlite3.connect(os.path.join(BASE, "db", "database.db")) if os.path.exists(os.path.join(BASE, "db", "database.db")) else sqlite3.connect(os.path.join(BASE, "tenants", slug, "data.db"))
+                    cur = conn.cursor()
+                    # ver vínculos
+                    cur.execute("SELECT COUNT(*) FROM products WHERE (cat = ? OR cat = ?) AND tenant_id = ?", (nome, nome, slug))
+                    count = cur.fetchone()[0]
+                    if count > 0:
+                        self._json({"erro": f"Categoria {nome} é usada por {count} produto(s). Remova os vínculos primeiro."}, 400)
+                        return
+                    cur.execute("DELETE FROM categories WHERE id = ? OR (nome = ? AND tenant_id = ?)", (cat_id, nome, slug))
+                    conn.commit(); conn.close()
+                    self._json({"ok": True, "msg": "Categoria removida."})
+                except Exception as exc:
+                    self._json({"erro": str(exc)}, 500)
+                return
+            if not nome or len(nome) < 1:
+                self._json({"erro": "Informe o nome da categoria."}, 400)
+                return
+            # normalizar
+            nome_limpo = nome.strip()
+            try:
+                conn = sqlite3.connect(os.path.join(BASE, "db", "database.db")) if os.path.exists(os.path.join(BASE, "db", "database.db")) else sqlite3.connect(os.path.join(BASE, "tenants", slug, "data.db"))
+                cur = conn.cursor()
+                cur.execute("SELECT id FROM categories WHERE lower(nome) = lower(?) AND (tenant_id = ? OR tenant_id = '')", (nome_limpo, slug))
+                existente = cur.fetchone()
+                if existente:
+                    self._json({"ok": True, "id": existente[0], "nome": nome_limpo})
+                else:
+                    cur.execute("INSERT INTO categories (nome, tenant_id) VALUES (?, ?)", (nome_limpo, slug))
+                    conn.commit()
+                    new_id = cur.lastrowid
+                    conn.close()
+                    self._json({"ok": True, "id": new_id, "nome": nome_limpo, "msg": "Categoria criada."})
+            except Exception as exc:
+                self._json({"erro": str(exc)}, 500)
+            return
+
 
         if rota == "/api/admin/upload":
             if not self._precisa_admin(slug):
@@ -2392,6 +2463,50 @@ class Handler(BaseHTTPRequestHandler):
             gravar(TP["catalogo"], prods)
             self._json(b)
             return
+        if rota == "/api/admin/categorias":
+            if not self._precisa_admin(slug): return
+            b = self._corpo()
+            action = str(b.get("action") or "").strip().lower()
+            nome = str(b.get("nome") or "").strip()
+            if action == "excluir":
+                cat_id = b.get("id")
+                try:
+                    conn = sqlite3.connect(os.path.join(BASE, "db", "database.db")) if os.path.exists(os.path.join(BASE, "db", "database.db")) else sqlite3.connect(os.path.join(BASE, "tenants", slug, "data.db"))
+                    cur = conn.cursor()
+                    # ver vínculos
+                    cur.execute("SELECT COUNT(*) FROM products WHERE (cat = ? OR cat = ?) AND tenant_id = ?", (nome, nome, slug))
+                    count = cur.fetchone()[0]
+                    if count > 0:
+                        self._json({"erro": f"Categoria {nome} é usada por {count} produto(s). Remova os vínculos primeiro."}, 400)
+                        return
+                    cur.execute("DELETE FROM categories WHERE id = ? OR (nome = ? AND tenant_id = ?)", (cat_id, nome, slug))
+                    conn.commit(); conn.close()
+                    self._json({"ok": True, "msg": "Categoria removida."})
+                except Exception as exc:
+                    self._json({"erro": str(exc)}, 500)
+                return
+            if not nome or len(nome) < 1:
+                self._json({"erro": "Informe o nome da categoria."}, 400)
+                return
+            # normalizar
+            nome_limpo = nome.strip()
+            try:
+                conn = sqlite3.connect(os.path.join(BASE, "db", "database.db")) if os.path.exists(os.path.join(BASE, "db", "database.db")) else sqlite3.connect(os.path.join(BASE, "tenants", slug, "data.db"))
+                cur = conn.cursor()
+                cur.execute("SELECT id FROM categories WHERE lower(nome) = lower(?) AND (tenant_id = ? OR tenant_id = '')", (nome_limpo, slug))
+                existente = cur.fetchone()
+                if existente:
+                    self._json({"ok": True, "id": existente[0], "nome": nome_limpo})
+                else:
+                    cur.execute("INSERT INTO categories (nome, tenant_id) VALUES (?, ?)", (nome_limpo, slug))
+                    conn.commit()
+                    new_id = cur.lastrowid
+                    conn.close()
+                    self._json({"ok": True, "id": new_id, "nome": nome_limpo, "msg": "Categoria criada."})
+            except Exception as exc:
+                self._json({"erro": str(exc)}, 500)
+            return
+
 
         if rota == "/api/admin/leads":
             if not self._precisa_admin(slug):

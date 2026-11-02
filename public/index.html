@@ -378,7 +378,8 @@
       <div class="cab-secao centro rv" data-slot="ocasioes.cabecalho">
         <p class="chapeu" data-t-html="ocasioes.chapeu">Para quando</p>
         <h2 class="titulo" data-t-html="ocasioes.titulo">Os dias que a família <em>não esquece</em></h2>
-              </div>
+        <p class="descricao" data-t-html="ocasioes.descricao"></p>
+      </div>
       <div class="ocasioes rv" data-slot="ocasioes.grade">
         <figure class="ocasiao">
           <img src="img/terco-infantil-nome-caixa.webp" alt="Terço infantil personalizado com o nome da criança, dentro da caixinha de presente" loading="lazy">
@@ -404,7 +405,6 @@
   <div class="oracao">
     <div class="env">
       <div class="cartao-oracao rv" data-slot="oracao.cartao">
-        <svg class="cruz" viewBox="0 0 30 40" aria-hidden="true"><path d="M15 2v36M5 12h20"/></svg>
         <p class="chapeu" data-t-html="oracao.chapeu"></p>
         <p data-t-html="oracao.texto">"Segure o terço com fé. Cada Ave-Maria é um passo em direção ao coração de Jesus pelas mãos de Maria."</p>
         <cite data-t="oracao.autor">Loja Modelo</cite>
@@ -534,7 +534,7 @@
     <p class="chapeu" data-t-html="rodape.chapeu"></p>
     <div class="pe-grade" data-slot="rodape.grade">
       <div>
-        <h3 data-t="rodape.titulo">Loja Modelo</h3>
+        <h3 data-t-html="rodape.titulo">Loja Modelo</h3>
         <p data-t-html="rodape.sobre">Terços artesanais feitos com fé. Cada peça é montada à mão, com intenção, oração e amor. Enviamos para todo o Brasil.</p>
         <div class="redes">
           <a data-href="geral.instagram" href="https://www.instagram.com/atelie_santotercoo/" target="_blank" rel="noopener" aria-label="Instagram do Loja Modelo">
@@ -546,28 +546,31 @@
         </div>
       </div>
       <div>
-        <h3 data-t="rodape.cat_titulo">Catálogo</h3>
+        <h3 data-t-html="rodape.cat_titulo">Catálogo</h3>
         <div class="pe-links">
-          <a href="#catalogo">Linha Essencial</a>
-          <a href="#catalogo">Linha Clássica</a>
-          <a href="#catalogo">Linha Premium e Luxo</a>
-          <a href="#catalogo">Para os pequenos</a>
-          <a href="#catalogo">Dezenas para o carro</a>
-          <a href="#encomenda">Sob encomenda</a>
+          <a href="#catalogo" data-t-html="rodape.cat_essencial">Linha Essencial</a>
+          <a href="#catalogo" data-t-html="rodape.cat_classica">Linha Clássica</a>
+          <a href="#catalogo" data-t-html="rodape.cat_premium">Linha Premium e Luxo</a>
+          <a href="#catalogo" data-t-html="rodape.cat_pequenos">Para os pequenos</a>
+          <a href="#catalogo" data-t-html="rodape.cat_dezenas">Dezenas para o carro</a>
+          <a href="#encomenda" data-t-html="rodape.cat_sob">Sob encomenda</a>
+        </div>
+        <div class="pe-links-extra" data-slot="rodape.links_rodape" style="margin-top:10px;opacity:.8;font-size:13px;">
+          <a href="#catalogo" data-t-html="rodape.cat_extra_1">Menu footer</a>
         </div>
       </div>
       <div>
-        <h3 data-t="rodape.como_titulo">Como comprar</h3>
+        <h3 data-t-html="rodape.como_titulo">Como comprar</h3>
         <div class="pe-links">
-          <a id="zapRodape2" href="#" target="_blank" rel="noopener"><span data-t="geral.zap_tel">WhatsApp (16) 99103-8587</span></a>
-          <span>Encomendas também pelo direct</span>
-          <span>Enviamos para todo o Brasil</span>
-          <a href="#terco">Como rezar o terço</a>
+          <a id="zapRodape2" href="#" target="_blank" rel="noopener"><span data-t-html="rodape.zap_rodape">WhatsApp (16) 99103-8587</span></a>
+          <span data-t-html="rodape.zap_direct">Encomendas também pelo direct</span>
+          <span data-t-html="rodape.zap_envio">Enviamos para todo o Brasil</span>
+          <a href="#terco" data-t-html="rodape.como_rezar">Como rezar o terço</a>
         </div>
       </div>
     </div>
     <div class="pe-base">
-      <span>© <span id="ano"></span> <span data-t="rodape.titulo">Loja Modelo</span></span>
+      <span>© <span id="ano"></span> <span data-t-html="rodape.titulo">Loja Modelo</span></span>
       <span data-t-html="rodape.nota_base">Peças artesanais: pequenas variações fazem parte do feito à mão.</span>
     <span class="credito-visivel">Site feito por
       <img src="img/marca/simbolo-cor.svg" alt="Jordão Neto Tech" width="22" height="22">
@@ -598,7 +601,7 @@
   </div>
   <div class="itens" id="itens"></div>
   <div class="gaveta-pe">
-    <details class="dobravel" id="dobravelDados">
+    <details class="dobravel" id="dobravelDados" open>
       <summary><span data-t="carrinho.dados_titulo">Personalização e entrega</span><em data-t="carrinho.dados_opcional">opcional</em></summary>
       <div class="dobravel-corpo">
         <label class="obs-rot" for="obs" data-t="carrinho.obs_rot">Cor, devoção ou nome para gravar</label>

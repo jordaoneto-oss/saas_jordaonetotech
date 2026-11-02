@@ -1,17 +1,6 @@
 {
   "lojas": [
     {
-      "slug": "santo-terco",
-      "nome": "Santo Terço",
-      "email": "santoterco@gmail.com",
-      "zap": "1699999999",
-      "porta": 8332,
-      "path": "lojas/santo-terco",
-      "status": "suspensa",
-      "created_at": "2026-09-25T16:01:08",
-      "dominio": "santoterco.com.br"
-    },
-    {
       "slug": "loja-teste",
       "nome": "Teste1",
       "email": "teste@gmail.com",
@@ -51,6 +40,17 @@
       "template": "generico",
       "tema": "moderno",
       "created_at": "2026-10-28T00:18:42"
+    },
+    {
+      "slug": "santo-terco",
+      "nome": "Santo Terço",
+      "email": "santoterco@gmail.com",
+      "zap": "1699999999",
+      "porta": 8332,
+      "path": "lojas/santo-terco",
+      "status": "suspensa",
+      "created_at": "2026-09-25T16:01:08",
+      "dominio": "santoterco.com.br"
     }
   ]
 }

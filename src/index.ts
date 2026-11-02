@@ -1260,7 +1260,28 @@ async function handleApi(request: Request, env: Env, url: URL, path: string): Pr
         taxa_conclusao: nPedidos ? Math.round((concluidos.length / nPedidos) * 100) : 0,
         taxa_cancelamento: nPedidos ? Math.round((cancelados.length / nPedidos) * 100) : 0,
       };
-      return json({ periodo, dias, kpis });
+      /* Gráficos: mensal / top / status / origem */
+      const mensal: any[] = [];
+      try {
+        const m = await env.DB.prepare(`SELECT date(COALESCE(ts, created_at)) as mes, COUNT(*) as pedidos, COALESCE(SUM(COALESCE(total,0)),0) as receita FROM leads WHERE tenant_id = ? AND tipo = 'pedido' AND status = 'concluido' GROUP BY mes ORDER BY mes DESC LIMIT 12`).bind(slug).all<any>();
+        for (const row of (m.results || [])) mensal.push({ label: String(row.mes || "").slice(5, 7) + "/" + String(row.mes || "").slice(0, 4), pedidos: Number(row.pedidos || 0), receita: Number(row.receita || 0) });
+      } catch {}
+      const top_produtos: any[] = [];
+      try {
+        const t = await env.DB.prepare(`SELECT li.nome_snapshot AS nome, SUM(li.qtd) AS qtd, SUM(COALESCE(li.preco_snapshot,0)*li.qtd) AS receita, COUNT(DISTINCT l.id) AS pedidos FROM lead_items li JOIN leads l ON l.id = li.lead_id WHERE l.tenant_id = ? AND l.tipo = 'pedido' AND l.status = 'concluido' GROUP BY li.nome_snapshot ORDER BY qtd DESC LIMIT 10`).bind(slug).all<any>();
+        for (const row of (t.results || [])) top_produtos.push({ nome: row.nome, qtd: Number(row.qtd || 0), receita: Number(row.receita || 0), pedidos: Number(row.pedidos || 0) });
+      } catch {}
+      const status_atuais: any = {};
+      try {
+        const s = await env.DB.prepare(`SELECT status, COUNT(*) as n FROM leads WHERE tenant_id = ? AND tipo = 'pedido' GROUP BY status`).bind(slug).all<any>();
+        for (const row of (s.results || [])) status_atuais[row.status] = Number(row.n || 0);
+      } catch {}
+      const origens: any[] = [];
+      try {
+        const o = await env.DB.prepare(`SELECT origem, COUNT(*) as pedidos FROM leads WHERE tenant_id = ? AND tipo = 'pedido' GROUP BY origem ORDER BY pedidos DESC`).bind(slug).all<any>();
+        for (const row of (o.results || [])) if (row.origem) origens.push({ origem: row.origem, pedidos: Number(row.pedidos || 0) });
+      } catch {}
+      return json({ periodo, dias, kpis, mensal, top_produtos, status_atuais, origens });
     } catch (e: any) {
       return fail(`erro nos indicadores: ${e?.message || e}`, 500);
     }
