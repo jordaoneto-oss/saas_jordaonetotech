@@ -2708,6 +2708,17 @@ class Handler(BaseHTTPRequestHandler):
             self._json({"ok": True})
             return
 
+        if p.path == "/config.json":
+            b = self._corpo()
+            try:
+                cfg_path = os.path.join(BASE, "tenants", slug, "config.json")
+                with open(cfg_path, "w") as f:
+                    json.dump(b, f, ensure_ascii=False, indent=2)
+                self._json({"ok": True, "tenant": slug})
+            except Exception as e:
+                self._json({"erro": f"falha ao salvar config: {e}"}, 500)
+            return
+
         self._json({"erro": "rota não encontrada"}, 404)
 
     def _registrar_lead(self, b, slug):
