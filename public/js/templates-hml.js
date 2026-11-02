@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Templates HML — renderer + personalizador modular (Nuvemshop-like)
+   Templates renderer + personalizador modular (Nuvemshop-like)
    3 modelos: vitrine-hml · editorial-hml · boutique-hml
    Dados: window.TEMPLATES_HML (gerado por scripts/build-templates-hml.mjs)
    ========================================================================== */
@@ -17,14 +17,14 @@
   const TPL_ID = document.body.dataset.template || "vitrine-hml";
   const PACOTE = window.TEMPLATES_HML && window.TEMPLATES_HML[TPL_ID];
   const PAGINAS = {
-    "vitrine-hml": "homolog-template-vitrine.html",
-    "editorial-hml": "homolog-template-editorial.html",
-    "boutique-hml": "homolog-template-boutique.html",
+    "vitrine-hml": "template-vitrine.html",
+    "editorial-hml": "template-editorial.html",
+    "boutique-hml": "template-boutique.html",
   };
 
   if (!PACOTE) {
     const alvo = $("#loja");
-    if (alvo) alvo.innerHTML = '<p style="padding:48px;font-family:sans-serif">Modelo não encontrado. Volte para <a href="homolog-templates.html">a galeria de modelos</a>.</p>';
+    if (alvo) alvo.innerHTML = '<p style="padding:48px;font-family:sans-serif">Modelo não encontrado. Volte para <a href="templates.html">a galeria de modelos</a>.</p>';
     return;
   }
 
@@ -426,11 +426,11 @@
   function renderSelos() {
     const itens = cfg.selos || [];
     const icones = ["truck", "refresh", "shield", "star"];
-    return `<div class="selos" data-sec="selos">
+    return `<section class="sec selos" data-sec="selos">
       <div class="container selos-in">
         ${itens.map((s, i) => `<div class="selo-item"><span class="selo-ic">${svg(icones[i % icones.length])}</span><span><b>${esc(s.t)}</b><small>${esc(s.s)}</small></span></div>`).join("")}
       </div>
-    </div>`;
+    </section>`;
   }
 
   function renderDestaques() {

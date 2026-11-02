@@ -60,7 +60,7 @@ body.arrumar-modal{overflow:hidden}
   border-radius:4px;display:inline-block;
 }
 .chapeu a{color:inherit;text-decoration:underline;text-underline-offset:2px}
-.titulo{font-size:clamp(2.1rem,4.6vw,3.4rem);line-height:1.05;overflow-wrap:anywhere}
+.titulo{font-size:clamp(2.1rem,4.6vw,3.4rem);line-height:1.05;overflow-wrap:anywhere;word-break:break-word}
 .titulo em{font-style:italic;color:var(--ouro);font-weight:400;white-space:nowrap}
 .lead{font-size:1.08rem;color:var(--tinta-suave);max-width:60ch;font-weight:300}
 .centro{text-align:center}
@@ -107,7 +107,7 @@ header .env{display:flex;align-items:center;justify-content:space-between;height
 .marca b{font-family:var(--serif);font-size:1.34rem;font-weight:500;letter-spacing:.05em;line-height:1;display:block;white-space:nowrap}
 .marca>span>span{display:block;font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--tinta-suave);margin-top:4px}
 nav{display:flex;align-items:center;gap:26px}
-nav a{font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--tinta-suave);transition:.2s;position:relative;white-space:nowrap}
+nav a{font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--tinta-suave);transition:.2s;position:relative;white-space:nowrap;text-overflow:ellipsis;overflow:hidden;max-width:140px}
 nav a::after{content:"";position:absolute;left:0;right:100%;bottom:-5px;height:1px;background:var(--ouro);transition:right .3s}
 nav a:hover{color:var(--tinta)}
 nav a:hover::after{right:0}
@@ -607,6 +607,9 @@ footer a:hover{color:var(--ouro-claro)}
 }
 @media (max-width:960px){
   .hero .env,.editorial,.encomenda .env,.sobre .env{grid-template-columns:1fr;gap:44px}
+@media (min-width:961px){
+  .hero .env,.editorial,.encomenda .env,.sobre .env{grid-template-columns:1fr 1fr;gap:62px;align-items:center}
+}
   .hero{padding-top:calc(var(--topo) + 32px)}
   .moldura{max-width:400px;margin:0 auto}
   .par-fotos{margin:0 auto}

@@ -1,6 +1,6 @@
-# Modelos de loja HML — Vitrine, Editorial e Boutique
+# Modelos de loja Vitrine, Editorial e Boutique
 
-Três seeds de loja virtual para homologação, no mesmo formato modular do editor atual
+Três seeds de loja virtual para produção, no mesmo formato modular do editor atual
 (seções + blocos + tema). O lojista escolhe o modelo na criação do tenant e personaliza
 tudo depois no editor: ordem das seções, visibilidade, textos, cores, fontes, formato dos
 botões e prévia responsiva.
@@ -11,9 +11,9 @@ botões e prévia responsiva.
 | **Editorial Casa** | `editorial-hml` | `editorial` | Storytelling, coleções e curadoria | casa / lifestyle / marcas autorais |
 | **Boutique Noir** | `boutique-hml` | `boutique` | Premium, concierge e edições limitadas | joias / beleza / presentes |
 
-Página de entrada: **`homolog-templates.html`** (galeria com comparativo e checklist).
-Prévias: `homolog-template-vitrine.html`, `homolog-template-editorial.html`,
-`homolog-template-boutique.html`.
+Página de entrada: **`templates.html`** (galeria com comparativo e checklist).
+Prévias: `template-vitrine.html`, `template-editorial.html`,
+`template-boutique.html`.
 
 ---
 
@@ -109,7 +109,7 @@ são extras da prévia HML (arte CSS quando não há foto).
 
 ## 2. Prévia e personalização
 
-Abra `homolog-templates.html` e escolha um modelo, ou vá direto a uma página de prévia.
+Abra `templates.html` e escolha um modelo, ou vá direto a uma página de prévia.
 O painel lateral tem três abas:
 
 1. **Seções** — arrastar para reordenar, setas para subir/descer, olho para ocultar.
@@ -195,7 +195,7 @@ Os seeds e a prévia são gerados por script — não edite `js/templates-hml-da
 
 ```bash
 node scripts/build-templates-hml.mjs   # seeds + js/templates-hml-data.js
-node scripts/build-hml-pages.mjs       # 3 prévias + homolog-templates.html
+node scripts/build-hml-pages.mjs       # 3 prévias + templates.html
 npm run build                          # sincroniza public/
 ```
 
@@ -204,7 +204,7 @@ Arquivos gerados:
 - `saas/templates/{vitrine,editorial,boutique}-hml/*`
 - `js/templates-hml-data.js`
 - `homolog-template-{vitrine,editorial,boutique}.html`
-- `homolog-templates.html`
+- `templates.html`
 
 Arquivos escritos à mão:
 
@@ -226,7 +226,7 @@ Arquivos escritos à mão:
 - [ ] Conferir busca, filtro por categoria, ordenação e estado vazio do catálogo.
 - [ ] Rodar `npm run build` e confirmar páginas e assets em `public/`.
 
-A mesma lista está interativa em `homolog-templates.html#checklist`.
+A mesma lista está interativa em `templates.html#checklist`.
 
 ---
 

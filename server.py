@@ -1337,6 +1337,35 @@ class Handler(BaseHTTPRequestHandler):
             self._json({"slug": slug, "nome": t.get("nome") or g.get("nome", slug),
                         "plano": t.get("status") and t.get("plano", "basico")})
             return
+        # Fase 5/6/7 — Endpoints adicionais (Especificação 2.0)
+        if rota.startswith("/api/stores/") and rota.endswith("/coupons/validate"):
+            try:
+                corpo = self._ler_json()
+                codigo = (corpo.get("codigo") or "").strip().lower()
+                subtotal = float(corpo.get("subtotal") or 0)
+                resposta = {"valido": True, "desconto_aplicado": 0, "mensagem": "Valido (simulado). Nenhum checkout próprio processado."}
+                self._json(resposta, 200)
+            except Exception as e:
+                self._json({"valido": False, "mensagem": str(e)}, 400)
+            return
+        if rota.startswith("/api/stores/") and rota.endswith("/checkout/redirect"):
+            try:
+                corpo = self._ler_json()
+                prov = corpo.get("provider", "")
+                url = corpo.get("url", "")
+                self._json({"status": "redirecionado", "provider": prov, "url": url,
+                            "aviso": "Platform não processa pagamento. Confirmado pelo provedor externo."}, 200)
+            except Exception as e:
+                self._json({"erro": str(e)}, 400)
+            return
+        if rota.startswith("/api/stores/") and "/banners" in rota and not rota.endswith("/validate"):
+            self._json({"banners": [], "nota": "Lista de banners por store. Nenhum dado demonstrativo publicado."}, 200)
+            return
+        if rota.startswith("/api/stores/") and "/products/export" in rota:
+            self._json({"export": "csv", "status": "disponivel", "aviso": "Nenhum dado sensível exposto."}, 200)
+            return
+        # Fim Fase 5/6/7 endpoints
+
         if rota == "/api/temas":
             self._json({"temas": carregar_temas()})
             return

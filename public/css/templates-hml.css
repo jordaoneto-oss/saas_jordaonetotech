@@ -400,11 +400,9 @@ a { color: inherit; }
 .loja .anuncio a { display: inline-flex; align-items: center; gap: 5px; font-weight: 800; text-decoration: underline; text-underline-offset: 3px; white-space: nowrap; }
 .loja .anuncio a .ic { width: 13px; height: 13px; }
 .loja .topo {
-  position: sticky; top: 0; z-index: 40;
-  background: var(--marfim);
-  background: color-mix(in srgb, var(--marfim) 92%, transparent);
+  background: var(--menu, var(--marfim));
+  position: sticky; top: 0; z-index: 10;
   border-bottom: 1px solid var(--linha);
-  backdrop-filter: blur(14px);
 }
 .loja .topo-in { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 24px; min-height: 74px; }
 .loja button.menu-btn { display: none; }

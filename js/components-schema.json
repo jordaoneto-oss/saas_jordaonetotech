@@ -1,0 +1,79 @@
+{
+  "version": "2.0.0",
+  "engine": "plataforma-saas-2",
+  "components": [
+    {
+      "type": "header",
+      "name": "Cabeçalho",
+      "description": "Logo, busca, conta e carrinho",
+      "fields": ["logo_url", "search_placeholder", "cart_link", "account_link"],
+      "responsive": true,
+      "required_version": "2.0.0"
+    },
+    {
+      "type": "banner_carousel",
+      "name": "Carrossel de banners",
+      "description": "Banners desktop/mobile com agendamento",
+      "fields": ["items", "autoplay", "interval", "controls", "indicators"],
+      "responsive": true,
+      "required_version": "2.0.0"
+    },
+    {
+      "type": "catalogo",
+      "name": "Catálogo / Vitrine",
+      "description": "Grade ou carrossel de produtos",
+      "fields": ["layout", "items", "category_filter", "order", "max_items"],
+      "responsive": true,
+      "required_version": "2.0.0"
+    },
+    {
+      "type": "beneficios",
+      "name": "Faixa de benefícios",
+      "description": "Ícones e textos de confiança",
+      "fields": ["items", "colors", "layout"],
+      "responsive": true,
+      "required_version": "2.0.0"
+    },
+    {
+      "type": "produto",
+      "name": "Página de produto",
+      "description": "Galeria, preço, variações, descrição",
+      "fields": ["gallery", "name", "price", "sale_price", "variants", "description", "cta_text"],
+      "responsive": true,
+      "required_version": "2.0.0"
+    },
+    {
+      "type": "texto_institucional",
+      "name": "Texto institucional",
+      "description": "Bloco editorial com imagem opcional",
+      "fields": ["title", "body", "image", "align", "cta_text", "cta_url"],
+      "responsive": true,
+      "required_version": "2.0.0"
+    },
+    {
+      "type": "faq",
+      "name": "Perguntas frequentes",
+      "description": "Lista de perguntas e respostas",
+      "fields": ["items", "style"],
+      "responsive": true,
+      "required_version": "2.0.0"
+    },
+    {
+      "type": "rodape",
+      "name": "Rodapé",
+      "description": "Contato, links, redes sociais e políticas",
+      "fields": ["columns", "social_links", "contact_email", "copyright"],
+      "responsive": true,
+      "required_version": "2.0.0"
+    }
+  ],
+  "theme_variants": [
+    {"segment": "gen", "variants": ["essencial", "contemporaneo", "premium"]},
+    {"segment": "arte", "variants": ["acolhedor", "editorial", "luxo"]},
+    {"segment": "moda", "variants": ["minimal", "editorial", "premium"]},
+    {"segment": "beleza", "variants": ["leve", "editorial", "premium"]},
+    {"segment": "alimentos", "variants": ["limpo", "editorial", "premium"]},
+    {"segment": "casa", "variants": ["editorial", "minimal", "premium"]}
+  ],
+  "required_version": "2.0.0"
+}

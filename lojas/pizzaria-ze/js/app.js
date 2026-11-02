@@ -2,7 +2,7 @@
 "use strict";
 
 let ZAP = "5516991038587";
-let NOME = "Ateliê Santo Terço";
+let NOME = "Loja Modelo";
 let CFG = null;
 // SaaS multi-tenant: ?loja=<slug> seleciona a loja (servidor resolve por query/host/header)
 const LOJA = (()=>{ try{ return (new URLSearchParams(location.search).get("loja")||"").toLowerCase(); }catch(e){ return ""; } })();

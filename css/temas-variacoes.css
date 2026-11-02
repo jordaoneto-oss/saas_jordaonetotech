@@ -1,0 +1,27 @@
+/* Fase 2 — Temas e modelos (4.1-4.8) — Variações visuais */
+:root {
+  /* Modelo 1 — Genérico / catálogo versátil */
+  --theme-gen-essencial: #0f172a, #f8fafc, #2563eb;
+  --theme-gen-contemporaneo: #1e1b4b, #f5f3ff, #6366f1;
+  --theme-gen-premium: #111827, #fefce8, #c2410c;
+  /* Modelo 2 — Artesanato, presentes e personalizados */
+  --theme-arte-acolhedor: #3f2e1a, #fdf6e3, #b45309;
+  --theme-arte-editorial: #4a3f35, #f5f0eb, #8b5e3c;
+  --theme-arte-luxo: #2a1a0e, #f0e6d2, #d4af37;
+  /* Modelo 3 — Moda, calçados e acessórios */
+  --theme-moda-minimal: #18181b, #fafafa, #d946ef;
+  --theme-moda-editorial: #1c1917, #f9f5f2, #57534e;
+  --theme-moda-premium: #0a0a0f, #f3f0eb, #bfa15f;
+  /* Modelo 4 — Beleza, cosméticos e cuidados */
+  --theme-beleza-leve: #1b2a3a, #f0f8ff, #38bdf8;
+  --theme-beleza-editorial: #1a1a2e, #f5f3f8, #7c3aed;
+  --theme-beleza-premium: #0f172a, #fff7ed, #f97316;
+  /* Modelo 5 — Alimentos, doces e bebidas */
+  --theme-alim-limpo: #14532d, #f7fef5, #22c55e;
+  --theme-alim-editorial: #2a2a1b, #fcfbf7, #ca8a04;
+  --theme-alim-premium: #3a0d1a, #fff0f5, #e11d48;
+  /* Modelo 6 — Casa, decoração e utilidades */
+  --theme-casa-editorial: #3a2f2a, #f7f5f0, #78716c;
+  --theme-casa-minimal: #292524, #fafaf9, #a8a29e;
+  --theme-casa-premium: #0f0a05, #fdf8f0, #b45309;
+}

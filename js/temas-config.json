@@ -1,0 +1,16 @@
+{
+  "version": "2.0.0",
+  "segmentos": [
+    {"id":"gen","nome":"Genérico / catálogo versátil","variacoes":[{"nome":"Essencial","slug":"essencial","css":"--ink:#0f172a;--surface:#f8fafc;--blue:#2563eb;"},{"nome":"Contemporâneo","slug":"contemporaneo","css":"--ink:#1e1b4b;--surface:#f5f3ff;--blue:#6366f1;"},{"nome":"Premium","slug":"premium","css":"--ink:#111827;--surface:#fefce8;--blue:#c2410c;"}]},
+    {"id":"arte","nome":"Artesanato, presentes e personalizados","variacoes":[{"nome":"Acolhedor","slug":"acolhedor","css":"--ink:#3f2e1a;--surface:#fdf6e3;--blue:#b45309;"},{"nome":"Editorial","slug":"editorial","css":"--ink:#4a3f35;--surface:#f5f0eb;--blue:#8b5e3c;"},{"nome":"Luxo","slug":"luxo","css":"--ink:#2a1a0e;--surface:#f0e6d2;--blue:#d4af37;"}]},
+    {"id":"moda","nome":"Moda, calçados e acessórios","variacoes":[{"nome":"Minimal","slug":"minimal","css":"--ink:#18181b;--surface:#fafafa;--blue:#d946ef;"},{"nome":"Editorial","slug":"editorial","css":"--ink:#1c1917;--surface:#f9f5f2;--blue:#57534e;"},{"nome":"Premium","slug":"premium","css":"--ink:#0a0a0f;--surface:#f3f0eb;--blue:#bfa15f;"}]},
+    {"id":"beleza","nome":"Beleza, cosméticos e cuidados","variacoes":[{"nome":"Leve","slug":"leve","css":"--ink:#1b2a3a;--surface:#f0f8ff;--blue:#38bdf8;"},{"nome":"Editorial","slug":"editorial","css":"--ink:#1a1a2e;--surface:#f5f3f8;--blue:#7c3aed;"},{"nome":"Premium","slug":"premium","css":"--ink:#0f172a;--surface:#fff7ed;--blue:#f97316;"}]},
+    {"id":"alim","nome":"Alimentos, doces e bebidas","variacoes":[{"nome":"Limpo","slug":"limpo","css":"--ink:#14532d;--surface:#f7fef5;--blue:#22c55e;"},{"nome":"Editorial","slug":"editorial","css":"--ink:#2a2a1b;--surface:#fcfbf7;--blue:#ca8a04;"},{"nome":"Premium","slug":"premium","css":"--ink:#3a0d1a;--surface:#fff0f5;--blue:#e11d48;"}]},
+    {"id":"casa","nome":"Casa, decoração e utilidades","variacoes":[{"nome":"Editorial","slug":"editorial","css":"--ink:#3a2f2a;--surface:#f7f5f0;--blue:#78716c;"},{"nome":"Minimal","slug":"minimal","css":"--ink:#292524;--surface:#fafaf9;--blue:#a8a29e;"},{"nome":"Premium","slug":"premium","css":"--ink:#0f0a05;--surface:#fdf8f0;--blue:#b45309;"}]}
+  ],
+  "total_combinacoes": 18,
+  "preserva_catalogo": true,
+  "preserva_paginas": true,
+  "preserva_cupons": true,
+  "requer_backup_antes": true
+}

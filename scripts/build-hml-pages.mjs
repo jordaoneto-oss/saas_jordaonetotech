@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Gera as 3 páginas de homologação dos modelos de loja.
+ * Gera as 3 páginas de produção dos modelos de loja.
  * Rode depois de scripts/build-templates-hml.mjs.
  */
 import { readFileSync, writeFileSync } from "node:fs";
@@ -28,9 +28,9 @@ const IC = {
 const svg = (n) => `<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${IC[n]}</svg>`;
 
 const PAGINAS = [
-  { id: "vitrine-hml", arquivo: "homolog-template-vitrine.html", cor: "#4f46e5" },
-  { id: "editorial-hml", arquivo: "homolog-template-editorial.html", cor: "#b4552d" },
-  { id: "boutique-hml", arquivo: "homolog-template-boutique.html", cor: "#c8a96a" },
+  { id: "vitrine-hml", arquivo: "template-vitrine.html", cor: "#4f46e5" },
+  { id: "editorial-hml", arquivo: "template-editorial.html", cor: "#b4552d" },
+  { id: "boutique-hml", arquivo: "template-boutique.html", cor: "#c8a96a" },
 ];
 
 const meta = (id) => JSON.parse(readFileSync(join(TPL, id, "meta.json"), "utf8"));
@@ -69,7 +69,7 @@ function pagina(p) {
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>HML — ${m.nome} · template de loja virtual</title>
+<title>${m.nome} · modelo de loja virtual</title>
 <meta name="description" content="${m.descricao}">
 <meta name="robots" content="noindex,nofollow">
 <meta name="theme-color" content="${p.cor}">
@@ -80,7 +80,7 @@ function pagina(p) {
 <body data-template="${p.id}">
 
 <header class="cx-topo">
-  <a class="cx-voltar" href="homolog-templates.html" aria-label="Voltar para a galeria de modelos">${svg("arrow")}<span>Modelos</span></a>
+  <a class="cx-voltar" href="templates.html" aria-label="Voltar para a galeria de modelos">${svg("arrow")}<span>Modelos</span></a>
   <div class="cx-titulo"><b id="cxNomeModelo">${m.nome}</b><span id="cxMetaModelo">HML · ${m.foco}</span></div>
   <label class="cx-modelo">Modelo <select id="cxModelo" aria-label="Trocar de modelo">${opcoes}</select></label>
   <div class="cx-dispositivos" role="group" aria-label="Visualizar em">
@@ -208,8 +208,8 @@ function galeria() {
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Modelos de loja — homologação (HML v1)</title>
-<meta name="description" content="Três modelos de loja virtual modulares para homologação: Vitrine Express, Editorial Casa e Boutique Noir.">
+<title>Modelos de loja — produção (HML v1)</title>
+<meta name="description" content="Três modelos de loja virtual modulares para produção: Vitrine Express, Editorial Casa e Boutique Noir.">
 <meta name="robots" content="noindex,nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -358,7 +358,7 @@ function galeria() {
     <a class="voltar" href="saas-admin.html" aria-label="Voltar ao painel">${svg("arrow")}Painel</a>
     <div class="marca">
       <span class="dot" aria-hidden="true">H</span>
-      <div><b>Modelos de loja</b><span>Homologação · 3 modelos modulares</span></div>
+      <div><b>Modelos de loja</b><span>Modelo · 3 modelos modulares</span></div>
     </div>
     <nav class="menu" aria-label="Atalhos">
       <a href="#modelos">Modelos</a>
@@ -392,7 +392,7 @@ function galeria() {
           <h2>Escolha um ponto de partida</h2>
           <p>Os três modelos usam o mesmo schema de configuração (<code>config.json</code>) do editor atual. Trocar de modelo é trocar o seed — o código da loja é o mesmo.</p>
         </div>
-        <a class="btn" style="flex:0 0 auto" href="homolog-template-vitrine.html">${svg("sliders")}Abrir personalizador</a>
+        <a class="btn" style="flex:0 0 auto" href="template-vitrine.html">${svg("sliders")}Abrir personalizador</a>
       </div>
       <div class="grade">
 ${cards}
@@ -412,7 +412,7 @@ ${cards}
         <div class="passo"><b>1</b><h3>Seções</h3><p>Arraste para reordenar, use as setas ou o olho para ocultar um módulo sem apagar o conteúdo.</p></div>
         <div class="passo"><b>2</b><h3>Conteúdo</h3><p>Edite capa, selos, produtos em destaque, coleções, depoimentos e rodapé com campos guiados.</p></div>
         <div class="passo"><b>3</b><h3>Tema</h3><p>Aplique um preset, ajuste cada cor e troque as fontes de título e texto. O contraste acompanha.</p></div>
-        <div class="passo"><b>4</b><h3>Publicar</h3><p>Exporte o JSON, teste no celular e use o mesmo arquivo como base do tenant na homologação.</p></div>
+        <div class="passo"><b>4</b><h3>Publicar</h3><p>Exporte o JSON, teste no celular e use o mesmo arquivo como base do tenant na produção.</p></div>
       </div>
     </div>
   </section>
@@ -441,7 +441,7 @@ ${linhas}
       <div class="sec-cab">
         <div>
           <h2>Criar uma loja com o modelo</h2>
-          <p>Na homologação local, o clone lê <code>saas/templates/&lt;id&gt;/</code> e aplica o tema sugerido do <code>meta.json</code>.</p>
+          <p>Na produção local, o clone lê <code>saas/templates/&lt;id&gt;/</code> e aplica o tema sugerido do <code>meta.json</code>.</p>
         </div>
       </div>
       <div class="criar">
@@ -549,5 +549,5 @@ for (const p of PAGINAS) {
   console.log(`✓ ${p.arquivo}`);
 }
 
-writeFileSync(join(ROOT, "homolog-templates.html"), galeria(), "utf8");
-console.log("✓ homolog-templates.html");
+writeFileSync(join(ROOT, "templates.html"), galeria(), "utf8");
+console.log("✓ templates.html");

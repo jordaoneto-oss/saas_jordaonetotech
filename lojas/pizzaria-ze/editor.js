@@ -29,7 +29,8 @@ const CORES_INFO = [
   {k:"rosa", r:"Tom de apoio"},
   {k:"rosa-claro", r:"Tom de apoio claro"},
   {k:"salvia", r:"Tom neutro verde"},
-  {k:"zap", r:"WhatsApp"}
+  {k:"zap", r:"WhatsApp"},
+  {k:"menu", r:"Menu do topo"}
 ];
 
 const FONTS = [
@@ -512,7 +513,7 @@ function elementoSecao(id){
   if(!doc) return null;
   switch(id){
     case "hero": return doc.querySelector("section.hero");
-    case "selos": return doc.querySelector(".selos");
+    case "selos": return doc.querySelector(".selos, section.selos, #selos");
     case "destaques": return doc.querySelector("section.destaques");
     case "oficio": return doc.querySelector("section.oficio");
     case "catalogo": return doc.querySelector("#catalogo");

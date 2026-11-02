@@ -25,7 +25,7 @@ with open(os.path.join(ROOT, "js", "catalog.json"), encoding="utf-8") as f:
     catalogo = json.load(f)
 
 geral = cfg.get("geral", {})
-nome = geral.get("nome") or "Ateliê Santo Terço"
+nome = geral.get("nome") or "Loja Modelo"
 zap = "".join(ch for ch in str(geral.get("zap") or "") if ch.isdigit())
 zap_tela = geral.get("zap_tel") or ""
 instagram = geral.get("instagram") or ""

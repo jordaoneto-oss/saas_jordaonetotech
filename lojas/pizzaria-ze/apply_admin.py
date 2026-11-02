@@ -10,13 +10,13 @@ with io.open(PATH, encoding="utf-8") as f:
 # (antigo, novo) — cada antigo deve ser único
 R = [
     # ---- título / meta ----
-    ('<title>Ateliê Santo Terço — Terços artesanais feitos à mão, com fé</title>',
-     '<title data-t="geral.title">Ateliê Santo Terço — Terços artesanais feitos à mão, com fé</title>'),
+    ('<title>Loja Modelo — Terços artesanais feitos à mão, com fé</title>',
+     '<title data-t="geral.title">Loja Modelo — Terços artesanais feitos à mão, com fé</title>'),
     ('<meta name="description" content="',
      '<meta name="description" data-t="geral.descricao" content="'),
     # ---- marca ----
-    ('<span>\n        <b>Ateliê Santo Terço</b>\n        <span>Terços feitos à mão</span>\n      </span>',
-     '<span>\n        <b data-t="geral.nome">Ateliê Santo Terço</b>\n        <span data-t="geral.tagline">Terços feitos à mão</span>\n      </span>'),
+    ('<span>\n        <b>Loja Modelo</b>\n        <span>Terços feitos à mão</span>\n      </span>',
+     '<span>\n        <b data-t="geral.nome">Loja Modelo</b>\n        <span data-t="geral.tagline">Terços feitos à mão</span>\n      </span>'),
     # ---- hero ----
     ('<p class="chapeu">Terços artesanais · feitos com fé</p>',
      '<p class="chapeu" data-t="hero.chapeu">Terços artesanais · feitos com fé</p>'),
@@ -91,7 +91,7 @@ R = [
     ('<h2 class="titulo">Os dias que a família', '<h2 class="titulo" data-t-html="ocasioes.titulo">Os dias que a família'),
     # ---- oração ----
     ('<p>"Segure o terço com fé.', '<p data-t-html="oracao.texto">"Segure o terço com fé.'),
-    ('<cite>Ateliê Santo Terço</cite>', '<cite data-t="oracao.autor">Ateliê Santo Terço</cite>'),
+    ('<cite>Loja Modelo</cite>', '<cite data-t="oracao.autor">Loja Modelo</cite>'),
     # ---- mistérios ----
     ('<p class="chapeu">A oração de cada dia</p>', '<p class="chapeu" data-t="misterios.chapeu">A oração de cada dia</p>'),
     ('<h2 class="titulo">Os mistérios,', '<h2 class="titulo" data-t-html="misterios.titulo">Os mistérios,'),
@@ -108,8 +108,8 @@ R = [
      '<p class="lead" style="margin-top:16px" data-t-html="sobre.p3">Hoje as encomendas saem daqui'),
     ('<a class="btn btn-ouro" href="https://www.instagram.com/atelie_santotercoo/" target="_blank" rel="noopener">Ver o dia a dia no Instagram</a>',
      '<a class="btn btn-ouro" data-href="geral.instagram" data-t="sobre.cta" href="https://www.instagram.com/atelie_santotercoo/" target="_blank" rel="noopener">Ver o dia a dia no Instagram</a>'),
-    ('<a href="https://www.instagram.com/atelie_santotercoo/" target="_blank" rel="noopener" aria-label="Instagram do Ateliê Santo Terço">',
-     '<a data-href="geral.instagram" href="https://www.instagram.com/atelie_santotercoo/" target="_blank" rel="noopener" aria-label="Instagram do Ateliê Santo Terço">'),
+    ('<a href="https://www.instagram.com/atelie_santotercoo/" target="_blank" rel="noopener" aria-label="Instagram do Loja Modelo">',
+     '<a data-href="geral.instagram" href="https://www.instagram.com/atelie_santotercoo/" target="_blank" rel="noopener" aria-label="Instagram do Loja Modelo">'),
     # ---- depoimentos ----
     ('<p class="chapeu">Quem já levou</p>', '<p class="chapeu" data-t="depoimentos.chapeu">Quem já levou</p>'),
     ('<h2 class="titulo">Devoções que viraram', '<h2 class="titulo" data-t-html="depoimentos.titulo">Devoções que viraram'),
@@ -143,7 +143,7 @@ R = [
     ('<a class="btn btn-linha" href="#catalogo">Voltar ao catálogo</a>',
      '<a class="btn btn-linha" href="#catalogo" data-t="final.cta2">Voltar ao catálogo</a>'),
     # ---- rodapé ----
-    ('<h4>Ateliê Santo Terço</h4>', '<h4 data-t="rodape.titulo">Ateliê Santo Terço</h4>'),
+    ('<h4>Loja Modelo</h4>', '<h4 data-t="rodape.titulo">Loja Modelo</h4>'),
     ('<p>Terços artesanais feitos com fé. Cada peça é montada à mão,',
      '<p data-t-html="rodape.sobre">Terços artesanais feitos com fé. Cada peça é montada à mão,'),
     ('<h4>Catálogo</h4>', '<h4 data-t="rodape.cat_titulo">Catálogo</h4>'),

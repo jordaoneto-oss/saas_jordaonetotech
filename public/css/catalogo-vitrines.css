@@ -1,0 +1,26 @@
+/* Fase 3 — Componentes de catálogo, banners e vitrines (5.1-5.5) */
+.banner-card{border:1px solid var(--line);border-radius:var(--radius-md);overflow:hidden;background:#fff;box-shadow:var(--shadow-sm);transition:box-shadow .15s;}
+.banner-card:hover{box-shadow:var(--shadow-md);}
+.banner-card img{width:100%;height:auto;display:block;object-fit:cover;}
+.banner-meta{padding:10px 12px;font-size:13px;}
+.banner-meta .title{font-weight:600;color:var(--ink);display:block;}
+.banner-meta .schedule{font-size:11px;color:var(--muted);}
+.banner-actions{display:flex;gap:4px;padding:0 12px 10px;}
+.banner-actions button{padding:4px 8px;font-size:11px;border-radius:6px;border:1px solid var(--line);background:#fff;cursor:pointer;}
+.banner-actions button:hover{background:var(--line-soft);}
+.vitrine-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;}
+.vitrine-card{border:1px solid var(--line);border-radius:var(--radius-md);background:#fff;padding:10px;box-shadow:var(--shadow-sm);transition:box-shadow .15s;}
+.vitrine-card:hover{box-shadow:var(--shadow-md);}
+.vitrine-card img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:var(--radius-sm);}
+.vitrine-card h4{margin:8px 0 2px;font-size:14px;color:var(--ink);}
+.vitrine-card .price{font-weight:700;color:var(--ink-2);font-size:13px;}
+.vitrine-card .btn{margin-top:8px;padding:6px 12px;background:var(--blue);color:#fff;border:0;border-radius:var(--btn-radius);font-size:12px;font-weight:600;cursor:pointer;display:inline-block;}
+.vitrine-card .btn:hover{opacity:.92;}
+.catalog-table{width:100%;border-collapse:collapse;font-size:13px;}
+.catalog-table th{background:var(--line-soft);text-align:left;padding:8px 10px;font-weight:600;color:var(--ink-3);border-bottom:1.5px solid var(--line);}
+.catalog-table td{padding:8px 10px;border-bottom:1px solid var(--line);color:var(--ink-2);}
+.catalog-table tr:hover{background:var(--line-soft);}
+.catalog-table .btn-edit{padding:3px 8px;font-size:11px;border:1px solid var(--line);border-radius:4px;background:#fff;cursor:pointer;margin-right:4px;}
+.catalog-table .btn-del{padding:3px 8px;font-size:11px;border:1px solid var(--danger);color:var(--danger);border-radius:4px;background:#fff;cursor:pointer;}
+.catalog-table .btn-edit:hover{background:#f1f5f9;}
+.catalog-table .btn-del:hover{background:var(--danger-soft);}
