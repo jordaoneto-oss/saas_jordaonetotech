@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>novo_editor — Híbrido</title>
+  <link rel="stylesheet" href="editor.css">
+  <script>
+    // Versão híbrida: editor atual com estrutura modular do repo saas-editor-tenant
+    console.log("novo_editor híbrido carregado. Editor atual + referência frontend/src/");
+  </script>
+</head>
+<body>
+  <h1>novo_editor — Versão Híbrida</h1>
+  <p>Esta versão combina o <strong>editor atual</strong> (<code>editor.js</code>) com a arquitetura do repo <code>saas-editor-tenant</code> (React + TypeScript + PuckEditor).</p>
+
+  <section>
+    <h2>Editor atual (funcional para tenants)</h2>
+    <a href="editor.html">Abrir editor atual</a>
+  </section>
+
+  <section>
+    <h2>Frontend moderno (referência)</h2>
+    <p>Veja <code>frontend/src/App.tsx</code> e <code>frontend/src/components/PuckEditor.tsx</code>.</p>
+  </section>
+
+  <section>
+    <h2>Middleware / API (referência)</h2>
+    <p>Veja <code>src/middleware/tenant.ts</code> e <code>src/routes/store.ts</code>.</p>
+  </section>
+</body>
+</html>

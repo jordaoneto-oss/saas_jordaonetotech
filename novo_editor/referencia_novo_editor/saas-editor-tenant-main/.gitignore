@@ -1,0 +1,8 @@
+node_modules
+/dist
+dist-web
+.env
+.env.local
+npm-debug.log*
+.vitest
+.DS_Store
