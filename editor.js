@@ -487,8 +487,10 @@ async function carregarTenant(){
 }
 
 async function carregarDados(){
-  const [cfg, prods, imgs, midias, temas] = await Promise.all([
-    api("/api/admin/config").catch(()=>null),
+  /* a config é obrigatória: se o token expirou, precisamos falhar aqui
+     em vez de abrir o editor vazio e só quebrar ao salvar */
+  const cfg = await api("/api/admin/config");
+  const [prods, imgs, midias, temas] = await Promise.all([
     api("/api/admin/produtos").catch(()=>[]),
     api("/api/admin/imagens").catch(()=>[]),
     api("/api/admin/midias").catch(()=>null),
@@ -513,7 +515,11 @@ async function entrarReal(senha){
     await carregarDados();
   }catch(e){
     erro.hidden = false;
-    erro.textContent = e.status === 429 ? "Muitas tentativas. Aguarde um minuto." : "Senha incorreta.";
+    erro.textContent = e.status === 429
+      ? "Muitas tentativas. Aguarde um minuto."
+      : e.status === 401
+        ? "Senha incorreta."
+        : "Não foi possível carregar o editor: " + e.message;
   }finally{
     btn.disabled = false;
   }
@@ -739,6 +745,7 @@ function alternarPainel(){
 }
 
 function selecionar(id, rolar){
+  const trocou = state.selected !== id;
   state.selected = id;
   $$(".section-list li").forEach(li=>li.classList.toggle("on", li.dataset.sec===id));
   const mc = $(".menu-card");
@@ -751,9 +758,12 @@ function selecionar(id, rolar){
     else if(id !== "carrinho" && w && typeof w.__editorFecharCarrinho === "function") w.__editorFecharCarrinho();
   }catch(e){}
   aplicarSelecao();
+  if(trocou) state.inspTab = "conteudo";
   renderInspector();
   if(state.panel === "paginas") renderPanel();
-  $("#inspector").hidden = false;
+  const insp = $("#inspector");
+  insp.hidden = false;
+  if(trocou) insp.scrollTop = 0;
   if(window.innerWidth <= 980) fecharPainel();
   atualizarScrim();
   $("#canvasHint").textContent = nomeSecao(id) + " — edite os campos à direita";
@@ -1033,8 +1043,10 @@ function renderInspector(){
 function renderPanel(){
   const panel = $("#panel");
   if(!panel) return;
+  const rolagem = panel.scrollTop;
   panel.innerHTML = panelConteudo();
   if(state.panel === "catalogo") renderListaProdutos("");
+  panel.scrollTop = rolagem;
 }
 
 function panelConteudo(){
@@ -1062,7 +1074,7 @@ function painelPaginas(){
     const vis = s.visivel !== false;
     return `<li data-sec="${s.id}" draggable="true" class="${s.id===state.selected?"on":""}">
       <span class="grip" title="Arraste para reordenar">${miniIcone(MINI.grip)}</span>
-      <div class="sec-main" data-act="sel" data-sec="${s.id}" role="button" tabindex="0">${iconeSecao(s.id)}<span><b>${esc(s.nome||meta.nome)}</b><input class="nome-edit" data-act="nome" value="${esc(s.nome||meta.nome)}" data-sec="${s.id}" aria-label="Nome da seção"><small>${esc(meta.desc)}</small></span></div>
+      <div class="sec-main" data-act="sel" data-sec="${s.id}" role="button" tabindex="0">${iconeSecao(s.id)}<span><input class="nome-edit" data-act="nome" value="${esc(s.nome||meta.nome)}" data-sec="${s.id}" aria-label="Nome da seção"><small>${esc(meta.desc)}</small></span></div>
       <button class="mini" data-act="subir" data-sec="${s.id}" title="Mover para cima"${i===0?" disabled":""}>${miniIcone(MINI.up)}</button>
       <button class="mini" data-act="descer" data-sec="${s.id}" title="Mover para baixo"${i===layout.length-1?" disabled":""}>${miniIcone(MINI.down)}</button>
       <button class="mini ${vis?"":"off"}" data-act="olho" data-sec="${s.id}" title="${vis?"Ocultar seção":"Mostrar seção"}">${miniIcone(vis?MINI.eye:MINI.eyeOff)}</button>
@@ -1894,8 +1906,8 @@ function ligarTeclado(){
     if(e.key === "Escape"){
       if(!$("#modalProduto").hidden) $("#modalProduto").hidden = true;
       else if(!$("#modalAjuda").hidden) $("#modalAjuda").hidden = true;
-      else if(!$("#inspector").hidden && window.innerWidth <= 1120) $("#inspector").hidden = true;
-      else $("#panel").classList.remove("open");
+      else if(!$("#inspector").hidden) fecharInspector();
+      else if(window.innerWidth <= 980) fecharPainel();
       return;
     }
     if((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "s"){
@@ -1917,6 +1929,54 @@ function ligarTeclado(){
 
 let editandoProduto = null;
 
+/* ---------- categorias do produto (select + criar/excluir) ---------- */
+const CATS_FIXAS_ED = [["essencial","Essencial"],["classico","Clássica"],["premium","Premium"],["luxo","Luxo"],["infantil","Para os pequenos"],["carro","Para o carro"]];
+let CATS_EXTRAS_ED = (()=>{ try{ return JSON.parse(localStorage.getItem("cats_extras")||"[]"); }catch(e){ return []; } })();
+function salvarCatsExtrasEd(){ try{ localStorage.setItem("cats_extras", JSON.stringify(CATS_EXTRAS_ED)); }catch(e){} }
+function listaCatsEd(){
+  const mapa = new Map(CATS_FIXAS_ED);
+  [...new Set((state.produtos||[]).map(x=>(x.cat||"").trim()).filter(Boolean))].sort().forEach(c=>{ if(!mapa.has(c)) mapa.set(c,c); });
+  CATS_EXTRAS_ED.forEach(c=>{ if(c && !mapa.has(c)) mapa.set(c,c); });
+  return [...mapa.entries()];
+}
+function preencherCategoriasEditor(atual){
+  const sel = $("#pCat");
+  if(!sel) return;
+  const lista = listaCatsEd();
+  sel.innerHTML = lista.map(([v,l])=>`<option value="${esc(v)}">${esc(l)}</option>`).join("");
+  if(atual && !lista.some(([v])=>v===atual)){
+    sel.insertAdjacentHTML("afterbegin", `<option value="${esc(atual)}">${esc(atual)}</option>`);
+  }
+  sel.value = atual || "essencial";
+}
+$("#pCatNova")?.addEventListener("click", ()=>{
+  const nome = prompt("Nome da nova categoria:");
+  if(!nome) return;
+  const slug = nome.trim().toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[^a-z0-9]+/g,"-").replace(/^-+|-+$/g,"").slice(0,30);
+  if(!slug) return;
+  if(!CATS_EXTRAS_ED.includes(slug) && !CATS_FIXAS_ED.some(([v])=>v===slug)) CATS_EXTRAS_ED.push(slug);
+  salvarCatsExtrasEd();
+  preencherCategoriasEditor(slug);
+  toast("Categoria criada.");
+});
+$("#pCatExcluir")?.addEventListener("click", ()=>{
+  const sel = $("#pCat");
+  const cat = sel.value;
+  if(!cat) return;
+  const usados = (state.produtos||[]).filter(p=>p.cat===cat);
+  if(usados.length){
+    if(!confirm(`A categoria "${cat}" é usada por ${usados.length} produto(s). Mover esses produtos para "Essencial" e excluir a categoria?`)) return;
+    state.produtos = state.produtos.map(p=>p.cat===cat?{...p,cat:"essencial"}:p);
+    registrarHistorico(true); marcarSujo(); atualizarPreview();
+  } else {
+    if(!confirm(`Excluir a categoria "${cat}"?`)) return;
+  }
+  CATS_EXTRAS_ED = CATS_EXTRAS_ED.filter(c=>c!==cat);
+  salvarCatsExtrasEd();
+  preencherCategoriasEditor("essencial");
+  toast("Categoria excluída.");
+});
+
 function abrirProduto(id){
   if(state.demo){ toast("A demonstração é somente leitura.", true); return; }
   editandoProduto = id || null;
@@ -1930,35 +1990,7 @@ function abrirProduto(id){
   $("#pSelo").value = p ? (p.selo||"") : "";
   $("#pVideo").value = p ? (p.video||"") : "";
   $("#pDesc").value = p ? (p.desc||"") : "";
-  const cats = [...new Set(state.produtos.map(x=>x.cat).filter(Boolean))];
-  $("#listaCats").innerHTML = cats.map(c=>`<option value="${esc(c)}"></option>`).join("");
-  const sel = $("#pCatList");
-  sel.innerHTML = cats.map(c=>`<div class="cat-row" data-cat="${esc(c)}" style="display:flex;align-items:center;justify-content:space-between;padding:6px 8px;border-bottom:1px solid var(--linha);cursor:pointer"><span>${esc(c)}</span><button type="button" class="cat-del" data-cat="${esc(c)}" style="background:transparent;border:0;color:#b42318;font-size:14px;cursor:pointer;padding:2px 4px">×</button></div>`).join("");
-  sel.addEventListener("click", e=>{
-    const row = e.target.closest ? e.target.closest(".cat-row") : null;
-    const btn = e.target.closest ? e.target.closest(".cat-del") : null;
-    if(btn){
-      const cat = btn.dataset.cat;
-      if(!cat || !confirm("Remover categoria \""+cat+"\" de todos os produtos?")) return;
-      state.produtos = state.produtos.map(x=>x.cat===cat?{...x,cat:""}:x);
-      registrarHistorico(true); marcarSujo(); atualizarPreview();
-      abrirProduto(editandoProduto);
-      return;
-    }
-    if(row){
-      $("#pCat").value = row.dataset.cat || "";
-    }
-  });
-  $("#tagsCats").innerHTML = cats.map(c=>`<button type="button" class="tag-cat" data-cat="${esc(c)}" style="background:var(--marfim);border:1px solid var(--linha);border-radius:6px;padding:3px 8px;font-size:11px;color:var(--tinta);cursor:pointer">${esc(c)} ×</button>`).join("");
-  $("#tagsCats").addEventListener("click", e=>{
-    const btn = e.target.closest && e.target.closest(".tag-cat");
-    if(!btn) return;
-    const cat = btn.dataset.cat;
-    if(!cat || !confirm("Remover categoria \""+cat+"\" de todos os produtos?")) return;
-    state.produtos = state.produtos.map(p=>{ if(p.cat===cat) return {...p, cat:""}; return p; });
-    registrarHistorico(true); marcarSujo(); atualizarPreview();
-    abrirProduto(editandoProduto);
-  }, {once:true});
+  preencherCategoriasEditor(p ? (p.cat||"") : "");
   const colecoes = [...new Set(state.produtos.map(x=>x.colecao).filter(Boolean))];
   const dev = (state.cfg.devocoes && Array.isArray(state.cfg.devocoes.itens)) ? state.cfg.devocoes.itens : [];
   dev.forEach(d=>{ const t = String((d && (d.t||d)) || "").trim(); if(t && !colecoes.includes(t)) colecoes.push(t); });
@@ -2172,95 +2204,6 @@ function init(){
   if(sessionStorage.getItem("tok")) tentarEntrar();
 }
 
-function aplicarFormato(el, tag, val){
-  el.focus();
-  const s = el.selectionStart, e = el.selectionEnd, v = el.value;
-  if(s===e) return; // nada selecionado
-  const txt = v.substring(s,e);
-  const open = tag==="b"?"<b>":tag==="i"?"<i>":tag==="tamanho"?`<span style="font-size:${esc(val||"1.15em")}!important">`:tag==="cor"?`<span style="color:${esc(val||"#d39c9c")}!important">`:"";
-  const close = tag==="b"?"</b>":tag==="i"?"</i>":tag==="tamanho"||tag==="cor"?"</span>":"";
-  el.value = v.substring(0,s) + open + txt + close + v.substring(e);
-  el.selectionStart = s + open.length;
-  el.selectionEnd = s + open.length + txt.length;
-}
-
-function initToolbar(){
-  document.addEventListener("focusin", e=>{
-    const ta = e.target.closest ? e.target.closest(".ed-texto") : null;
-    if(!ta) return;
-    const fld = ta.closest(".fld");
-    if(!fld) return;
-    if(!fld.querySelector(".toolbar-formato")){
-      const tb = document.createElement("div");
-      tb.className = "toolbar-formato";
-      tb.innerHTML = `<button type="button" data-cmd="bold" title="Negrito">B</button>` +
-        `<button type="button" data-cmd="italic" title="Itálico">I</button>` +
-        `<span class="sep"></span>` +
-        `<button type="button" data-cmd="fontSize" data-val="3" title="Aumentar">A+</button>` +
-        `<button type="button" data-cmd="fontSize" data-val="1" title="Diminuir">A-</button>` +
-        `<span class="sep"></span>` +
-        `<button type="button" data-cmd="foreColor" data-val="#d39c9c" title="Ouro">●</button>` +
-        `<button type="button" data-cmd="foreColor" data-val="#33291f" title="Tinta">●</button>` +
-        `<input type="color" class="rgbPicker" value="#d39c9c" style="width:30px;height:30px;padding:0;border:0;background:transparent;cursor:pointer;flex:0 0 auto">`;
-      fld.insertBefore(tb, ta);
-    }
-    const tb = fld.querySelector(".toolbar-formato");
-    if(tb) tb.classList.add("on");
-  });
-  document.addEventListener("focusout", e=>{
-    const ta = e.target.closest ? e.target.closest(".ed-texto") : null;
-    if(!ta) return;
-    const fld = ta.closest(".fld");
-    if(fld){
-      const tb = fld.querySelector(".toolbar-formato");
-      if(tb) setTimeout(()=>{ if(!fld.contains(document.activeElement)) tb.classList.remove("on"); }, 150);
-    }
-  });
-  document.addEventListener("click", e=>{
-    const btn = e.target.closest ? e.target.closest(".toolbar-formato button") : null;
-    if(!btn) return;
-    const fld = btn.closest(".toolbar-formato").closest(".fld");
-    const ta = fld ? fld.querySelector(".ed-texto") : null;
-    if(!ta) return;
-    ta.focus();
-    const cmd = btn.dataset.cmd;
-    const val = btn.dataset.val || "";
-    if(cmd) document.execCommand(cmd, false, val || undefined);
-    if(ta && ta.isContentEditable){
-      const spans = ta.querySelectorAll ? ta.querySelectorAll("font,span") : [];
-      spans.forEach(s=>{
-        if(s.style.color && s.style.color.indexOf("important")==-1) s.style.color = s.style.color + " !important";
-        if(s.style.fontSize && s.style.fontSize.indexOf("important")==-1) s.style.fontSize = s.style.fontSize + " !important";
-      });
-    }
-  });
-  document.addEventListener("input", e=>{
-    if(e.target.classList && e.target.classList.contains("rgbPicker")){
-      const ta = e.target.closest(".toolbar-formato")?.closest(".fld")?.querySelector(".ed-texto");
-      if(ta) {
-        ta.focus();
-        const sel = window.getSelection();
-        if(sel.rangeCount){
-          const r = sel.getRangeAt(0);
-          try{
-            const s = document.createElement("span");
-            s.style.color = e.target.value + " !important";
-            r.surroundContents(s);
-          }catch(err){
-            const txt = sel.toString();
-            if(txt){
-              const nodo = document.createElement("span");
-              nodo.innerHTML = `<span style="color:${e.target.value} !important">${esc(txt)}</span>`;
-              r.deleteContents(); r.insertNode(nodo);
-            }
-          }
-        }
-      }
-    }
-  });
-}
-
 init();
-initToolbar();
 
 })();

@@ -107,16 +107,13 @@ try{
           <input id="pNome" required>
         </div>
         <div>
-          <label for="pCat">Linha / categoria (digite para criar nova)</label>
-          <input id="pCat" list="listaCats" placeholder="Ex.: Essencial ou nova linha" autocomplete="off">
-          <datalist id="listaCats">
-            <option value="essencial">Essencial</option>
-            <option value="classico">Clássica</option>
-            <option value="premium">Premium</option>
-            <option value="luxo">Luxo</option>
-            <option value="infantil">Para os pequenos</option>
-            <option value="carro">Para o carro</option>
-          </datalist>
+          <label for="pCat">Linha / categoria</label>
+          <div style="display:flex;gap:6px;align-items:center">
+            <select id="pCat" style="flex:1"></select>
+            <button type="button" class="btn-mini" id="pCatNova" title="Criar nova categoria">＋ Nova</button>
+            <button type="button" class="btn-perigo" id="pCatExcluir" title="Excluir categoria selecionada">🗑</button>
+          </div>
+          <p class="descricao-campo" style="margin:4px 0 0">Selecione uma linha existente, crie uma nova ou exclua.</p>
         </div>
         <div>
           <label for="pColecao">Coleção (da lista em Conteúdo do site › Coleções)</label>
@@ -163,6 +160,6 @@ try{
   </div>
 </div>
 
-<script src="admin.js?v=20261020-producao7"></script>
+<script src="admin.js?v=20261102-cat-select"></script>
 </body>
 </html>

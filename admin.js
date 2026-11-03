@@ -834,21 +834,66 @@ function preencherSelectFoto(){
   sel.innerHTML = IMAGENS.map(f=>`<option value="${escapeHtml(f)}">${escapeHtml(f)}</option>`).join("");
 }
 
+/* ---------- categorias do produto (select + criar/excluir) ---------- */
+const CATS_FIXAS = [["essencial","Essencial"],["classico","Clássica"],["premium","Premium"],["luxo","Luxo"],["infantil","Para os pequenos"],["carro","Para o carro"]];
+let CATS_EXTRAS = (()=>{ try{ return JSON.parse(localStorage.getItem("cats_extras")||"[]"); }catch(e){ return []; } })();
+function salvarCatsExtras(){ try{ localStorage.setItem("cats_extras", JSON.stringify(CATS_EXTRAS)); }catch(e){} }
+function listaCats(){
+  const mapa = new Map(CATS_FIXAS);
+  [...new Set((PRODUTOS||[]).map(x=>(x.cat||"").trim()).filter(Boolean))].sort().forEach(c=>{ if(!mapa.has(c)) mapa.set(c,c); });
+  CATS_EXTRAS.forEach(c=>{ if(c && !mapa.has(c)) mapa.set(c,c); });
+  return [...mapa.entries()];
+}
+function preencherCategorias(atual){
+  const sel = $("#pCat");
+  if(!sel) return;
+  const lista = listaCats();
+  sel.innerHTML = lista.map(([v,l])=>`<option value="${escapeHtml(v)}">${escapeHtml(l)}</option>`).join("");
+  if(atual && !lista.some(([v])=>v===atual)){
+    sel.insertAdjacentHTML("afterbegin", `<option value="${escapeHtml(atual)}">${escapeHtml(atual)}</option>`);
+  }
+  sel.value = atual || "essencial";
+}
+$("#pCatNova")?.addEventListener("click", ()=>{
+  const nome = prompt("Nome da nova categoria:");
+  if(!nome) return;
+  const slug = nome.trim().toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[^a-z0-9]+/g,"-").replace(/^-+|-+$/g,"").slice(0,30);
+  if(!slug) return;
+  if(!CATS_EXTRAS.includes(slug) && !CATS_FIXAS.some(([v])=>v===slug)) CATS_EXTRAS.push(slug);
+  salvarCatsExtras();
+  preencherCategorias(slug);
+  toast("Categoria criada.");
+});
+$("#pCatExcluir")?.addEventListener("click", async ()=>{
+  const sel = $("#pCat");
+  const cat = sel.value;
+  if(!cat) return;
+  const usados = (PRODUTOS||[]).filter(p=>p.cat===cat);
+  if(usados.length){
+    if(!confirm(`A categoria "${cat}" é usada por ${usados.length} produto(s). Mover esses produtos para "Essencial" e excluir a categoria?`)) return;
+    try{
+      for(const p of usados){
+        await api("/api/admin/produtos/"+encodeURIComponent(p.id), {method:"PUT", body:Object.assign({}, p, {cat:"essencial"})});
+      }
+    }catch(err){ toast("Erro ao excluir: "+err.message); return; }
+  } else {
+    if(!confirm(`Excluir a categoria "${cat}"?`)) return;
+  }
+  CATS_EXTRAS = CATS_EXTRAS.filter(c=>c!==cat);
+  salvarCatsExtras();
+  PRODUTOS = (PRODUTOS||[]).map(p=>p.cat===cat?Object.assign({},p,{cat:"essencial"}):p);
+  preencherCategorias("essencial");
+  toast("Categoria excluída.");
+  carregarProdutos();
+});
+
 function abrirModalProduto(id){
   EDITANDO_PRODUTO = id || null;
   const p = id ? PRODUTOS.find(x=>x.id===id) : null;
   $("#modProdutoTitulo").textContent = p ? "Editar produto" : "Novo produto";
   $("#pNome").value = p ? p.nome : "";
-  /* datalist: 6 fixas + linhas já usadas nos produtos (lojista pode digitar nova) */
-  try{
-    const fixas = [["essencial","Essencial"],["classico","Clássica"],["premium","Premium"],["luxo","Luxo"],["infantil","Para os pequenos"],["carro","Para o carro"]];
-    const usadas = [...new Set((PRODUTOS||[]).map(x=>(x.cat||"").trim()).filter(Boolean))].sort();
-    const vistas = new Set();
-    $("#listaCats").innerHTML = fixas.concat(usadas.filter(c=>!fixas.some(f=>f[0]===c)).map(c=>[c,c]))
-      .filter(([v,l])=>{ if(vistas.has(v)) return false; vistas.add(v); return true; })
-      .map(([v,l])=>`<option value="${escapeHtml(v)}">${escapeHtml(l)}</option>`).join("");
-  }catch(e){}
-  $("#pCat").value = p ? (p.cat||"essencial") : "essencial";
+  /* categorias: select com as fixas + as já usadas nos produtos */
+  preencherCategorias(p ? (p.cat||"essencial") : "essencial");
   /* coleção: seleção fechada a partir da lista mestra (Conteúdo do site › Coleções) */
   try{
     const mestra = [...new Set((((CFG&&CFG.devocoes||{}).itens||[]).map(x=>String((x&&x.t)||x||"").trim()).filter(Boolean)))];
